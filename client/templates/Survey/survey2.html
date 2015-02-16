@@ -1,0 +1,112 @@
+
+<template name="survey2">
+  {{setSelectedSchoolDoc schoolId}}
+  {{#autoForm collection="Schools" id="survey" type="update" doc=selectedSchoolDoc template="bootstrap3-horizontal" label-class="col-sm-3" input-col-class="col-sm-9" resetOnSuccess=false}}
+            <button class="btn btn-primary btn-back">Back</button>
+          <button type="submit" class="btn btn-primary">Save</button>
+          <fieldset>
+            {{> afQuickField name="grades.totalTeachersInSchool" options="auto"}}
+
+            <b>Please select a grade to update</b>
+
+           {{#if afFieldValueIs name="schoolDetails.CLASSIFICATION" value="Primary"}}
+                {{> primaryschool_accordian}}
+              {{else}}
+                {{> highschool_accordian}}
+            {{/if}}
+          	
+        </fieldset>
+
+   {{/autoForm}}
+
+
+</template>
+
+<template name="primaryschool_accordian">
+  <div class="accordion">
+    <div class="accordion-section">
+        <a class="accordion-section-title" href="#accordion-0">Grade R</a>
+        <div id="accordion-0" class="accordion-section-content">
+          {{> afQuickField name="grades.gradeR" options="auto"}}
+        </div>
+    </div><!--end .accordion-section-->
+     <div class="accordion-section">
+        <a class="accordion-section-title" href="#accordion-1">Grade 1</a>
+        <div id="accordion-1" class="accordion-section-content">
+          {{> afQuickField name="grades.grade1" options="auto"}}
+        </div>
+    </div><!--end .accordion-section-->
+     <div class="accordion-section">
+        <a class="accordion-section-title" href="#accordion-2">Grade 2</a>
+        <div id="accordion-2" class="accordion-section-content">
+          {{> afQuickField name="grades.grade2" options="auto"}}
+        </div>
+    </div><!--end .accordion-section-->
+     <div class="accordion-section">
+        <a class="accordion-section-title" href="#accordion-3">Grade 3</a>
+        <div id="accordion-3" class="accordion-section-content">
+          {{> afQuickField name="grades.grade3" options="auto"}}
+        </div>
+    </div><!--end .accordion-section-->        
+     <div class="accordion-section">
+        <a class="accordion-section-title" href="#accordion-4">Grade 4</a>
+        <div id="accordion-4" class="accordion-section-content">
+          {{> afQuickField name="grades.grade4" options="auto"}}
+        </div>
+    </div><!--end .accordion-section-->
+     <div class="accordion-section">
+        <a class="accordion-section-title" href="#accordion-5">Grade 5</a>
+        <div id="accordion-5" class="accordion-section-content">
+          {{> afQuickField name="grades.grade5" options="auto"}}
+        </div>
+    </div><!--end .accordion-section-->
+     <div class="accordion-section">
+        <a class="accordion-section-title" href="#accordion-6">Grade 6</a>
+        <div id="accordion-6" class="accordion-section-content">
+          {{> afQuickField name="grades.grade6" options="auto"}}
+        </div>
+    </div><!--end .accordion-section-->
+     <div class="accordion-section">
+        <a class="accordion-section-title" href="#accordion-7">Grade 7</a>
+        <div id="accordion-7" class="accordion-section-content">
+          {{> afQuickField name="grades.grade7" options="auto"}}
+        </div>
+    </div><!--end .accordion-section-->            
+</div><!--end .accordion-->
+</template>
+
+<template name="highschool_accordian">
+  <div class="accordion">
+    <div class="accordion-section">
+        <a class="accordion-section-title" href="#accordion-0">Grade 8</a>
+        <div id="accordion-0" class="accordion-section-content">
+          {{> afQuickField name="grades.grade8" options="auto"}}
+        </div>
+    </div><!--end .accordion-section-->
+     <div class="accordion-section">
+        <a class="accordion-section-title" href="#accordion-1">Grade 9</a>
+        <div id="accordion-1" class="accordion-section-content">
+          {{> afQuickField name="grades.grade9" options="auto"}}
+        </div>
+    </div><!--end .accordion-section-->
+     <div class="accordion-section">
+        <a class="accordion-section-title" href="#accordion-2">Grade 10</a>
+        <div id="accordion-2" class="accordion-section-content">
+          {{> afQuickField name="grades.grade10" options="auto"}}
+        </div>
+    </div><!--end .accordion-section-->
+     <div class="accordion-section">
+        <a class="accordion-section-title" href="#accordion-3">Grade 11</a>
+        <div id="accordion-3" class="accordion-section-content">
+          {{> afQuickField name="grades.grade11" options="auto"}}
+        </div>
+    </div><!--end .accordion-section-->        
+     <div class="accordion-section">
+        <a class="accordion-section-title" href="#accordion-4">Grade 12</a>
+        <div id="accordion-4" class="accordion-section-content">
+          {{> afQuickField name="grades.grade12" options="auto"}}
+        </div>
+    </div><!--end .accordion-section-->
+        
+</div><!--end .accordion-->
+</template>

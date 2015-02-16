@@ -1,0 +1,112 @@
+
+<template name="survey4">
+  {{setSelectedSchoolDoc schoolId}}
+  {{#autoForm collection="Schools" id="survey" type="update" doc=selectedSchoolDoc template="bootstrap3-horizontal" label-class="col-sm-3" input-col-class="col-sm-9" resetOnSuccess=false}}
+    <button class="btn btn-primary btn-back">Back</button>
+    <button type="submit" class="btn btn-primary">Save</button>
+    <fieldset>
+      <legend>Library & Media Centre</legend>
+      {{> afQuickField name="library.hasLibrary" options="auto"}}
+
+      {{#unless afFieldValueIs name="library.hasLibrary" value="No library"}}
+        {{#unless afFieldValueIs name="library.hasLibrary" value=""}}
+          {{> libraries}}
+        {{/unless}}
+      {{/unless}}
+
+    </fieldset>
+
+  {{/autoForm}}
+</template>
+
+<template name="libraries">
+	{{> afQuickField name="library.librarians" options="auto"}}
+	{{> afQuickField name="library.hasComputerTracking" options="auto"}}
+	{{> afQuickField name="library.hasComputerForGeneralUse" options="auto"}}
+	{{> afQuickField name="library.totalNumberOfComputers" options="auto"}}
+	{{> afQuickField name="library.totalNumberOfComputersThatConnectToTheInternet" options="auto"}}
+	{{> afQuickField name="library.hasBooks" options="auto"}}
+	{{> afQuickField name="library.hasFictionSection" options="auto"}}
+</template>
+<!-- LibrarySchema = new SimpleSchema({
+  hasLibrary: {
+    optional: true,
+    type: String,
+    label: "Does your school have a library or media center?",
+    autoform: {
+      type: "select",
+      options: function () {
+        return [
+          {label: "No library", value: 'No library'},
+          {label: "Yes, library only serves school", value: 'Yes, Library only serves school'},
+          {label: "Yes, library is shared with other schools", value: 'Yes, Library is shared with other schools'}
+        ];
+      }
+    }
+  },
+  librarians: {
+    optional: true,
+    type: [String],
+    label: "Does the school have (please tick all that apply)",
+    autoform: {
+      type: "select-checkbox",
+      options: function() {
+        return [
+        {label: "Dedicated librarian", value: 'Dedicated librarian'},
+        {label: "Teacher assigned as a librarian", value: 'Teacher assigned as a librarian'},
+        {label: "No librarian", value: 'No librarian'},
+        ];
+      }
+    }
+  },
+  hasComputerTracking: {
+    label: "Does the library have a computer to track book lending?",
+    type: Boolean,
+    optional: true,
+    autoform: {
+         type: "boolean-radios",
+         trueLabel: "Yes",
+         falseLabel: "No",
+      }
+    },
+    hasComputerForGeneralUse: {
+    label: "Does the library have other computers for general use?",
+    type: Boolean,
+    optional: true,
+    autoform: {
+         type: "boolean-radios",
+         trueLabel: "Yes",
+         falseLabel: "No",
+      }
+    },
+    totalNumberOfComputers: {
+      label: "Total number of computers",
+      type: Number,
+      optional: true,
+    },
+    totalNumberOfComputersThatConnectToTheInternet: {
+      label: "Total number of computers that connect to the internet",
+      type: Number,
+      optional: true,
+    },
+    hasBooks: {
+    label: "Does the library have books?",
+    type: Boolean,
+    optional: true,
+    autoform: {
+         type: "boolean-radios",
+         trueLabel: "Yes",
+         falseLabel: "No",
+      }
+    },
+    hasFictionSection: {
+      label: "Does the library have fiction (stories, novels etc)?",
+      type: Boolean,
+      optional: true,
+      autoform: {
+        type: "boolean-radios",
+        trueLabel: "Yes",
+        falseLabel: "No",
+      }
+    }
+}); -->

@@ -1,0 +1,24 @@
+<template name="home">
+	<div class="container">
+		<div class="align-content-center">
+
+
+			{{#if currentUser}}
+				<h2>What would you like to do?</h2>
+				<a href="{{pathFor 'schools'}}" class="btn btn-primary full-width">Add a School</a>
+				<br />
+				<a href="{{pathFor 'upload'}}" class="btn btn-primary full-width">Upload Many Schools</a>
+				<br />
+				<a href="{{pathFor 'survey' surveySection='survey_schools'}}" class="btn btn-primary full-width">Update a School Profile</a>
+				<br />
+				<a href="{{pathFor 'view' }}" class="btn btn-primary full-width">View a School Profile for Printing</a>
+				<br />
+				<a href="" class="btn btn-primary full-width">Contact Equal Education</a>
+			{{else}}
+				<h2>Please log in</h2>
+			
+			{{/if}}
+
+		</div>
+	</div>
+</template>

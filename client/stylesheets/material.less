@@ -1,0 +1,309 @@
+@import 'variables';
+
+h1, h2, h3, h4, p {
+  font-family: @fontFace;
+}
+
+h1 {
+  font-size: 28px;
+}
+
+.container-fluid {
+  padding-left: 25px;
+}
+
+.navbar, .navbar-default {
+  background-color: @primaryBackgroundColor;
+  color: #666;
+
+  .scrolled {
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .container-fluid {
+    .navbar-brand {
+      margin-left: 0px;
+      margin-top: 0px;
+    }
+  }
+  .navbar-brand {
+    img {
+      max-width: 200px;
+    }
+  }
+
+  a {
+    cursor: pointer;
+  }
+
+  .navbar-form {
+    margin-top: 0px;
+    background: rgba(255,255,255,0.8);
+    border-radius: 3px;
+    margin-top: 25px;
+    margin-left: 35px;
+    i {
+      font-size: 20px;
+      position: relative;
+      top: 6px;
+    }
+    input[type="text"] {
+      border-bottom: none;
+      padding-left: 5px;
+      height: 37px;
+      font-size: 18px;
+    }
+  }
+
+  .btn {
+    font-size: 16px;
+    text-transform: none;
+  }
+
+  .btn:not(.btn-link):not(.btn-flat) {
+    color: #666;
+  }
+
+  .btn:hover:not(.btn-link):not(.btn-flat) {
+    color: #666;
+  }
+
+  .nav.navbar-nav {
+
+    li:first-child, li.icon-nav:first-child {
+      margin-left: 15px;
+    }
+
+    li.profile-nav  {
+      margin: 0 0 0 0;
+      min-width: 0;
+    }
+
+    li.profile-nav-avatar {
+      margin: inherit 0 0 0;
+      min-width: 0;
+      padding-top: 4px;
+      a i{
+        font-size: 27px;
+      }
+
+      .caret {
+        vertical-align: text-top;
+      }
+    }
+  }
+
+
+  .nav.navbar-nav li.icon-nav  {
+    margin: 0;
+    min-width: 0;
+    font-size: 20px;
+  }
+
+  #login-buttons{
+    margin: 0px;
+    padding: 21px 15px 8px 8px;
+    font-family: @fontFace;
+
+    a {
+      text-decoration: none;
+    }
+    .accounts-dialog   {
+      border-radius: 0px;
+      padding: 20px;
+      border: none;
+      margin-right: 0;
+      box-shadow: 0 0 2px rgba(0,0,0,.12),0 2px 4px rgba(0,0,0,.24);
+
+      * {
+        font-family: @fontFace;
+      }
+      .login-button.single-login-button {
+        background: transparent;
+        color: @primaryTextColor;
+        border: none;
+        border-radius: 0px;
+        font-size: inherit;
+        font-weight: 300;
+
+      }
+
+      input {
+        margin-bottom: 10px;
+      }
+
+      .login-button-form-submit {
+        margin-top: 15px;
+      }
+
+      .or {
+        margin: 15px 0;
+      }
+    }
+    .login-form {
+input[type="text"], input[type="email"], input[type="password"] {
+  border-radius: 0px;
+  border: 0;
+  border-bottom: 2px solid;
+  border-color: #D7D7D7;
+  font-weight: 300;
+}
+
+label {
+  font-size: inherit;
+  font-family: @fontFace;
+  text-align: left;
+}
+      .additional-link {
+        text-decoration: none;
+        color: @secondaryLinkColor;
+        text-transform: uppercase;
+        font-size: 10px;
+      }
+    }
+    .login-link-text {
+      color: @primaryTextColor;
+    }
+    .login-close-text {
+      font-size: 8pt;
+      text-transform: UPPERCASE;
+      text-decoration: none;
+      color: @secondaryLinkColor;
+
+      &:hover {
+        color: #666;
+      }
+    }
+    .login-button.login-button-form-submit {
+      position: relative;
+      padding: 8px 0;
+      border: 0;
+      margin: 10px 0px 10px 0;
+      cursor: pointer;
+      border-radius: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: rgba(255, 255, 255, 0.84);
+      transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+      outline: none !important;
+      background-color: transparent;
+      color: @primaryColor;
+      font-size: 16px;
+      text-align: right;
+    }
+  }
+
+  .nav.navbar-nav li {
+    height: 72px;
+    min-width: 120px;
+    text-align: center;
+    padding-top: 7px;
+    font-weight: 400;
+    font-size: 16px;
+    margin-left: 18px;
+
+    a:hover {
+      color: @primaryColor;
+    }
+    &.active {
+      border-bottom: 3px solid #50E3C2;
+    }
+  }
+}
+
+.dropdown.profile-nav-avatar.open .dropdown-menu li {
+  height: 40px;
+
+  &.dropdown-title {
+    text-transform: UPPERCASE;
+    font-size: 14px;
+  }
+
+  &.divider {
+    height: 10px;
+    background: transparent;
+    border-bottom: 1px solid #f3f3f3;
+  }
+}
+
+.form label {
+  display: block;
+  text-transform: UPPERCASE;
+  font-weight: 500;
+  margin-top: 5px;
+}
+
+.modal {
+  align: center;
+  margin-left: auto;
+  margin-right: auto;
+  background: linear-gradient(to bottom, rgba(245, 245, 245, 0.98) 0%, rgba(240, 240, 255, 0.96) 100%);
+  color: @primaryTextColor;
+
+
+  .modal-header {
+
+  }
+
+
+  .form input[type=text]
+  {
+    color: rgb(0,0,0);
+  }
+}
+
+.icon-button {
+  background: transparent;
+  color: rgba(255,255,255,0.6);
+  position: relative;
+  border: none;
+  padding-left: 7px;
+  padding-top: 7px;
+  min-width: 5px;
+  i {
+    font-size: 28px;
+  }
+
+  &:hover {
+    background: transparent;
+    color: #FFF46E;
+    :before {
+      content: "E";
+    }
+  }
+
+  &.favorited {
+    color: #FFF46E;
+    :before {
+      content: "E";
+    }
+  }
+}
+
+.btn-primary {
+  border-style: none;
+}
+
+.btn-primary.btn-flat:not(.btn-link) {
+  color: @primaryColor;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+  border-radius: 0px;
+  border: 0;
+  border-bottom: 2px solid;
+  border-color: #D7D7D7;
+  font-weight: 300;
+}
+
+label {
+  font-size: inherit;
+  font-family: @fontFace;
+  text-align: left;
+}
+
+.btn.btn-primary:not(.btn-link):not(.btn-flat) {
+  background-color: @primaryColor;
+  border-style: none;
+  color: #000000;
+}

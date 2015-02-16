@@ -1,0 +1,66 @@
+<template name="review">
+	<div class="container">
+		{{#if this.schoolId}}
+		  {{setSelectedSchoolDoc this.schoolId}}
+  		{{#autoForm collection="Schools" id="review" type="update" doc=selectedSchoolDoc template="bootstrap3-horizontal" label-class="col-sm-3" input-col-class="col-sm-9" resetOnSuccess=false}}
+         <button class="btn btn-primary btn-back">Back</button>
+          <button type="submit" class="btn btn-primary">Next</button>
+          <fieldset>
+
+<!--       			        {{> afQuickField name='schoolDetails' options="auto"}}
+
+      			        {{> afQuickField name='contact' options="auto"}}
+
+      			        {{> afQuickField name='grades' options="auto"}}
+
+      			        {{> afQuickField name='sports' options="auto"}}
+
+      			        {{> afQuickField name='library' options="auto"}}
+
+      			        {{> afQuickField name='science_lab' options="auto"}}
+
+       			        {{> afQuickField name='security' options="auto"}}
+
+       			        {{> afQuickField name='sanitation' options="auto"}}
+ -->
+        			        {{> afQuickField name='specialNeeds' options="auto"}}
+
+		 </fieldset>
+
+   {{/autoForm}}
+
+		{{else}}
+			{{> review_schools}}
+		{{/if}}
+	</div>
+</template>
+
+
+<template name="review_schools">
+	<div class="container">
+		<div class="container">
+			<form class="form-horizontal select_school">
+				<div class="form-group">
+					<label class="col-lg-2 control-label">Select a school</label>
+					<div class="col-lg-10">
+						<div class="form-control-wrapper">
+							<select name="selected_school" class="form-control"  onChange="window.location.href=this.value">
+								<option value="">Select...</option>
+									{{#each schools}}
+											{{> review_school}}
+									{{/each}}
+							</select>
+							<span class="material-input"></span>
+						</div>
+						<br> 
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</template>
+
+
+<template name="review_school">
+		  	<option value="{{pathFor 'view'}}">{{schoolDetails.INSTITUTION_NAME}}</option>
+</template>

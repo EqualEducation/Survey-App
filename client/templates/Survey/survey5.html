@@ -1,0 +1,49 @@
+
+<template name="survey5">
+	  {{setSelectedSchoolDoc schoolId}}
+  {{#autoForm collection="Schools" id="survey" type="update" doc=selectedSchoolDoc template="bootstrap3-horizontal" label-class="col-sm-3" input-col-class="col-sm-9" resetOnSuccess=false}}
+        <button class="btn btn-primary btn-back">Back</button>
+        <button type="submit" class="btn btn-primary">Save</button>
+		<fieldset>
+      		<legend>Science Labs</legend>
+  			{{> afQuickField name="science_lab.hasLab" options="auto"}}
+            {{#if afFieldValueIs name="science_lab.hasLab" value=true}}
+				{{> sciencelabs}}
+            {{/if}}
+        </fieldset>
+   {{/autoForm}}
+</template>
+
+<template name="sciencelabs">
+	{{> afQuickField name="science_lab.numberOfLabs" options="auto"}}
+	{{> afQuickField name="science_lab.drillDown" options="auto"}}
+	{{> afQuickField name="science_lab.hasComputerForGeneralUse" options="auto"}}
+	{{> afQuickField name="science_lab.comment" options="auto"}}
+</template>
+
+<!-- ScienceLabSchema = new SimpleSchema({
+  hasLab: {
+    label: "Does your school have a science laboratory?",
+    type: Boolean,
+      optional: true,
+      autoform: {
+        type: "boolean-radios",
+        trueLabel: "Yes",
+        falseLabel: "No",
+      }
+  },
+  numberOfLabs: {
+    label: "How many labs does the school have?",
+    type: Number,
+    optional: true,
+  },
+  drillDown: {
+    type: ScienceLabDrillDownSchema,
+    optional: true,
+  },
+  comment: {
+    type: String,
+    optional: true,
+    label: "Comment"
+  }
+}); -->

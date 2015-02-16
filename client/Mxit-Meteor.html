@@ -1,0 +1,44 @@
+<template name="basicLayout">
+    <head>
+
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+        <link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/css/ripples.min.css" rel="stylesheet">
+        <link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/css/material-wfont.min.css" rel="stylesheet">
+
+    </head>
+     <body>
+
+          {{> yield region="header"}}
+        <div  class="main">
+          {{> yield}}
+        </div>
+
+
+        <!-- Your site ends -->
+        <script src="jquery-csv.js"></script>
+        <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+        <script src="js/ripples.min.js"></script>
+        <script src="js/material.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $.material.init();
+            });
+        </script>
+
+    </body>
+
+
+</template>
+
+<template name="header">
+    <div class="container">
+
+    <br />
+
+    <a href="{{pathFor 'home'}}"><img class="center-image" src="/logo.png"/></a>
+        {{> loginButtons}}
+
+</div>
+</template>

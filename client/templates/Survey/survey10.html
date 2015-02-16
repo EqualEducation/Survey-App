@@ -1,0 +1,47 @@
+
+<template name="survey10">
+		{{setSelectedSchoolDoc schoolId}}
+<!-- 		{{#autoForm collection="Schools" id="survey" type="update" doc=selectedSchoolDoc template="bootstrap3-horizontal" label-class="col-sm-3" input-col-class="col-sm-9" resetOnSuccess=false}}
+			<button class="btn btn-primary btn-back">Back</button>
+			<button type="submit" class="btn btn-primary">Save</button>
+			<fieldset>
+				 {{#each afFieldNames name="additionalInfo"}}
+        			{{#if isEqual this "additionalInfo.couldBeMoved"}} 
+        				{{#if isAtLeastOneLocationChecked}}
+        					{{> afQuickField name=this options="auto"}}
+        				{{/if}}
+					{{else}}
+						{{> afQuickField name=this options="auto"}}
+					{{/if}}
+      			{{/each}}
+			</fieldset>
+		{{/autoForm}} -->
+
+		{{#autoForm collection="Schools" id="survey" type="update" doc=selectedSchoolDoc template="bootstrap3-horizontal" label-class="col-sm-3" input-col-class="col-sm-9" resetOnSuccess=false}}
+
+		 {{#each afFieldNames name="additionalInfo"}}
+        			{{#if isEqual this "additionalInfo.couldBeMoved"}} 
+        				{{#each locations}}
+							{{#if afFieldValueContains name="additionalInfo.location" value=this}}
+								{{setShowCouldBeMoved this true}}
+							{{else}}
+								{{setShowCouldBeMoved this false}}
+	  						{{/if}}
+  						{{/each}}
+  						{{#if getShowCouldBeMoved}}
+  							 {{> afQuickField name="additionalInfo.couldBeMoved"}}
+  						{{/if}}
+					{{else}}
+						{{> afQuickField name=this options="auto"}}
+					{{/if}}
+      			{{/each}}
+
+
+  	<!-- 		{{> afQuickField name="additionalInfo"}}
+  			{{#if afFieldValueContains name="additionalInfo.location" value="Cemetery"}}
+    			{{> afQuickField name="additionalInfo.couldBeMoved"}}
+  			{{/if}} -->
+		{{/autoForm}}
+</template>
+
+
