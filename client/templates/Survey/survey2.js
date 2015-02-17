@@ -33,3 +33,7 @@ if (Meteor.isClient) {
  
   });
 }
+
+Template.registerHelper("currentFieldValue", function (fieldName) {
+  return AutoForm.getFieldValue("reactiveCurrentValueForm", fieldName) || "not selected";
+});

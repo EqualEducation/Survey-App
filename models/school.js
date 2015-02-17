@@ -19,7 +19,7 @@ SchoolDetailsSchema = new SimpleSchema({
     type: String,
     label: "Street number",
     optional: true,
-    regEx: /^[0-9]{4}$/
+    regEx: /^[0-9]{0,5}$/
   },
   STREET_NAME: {
     type: String,
@@ -117,16 +117,20 @@ ContactDetailsSchema = new SimpleSchema({
   name: {
     type: String,
     label: "Contact Name",
+    optional: true,
   },
   phoneNumber: {
     type: String,
+    optional: true,
     label: "Contact Number",
     regEx: /^((?:\+27|27)|0)(=|72|82|73|83|74|84|21)(\d{7})$/
 
   },
   email: {
     type: String,
-    label: "Contact Email"
+    label: "Contact Email",
+    optional: true,
+
   },
   comment: {
     type: String,
@@ -134,8 +138,7 @@ ContactDetailsSchema = new SimpleSchema({
     label: "Comment",
     autoform: {
       rows: 4,
-    }
-
+    },
   }
 });
 

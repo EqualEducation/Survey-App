@@ -154,9 +154,9 @@ Template.survey5.rendered = function(){
 Template.survey6.rendered = function(){
   $.material.init();
 };
-Template.survey7.rendered = function(){
-  $.material.init();
-};
+// Template.survey7.rendered = function(){
+//   $.material.init();
+// };
 Template.survey8.rendered = function(){
   $.material.init();
 };

@@ -42,7 +42,7 @@ if (Meteor.isClient) {
 	});
 
 
-	Template.survey2.rendered = function() {
+	Template.survey7.rendered = function() {
 		$.material.init();
 
  		$('.accordion .accordion-section-title').removeClass('active');

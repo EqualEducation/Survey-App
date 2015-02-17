@@ -6,10 +6,10 @@
           <button type="submit" class="btn btn-primary">Save</button>
           <fieldset>
             {{> afQuickField name="grades.totalTeachersInSchool" options="auto"}}
+            {{> afQuickField name="schoolDetails.CLASSIFICATION" options="auto"}}
 
             <b>Please select a grade to update</b>
-
-           {{#if afFieldValueIs name="schoolDetails.CLASSIFICATION" value="Primary"}}
+           {{#if afFieldValueIs name="schoolDetails.CLASSIFICATION" value='Primary'}}
                 {{> primaryschool_accordian}}
               {{else}}
                 {{> highschool_accordian}}
