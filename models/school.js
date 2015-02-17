@@ -1294,7 +1294,24 @@ NutritionSchema = new SimpleSchema({
 SchoolSchema = new SimpleSchema({
   schoolDetails: {
     type: SchoolDetailsSchema,
-    optional: true
+    optional: true,
+    custom: function () {
+      if (Meteor.isClient) {
+
+        var currentRoute = Router.current();
+  
+        var template_name = currentRoute.lookupTemplate();
+
+        var isRequired = template_name === "Schools";
+        if (!isRequired) {
+          return;
+        }
+        if (isRequired && !this.isSet && (!this.operator || (this.value === null || this.value === ""))) {
+          console.log("School Details are required");
+          return "required";
+        }
+      }
+    }
   },
   contact: {
     type: ContactDetailsSchema,
