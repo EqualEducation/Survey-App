@@ -10,20 +10,16 @@ SchoolDetailsSchema = new SimpleSchema({
     optional: true
   },
   TELEPHONE_NO: {
-    type: Number,
+    type: String,
     label: "Telephone number",
-    optional: true,
-    autoform: {
-      type: "text"
-    }
+    optional: true,  
+    regEx: /^((?:\+27|27)|0)(=|72|82|73|83|74|84|21)(\d{7})$/
   },
   STREET_NO: {
-    type: Number,
+    type: String,
     label: "Street number",
     optional: true,
-    autoform: {
-      type: "text"
-    }
+    regEx: /^[0-9]{4}$/
   },
   STREET_NAME: {
     type: String,
@@ -46,12 +42,10 @@ SchoolDetailsSchema = new SimpleSchema({
     optional: true
   },
   POSTAL_CODE: {
-    type: Number,
+    type: String,
     label: "Postal Code",
     optional: true,
-    autoform: {
-      type: "text"
-    }
+    regEx: /^[0-9]{4}$/
   },
   PROVINCE_NAME: {
     type: String,
@@ -77,12 +71,10 @@ SchoolDetailsSchema = new SimpleSchema({
     }
   },
   NEIMS_NUMBER: {
-    type: Number,
+    type: String,
     label: "NEIMS number",
     optional: false,
-    autoform: {
-      type: "text"
-    }
+    regEx: /^[0-9]{9}$/
   },
   CLASSIFICATION: {
     type: String,
@@ -127,11 +119,10 @@ ContactDetailsSchema = new SimpleSchema({
     label: "Contact Name",
   },
   phoneNumber: {
-    type: Number,
+    type: String,
     label: "Contact Number",
-    autoform: {
-      type: "text"
-    }
+    regEx: /^((?:\+27|27)|0)(=|72|82|73|83|74|84|21)(\d{7})$/
+
   },
   email: {
     type: String,
