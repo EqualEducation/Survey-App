@@ -136,12 +136,12 @@ Template.registerHelper("getShowCouldBeMoved", function() {
 });
 
 
+//NOTE: We need to re initialize the material css for some reason every time a template is rendered. 
+//TODO: Use one method for all rendered templates instead of having to define each on ehere
 Template.survey1.rendered = function(){
   $.material.init();
 };
-// Template.survey2.rendered = function(){
-//   $.material.init();
-// };
+
 Template.survey3.rendered = function(){
   $.material.init();
 };
@@ -182,6 +182,9 @@ Template.security.rendered = function(){
       $.material.init();
 }
 Template.water.rendered = function(){
+      $.material.init();
+}
+Template.electricity.rendered = function(){
       $.material.init();
 }
 Template.afArrayField_bootstrap3.rendered = function(){

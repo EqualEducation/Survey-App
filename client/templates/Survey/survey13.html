@@ -1,22 +1,36 @@
 <template name="survey13">
 		{{setSelectedSchoolDoc schoolId}}
-<!-- 		{{#autoForm collection="Schools" id="survey" type="update" doc=selectedSchoolDoc template="bootstrap3-horizontal" label-class="col-sm-3" input-col-class="col-sm-9" resetOnSuccess=false}}
-			<button class="btn btn-primary btn-back">Back</button>
-			<button type="submit" class="btn btn-primary">Save</button>
-			<fieldset>
-				{{> afQuickField name="electricity" options="auto"}}
-			</fieldset>
-		{{/autoForm}} -->
-
 		{{#autoForm collection="Schools" id="survey" type="update" doc=selectedSchoolDoc template="bootstrap3-horizontal" label-class="col-sm-3" input-col-class="col-sm-9" resetOnSuccess=false}}
-  			{{> afQuickField name="electricity.electricityCondition"}}
+  			<!-- {{> afQuickField name="electricity.electricityCondition"}}
   			{{#if afFieldValueIs name="electricity.electricityCondition" value="Sometimes there is power"}}
     			{{> afQuickField name="electricity.electricitySource"}}
   			{{/if}}
   			{{#if afFieldValueIs name="electricity.electricitySource" value="Other"}}
     				{{> afQuickField name="electricity.electricitySourceOtherDescription"}}
-  			{{/if}}
+  			{{/if}} -->
+
+  			<button class="btn btn-primary btn-back">Back</button>
+          <button type="submit" class="btn btn-primary">Save</button>
+          <fieldset>
+          <legend>Electricity</legend>
+             {{> afQuickField name="electricity.electricityCondition" options="auto"}}
+
+			 {{#unless afFieldValueIs name="electricity.electricityCondition" value="There is no power supply"}}
+		        {{#unless afFieldValueIs name="electricity.electricityCondition" value=""}}
+		        	{{> electricity}}
+		        {{/unless}}
+		      {{/unless}}
+
+		      
+        </fieldset>
 	{{/autoForm}}
+</template>
+
+<template name="electricity">
+	{{> afQuickField name="electricity.electricitySource" options="auto"}}
+	{{#if afFieldValueContains name="electricity.electricitySource" value="Other"}}
+	  	{{> afQuickField name="electricity.electricitySourceOtherDescription" options="auto"}}
+    {{/if}}
 </template>
 
 
