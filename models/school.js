@@ -1295,15 +1295,15 @@ ClassroomsSchema = new SimpleSchema ({
  });
 
 NutritionSchema = new SimpleSchema({
-  hasNutritionCentre: {
-    label: "Does the school have a nutrition centre?",
+  isInNutritionProgramme: {
+    label: "Is the school in the National School Nutrition Programme?",
     type: Boolean,
       optional: true,
       autoform: {
            type: "boolean-radios",
            trueLabel: "Yes",
            falseLabel: "No",
-        }
+    }
   },
   nutritionProgram: {
     optional: true,
@@ -1319,6 +1319,24 @@ NutritionSchema = new SimpleSchema({
           {label: "No nutrition program necessary", value: 'No nutrition program necessary'},
         ];
       }
+    }
+  },
+  hasNutritionCentre: {
+    label: "Does the school have a nutrition centre?",
+    type: Boolean,
+      optional: true,
+      autoform: {
+           type: "boolean-radios",
+           trueLabel: "Yes",
+           falseLabel: "No",
+    }
+  },
+  comment: {
+    type: String,
+    optional: true,
+    label: "Comment",
+    autoform: {
+      rows: 4,
     }
   }
 });
