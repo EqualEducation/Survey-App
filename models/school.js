@@ -987,6 +987,14 @@ SpecialNeedsSchema = new SimpleSchema({
         ];
       }
     }
+  },
+  comment: {
+    type: String,
+    optional: true,
+    label: "Comment",
+    autoform: {
+      rows: 4,
+    }
   }
 });
 
@@ -1122,6 +1130,14 @@ AdditionalInfoSchema = new SimpleSchema({
     label: "Number of printing rooms",
     type: Number,
   },
+  comment: {
+    type: String,
+    optional: true,
+    label: "Comment",
+    autoform: {
+      rows: 4,
+    }
+  }
 });
 
 ElectricitySchema = new SimpleSchema({
@@ -1163,6 +1179,14 @@ ElectricitySchema = new SimpleSchema({
     optional: true,
     label: "Please describe",
     type: String
+  },
+  comment: {
+    type: String,
+    optional: true,
+    label: "Comment",
+    autoform: {
+      rows: 4,
+    }
   }
 });
 
