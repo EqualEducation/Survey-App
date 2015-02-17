@@ -10,14 +10,20 @@ SchoolDetailsSchema = new SimpleSchema({
     optional: true
   },
   TELEPHONE_NO: {
-    type: String,
+    type: Number,
     label: "Telephone number",
-    optional: true
+    optional: true,
+    autoform: {
+      type: "text"
+    }
   },
   STREET_NO: {
     type: Number,
     label: "Street number",
-    optional: true
+    optional: true,
+    autoform: {
+      type: "text"
+    }
   },
   STREET_NAME: {
     type: String,
@@ -42,7 +48,10 @@ SchoolDetailsSchema = new SimpleSchema({
   POSTAL_CODE: {
     type: Number,
     label: "Postal Code",
-    optional: true
+    optional: true,
+    autoform: {
+      type: "text"
+    }
   },
   PROVINCE_NAME: {
     type: String,
@@ -71,6 +80,9 @@ SchoolDetailsSchema = new SimpleSchema({
     type: Number,
     label: "NEIMS number",
     optional: false,
+    autoform: {
+      type: "text"
+    }
   },
   CLASSIFICATION: {
     type: String,
@@ -117,6 +129,9 @@ ContactDetailsSchema = new SimpleSchema({
   phoneNumber: {
     type: Number,
     label: "Contact Number",
+    autoform: {
+      type: "text"
+    }
   },
   email: {
     type: String,
@@ -138,26 +153,41 @@ GradeDetailsSchema = new SimpleSchema({
     optional: true,
     type: Number,
     label: "Number of male students",
+    autoform: {
+      type: "text"
+    }
   },
   numberOfFemaleStudents: {
     optional: true,
     type: Number,
     label: "Number of female students",
+    autoform: {
+      type: "text"
+    }
   },
   totalNumberOfStudents: {
     optional: true,
     type: Number,
-    label: "Total number of students"
+    label: "Total number of students",
+    autoform: {
+      type: "text"
+    }
   },
   totalNumberOfTeachers: {
     optional: true,
     type: Number,
-    label: "Total number of teachers"
+    label: "Total number of teachers",
+    autoform: {
+      type: "text"
+    }
   },
   totalNumberOfClassRooms: {
     optional: true,
     type: Number,
-    label: "Total number of classrooms"
+    label: "Total number of classrooms",
+    autoform: {
+      type: "text"
+    }
   },
   comment: {
     type: String,
@@ -171,7 +201,10 @@ GradesSchema = new SimpleSchema({
   totalTeachersInSchool: {
     type: Number,
     label: "Total number of teachers in the school",
-    optional: true
+    optional: true,
+    autoform: {
+      type: "text"
+    }
   },
   gradeR: {
     type: GradeDetailsSchema,
@@ -278,6 +311,9 @@ SportsFieldSchema = new SimpleSchema({
     optional: true,
     type: Number,
     label: "Total Number of Sports Fields/Areas",
+    autoform: {
+      type: "text"
+    }
   },
   availableSports: {
     optional: true,
@@ -413,11 +449,17 @@ LibrarySchema = new SimpleSchema({
       label: "Total number of computers",
       type: Number,
       optional: true,
+      autoform: {
+        type: "text"
+      }
     },
     totalNumberOfComputersThatConnectToTheInternet: {
       label: "Total number of computers that connect to the internet",
       type: Number,
       optional: true,
+      autoform: {
+        type: "text"
+      }
     },
     hasBooks: {
     label: "Does the library have books?",
@@ -503,6 +545,9 @@ ScienceLabSchema = new SimpleSchema({
     label: "How many labs does the school have?",
     type: Number,
     optional: true,
+    autoform: {
+      type: "text"
+    }
   },
   drillDown: {
     type: ScienceLabDrillDownSchema,
@@ -643,21 +688,33 @@ SanitationDrillDownSchema = new SimpleSchema({
     label: "Number of working toilets",
     type: Number,
     optional: true,
+    autoform: {
+      type: "text"
+    }
   },
   numberOfBrokenToilets: {
     label: "Number of non-working toilets",
     type: Number,
     optional: true,
+    autoform: {
+      type: "text"
+    }
   },
   numberOfWorkingTaps: {
     label: "Number of working taps",
     type: Number,
     optional: true,
+    autoform: {
+      type: "text"
+    }
   },
   numberOfBrokenTaps: {
     label: "Number of non-working taps",
     type: Number,
     optional: true,
+    autoform: {
+      type: "text"
+    }
   },
   hasSoap: {
     label: "Is there soap?",
@@ -773,16 +830,25 @@ SanitationSchema = new SimpleSchema({
     optional: true,
     type: Number,
     label: "Total number of toilet blocks",
+    autoform: {
+      type: "text"
+    }
   },
  totalNumberOfToiletBlockTaps: {
     optional: true,
     type: Number,
     label: "Total number of taps outside toilet blocks",
+    autoform: {
+      type: "text"
+    }
   },
   totalNumberOfWorkingTaps: {
     optional: true,
     type: Number,
     label: "Total number of working taps",
+    autoform: {
+      type: "text"
+    }
   },
   disabledToilets: {
   label: "How many toilets were there that were big enough for a wheelchair?",
@@ -1113,22 +1179,37 @@ AdditionalInfoSchema = new SimpleSchema({
   numberOfDeputyPrincipalOffices: {
     label: "Number of deputy principal offices",
     type: Number,
+    autoform: {
+      type: "text"
+    }
   },
   numberOfSickRooms: {
     label: "Number of sick rooms",
     type: Number,
+    autoform: {
+      type: "text"
+    }
   },
   numberOfStaffKitchenetters: {
     label: "Number of staff kitchenettes",
     type: Number,
+    autoform: {
+      type: "text"
+    }
   },
   numberOfHODoffices: {
     label: "Number of HOD offices",
     type: Number,
+    autoform: {
+      type: "text"
+    }
   },
   numberOfPrintingRooms: {
     label: "Number of printing rooms",
     type: Number,
+    autoform: {
+      type: "text"
+    }
   },
   comment: {
     type: String,
@@ -1201,38 +1282,65 @@ ClassroomsDrillDownSchema = new SimpleSchema ({
     label: "Number of students in classroom",
     type: Number,
     optional: true,
+    autoform: {
+      type: "text"
+    }
   },
   totalNumberOfLightbulbs: {
     label: "Total number of lightbulbs in classroom",
     type: Number,
+    autoform: {
+      type: "text"
+    }
   },
   totalNumberOfBrokenLightbulbs: {
     label: "Total number of broken lightbulbs in classroom",
     type: Number,
+    autoform: {
+      type: "text"
+    }
   },
   totalNumberOfWindows: {
     label: "Total number of windows in classroom",
     type: Number,
+    autoform: {
+      type: "text"
+    }
   },
   totalNumberOfBrokenWindows: {
     label: "Total number of broken windows in classroom",
     type: Number,
+    autoform: {
+      type: "text"
+    }
   },
   totalNumberOfDesks: {
     label: "Total number of desks in classroom",
     type: Number,
+    autoform: {
+      type: "text"
+    }
   },
   totalNumberOfBrokenDesks: {
     label: "Total number of broken desks in classroom",
     type: Number,
+    autoform: {
+      type: "text"
+    }
   },
   totalNumberOfChairs: {
     label: "Total number of chairs in classroom",
     type: Number,
+    autoform: {
+      type: "text"
+    }
   },
   totalNumberOfBrokenChairs: {
     label: "Total number of broken chairs in classroom",
     type: Number,
+    autoform: {
+      type: "text"
+    }
   },
   howIsClassroomUsed : {
     optional: true,

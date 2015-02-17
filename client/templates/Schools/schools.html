@@ -3,7 +3,15 @@
 	  {{#autoForm collection="Schools" id="insertSchoolForm" type="insert" template="bootstrap3-horizontal" label-class="col-sm-3" input-col-class="col-sm-9" resetOnSuccess=false}}
     <fieldset>
       <legend>Add a School</legend>
- 				{{> afQuickField name="schoolDetails" options="auto"}}
+<!--        {{#each afFieldNames name="schoolDetails"}}
+        {{#if isEqual this "schoolDetails.TELEPHONE_NO"}}
+          {{> afFormGroup name=this type="text" }}
+        {{else}}
+          {{> afQuickField name=this options="auto"}}
+        {{/if}}
+      {{/each}} -->
+ 		
+ 		{{> afFormGroup name="schoolDetails" options="auto"}}
 
     </fieldset>
         <button class="btn btn-primary btn-back">Back</button>
