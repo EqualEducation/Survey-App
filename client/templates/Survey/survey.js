@@ -102,38 +102,38 @@ Template.survey13.events({
     }, 
   });
 
-Template.registerHelper("locations", function () {
-  return ["Cemetery", "Business centre", "Railway Station"];
-});
+// Template.registerHelper("locations", function () {
+//   return ["Cemetery", "Business centre", "Railway Station"];
+// });
 
-Template.registerHelper("setShowCouldBeMoved", function (location, isChecked) {
-  var selections = ["firstIteam"];
+// Template.registerHelper("setShowCouldBeMoved", function (location, isChecked) {
+//   var selections = ["firstIteam"];
 
-  var previouslySelected = Session.get("showCouldBeMoved");
-  console.log('previously selected: ' + previouslySelected);
-  selections.concat(previouslySelected);
+//   var previouslySelected = Session.get("showCouldBeMoved");
+//   console.log('previously selected: ' + previouslySelected);
+//   selections.concat(previouslySelected);
 
-  console.log("selected: " + selections);
-  if (selections.indexOf(location)){
-      console.log("has location: " + location);
-    if (isChecked) {
-      console.log("location is already checked");
-    } else {
-      console.log("remove location: " + location);
-      selections.remove(location);
-    }
-  } else {
-    console.log("add location: " + location);
-    selections.push(location);
-  }
-  console.log("selections array: " + selections);
+//   console.log("selected: " + selections);
+//   if (selections.indexOf(location)){
+//       console.log("has location: " + location);
+//     if (isChecked) {
+//       console.log("location is already checked");
+//     } else {
+//       console.log("remove location: " + location);
+//       selections.remove(location);
+//     }
+//   } else {
+//     console.log("add location: " + location);
+//     selections.push(location);
+//   }
+//   console.log("selections array: " + selections);
 
-  Session.set("showCouldBeMoved", selections);
-});
+//   Session.set("showCouldBeMoved", selections);
+// });
 
-Template.registerHelper("getShowCouldBeMoved", function() {
-  //Session.get("showCouldBeMoved").length > 0;
-});
+// Template.registerHelper("getShowCouldBeMoved", function() {
+//   //Session.get("showCouldBeMoved").length > 0;
+// });
 
 
 //NOTE: We need to re initialize the material css for some reason every time a template is rendered. 

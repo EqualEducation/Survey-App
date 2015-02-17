@@ -1157,12 +1157,12 @@ AdditionalInfoSchema = new SimpleSchema({
       {
         return [
       {label: "Principal’s office", value: "Principal’s office"},
-      {label: "Deputy principal’s office", value: " Deputy principal’s office"},
+      {label: "Deputy principal’s office", value: "Deputy principal’s office"},
       {label: "Reception area", value: "Reception area"},
       {label: "Storage room", value: "Storage room"},
       {label: "Strong room", value: "Strong room"},      
       {label: "Counselling room", value: "Counselling room"},
-      {label: "Sick room ", value: "Sick room "},
+      {label: "Sick room", value: "Sick room"},
       {label: "Staff kitchenette", value: "Staff kitchenette"},
       {label: "HOD’s office", value: "HOD’s office"},
       {label: "Printing room", value: "Printing room"},

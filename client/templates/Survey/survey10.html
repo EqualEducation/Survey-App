@@ -1,47 +1,33 @@
 
 <template name="survey10">
 		{{setSelectedSchoolDoc schoolId}}
-<!-- 		{{#autoForm collection="Schools" id="survey" type="update" doc=selectedSchoolDoc template="bootstrap3-horizontal" label-class="col-sm-3" input-col-class="col-sm-9" resetOnSuccess=false}}
-			<button class="btn btn-primary btn-back">Back</button>
-			<button type="submit" class="btn btn-primary">Save</button>
-			<fieldset>
-				 {{#each afFieldNames name="additionalInfo"}}
-        			{{#if isEqual this "additionalInfo.couldBeMoved"}} 
-        				{{#if isAtLeastOneLocationChecked}}
-        					{{> afQuickField name=this options="auto"}}
-        				{{/if}}
-					{{else}}
-						{{> afQuickField name=this options="auto"}}
-					{{/if}}
-      			{{/each}}
-			</fieldset>
-		{{/autoForm}} -->
-
 		{{#autoForm collection="Schools" id="survey" type="update" doc=selectedSchoolDoc template="bootstrap3-horizontal" label-class="col-sm-3" input-col-class="col-sm-9" resetOnSuccess=false}}
+		<button class="btn btn-primary btn-back">Back</button>
+          <button type="submit" class="btn btn-primary">Save</button>
+				 {{> afQuickField name="additionalInfo.yearBuilt"}}
+				 {{> afQuickField name="additionalInfo.location"}}				 
+			 {{#unless afFieldValueContains name="additionalInfo.location" value=" "}}
+				 {{> afQuickField name="additionalInfo.couldBeMoved"}}
+			{{/unless}}
+			 {{> afQuickField name="additionalInfo.schoolSignboard"}}
+			 {{> afQuickField name="additionalInfo.electronicConnectivity"}}
+			 {{> afQuickField name="additionalInfo.facilities"}}
+			 {{#if afFieldValueContains name="additionalInfo.facilities" value="Deputy principal’s office"}}
+				 {{> afQuickField name="additionalInfo.numberOfDeputyPrincipalOffices"}}
+			{{/if}}
+			{{#if afFieldValueContains name="additionalInfo.facilities" value="Sick room"}}
+				 {{> afQuickField name="additionalInfo.numberOfSickRooms"}}
+			{{/if}}
+			{{#if afFieldValueContains name="additionalInfo.facilities" value="Staff kitchenette"}}
+				 {{> afQuickField name="additionalInfo.numberOfStaffKitchenetters"}}
+			{{/if}}
+			{{#if afFieldValueContains name="additionalInfo.facilities" value="HOD’s office"}}
+				 {{> afQuickField name="additionalInfo.numberOfHODoffices"}}
+			{{/if}}
+			{{#if afFieldValueContains name="additionalInfo.facilities" value="Printing room"}}
+				 {{> afQuickField name="additionalInfo.numberOfPrintingRooms"}}
+			{{/if}}
 
-		 {{#each afFieldNames name="additionalInfo"}}
-        			{{#if isEqual this "additionalInfo.couldBeMoved"}} 
-        				{{#each locations}}
-							{{#if afFieldValueContains name="additionalInfo.location" value=this}}
-								{{setShowCouldBeMoved this true}}
-							{{else}}
-								{{setShowCouldBeMoved this false}}
-	  						{{/if}}
-  						{{/each}}
-  						{{#if getShowCouldBeMoved}}
-  							 {{> afQuickField name="additionalInfo.couldBeMoved"}}
-  						{{/if}}
-					{{else}}
-						{{> afQuickField name=this options="auto"}}
-					{{/if}}
-      			{{/each}}
-
-
-  	<!-- 		{{> afQuickField name="additionalInfo"}}
-  			{{#if afFieldValueContains name="additionalInfo.location" value="Cemetery"}}
-    			{{> afQuickField name="additionalInfo.couldBeMoved"}}
-  			{{/if}} -->
 		{{/autoForm}}
 </template>
-
 
