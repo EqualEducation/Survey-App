@@ -438,6 +438,14 @@ LibrarySchema = new SimpleSchema({
         trueLabel: "Yes",
         falseLabel: "No",
       }
+    },
+    comment: {
+      type: String,
+      optional: true,
+      label: "Comment",
+      autoform: {
+        rows: 4,
+      }
     }
 });
 
