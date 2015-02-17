@@ -187,9 +187,13 @@ Template.water.rendered = function(){
 Template.electricity.rendered = function(){
       $.material.init();
 }
+Template.sciencelabs.rendered = function(){
+      $.material.init();
+}
 Template.afArrayField_bootstrap3.rendered = function(){
    $.material.init(); 
 }
+
 
 AutoForm.hooks({
   survey: {

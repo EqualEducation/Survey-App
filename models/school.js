@@ -546,6 +546,7 @@ ScienceLabSchema = new SimpleSchema({
   drillDown: {
     type: ScienceLabDrillDownSchema,
     optional: true,
+    label: "More information",
   },
   comment: {
     type: String,
