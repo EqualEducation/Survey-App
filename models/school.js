@@ -1287,6 +1287,7 @@ ClassroomsDrillDownSchema = new SimpleSchema ({
   totalNumberOfLightbulbs: {
     label: "Total number of lightbulbs in classroom",
     type: Number,
+    optional: true,
     autoform: {
       type: "text"
     }
@@ -1294,6 +1295,7 @@ ClassroomsDrillDownSchema = new SimpleSchema ({
   totalNumberOfBrokenLightbulbs: {
     label: "Total number of broken lightbulbs in classroom",
     type: Number,
+    optional: true,
     autoform: {
       type: "text"
     }
@@ -1301,6 +1303,7 @@ ClassroomsDrillDownSchema = new SimpleSchema ({
   totalNumberOfWindows: {
     label: "Total number of windows in classroom",
     type: Number,
+    optional: true,
     autoform: {
       type: "text"
     }
@@ -1308,6 +1311,7 @@ ClassroomsDrillDownSchema = new SimpleSchema ({
   totalNumberOfBrokenWindows: {
     label: "Total number of broken windows in classroom",
     type: Number,
+    optional: true,
     autoform: {
       type: "text"
     }
@@ -1315,6 +1319,7 @@ ClassroomsDrillDownSchema = new SimpleSchema ({
   totalNumberOfDesks: {
     label: "Total number of desks in classroom",
     type: Number,
+    optional: true,
     autoform: {
       type: "text"
     }
@@ -1322,6 +1327,7 @@ ClassroomsDrillDownSchema = new SimpleSchema ({
   totalNumberOfBrokenDesks: {
     label: "Total number of broken desks in classroom",
     type: Number,
+    optional: true,
     autoform: {
       type: "text"
     }
@@ -1329,6 +1335,7 @@ ClassroomsDrillDownSchema = new SimpleSchema ({
   totalNumberOfChairs: {
     label: "Total number of chairs in classroom",
     type: Number,
+    optional: true,
     autoform: {
       type: "text"
     }
@@ -1336,6 +1343,7 @@ ClassroomsDrillDownSchema = new SimpleSchema ({
   totalNumberOfBrokenChairs: {
     label: "Total number of broken chairs in classroom",
     type: Number,
+    optional: true,
     autoform: {
       type: "text"
     }
