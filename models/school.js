@@ -13,7 +13,7 @@ SchoolDetailsSchema = new SimpleSchema({
     type: String,
     label: "Telephone number",
     optional: true,  
-    regEx: /^((?:\+27|27)|0)(=|72|82|73|83|74|84|21)(\d{7})$/
+    regEx: /^[0-9]{10}$/
   },
   STREET_NO: {
     type: String,

@@ -198,8 +198,12 @@ Template.afArrayField_bootstrap3.rendered = function(){
 AutoForm.hooks({
   survey: {
       onSuccess: function(operation, result, template) {  
-      alert('School has been updated');
+        alert('School has been updated');
       },
+      onError: function(operation, error, template) {
+        alert('Could not save the form. Please check all fields are filled in correctly.');
+
+      }
     }
   });
 
