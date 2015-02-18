@@ -190,10 +190,12 @@ Template.electricity.rendered = function(){
 Template.sciencelabs.rendered = function(){
       $.material.init();
 }
-Template.afArrayField_bootstrap3.rendered = function(){
+Template.afArrayField.rendered = function(){
    $.material.init(); 
 }
-
+Template.classroom_table.rendered = function(){
+   $.material.init(); 
+}
 
 AutoForm.hooks({
   survey: {

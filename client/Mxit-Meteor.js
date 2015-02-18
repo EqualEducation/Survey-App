@@ -25,6 +25,7 @@ if (Meteor.isClient) {
 	});
 
 	Handlebars.registerHelper('isEqual', function(string1, string2) {
+		console.log(string1);
 		return string1 === string2;
 	});
 
