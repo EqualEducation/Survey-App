@@ -94,17 +94,17 @@ SchoolDetailsSchema = new SimpleSchema({
   },
   principalCooperative: {
     type: String,
-    optional: false,
+    optional: true,
     label: "Is the principal eager to work with Equal Education?",
     autoform: 
     {
-      type: "boolean-select",
+      type: "select",
       options: function () 
       {
         return [
-      {label: "Select...", value: 'none'},
       {label: "Yes", value: 'yes'},
       {label: "No", value: 'no'},
+      {label: "Unsure", value: 'Unsure'},
         ];
       }
     }
