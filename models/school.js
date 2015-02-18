@@ -766,7 +766,10 @@ SanitationDrillDownSchema = new SimpleSchema({
       options: function () {
         return [
           {label: "Flush", value: 'Flush'},
-          {label: "Pit toilet", value: 'Pit toilet'},
+          {label: "Pit", value: 'Pit'},
+          {label: "VIP", value: 'VIP'},
+          {label: "Composting", value: 'Composting'},
+          {label: "Bucket", value: 'Bucket'},
         ];
       }
     }

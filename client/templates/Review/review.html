@@ -1,13 +1,17 @@
 <template name="review">
 	<div class="container">
 		{{#if this.schoolId}}
-		  {{setSelectedSchoolDoc this.schoolId}}
-  		{{#autoForm collection="Schools" id="review" type="update" doc=selectedSchoolDoc template="bootstrap3-horizontal" label-class="col-sm-3" input-col-class="col-sm-9" resetOnSuccess=false}}
+
+		{{> quickForm collection="Schools" id="review" schema=schemaFromJSON type="update" readonly="true"}}
          <button class="btn btn-primary btn-back">Back</button>
           <button type="submit" class="btn btn-primary">Next</button>
+
+<!-- 		  {{setSelectedSchoolDoc this.schoolId}}
+  		{{#autoForm collection="Schools" id="review" type="update" doc=selectedSchoolDoc template="bootstrap3-horizontal" label-class="col-sm-3" input-col-class="col-sm-9" resetOnSuccess=false}}
+
           <fieldset>
 
-<!--       			        {{> afQuickField name='schoolDetails' options="auto"}}
+      			        {{> afQuickField name='schoolDetails' options="auto"}}
 
       			        {{> afQuickField name='contact' options="auto"}}
 
@@ -22,13 +26,13 @@
        			        {{> afQuickField name='security' options="auto"}}
 
        			        {{> afQuickField name='sanitation' options="auto"}}
- -->
-        			        {{> afQuickField name='specialNeeds' options="auto"}}
+
+        			    {{> afQuickField name='specialNeeds' options="auto"}}
 
 		 </fieldset>
 
    {{/autoForm}}
-
+ -->
 		{{else}}
 			{{> review_schools}}
 		{{/if}}
