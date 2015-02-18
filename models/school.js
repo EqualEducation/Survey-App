@@ -532,6 +532,11 @@ ScienceLabDrillDownSchema = new SimpleSchema({
         trueLabel: "Yes",
         falseLabel: "No",
       }
+  },
+  comment: {
+    type: String,
+    optional: true,
+    label: "Comment"
   }
 
 });
@@ -555,16 +560,17 @@ ScienceLabSchema = new SimpleSchema({
       type: "text"
     }
   },
-  drillDown: {
-    type: ScienceLabDrillDownSchema,
-    optional: true,
-    label: "More information",
-  },
-  comment: {
-    type: String,
-    optional: true,
-    label: "Comment"
-  }
+  labs: {
+      type: Array,
+      optional: true,
+      minCount: 0,
+      maxCount: 100
+   },
+   "labs.$": {
+      optional: true,
+      type: ScienceLabDrillDownSchema
+   },
+  
 });
 
 SecuritySchema = new SimpleSchema({
