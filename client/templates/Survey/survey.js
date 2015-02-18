@@ -74,17 +74,7 @@ Template.survey10.events({
     }, 
   });
 
-Template.survey11.events({
-    "click .btn-back" : function() {
-      var schoolId = Session.get("selectedSchoolId");
-      Router.go('/survey/survey_sections/'+ schoolId);
-      return false;
-    }, 
-    "click .autoform-add-item" : function() {
-      //alert('clicked add new classroom');
-      $.material.init();
-    },
-  });
+
 
 Template.survey12.events({
     "click .btn-back" : function() {

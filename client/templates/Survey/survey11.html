@@ -4,9 +4,7 @@
 		{{#autoForm collection="Schools" id="survey" type="update" doc=selectedSchoolDoc}}
 			<button class="btn btn-primary btn-back">Back</button>
 			<button type="submit" class="btn btn-primary">Save</button>
-    				<!-- {{> afArrayField name='classrooms'}}  -->
-				<!-- {{> afQuickField name="classrooms" options="auto"}} -->
-				{{> afArrayField name="classrooms.classrooms" template="classroom"}}
+			{{> afArrayField name="classrooms.classrooms" template="classroom"}}
 
 		{{/autoForm}}
 </template>
@@ -20,6 +18,11 @@
 	    </div>
 	    {{/if}}
 	    <ul class="list-group">
+	    	{{#if afArrayFieldHasLessThanMaximum name=this.atts.name minCount=this.atts.minCount maxCount=this.atts.maxCount}}
+	      <li class="list-group-item">
+	        <button type="button" class="btn btn-primary autoform-add-item" data-autoform-field="{{this.atts.name}}" data-autoform-minCount="{{this.atts.minCount}}" data-autoform-maxCount="{{this.atts.maxCount}}">Add another classroom </button>
+	      </li>
+	      {{/if}}
 	      {{#afEachArrayItem name=this.atts.name minCount=this.atts.minCount maxCount=this.atts.maxCount}}
 	      <li class="list-group-item autoform-array-item">
 	        <div class="media">
@@ -44,3 +47,4 @@
 <template name="classroom_table">
 	{{> afQuickField name=this.name label=false options="auto"}}
 </template>
+

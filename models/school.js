@@ -1396,6 +1396,7 @@ ClassroomsSchema = new SimpleSchema ({
       maxCount: 100
    },
    "classrooms.$": {
+      optional: true,
       type: ClassroomsDrillDownSchema
    },
  });
