@@ -21,7 +21,9 @@
 		      	{{/unless}}
 
 	       		{{> afQuickField name="sanitation.comment" options="auto"}}
-	       		{{> blocks_accordion}}
+	       		{{> afArrayField name="sanitation.blocks" template="block"}}
+
+	       		<!-- {{> blocks_accordion}} -->
 
         </fieldset>
    {{/autoForm}}
@@ -36,19 +38,42 @@
 	{{> afQuickField name="sanitation.isWaterEnoughForHygiene" options="auto"}}
 </template>
 
-<template name="blocks_accordion">
-  <div class="accordion">
-		{{#each getNumberOfToiletBlocks}}
-			{{> blocks_accordion_section blockName=this}}
-   		{{/each}} 
-</div><!--end .accordion-->
+
+<template name="afArrayField_block">
+  <div class="panel panel-default">
+      <div class="panel-heading">{{afFieldLabelText name=this.atts.name}}</div>
+      {{#if afFieldIsInvalid name=this.atts.name}}
+      <div class="panel-body has-error">
+        <span class="help-block">{{{afFieldMessage name=this.atts.name}}}</span>
+      </div>
+      {{/if}}
+      <ul class="list-group">
+        {{#if afArrayFieldHasLessThanMaximum name=this.atts.name minCount=this.atts.minCount maxCount=this.atts.maxCount}}
+        <li class="list-group-item">
+          <button type="button" class="btn btn-primary autoform-add-item" data-autoform-field="{{this.atts.name}}" data-autoform-minCount="{{this.atts.minCount}}" data-autoform-maxCount="{{this.atts.maxCount}}">Add another block </button>
+        </li>
+        {{/if}}
+        {{#afEachArrayItem name=this.atts.name minCount=this.atts.minCount maxCount=this.atts.maxCount}}
+        <li class="list-group-item autoform-array-item">
+          <div class="media">
+            {{#if afArrayFieldHasMoreThanMinimum name=../atts.name minCount=../atts.minCount maxCount=../atts.maxCount}}
+            <button type="button" class="btn btn-primary autoform-remove-item pull-left">Remove this block </button>
+            {{/if}}
+            <div class="media-body">
+              {{> block_table}}
+            </div>
+          </div>
+        </li>
+        {{/afEachArrayItem}}
+        {{#if afArrayFieldHasLessThanMaximum name=this.atts.name minCount=this.atts.minCount maxCount=this.atts.maxCount}}
+        <li class="list-group-item">
+          <button type="button" class="btn btn-primary autoform-add-item" data-autoform-field="{{this.atts.name}}" data-autoform-minCount="{{this.atts.minCount}}" data-autoform-maxCount="{{this.atts.maxCount}}">Add another block </button>
+        </li>
+        {{/if}}
+      </ul>
+    </div>
 </template>
 
-<template name="blocks_accordion_section">
-	<div class="accordion-section">
-        <a class="accordion-section-title" href="#accordion-{{blockName}}">Block {{blockName}}</a>
-        <div id="accordion-{{blockName}}" class="accordion-section-content">
-		   {{> afQuickField name="sanitation.blocks" options="auto"}}
-        </div>
-    </div><!--end .accordion-section-->           
+<template name="block_table">
+  {{> afQuickField name=this.name label=false options="auto"}}
 </template>
