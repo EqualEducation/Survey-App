@@ -12,6 +12,13 @@
              {{#if afFieldValueContains name="sports.availableSports" value="Other"}}
              	{{> afQuickField name="sports.availableSportsOtherDescription" options="auto"}}
             {{/if}}
+
+            {{#if afFieldValueContains name="sports.availableSports" value="Athletics Field"}}
+              {{> afQuickField name="sports.athleticsDrillDown" options="auto"}}
+            {{/if}}
+            {{#if afFieldValueContains name="sports.availableSports" value="Hockey Field"}}
+              {{> afQuickField name="sports.hockeyDrillDown" options="auto"}}
+            {{/if}}
              {{#if afFieldValueContains name="sports.availableSports" value="Netball Court"}}
              	{{> afQuickField name="sports.netballDrillDown" options="auto"}}
             {{/if}}

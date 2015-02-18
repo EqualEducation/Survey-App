@@ -319,8 +319,10 @@ SportsFieldSchema = new SimpleSchema({
       options: function () 
       {
         return [
+      {label: "Athletics Field", value: "Athletics Field"},
       {label: "Netball Court", value: "Netball Court"},
       {label: "Basketball Court", value: "Basketball Court"},
+      {label: "Hockey Field", value: "Hockey Field"},
       {label: "Tennis Court", value: "Tennis Court"},
       {label: "Cricket Pitch", value: 'Cricket Pitch'},
       {label: "Soccer Field", value: 'Soccer Field'},
@@ -340,6 +342,16 @@ SportsFieldSchema = new SimpleSchema({
     type: SportsFieldDrillDownSchema,
     optional: true,
     label: "All other fields/courts"
+  },
+  athleticsDrillDown: {
+    type: SportsFieldDrillDownSchema,
+    optional: true,
+    label: "Athletics Field Details"
+  },
+  hockeyDrillDown: {
+    type: SportsFieldDrillDownSchema,
+    optional: true,
+    label: "Hockey Field Details"
   },
   netballDrillDown: {
     type: SportsFieldDrillDownSchema,
