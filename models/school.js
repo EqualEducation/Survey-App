@@ -1284,8 +1284,16 @@ ClassroomsDrillDownSchema = new SimpleSchema ({
       type: "text"
     }
   },
-  totalNumberOfLightbulbs: {
-    label: "Total number of lightbulbs in classroom",
+  totalNumberOfLightFittings: {
+    label: "Total number of light fittings in classroom",
+    type: Number,
+    optional: true,
+    autoform: {
+      type: "text"
+    }
+  },
+  totalNumberOfWorkingLightbulbs: {
+    label: "Total number of working lightbulbs in classroom",
     type: Number,
     optional: true,
     autoform: {
@@ -1316,8 +1324,28 @@ ClassroomsDrillDownSchema = new SimpleSchema ({
       type: "text"
     }
   },
+  teachHasDesk: {
+    label: "Does the teacher have their own desk?",
+    type: Boolean,
+      optional: true,
+      autoform: {
+           type: "boolean-radios",
+           trueLabel: "Yes",
+           falseLabel: "No",
+    }
+  },
+  teacherHasChair: {
+    label: "Does the teacher have their own chair?",
+    type: Boolean,
+      optional: true,
+      autoform: {
+           type: "boolean-radios",
+           trueLabel: "Yes",
+           falseLabel: "No",
+    }
+  },
   totalNumberOfDesks: {
-    label: "Total number of desks in classroom",
+    label: "Total number of desks in classroom (including teacher's)",
     type: Number,
     optional: true,
     autoform: {
@@ -1325,7 +1353,7 @@ ClassroomsDrillDownSchema = new SimpleSchema ({
     }
   },
   totalNumberOfBrokenDesks: {
-    label: "Total number of broken desks in classroom",
+    label: "Total number of broken desks in classroom (including teacher's)",
     type: Number,
     optional: true,
     autoform: {
@@ -1333,7 +1361,7 @@ ClassroomsDrillDownSchema = new SimpleSchema ({
     }
   },
   totalNumberOfChairs: {
-    label: "Total number of chairs in classroom",
+    label: "Total number of chairs in classroom (including teacher's)",
     type: Number,
     optional: true,
     autoform: {
@@ -1341,7 +1369,7 @@ ClassroomsDrillDownSchema = new SimpleSchema ({
     }
   },
   totalNumberOfBrokenChairs: {
-    label: "Total number of broken chairs in classroom",
+    label: "Total number of broken chairs in classroom (including teacher's)",
     type: Number,
     optional: true,
     autoform: {
