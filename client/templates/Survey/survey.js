@@ -187,10 +187,10 @@ Template.classroom_table.rendered = function(){
    $.material.init(); 
 }
 Template.lab_table.rendered = function(){
-     $.material.init(); 
+  $.material.init(); 
 }
 Template.block_table.rendered  = function() {
-       $.material.init(); 
+  $.material.init(); 
 }
 
 AutoForm.hooks({

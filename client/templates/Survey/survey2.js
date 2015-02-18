@@ -35,5 +35,19 @@ if (Meteor.isClient) {
 }
 
 Template.registerHelper("currentFieldValue", function (fieldName) {
-  return AutoForm.getFieldValue("reactiveCurrentValueForm", fieldName) || "not selected";
+  var value= AutoForm.getFieldValue("survey", fieldName) || "";
+  return value;
+});
+
+Template.registerHelper("totalNumberOfStudentsInGrade", function (gradeName) {
+  //grades.gradeR
+  var numberOfMaleStudentsFieldName = gradeName.concat(".numberOfMaleStudents");
+  var totalNumberOfMaleStudents = AutoForm.getFieldValue("survey", numberOfMaleStudentsFieldName) || "0";
+  var numberOfFemaleStudentsFieldName = gradeName.concat(".numberOfFemaleStudents");
+  var totalNumberOfFemaleStudents = AutoForm.getFieldValue("survey", numberOfFemaleStudentsFieldName) || "0";
+
+  var value = (parseInt(totalNumberOfFemaleStudents) + parseInt(totalNumberOfMaleStudents));
+
+
+  return value;
 });

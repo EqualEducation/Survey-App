@@ -123,8 +123,7 @@ ContactDetailsSchema = new SimpleSchema({
     type: String,
     optional: true,
     label: "Contact Number",
-    regEx: /^((?:\+27|27)|0)(=|72|82|73|83|74|84|21)(\d{7})$/
-
+    regEx: /^[0-9]{10}$/
   },
   email: {
     type: String,
@@ -842,14 +841,6 @@ SanitationSchema = new SimpleSchema({
       }
     }
   },
-  totalNumberOfToiletBlocks: {
-    optional: true,
-    type: Number,
-    label: "Total number of toilet blocks",
-    autoform: {
-      type: "text"
-    }
-  },
  totalNumberOfToiletBlockTaps: {
     optional: true,
     type: Number,
@@ -861,7 +852,7 @@ SanitationSchema = new SimpleSchema({
   totalNumberOfWorkingTaps: {
     optional: true,
     type: Number,
-    label: "Total number of working taps",
+    label: "Total number of working taps outside toilet blocks",
     autoform: {
       type: "text"
     }
@@ -1046,7 +1037,15 @@ waterSupply: {
     optional: true,
     label: "Comment"
 
-  }
+  },
+  totalNumberOfToiletBlocks: {
+    optional: true,
+    type: Number,
+    label: "Total number of toilet blocks",
+    autoform: {
+      type: "text"
+    }
+  },
 });
 
 SpecialNeedsSchema = new SimpleSchema({
