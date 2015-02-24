@@ -73,7 +73,7 @@ SchoolDetailsSchema = new SimpleSchema({
   NEIMS_NUMBER: {
     type: String,
     label: "NEIMS number",
-    optional: false,
+    optional: true,
     regEx: /^[0-9]{9}$/
   },
   CLASSIFICATION: {
@@ -1525,7 +1525,8 @@ SchoolSchema = new SimpleSchema({
   },
   contact: {
     type: ContactDetailsSchema,
-    optional: true
+    optional: true,
+    label: "Contact Person Details"
   },
   grades: {
     type: GradesSchema,
