@@ -2,10 +2,10 @@
 <template name="survey">
 	<div class="container">
 		{{#if this.schoolId}}
-			<h2>Norms & Standards Survey for {{schoolNameWithId this.schoolId}}</h2>
+			<h2>Survey for {{schoolNameWithId this.schoolId}}</h2>
 
 		{{else}}
-			<h2>Norms & Standards Survey</h2>
+			<h2>Survey</h2>
 		{{/if}}
 		
 		{{#if isEqual this.surveySection 'survey_schools'}}

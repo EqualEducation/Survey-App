@@ -128,9 +128,9 @@ Template.survey13.events({
 
 //NOTE: We need to re initialize the material css for some reason every time a template is rendered. 
 //TODO: Use one method for all rendered templates instead of having to define each on ehere
-Template.survey1.rendered = function(){
-  $.material.init();
-};
+// Template.survey1.rendered = function(){
+//   $.material.init();
+// };
 
 Template.survey3.rendered = function(){
   $.material.init();

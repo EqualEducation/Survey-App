@@ -73,7 +73,7 @@ SchoolDetailsSchema = new SimpleSchema({
   NEIMS_NUMBER: {
     type: String,
     label: "NEIMS number",
-    optional: false,
+    optional: true,
     regEx: /^[0-9]{9}$/
   },
   CLASSIFICATION: {
@@ -1571,11 +1571,11 @@ SchoolSchema = new SimpleSchema({
     type: NutritionSchema,
     optional: true,
   },
-  createdBy: {
-    type: String,
-    autoValue:function(){ return Meteor.user().emails[0].address },
+  // createdBy: {
+  //   type: String,
+  //   autoValue:function(){ return Meteor.user().emails[0].address },
     // autoValue:function(){ return this.userId }
-}
+// }
 });
 
 Schools.attachSchema(SchoolSchema);
