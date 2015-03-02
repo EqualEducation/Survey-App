@@ -292,11 +292,6 @@ SanitationSchema = new SimpleSchema({
     optional: true,
    
   },
-  // blockDrillDown: {
-  //   label: "Block",
-  //   type: SanitationDrillDownSchema,
-  //   optional: true,
-  // },
   blocks: {
       type: Array,
       optional: true,
@@ -306,81 +301,6 @@ SanitationSchema = new SimpleSchema({
    "blocks.$": {
       type: SanitationDrillDownSchema
    },
- //  upgradesPerformed: {
- //    optional: true,
- //    type: [String],
- //    label: "What upgrades were performed at the school?",
- //    autoform: 
- //    {
- //      type: "select-checkbox",
- //      options: function () 
- //      {
- //        return [
- //      {label: "Renovation of all toilet blocks", value: "Renovation of all toilet blocks"},
- //      {label: "Cisterns", value: "Cisterns"},
- //      {label: "Toilet Seats", value: "Toilet Seats"},
- //      {label: "Urinals", value: 'Urinals'},
- //      {label: "Windows", value: 'Windows'},
- //      {label: "Tiling", value: 'Tiling'},
- //      {label: "Painting", value: 'Painting'},
- //      {label: "Taps", value: 'Taps'},
- //      {label: "Water Pressure", value: 'Water Pressure'},
- //      {label: "Gutters", value: 'Gutters'},
- //      {label: "Unblocking of Toilets", value: 'Unblocking of Toilets'},
- //      {label: "Basins", value: 'Basins'},
- //      {label: "Doors", value: 'Doors'},
- //        ];
- //      }
- //    }
- //  },
- // upgradePerformedQuality: {
- //    optional: true,
- //    type: String,
- //    label: "Is there a fence or wall around your school?",
- //  autoform: {
- //      type: "select",
- //      options: function () {
- //        return [
- //          {label: "Good", value: 'Good'},
- //          {label: "Average", value: 'Average'},
- //          {label: "Poor", value: 'Poor'}
- //        ];
- //      }
- //    }
- //  },
- //  upgradesNeeded: {
- //    optional: true,
- //    type: [String],
- //    label: "What additional improvements to sanitation do you still need?",
- //    autoform: 
- //    {
- //      type: "select-checkbox",
- //      options: function () 
- //      {
- //        return [
- //      {label: "Renovation of all toilet blocks", value: 'Renovation of all toilet blocks'},
- //      {label: "Cisterns", value: 'Cisterns'},
- //      {label: "Toilet Seats", value: 'Toilet Seats'},
- //      {label: "Urinals", value: 'Urinals'},
- //      {label: "Windows", value: 'Windows'},
- //      {label: "Tiling", value: 'Tiling'},
- //      {label: "Painting", value: 'Painting'},
- //      {label: "Taps", value: 'Taps'},
- //      {label: "Water Pressure", value: 'Water Pressure'},
- //      {label: "Gutters", value: 'Gutters'},
- //      {label: "Unblocking of Toilets", value: 'Unblocking of Toilets'},
- //      {label: "Basins", value: 'Basins'},
- //      {label: "Doors", value: 'Doors'},
- //        ];
- //      }
- //    }
- //  },
- //  upgradeCompany: {
- //    optional: true,
- //    type: String,
- //    label: "If known, please provide the name of the company who performed the repairs",
- //  },
-
   comment: {
     type: String,
     optional: true,

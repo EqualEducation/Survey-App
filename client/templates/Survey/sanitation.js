@@ -54,4 +54,7 @@ if (Meteor.isClient) {
 	    Session.set("numberOfToiletBlocks", numberOfToiletBlocks);
 	};
 
+	AutoForm.setDefaultTemplate('bootstrap3-horizontal');
+
+
 }

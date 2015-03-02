@@ -1,35 +1,14 @@
 
 <template name="survey7">
 		{{setSelectedSchoolDoc schoolId}}
-		{{#autoForm collection="Sanitation" id="survey" type="update" doc=selectedSchoolDoc template="bootstrap3-horizontal" label-class="col-sm-3" input-col-class="col-sm-9" resetOnSuccess=true}}
+		{{#autoForm collection="Sanitation" id="survey" type="update" doc=selectedSchoolDoc resetOnSuccess=true}}
 			<button class="btn btn-primary btn-back">Back</button>
 			<button type="submit" class="btn btn-primary">Save</button>
+			<h3>Water & Sanitation</h3>
+
 			<fieldset>
-				{{> afQuickField name="accessToSoap" options="auto"}}
-	       		{{> afQuickField name="accessToToiletPaper" options="auto"}}
-	       		{{> afQuickField name="accessToSanitaryPads" options="auto"}}
-	       		{{> afQuickField name="totalNumberOfToiletBlocks" options="auto"}}
-	       		{{> afQuickField name="totalNumberOfToiletBlockTaps" options="auto"}}
-	       		{{> afQuickField name="totalNumberOfWorkingTaps" options="auto"}}
-	       		{{> afQuickField name="disabledToilets" options="auto"}}
-	       		{{> afQuickField name="waterSupplyCondition" options="auto"}}
-				
-				{{#unless afFieldValueIs name="waterSupplyCondition" value="There is no water supply"}}
-			        {{#unless afFieldValueIs name="waterSupplyCondition" value=""}}
-			          {{> water}}
-			        {{/unless}}
-		      	{{/unless}}
-
-	       		{{> afQuickField name="comment" options="auto"}}
-
-            {{> sanitation_accordian}}
-
-	       		{{> afArrayField name="blocks" template="block"}}
-
-
-	       		<!-- {{> blocks_accordion}} -->
-
-        </fieldset>
+            	{{> sanitation_accordian}}
+        	</fieldset>
    {{/autoForm}}
    <br/>
 </template>
@@ -39,36 +18,30 @@
     <div class="accordion-section">
         <a class="accordion-section-title" href="#accordion-0">More Information</a>
         <div id="accordion-0" class="accordion-section-content">
+
           {{#each afFieldNames name="moreInformation"}}
+          {{#if isEqual this "moreInformation.waterSupply"}}
               {{> afQuickField name=this options="auto"}}
+
+          {{else}}
+              {{> afQuickField name=this options="auto" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+          {{/if}}
+ 			<div class="clearfix visible-xs-block"></div>
+ 			<br />
+
           {{/each}}
         </div>
     </div><!--end .accordion-section-->
+     <div class="accordion-section">
+        <a class="accordion-section-title" href="#accordion-1">Blocks</a>
+        <div id="accordion-1" class="accordion-section-content">
+        	{{> afArrayField name="blocks" template="block"}}
+        </div>
+    </div><!--end .accordion-section-->
   </div>
-</template>
-
-<template name="water">
-	{{> afQuickField name="waterSupply" options="auto"}}
-	{{> afQuickField name="isWaterDrinkable" options="auto"}}
-	{{> afQuickField name="isWaterEnoughForFoodPreparation" options="auto"}}
-	{{> afQuickField name="isWaterEnoughForHygiene" options="auto"}}
 </template>
 
 <template name="afArrayField_block">
-  <div class="accordion">
-    <div class="accordion-section">
-        <a class="accordion-section-title" href="#accordion-1">Block</a>
-        <div id="accordion-0" class="accordion-section-content">
-          {{#each afFieldNames name=this}}
-              {{> afQuickField name=this options="auto"}}
-          {{/each}}
-        </div>
-    </div><!--end .accordion-section-->
-  </div>
-</template>
-
-
-<!-- <template name="afArrayField_block">
   <div class="panel panel-default">
       <div class="panel-heading">{{afFieldLabelText name=this.atts.name}}</div>
       {{#if afFieldIsInvalid name=this.atts.name}}
@@ -79,7 +52,7 @@
       <ul class="list-group">
         {{#if afArrayFieldHasLessThanMaximum name=this.atts.name minCount=this.atts.minCount maxCount=this.atts.maxCount}}
         <li class="list-group-item">
-          <button type="button" class="btn btn-primary autoform-add-item" data-autoform-field="{{this.atts.name}}" data-autoform-minCount="{{this.atts.minCount}}" data-autoform-maxCount="{{this.atts.maxCount}}">Add another block </button>
+          <button type="button" class="btn btn-primary autoform-add-item" data-autoform-field="{{this.atts.name}}" data-autoform-minCount="{{this.atts.minCount}}" data-autoform-maxCount="{{this.atts.maxCount}}">Add new block </button>
         </li>
         {{/if}}
         {{#afEachArrayItem name=this.atts.name minCount=this.atts.minCount maxCount=this.atts.maxCount}}
@@ -96,13 +69,14 @@
         {{/afEachArrayItem}}
         {{#if afArrayFieldHasLessThanMaximum name=this.atts.name minCount=this.atts.minCount maxCount=this.atts.maxCount}}
         <li class="list-group-item">
-          <button type="button" class="btn btn-primary autoform-add-item" data-autoform-field="{{this.atts.name}}" data-autoform-minCount="{{this.atts.minCount}}" data-autoform-maxCount="{{this.atts.maxCount}}">Add another block </button>
+          <button type="button" class="btn btn-primary autoform-add-item" data-autoform-field="{{this.atts.name}}" data-autoform-minCount="{{this.atts.minCount}}" data-autoform-maxCount="{{this.atts.maxCount}}">Add new block </button>
         </li>
         {{/if}}
       </ul>
     </div>
-</template> -->
+</template>
 
 <template name="block_table">
-  {{> afQuickField name=this.name label=false options="auto"}}
+  {{> afQuickField name=this.name label=false options="auto" }}
 </template>
+
