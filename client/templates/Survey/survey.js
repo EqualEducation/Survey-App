@@ -173,9 +173,6 @@ Template.libraries.rendered = function(){
 Template.security.rendered = function(){
       $.material.init();
 }
-Template.water.rendered = function(){
-      $.material.init();
-}
 Template.electricity.rendered = function(){
       $.material.init();
 }
@@ -191,7 +188,8 @@ Template.classroom_table.rendered = function(){
 Template.lab_table.rendered = function(){
   $.material.init(); 
 }
-Template.block_table.rendered  = function() {
+Template.block_details.rendered  = function() {
+  alert("rendered");
   $.material.init(); 
 }
 

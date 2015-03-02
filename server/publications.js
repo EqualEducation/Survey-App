@@ -28,6 +28,11 @@ if (Meteor.isServer) {
   Meteor.publish("sanitation", function () {
     return Sanitation.find();
   });
+
+  Meteor.publish("sanitationblocks", function () {
+    return SanitationBlocks.find();
+  });
+
   Meteor.publish("additional", function () {
     return Additional.find();
   });

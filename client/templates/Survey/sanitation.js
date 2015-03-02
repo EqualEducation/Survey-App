@@ -5,6 +5,9 @@ if (Meteor.isClient) {
 	      Router.go('/survey/survey_sections/'+ schoolId);
 	      return false;
 	    }, 
+	    "click .btn-modal" : function() {
+			Meteor.render(Template.modal_block);	      
+	    }, 
 	    "input [name='totalNumberOfToiletBlocks']" : function(event, template) {
 	    	var numberOfToiletBlocks = event.target.value;
 	    	console.log(numberOfToiletBlocks);
