@@ -11,6 +11,11 @@ if (Meteor.isClient) {
 	});
 
 
+	Handlebars.registerHelper('selectedContactDoc',function(){
+    	return ContactPeople.findOne(Session.get("selectedSchoolId"));
+	});
+
+
   	Handlebars.registerHelper('schools',function(){
 		return Schools.find();
 	});

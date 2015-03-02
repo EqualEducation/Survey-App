@@ -1,0 +1,28 @@
+
+<template name="survey6">
+	  {{setSelectedSchoolDoc schoolId}}
+  {{#autoForm collection="Security" id="survey" type="update" doc=selectedSchoolDoc resetOnSuccess=false}}
+  	<button class="btn btn-primary btn-back">Back</button>
+	<button type="submit" class="btn btn-primary">Save</button>
+		<fieldset>
+	  		<legend>Perimeter Security</legend>
+       		{{> afQuickField name="safetyLevel" options="auto"}}
+       		{{> afQuickField name="hasFence" options="auto"}}
+
+        	{{#if afFieldValueIs name="hasFence" value=true}}
+				{{> security}}
+            {{/if}}
+
+       		{{> afQuickField name="hasBurglarBars" options="auto"}}
+       		{{> afQuickField name="hasSecurityGaurd" options="auto"}}
+       		{{> afQuickField name="comment" options="auto"}}
+
+        </fieldset>
+   {{/autoForm}}
+</template>
+
+<template name="security">
+	{{> afQuickField name="fenceHasHoles" options="auto"}}
+	{{> afQuickField name="fenceIsCorrectHeight" options="auto"}}
+	{{> afQuickField name="conditionOfFence" options="auto"}}
+</template>

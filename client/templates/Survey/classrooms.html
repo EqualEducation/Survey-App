@@ -1,10 +1,10 @@
 
 <template name="survey11">
 		{{setSelectedSchoolDoc schoolId}}
-		{{#autoForm collection="Schools" id="survey" type="update" doc=selectedSchoolDoc}}
+		{{#autoForm collection="Classrooms" id="survey" type="update" doc=selectedSchoolDoc}}
 			<button class="btn btn-primary btn-back">Back</button>
 			<button type="submit" class="btn btn-primary">Save</button>
-			{{> afArrayField name="classrooms.classrooms" template="classroom"}}
+			{{> afArrayField name="classrooms" template="classroom"}}
 
 		{{/autoForm}}
 </template>

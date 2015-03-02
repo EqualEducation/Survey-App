@@ -1,4 +1,6 @@
 Meteor.subscribe('schools');
+Meteor.subscribe('contactpeople');
+
 SimpleSchema.debug = true;
 
 if (Meteor.isClient) {
@@ -199,7 +201,7 @@ AutoForm.hooks({
         alert('School has been updated');
       },
       onError: function(operation, error, template) {
-        alert('Could not save the form. Please check all fields are filled in correctly.');
+        alert('Could not save the form. Please check all fields are filled in correctly' + error);
 
       }
     }

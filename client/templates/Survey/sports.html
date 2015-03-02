@@ -1,0 +1,51 @@
+
+<template name="survey3">
+  {{setSelectedSchoolDoc schoolId}}
+  {{#autoForm collection="Sports" id="survey" type="update" doc=selectedSchoolDoc template="bootstrap3-horizontal" label-class="col-sm-3" input-col-class="col-sm-9" resetOnSuccess=false}}
+          <button class="btn btn-primary btn-back">Back</button>
+          <button type="submit" class="btn btn-primary">Save</button>
+          <fieldset>
+          <legend>Sports Fields</legend>
+             {{> afQuickField name="numberOfSportsFields" options="auto"}}
+             {{> afQuickField name="availableSports" options="auto"}}
+
+             {{#if afFieldValueContains name="availableSports" value="Other"}}
+             	{{> afQuickField name="availableSportsOtherDescription" options="auto"}}
+            {{/if}}
+
+            {{#if afFieldValueContains name="availableSports" value="Athletics Field"}}
+              {{> afQuickField name="athleticsDrillDown" options="auto"}}
+            {{/if}}
+            {{#if afFieldValueContains name="availableSports" value="Hockey Field"}}
+              {{> afQuickField name="hockeyDrillDown" options="auto"}}
+            {{/if}}
+             {{#if afFieldValueContains name="availableSports" value="Netball Court"}}
+             	{{> afQuickField name="netballDrillDown" options="auto"}}
+            {{/if}}
+            {{#if afFieldValueContains name="availableSports" value="Basketball Court"}}
+             	{{> afQuickField name="basketballDrillDown" options="auto"}}
+            {{/if}}
+            {{#if afFieldValueContains name="availableSports" value="Tennis Court"}}
+             	{{> afQuickField name="tennisDrillDown" options="auto"}}
+            {{/if}}
+            {{#if afFieldValueContains name="availableSports" value="Cricket Pitch"}}
+             	{{> afQuickField name="cricketDrillDown" options="auto"}}
+            {{/if}}
+            {{#if afFieldValueContains name="availableSports" value="Soccer Field"}}
+             	{{> afQuickField name="soccerDrillDown" options="auto"}}
+            {{/if}}
+	        {{#if afFieldValueContains name="availableSports" value="Rugby Field"}}
+             	{{> afQuickField name="rugbyDrillDown" options="auto"}}
+            {{/if}}
+	        {{#if afFieldValueContains name="availableSports" value="Swimming Pool"}}
+             	{{> afQuickField name="swimmingDrillDown" options="auto"}}
+            {{/if}}
+	        {{#if afFieldValueContains name="availableSports" value="Other"}}
+             	{{> afQuickField name="otherDrillDown" options="auto"}}
+            {{/if}}
+        </fieldset>
+
+   {{/autoForm}}
+
+
+</template>

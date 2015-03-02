@@ -1,6 +1,6 @@
 <template name="survey13">
 		{{setSelectedSchoolDoc schoolId}}
-		{{#autoForm collection="Schools" id="survey" type="update" doc=selectedSchoolDoc template="bootstrap3-horizontal" label-class="col-sm-3" input-col-class="col-sm-9" resetOnSuccess=false}}
+		{{#autoForm collection="Electricity" id="survey" type="update" doc=selectedSchoolDoc template="bootstrap3-horizontal" label-class="col-sm-3" input-col-class="col-sm-9" resetOnSuccess=false}}
   			<!-- {{> afQuickField name="electricity.electricityCondition"}}
   			{{#if afFieldValueIs name="electricity.electricityCondition" value="Sometimes there is power"}}
     			{{> afQuickField name="electricity.electricitySource"}}
@@ -13,15 +13,15 @@
           <button type="submit" class="btn btn-primary">Save</button>
           <fieldset>
           <legend>Electricity</legend>
-             {{> afQuickField name="electricity.electricityCondition" options="auto"}}
+             {{> afQuickField name="electricityCondition" options="auto"}}
 
-			 {{#unless afFieldValueIs name="electricity.electricityCondition" value="There is no power supply"}}
-		        {{#unless afFieldValueIs name="electricity.electricityCondition" value=""}}
+			 {{#unless afFieldValueIs name="electricityCondition" value="There is no power supply"}}
+		        {{#unless afFieldValueIs name="electricityCondition" value=""}}
 		        	{{> electricity}}
 		        {{/unless}}
 		      {{/unless}}
              
-             {{> afQuickField name="electricity.comment" options="auto"}}
+             {{> afQuickField name="comment" options="auto"}}
 
 		      
         </fieldset>
@@ -29,9 +29,9 @@
 </template>
 
 <template name="electricity">
-	{{> afQuickField name="electricity.electricitySource" options="auto"}}
-	{{#if afFieldValueContains name="electricity.electricitySource" value="Other"}}
-	  	{{> afQuickField name="electricity.electricitySourceOtherDescription" options="auto"}}
+	{{> afQuickField name="electricitySource" options="auto"}}
+	{{#if afFieldValueContains name="electricitySource" value="Other"}}
+	  	{{> afQuickField name="electricitySourceOtherDescription" options="auto"}}
     {{/if}}
 </template>
 

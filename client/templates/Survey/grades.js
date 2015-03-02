@@ -40,7 +40,7 @@ Template.registerHelper("currentFieldValue", function (fieldName) {
 });
 
 Template.registerHelper("totalNumberOfStudentsInGrade", function (gradeName) {
-  //grades.gradeR
+  //gradeR
   var numberOfMaleStudentsFieldName = gradeName.concat(".numberOfMaleStudents");
   var totalNumberOfMaleStudents = AutoForm.getFieldValue("survey", numberOfMaleStudentsFieldName) || "0";
   var numberOfFemaleStudentsFieldName = gradeName.concat(".numberOfFemaleStudents");

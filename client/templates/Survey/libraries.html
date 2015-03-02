@@ -1,0 +1,33 @@
+
+<template name="survey4">
+  {{setSelectedSchoolDoc schoolId}}
+  {{#autoForm collection="Libraries" id="survey" type="update" doc=selectedSchoolDoc template="bootstrap3-horizontal" label-class="col-sm-3" input-col-class="col-sm-9" resetOnSuccess=false}}
+    <button class="btn btn-primary btn-back">Back</button>
+    <button type="submit" class="btn btn-primary">Save</button>
+    <fieldset>
+      <legend>Library & Media Centre</legend>
+      {{> afQuickField name="hasLibrary" options="auto"}}
+
+      {{#unless afFieldValueIs name="hasLibrary" value="No library"}}
+        {{#unless afFieldValueIs name="hasLibrary" value=""}}
+          {{> libraries}}
+        {{/unless}}
+      {{/unless}}
+
+      {{> afQuickField name="comment" options="auto"}}
+
+
+    </fieldset>
+
+  {{/autoForm}}
+</template>
+
+<template name="libraries">
+	{{> afQuickField name="librarians" options="auto"}}
+	{{> afQuickField name="hasComputerTracking" options="auto"}}
+	{{> afQuickField name="hasComputerForGeneralUse" options="auto"}}
+	{{> afQuickField name="totalNumberOfComputers" options="auto"}}
+	{{> afQuickField name="totalNumberOfComputersThatConnectToTheInternet" options="auto"}}
+	{{> afQuickField name="hasBooks" options="auto"}}
+	{{> afQuickField name="hasFictionSection" options="auto"}}
+</template>

@@ -128,18 +128,5 @@
 
 
 
-<template name="survey1">
-  {{setSelectedSchoolDoc schoolId}}
-  {{#autoForm collection="Schools" id="survey" type="update" doc=selectedSchoolDoc template="bootstrap3-horizontal" label-class="col-sm-3" input-col-class="col-sm-9" resetOnSuccess=false}}
-         <button class="btn btn-primary btn-back">Back</button>
-          <button type="submit" class="btn btn-primary">Save</button>
-          <fieldset>
-          <legend>Contact Details</legend>
-             {{> afQuickField name="contact" options="auto"}}
-        </fieldset>
 
-   {{/autoForm}}
-
-
-</template>
 

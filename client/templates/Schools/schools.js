@@ -1,4 +1,4 @@
-Meteor.subscribe("schools");
+Meteor.subscribe("schooldetails");
 
 if (Meteor.isClient) {
 

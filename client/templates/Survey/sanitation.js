@@ -5,7 +5,7 @@ if (Meteor.isClient) {
 	      Router.go('/survey/survey_sections/'+ schoolId);
 	      return false;
 	    }, 
-	    "input [name='sanitation.totalNumberOfToiletBlocks']" : function(event, template) {
+	    "input [name='totalNumberOfToiletBlocks']" : function(event, template) {
 	    	var numberOfToiletBlocks = event.target.value;
 	    	console.log(numberOfToiletBlocks);
 	    	Session.set("numberOfToiletBlocks", numberOfToiletBlocks);
@@ -49,7 +49,7 @@ if (Meteor.isClient) {
         $('.accordion .accordion-section-content').slideUp(300).removeClass('open');
 
 
-        var numberOfToiletBlocks = $([name='sanitation.totalNumberOfToiletBlocks']);
+        var numberOfToiletBlocks = $([name='totalNumberOfToiletBlocks']);
 	   	console.log(numberOfToiletBlocks);
 	    Session.set("numberOfToiletBlocks", numberOfToiletBlocks);
 	};

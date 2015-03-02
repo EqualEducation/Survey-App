@@ -1,33 +1,6 @@
+Security = new Mongo.Collection("security");
 
-<template name="survey6">
-	  {{setSelectedSchoolDoc schoolId}}
-  {{#autoForm collection="Schools" id="survey" type="update" doc=selectedSchoolDoc template="bootstrap3-horizontal" label-class="col-sm-3" input-col-class="col-sm-9" resetOnSuccess=false}}
-  	<button class="btn btn-primary btn-back">Back</button>
-	<button type="submit" class="btn btn-primary">Save</button>
-		<fieldset>
-	  		<legend>Perimeter Security</legend>
-       		{{> afQuickField name="security.safetyLevel" options="auto"}}
-       		{{> afQuickField name="security.hasFence" options="auto"}}
-
-        	{{#if afFieldValueIs name="security.hasFence" value=true}}
-				{{> security}}
-            {{/if}}
-
-       		{{> afQuickField name="security.hasBurglarBars" options="auto"}}
-       		{{> afQuickField name="security.hasSecurityGaurd" options="auto"}}
-       		{{> afQuickField name="security.comment" options="auto"}}
-
-        </fieldset>
-   {{/autoForm}}
-</template>
-
-<template name="security">
-	{{> afQuickField name="security.fenceHasHoles" options="auto"}}
-	{{> afQuickField name="security.fenceIsCorrectHeight" options="auto"}}
-	{{> afQuickField name="security.conditionOfFence" options="auto"}}
-</template>
-
-<!-- SecuritySchema = new SimpleSchema({
+SecuritySchema = new SimpleSchema({
   safetyLevel: {
     optional: true,
     type: String,
@@ -114,4 +87,6 @@
     label: "Comment"
 
   }
-}); -->
+});
+
+Security.attachSchema(SecuritySchema);
