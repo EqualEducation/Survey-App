@@ -189,7 +189,6 @@ Template.lab_table.rendered = function(){
   $.material.init(); 
 }
 Template.block_details.rendered  = function() {
-  alert("rendered");
   $.material.init(); 
 }
 

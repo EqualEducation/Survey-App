@@ -1,5 +1,9 @@
 if (Meteor.isClient) {
 	Template.survey7.events({
+		  "click .open-modal" : function(e,t) {
+	        e.preventDefault();
+	        $("#projectImageModal").modal("show");
+	    },
 	    "click .btn-back" : function() {
 	      var schoolId = Session.get("selectedSchoolId");
 	      Router.go('/survey/survey_sections/'+ schoolId);

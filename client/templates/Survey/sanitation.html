@@ -18,7 +18,7 @@
      <div class="accordion-section">
         <a class="accordion-section-title" href="#accordion-1">Blocks</a>
         <div id="accordion-1" class="accordion-section-content"> 
-        	{{> block_details}}
+        	{{> blocks}}
         	
         </div>
     </div><!--end .accordion-section-->
@@ -26,7 +26,7 @@
 </template>
 
 <template name="more_info">
-  {{#autoForm collection="Sanitation" id="survey" type="update" resetOnSuccess=false}}
+<!--   {{#autoForm collection="Sanitation" id="survey" type="update" resetOnSuccess=false}}
       <button type="submit" class="btn btn-primary">Save</button>
       <fieldset>
         {{#each afFieldNames name="moreInformation"}}
@@ -39,12 +39,12 @@
           <br />
         {{/each}}
       </fieldset>
-    {{/autoForm}}
+    {{/autoForm}} -->
 </template>
 
-<template name="block_details">
-  {{> modal_block }}
-          <!-- <button type="btn btn-primary btn-modal" class="btn btn-primary">Add Person</button> -->
+<template name="blocks">
+   {{> projectImageItem}}
+  {{> projectImageModal}}
 
 <!-- 	{{#autoForm collection="SanitationBlocks" id="survey2" type="update" resetOnSuccess=true}}
 			  {{#each afFieldNames}}
@@ -59,26 +59,23 @@
 			{{/autoForm}} -->
 </template>
 
-<template name="modal_block">
-<!-- {{> overlay}} -->
-<div class="overlay-content animated bounceInUp">
-  <div class="sheet form-sheet" >
-  <h3>What do you think?</h3>
-      <p>Let us know what made you happy, sad or confused.</p>
-      <div class="sheet-content">
-        <div class="form">
-              <label>Name</label>
-            <input type="text"  placeholder="Full name..." />
-              <label>Email</label>
-            <input type="text"  placeholder="Email address..." />
-            <label>Comment</label>
-            <textarea rows="4"></textarea>
-          </div>
+<!-- A modal that contains the bigger view of the image selected -->
+<template name="projectImageModal">
+  <div class="modal fade in" id="projectImageModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">Close</button>
+          <h4 class="modal-title">Big Image</h4>
         </div>
-        <div class="sheet-actions">
-          <button class="btn btn-flat btn-primary save">Send</button>
-          <button class="btn btn-flat cancel">Close</button>
+        <div class="modal-body">
+          <p>test</p>
         </div>
+      </div>
+    </div>
   </div>
-</div>
+</template>
+
+<template name="projectImageItem">
+ <input type="button" class="open-modal" value="Show modal." />
 </template>
