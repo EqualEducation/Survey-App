@@ -20,6 +20,9 @@ if (Meteor.isClient) {
 		return Schools.find();
 	});
 
+	Handlebars.registerHelper('blocks',function(){
+		return SanitationBlocks.find();
+	});
 
 	Handlebars.registerHelper('schoolNameWithId',function(schoolId){
 		var school = Schools.findOne(schoolId);

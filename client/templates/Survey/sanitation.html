@@ -44,7 +44,33 @@
 
 <template name="blocks">
   <input type="button" class="open-modal btn btn-primary" value="Add a block" />
+  {{> list_blocks }}
   {{> modal_block}}
+</template>
+
+<template name="list_blocks">
+<table class="table">
+    <thead>
+      <tr>
+        <th>Block name</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+   {{#each blocks}}
+        {{> block}} 
+      {{/each}}
+    </tbody>
+  </table>
+</template>
+
+<template name="block">
+  <tr>
+    <td>{{this.blockName}}</td>
+    <td><a href="#edit">Edit</a></td>
+    <td><a href="#delete">Delete</a></td>
+  </tr>
 </template>
 
 <!-- A modal that contains the bigger view of the image selected -->

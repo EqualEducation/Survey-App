@@ -1,3 +1,5 @@
+Meteor.subscribe('sanitationblocks');
+
 if (Meteor.isClient) {
 	Template.survey7.events({
 		  "click .open-modal" : function(e,t) {
@@ -36,22 +38,18 @@ if (Meteor.isClient) {
     },
 	  });
 
-	Template.registerHelper('getNumberOfToiletBlocks',function(){
-		 var count = Session.get("numberOfToiletBlocks");
-		 var out = [];
-
-		 for(var i=1, l=count; i<=l; i++) {
-		    out.push(i);
-		  }
-
-		  console.log(out.length);
-		  return out;
-	});
-
-
 	Template.survey7.rendered = function() {
 		$.material.init();
 	};
+
+	Template.list_blocks.helpers({
+    blocks: function () {
+    	console.log("Searching for blocks");
+    	var blocks = SanitationBlocks.find({});
+    	console.log(blocks.count());
+    	return blocks;
+    }
+  });
 
 	AutoForm.setDefaultTemplate('bootstrap3-horizontal');
 
