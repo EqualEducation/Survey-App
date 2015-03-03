@@ -51,17 +51,19 @@ if (Meteor.isClient) {
 
 	Template.survey7.rendered = function() {
 		$.material.init();
-
- 		$('.accordion .accordion-section-title').removeClass('active');
-        $('.accordion .accordion-section-content').slideUp(300).removeClass('open');
-
-
-        var numberOfToiletBlocks = $([name='totalNumberOfToiletBlocks']);
-	   	console.log(numberOfToiletBlocks);
-	    Session.set("numberOfToiletBlocks", numberOfToiletBlocks);
 	};
 
 	AutoForm.setDefaultTemplate('bootstrap3-horizontal');
 
+	AutoForm.hooks({
+	  blocks: {
+	      onSuccess: function(operation, result, template) {  
+	        alert('School has been updated');
+	      },
+	      onError: function(operation, error, template) {
+	        alert('Could not save the form. Please check all fields are filled in correctly' + error);
 
+	      }
+	    }
+	  });
 }
