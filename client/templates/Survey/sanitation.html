@@ -26,7 +26,7 @@
 </template>
 
 <template name="more_info">
-<!--   {{#autoForm collection="Sanitation" id="survey" type="update" resetOnSuccess=false}}
+  {{#autoForm collection="Sanitation" id="survey" type="update" resetOnSuccess=false}}
       <button type="submit" class="btn btn-primary">Save</button>
       <fieldset>
         {{#each afFieldNames name="moreInformation"}}
@@ -39,43 +39,37 @@
           <br />
         {{/each}}
       </fieldset>
-    {{/autoForm}} -->
+    {{/autoForm}}
 </template>
 
 <template name="blocks">
-   {{> projectImageItem}}
-  {{> projectImageModal}}
+ 
+  <input type="button" class="open-modal btn btn-primary" value="Add a block" />
+  {{> modal_block}}
 
-<!-- 	{{#autoForm collection="SanitationBlocks" id="survey2" type="update" resetOnSuccess=true}}
-			  {{#each afFieldNames}}
-	              {{> afQuickField name=this options="auto" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
-		 			<div class="clearfix visible-xs-block"></div>
-		 			<br />
-	          {{/each}}
-  				<div class="clearfix visible-xs-block"></div>
 
-			    <button type="submit" class="btn btn-primary">Add Person</button>
-			    <button type="reset" class="btn btn-default">Reset Form</button>
-			{{/autoForm}} -->
 </template>
 
 <!-- A modal that contains the bigger view of the image selected -->
-<template name="projectImageModal">
-  <div class="modal fade in" id="projectImageModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
+<template name="modal_block">
+  <div class="modal fade in" id="modal_block" data-backdrop="false" >
+     <div class="modal-dialog">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">Close</button>
-          <h4 class="modal-title">Big Image</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Add a Block</h4>
         </div>
         <div class="modal-body">
-          <p>test</p>
-        </div>
+            {{#autoForm collection="SanitationBlocks" id="survey2" type="update" resetOnSuccess=true}}
+                {{#each afFieldNames}}
+                    {{> afQuickField name=this options="auto" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+                    <div class="clearfix visible-xs-block"></div>
+                    <br />
+                {{/each}}
+            {{/autoForm}}
+              <button class="btn btn-primary btn-back">Back</button>
+              <button type="submit" class="btn btn-primary">Save</button>
+          </div>
       </div>
-    </div>
   </div>
 </template>
 
-<template name="projectImageItem">
- <input type="button" class="open-modal" value="Show modal." />
-</template>

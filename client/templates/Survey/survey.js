@@ -188,9 +188,9 @@ Template.classroom_table.rendered = function(){
 Template.lab_table.rendered = function(){
   $.material.init(); 
 }
-Template.block_details.rendered  = function() {
-  $.material.init(); 
-}
+// Template.block_details.rendered  = function() {
+//   $.material.init(); 
+// }
 
 AutoForm.hooks({
   survey: {
