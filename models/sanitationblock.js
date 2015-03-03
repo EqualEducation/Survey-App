@@ -131,6 +131,16 @@ SanitationBlocksSchema = new SimpleSchema({
       }
     }
   },
+  school_id: {
+    type: String,
+    defaultValue: function(){ 
+      return Session.get('selectedSchoolId');
+    },
+    autoform: {
+      type: "hidden",
+      label: false
+    },
+  }
 });
 
 SanitationBlocks.attachSchema(SanitationBlocksSchema);

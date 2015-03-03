@@ -161,6 +161,7 @@ Template.lab_table.rendered = function(){
 AutoForm.hooks({
   survey: {
       onSuccess: function(operation, result, template) {  
+        console.log(template);
         alert('School has been updated');
       },
       onError: function(operation, error, template) {

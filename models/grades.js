@@ -123,6 +123,16 @@ GradesSchema = new SimpleSchema({
     label: "Grade 12",
     optional: true
      },
+     school_id: {
+    type: String,
+    defaultValue: function(){ 
+      return Session.get('selectedSchoolId');
+    },
+    autoform: {
+      type: "hidden",
+      label: false
+    },
+  }
 });
 
 Grades.attachSchema(GradesSchema);

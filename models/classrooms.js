@@ -165,6 +165,16 @@ ClassroomsSchema = new SimpleSchema ({
       optional: true,
       type: ClassroomsDrillDownSchema
    },
+   school_id: {
+    type: String,
+    defaultValue: function(){ 
+      return Session.get('selectedSchoolId');
+    },
+    autoform: {
+      type: "hidden",
+      label: false
+    },
+  }
  });
 
 

@@ -135,54 +135,6 @@ SchoolSchema = new SimpleSchema({
       }
     }
   },
-  // contact: {
-  //   type: ContactDetailsSchema,
-  //   optional: true
-  // },
-  // grades: {
-  //   type: GradesSchema,
-  //   optional: true
-  // },
-  // classrooms: {
-  //   type: ClassroomsSchema,
-  //   optional: true,
-  // },
-  // sports: {
-  //   type: SportsFieldSchema,
-  //   optional: true
-  // }, 
-  // library: {
-  //   type: LibrarySchema,
-  //   optional: true
-  // },
-  // science_lab: {
-  //   type: ScienceLabSchema,
-  //   optional: true
-  // },
-  // security: {
-  //   type: SecuritySchema,
-  //   optional: true
-  // },
-  // sanitation: {
-  //   type: SanitationSchema,
-  //   optional: true
-  // },
-  // specialNeeds: {
-  //   type: SpecialNeedsSchema,
-  //   optional: true
-  // },
-  // additionalInfo: {
-  //   type: AdditionalInfoSchema,
-  //   optional: true
-  // },
-  // electricity: {
-  //   type: ElectricitySchema,
-  //   optional: true
-  // },
-  // nutrition: {
-  //   type: NutritionSchema,
-  //   optional: true,
-  // },
   // createdBy: {
   //   type: String,
   //   autoValue:function(){ return Meteor.user().emails[0].address },

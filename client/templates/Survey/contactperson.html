@@ -1,6 +1,6 @@
 <template name="survey1">
   {{setSelectedSchoolDoc schoolId}}
-  {{#autoForm collection="ContactPeople" id="survey" type="insert" template="bootstrap3-horizontal" label-class="col-sm-3" input-col-class="col-sm-9" resetOnSuccess=false}}
+  {{#autoForm collection="ContactPeople" id="survey" type="update" doc=selectedContactPersonDoc resetOnSuccess=false}}
          <button class="btn btn-primary btn-back">Back</button>
           <button type="submit" class="btn btn-primary">Save</button>
           <fieldset>

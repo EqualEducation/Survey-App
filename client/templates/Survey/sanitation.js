@@ -1,4 +1,5 @@
 Meteor.subscribe('sanitationblocks');
+Meteor.subscribe('sanitation');
 
 if (Meteor.isClient) {
 	Template.survey7.events({
@@ -43,23 +44,32 @@ if (Meteor.isClient) {
 	};
 
 	Template.list_blocks.helpers({
-    blocks: function () {
-    	console.log("Searching for blocks");
-    	var blocks = SanitationBlocks.find({});
-    	console.log(blocks.count());
-    	return blocks;
-    }
-  });
+	    blocks: function () {
+	    	var schoolId = Session.get("selectedSchoolId");
+	    	var blocks = SanitationBlocks.find({'school_id' : schoolId});
+	    	return blocks;
+	    }
+  	});
+
+  	Template.more_info.helpers({
+  		selectedSanitationDoc: function () {
+  			var schoolId = Session.get("selectedSchoolId");
+ 	    	var sanitation = Sanitation.find({'school_id' : schoolId});
+ 	    	return sanitation;
+  		}
+
+  	});
+
 
 	AutoForm.setDefaultTemplate('bootstrap3-horizontal');
 
 	AutoForm.hooks({
 	  blocks: {
 	      onSuccess: function(operation, result, template) {  
-	        alert('School has been updated');
+	        alert('Block has been added');
 	      },
 	      onError: function(operation, error, template) {
-	        alert('Could not save the form. Please check all fields are filled in correctly' + error);
+	        alert('Could not save the block. Please check all fields are filled in correctly. ' + error);
 
 	      }
 	    }

@@ -28,17 +28,15 @@ ContactDetailsSchema = new SimpleSchema({
   },
   school_id: {
     type: String,
-    optional: true,
-    autoValue: function(){ 
-      var ses = Session.get('selectedSchoolId'); 
-      console.log(ses);
+    defaultValue: function(){ 
+      return Session.get('selectedSchoolId');
     },
-      // Session.get("selectedSchoolId") },
     autoform: {
       type: "hidden",
       label: false
     },
-  }
+  },
+  
 });
 
 ContactPeople.attachSchema(ContactDetailsSchema);

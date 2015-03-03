@@ -86,6 +86,16 @@ SecuritySchema = new SimpleSchema({
     optional: true,
     label: "Comment"
 
+  },
+  school_id: {
+    type: String,
+    defaultValue: function(){ 
+      return Session.get('selectedSchoolId');
+    },
+    autoform: {
+      type: "hidden",
+      label: false
+    },
   }
 });
 
