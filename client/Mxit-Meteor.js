@@ -40,69 +40,73 @@ if (Meteor.isClient) {
 	//Generic setting of session items
 	Handlebars.registerHelper('setSelectedDoc',function(schoolId, collection_name){
 		var doc = "unknown";
-		var session_item_name = "unknown";
+		var selected_doc = "selected_doc";
+		Session.set(selected_doc, null);
+
 		// console.log("searching for "  + collection_name + " with school id " + schoolId);
 		if (collection_name === "additional") {
 			doc = Additional.findOne({'school_id' : schoolId});
-			session_item_name = "selectedAdditionalDoc";
+			// session_item_name = "selectedAdditionalDoc";
 		}
 
 		else if (collection_name === "sanitation") {
 			doc = Sanitation.findOne({'school_id' : schoolId});
-			session_item_name = "selectedSanitationDoc";
+			// session_item_name = "selectedSanitationDoc";
 		}
 
 		else if (collection_name === "classrooms") {
 			doc = Classrooms.findOne({'school_id' : schoolId});
-			session_item_name = "selectedClassroomsDoc";
+			// session_item_name = "selectedClassroomsDoc";
 		}
 		else if (collection_name === "contactperson") {
 			doc = ContactPeople.findOne({'school_id' : schoolId});
-			session_item_name = "selectedContactPersonDoc";
+			// session_item_name = "selectedContactPersonDoc";
 		}
 		else if (collection_name === "electricity") {
 			doc = Electricity.findOne({'school_id' : schoolId});
-			session_item_name = "selectedElectricityDoc";
+			// session_item_name = "selectedElectricityDoc";
 		}
 		else if (collection_name === "grades") {
 			doc = Grades.findOne({'school_id' : schoolId});
-			session_item_name = "selectedGradesDoc";
+			// session_item_name = "selectedGradesDoc";
+		}
+		else if (collection_name === "libraries") {
+			doc = Libraries.findOne({'school_id' : schoolId});
+			// session_item_name = "selectedLabsDoc";
 		}
 		else if (collection_name === "labs") {
 			doc = Labs.findOne({'school_id' : schoolId});
-			session_item_name = "selectedLabsDoc";
+			// session_item_name = "selectedLabsDoc";
 		}
 		else if (collection_name === "nutrition") {
 			doc = Nutrition.findOne({'school_id' : schoolId});
-			session_item_name = "selectedNutritionDoc";
+			// session_item_name = "selectedNutritionDoc";
 		}
 		else if (collection_name === "security") {
 			doc = Security.findOne({'school_id' : schoolId});
-			session_item_name = "selectedSecurityDoc";
+			// session_item_name = "selectedSecurityDoc";
 		}
 		else if (collection_name === "specialneeds") {
 			doc = SpecialNeeds.findOne({'school_id' : schoolId});
-			session_item_name = "selectedSpecialNeedsDoc";
+			// session_item_name = "selectedSpecialNeedsDoc";
 		}
 		else if (collection_name === "sports") {
 			doc = Sports.findOne({'school_id' : schoolId});
-			session_item_name = "selectedSportsDoc";
+			// session_item_name = "selectedSportsDoc";
 		}
-		Session.set(session_item_name, doc);
-		Session.set("current_session_item_name", session_item_name);
+		Session.set("selected_doc", doc);
 
 	});
 
 	Handlebars.registerHelper('selectedDoc', function() {
-		var currentSessionItemName = Session.get("current_session_item_name");
-		var doc = Session.get(currentSessionItemName);
+		var doc = Session.get("selected_doc");
+		console.log(doc);
 		return doc;
 	});
 
 	Handlebars.registerHelper('autoformType', function() {
-		var currentSessionItemName = Session.get("current_session_item_name");
 		var autoformType = "insert";
-		if (Session.get(currentSessionItemName) != null) {
+		if (Session.get("selected_doc") != null) {
 			autoformType =  "update";
 		} 
 		return autoformType;
