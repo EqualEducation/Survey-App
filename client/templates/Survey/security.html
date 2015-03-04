@@ -1,7 +1,8 @@
 
 <template name="survey6">
-	  {{setSelectedSchoolDoc schoolId}}
-  {{#autoForm collection="Security" id="survey" type="update" doc=selectedSchoolDoc resetOnSuccess=false}}
+	 {{setSelectedSchoolDoc schoolId}}
+  {{setSelectedDoc schoolId "security"}}
+  {{#autoForm collection="Security" id="survey" type=autoformType doc=selectedDoc resetOnSuccess=false}}
   	<button class="btn btn-primary btn-back">Back</button>
 	<button type="submit" class="btn btn-primary">Save</button>
 		<fieldset>

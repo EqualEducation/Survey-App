@@ -2,8 +2,6 @@
 <template name="survey2">
   {{setSelectedSchoolDoc schoolId}}
   {{setSelectedDoc schoolId "grades"}}
-
-  {{autoformType}}
   {{#autoForm collection="Grades" id="survey" type=autoformType doc=selectedDoc resetOnSuccess=false}}
             <button class="btn btn-primary btn-back">Back</button>
           <button type="submit" class="btn btn-primary">Save</button>
@@ -19,6 +17,8 @@
               {{else}}
                 {{> highschool_accordian}}
             {{/if}}
+            {{> afQuickField name="school_id" options="auto"}}
+
         </fieldset>
    {{/autoForm}}
 </template>

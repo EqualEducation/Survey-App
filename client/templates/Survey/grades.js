@@ -1,4 +1,5 @@
 Meteor.subscribe("schools");
+Meteor.subscribe("grades");
 
 
 	Template.survey2.rendered = function() {
@@ -45,8 +46,6 @@ Handlebars.registerHelper("isPrimarySchool", function () {
         var schoolId = Session.get("selectedSchoolId");
         console.log("is primary school selected school: " + schoolId);
         var school = Schools.findOne({'_id' : schoolId}, {"schoolDetails.CLASSIFICATION" : 1});
-        console.log(school.schoolDetails);
-
         var ret = false;
         if (school.schoolDetails.CLASSIFICATION === 'Primary') {
           ret = true;

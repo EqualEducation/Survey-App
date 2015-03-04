@@ -3,8 +3,11 @@
 	  {{#autoForm collection="Schools" id="insertSchoolForm" type="insert" template="bootstrap3-horizontal" label-class="col-sm-3" input-col-class="col-sm-9" resetOnSuccess=false}}
     <fieldset>
       <legend>Add a School</legend>
- 		{{> afQuickField name="schoolDetails" options="auto"}}
-
+		{{#each afFieldNames name="schoolDetails"}}
+            {{> afQuickField name=this options="auto" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+          <div class="clearfix visible-xs-block"></div>
+          <br />
+    	{{/each}}
     </fieldset>
         <button class="btn btn-primary btn-back">Back</button>
     	<button type="submit" class="btn btn-primary">Save</button>

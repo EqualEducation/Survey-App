@@ -2,7 +2,6 @@
 <template name="survey10">
 	{{setSelectedSchoolDoc schoolId }}
 	{{setSelectedDoc schoolId "additional"}}
-	{{autoformType}}
 	{{#autoForm collection="Additional" id="survey" type=autoformType doc=selectedDoc resetOnSuccess=false}}
 	<button class="btn btn-primary btn-back">Back</button>
       <button type="submit" class="btn btn-primary">Save</button>
