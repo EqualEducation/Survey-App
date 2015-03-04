@@ -168,9 +168,10 @@ waterSupply: {
       return Session.get('selectedSchoolId');
     },
     autoform: {
-      omit: true,
+      type: "hidden",
+      label: false
     },
-  },
+  }
 });
 
 Sanitation.attachSchema(SanitationSchema);

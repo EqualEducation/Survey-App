@@ -1,6 +1,6 @@
 
 <template name="survey7">
-  {{setSelectedSchoolDoc schoolId}}
+  {{setSelectedSanitationDoc schoolId}}
   <h3>Water & Sanitation</h3>
   <button class="btn btn-primary btn-back">Back</button>
   {{> sanitation_accordian}}
@@ -26,7 +26,8 @@
 </template>
 
 <template name="more_info">
-  {{#autoForm collection="Sanitation" id="survey" type="update" doc=selectedSanitationDoc resetOnSuccess=false}}
+  {{ autoformType }}
+  {{#autoForm collection="Sanitation" id="survey" type=autoformType doc=selectedSanitationDoc resetOnSuccess=false}}
       <button type="submit" class="btn btn-primary">Save</button>
         {{#each afFieldNames}}
           {{#if isEqual this "waterSupply"}}

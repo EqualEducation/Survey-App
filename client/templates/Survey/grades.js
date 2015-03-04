@@ -43,16 +43,16 @@ Template.registerHelper("currentFieldValue", function (fieldName) {
 
 Handlebars.registerHelper("isPrimarySchool", function () {
         var schoolId = Session.get("selectedSchoolId");
-        var school = Schools.find({'_id' : schoolId}, {"schoolDetails.CLASSIFICATION" : 1});
+        var school = Schools.findOne({'_id' : schoolId}, {"schoolDetails.CLASSIFICATION" : 1});
         var ret = false;
-        if (school.count() == 1) {
+        // if (school.count() == 1) {
 
-          school.forEach(function(entry) {
-              if (entry.schoolDetails.CLASSIFICATION === 'Primary') {
+          // school.forEach(function(entry) {
+              if (school.schoolDetails.CLASSIFICATION === 'Primary') {
                 ret = true;
               }
-          });
-        }
+          // });
+        // }
 
         return ret;
     });

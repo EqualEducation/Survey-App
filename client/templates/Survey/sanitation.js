@@ -52,13 +52,25 @@ if (Meteor.isClient) {
   	});
 
   	Template.more_info.helpers({
-  		selectedSanitationDoc: function () {
-  			var schoolId = Session.get("selectedSchoolId");
- 	    	var sanitation = Sanitation.find({'school_id' : schoolId});
- 	    	return sanitation;
+  		autoformType: function () {
+  			if (Session.get('selectedSanitationDoc') != null) {
+  				return "update";
+  			} else {
+  				return "insert";
+  			}
   		}
+  	})
 
-  	});
+
+	Handlebars.registerHelper('setSelectedSanitationDoc',function(schoolId){
+		var sanitation = Sanitation.findOne({'school_id' : schoolId});
+		console.log(sanitation);
+ 	    Session.set("selectedSanitationDoc", sanitation);
+	});
+
+	Handlebars.registerHelper('selectedSanitationDoc', function() {
+		return Session.get('selectedSanitationDoc');
+	});
 
 
 	AutoForm.setDefaultTemplate('bootstrap3-horizontal');
@@ -66,11 +78,19 @@ if (Meteor.isClient) {
 	AutoForm.hooks({
 	  blocks: {
 	      onSuccess: function(operation, result, template) {  
+	        console.log("Success result: " + result);
+	        console.log("Success operation: " + operation);
 	        alert('Block has been added');
 	      },
 	      onError: function(operation, error, template) {
 	        alert('Could not save the block. Please check all fields are filled in correctly. ' + error);
 
+	      },
+	      onSubmit : function(doc) {
+	        console.log("Submit: " + doc);
+	        // doc.groupId = /*Get the group id*/;
+	        // this.done(); //We've finished
+	        return true; //Let autoForm do his default job now
 	      }
 	    }
 	  });
