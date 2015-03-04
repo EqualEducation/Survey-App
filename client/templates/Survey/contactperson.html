@@ -6,8 +6,10 @@
           <fieldset>
           <legend>Contact Details</legend>
 		  {{#each afFieldNames}}
-		    	{{> afQuickField name=this options="auto"}}
-		  {{/each}}        
+        {{> afQuickField name=this options="auto" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+        <div class="clearfix visible-xs-block"></div>
+      {{/each}}        
+
 		</fieldset>
 
    {{/autoForm}}

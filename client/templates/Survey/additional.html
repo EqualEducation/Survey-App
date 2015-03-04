@@ -1,16 +1,17 @@
 
 <template name="survey10">
-		{{setSelectedDoc schoolId "additional"}}
-		{{autoformType}}
-		{{#autoForm collection="Additional" id="survey" type=autoformType doc=selectedDoc resetOnSuccess=false}}
-		<button class="btn btn-primary btn-back">Back</button>
-          <button type="submit" class="btn btn-primary">Save</button>
+	{{setSelectedSchoolDoc schoolId }}
+	{{setSelectedDoc schoolId "additional"}}
+	{{autoformType}}
+	{{#autoForm collection="Additional" id="survey" type=autoformType doc=selectedDoc resetOnSuccess=false}}
+	<button class="btn btn-primary btn-back">Back</button>
+      <button type="submit" class="btn btn-primary">Save</button>
 
-			{{#each afFieldNames}}
-	            {{> afQuickField name=this options="auto" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
-	          <div class="clearfix visible-xs-block"></div>
-	          <br />
-        	{{/each}}
-		{{/autoForm}}
+		{{#each afFieldNames}}
+            {{> afQuickField name=this options="auto" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+          <div class="clearfix visible-xs-block"></div>
+          <br />
+    	{{/each}}
+	{{/autoForm}}
 </template>
 
