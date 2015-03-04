@@ -161,12 +161,18 @@ Template.lab_table.rendered = function(){
 AutoForm.hooks({
   survey: {
       onSuccess: function(operation, result, template) {  
-        console.log(template);
+        console.log(result);
         alert('School has been updated');
       },
       onError: function(operation, error, template) {
         alert('Could not save the form. Please check all fields are filled in correctly' + error);
 
+      },
+      onSubmit : function(doc) {
+        console.log(doc);
+        // doc.groupId = /*Get the group id*/;
+        // this.done(); //We've finished
+        return true; //Let autoForm do his default job now
       }
     }
   });

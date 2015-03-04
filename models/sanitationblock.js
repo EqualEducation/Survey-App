@@ -124,7 +124,7 @@ SanitationBlocksSchema = new SimpleSchema({
         return [
           {label: "Flush", value: 'Flush'},
           {label: "Pit", value: 'Pit'},
-          {label: "VIP", value: 'VIP'},
+          {label: "Vetinlated Improved Pit (VIP)", value: 'Vetinlated Improved Pit (VIP)'},
           {label: "Composting", value: 'Composting'},
           {label: "Bucket", value: 'Bucket'},
         ];

@@ -4,14 +4,29 @@ LibrarySchema = new SimpleSchema({
   hasLibrary: {
     optional: true,
     type: String,
-    label: "Does your school have a library or media center?",
+    label: "Does your school have a library?",
     autoform: {
       type: "select",
       options: function () {
         return [
-          {label: "No library", value: 'No library'},
-          {label: "Yes, library only serves school", value: 'Yes, Library only serves school'},
-          {label: "Yes, library is shared with other schools", value: 'Yes, Library is shared with other schools'}
+          {label: "School's own", value: "School's own"},
+          {label: "Shared with other school", value: 'Shared with other school'},
+          {label: "None", value: 'None'}
+        ];
+      }
+    }
+  },
+  hasMediaCentre: {
+    optional: true,
+    type: String,
+    label: "Does your school have a media centre?",
+    autoform: {
+      type: "select",
+      options: function () {
+        return [
+          {label: "School's own", value: "School's own"},
+          {label: "Shared with other school", value: 'Shared with other school'},
+          {label: "None", value: 'None'}
         ];
       }
     }

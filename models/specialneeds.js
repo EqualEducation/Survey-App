@@ -4,7 +4,7 @@ SpecialNeedsSchema = new SimpleSchema({
   specialNeeds: {
     type: [String],
     optional: true,
-    label: "If this is a school or learners with special education needs, does it have the following? (please check all that apply)",
+    label: "When you were walking around the school, did you notice any of the following for special needs students? (tick all that apply)",
     autoform: 
     {
       type: "select-checkbox",

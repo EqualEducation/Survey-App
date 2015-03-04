@@ -2,19 +2,14 @@ Labs = new Mongo.Collection("labs");
 
 ScienceLabDrillDownSchema = new SimpleSchema({
   labCondition:{
-    label: "What is the condition of the lab?",
+    label: "Is the lab in good working order?",
     optional: true,
     type: String,
     autoform: {
-      type: "select",
-      options: function () {
-        return [
-          {label: "Good Condition", value: 'Good Condition'},
-          {label: "Average Condition", value: 'Average Condition'},
-          {label: "Poor Condition", value: 'Poor Condition'}
-        ];
+        type: "boolean-radios",
+        trueLabel: "Yes",
+        falseLabel: "No",
       }
-    }
   },
   hasNecessaryEquipment: {
     label: "Does the lab have the equipment necessary?",
@@ -26,16 +21,16 @@ ScienceLabDrillDownSchema = new SimpleSchema({
         falseLabel: "No",
       }
   },
-  hasSafeStorage: {
-    label: "Is there a safe and lockable storage space for lab equipment?",
-    type: Boolean,
-      optional: true,
-      autoform: {
-        type: "boolean-radios",
-        trueLabel: "Yes",
-        falseLabel: "No",
-      }
-  },
+  // hasSafeStorage: {
+  //   label: "Is there a safe and lockable storage space for lab equipment?",
+  //   type: Boolean,
+  //     optional: true,
+  //     autoform: {
+  //       type: "boolean-radios",
+  //       trueLabel: "Yes",
+  //       falseLabel: "No",
+  //     }
+  // },
   comment: {
     type: String,
     optional: true,

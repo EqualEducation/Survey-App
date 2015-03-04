@@ -14,30 +14,30 @@ ClassroomsDrillDownSchema = new SimpleSchema ({
       type: "text"
     }
   },
-  totalNumberOfLightFittings: {
-    label: "Total number of light fittings in classroom",
-    type: Number,
-    optional: true,
-    autoform: {
-      type: "text"
-    }
-  },
-  totalNumberOfWorkingLightbulbs: {
-    label: "Total number of working lightbulbs in classroom",
-    type: Number,
-    optional: true,
-    autoform: {
-      type: "text"
-    }
-  },
-  totalNumberOfBrokenLightbulbs: {
-    label: "Total number of broken lightbulbs in classroom",
-    type: Number,
-    optional: true,
-    autoform: {
-      type: "text"
-    }
-  },
+  // totalNumberOfLightFittings: {
+  //   label: "Total number of light fittings in classroom",
+  //   type: Number,
+  //   optional: true,
+  //   autoform: {
+  //     type: "text"
+  //   }
+  // },
+  // totalNumberOfWorkingLightbulbs: {
+  //   label: "Total number of working lightbulbs in classroom",
+  //   type: Number,
+  //   optional: true,
+  //   autoform: {
+  //     type: "text"
+  //   }
+  // },
+  // totalNumberOfBrokenLightbulbs: {
+  //   label: "Total number of broken lightbulbs in classroom",
+  //   type: Number,
+  //   optional: true,
+  //   autoform: {
+  //     type: "text"
+  //   }
+  // },
   totalNumberOfWindows: {
     label: "Total number of windows in classroom",
     type: Number,
@@ -122,36 +122,17 @@ ClassroomsDrillDownSchema = new SimpleSchema ({
       }
     }
   },
-  floorCondition: {
+  ceilingOrFloorHasHole: {
     optional: true,
-    label: "Describe the condition of the floor",
-    type: String,
-    autoform: {
-      type: "select",
-      options: function () {
-        return [
-          {label: "Good", value: 'Good'},
-          {label: "Average", value: 'Average'},
-          {label: "Poor", value: 'Poor'},
-        ];
-      }
-    }
+    label: "Is there a hole in the celing or floor",
+    type: Boolean,
+      optional: true,
+      autoform: {
+           type: "boolean-radios",
+           trueLabel: "Yes",
+           falseLabel: "No",
+    },
   },
-  ceilingCondition: {
-    optional: true,
-    label: "Describe the condition of the ceiling",
-    type: String,
-    autoform: {
-      type: "select",
-      options: function () {
-        return [
-          {label: "Good", value: 'Good'},
-          {label: "Average", value: 'Average'},
-          {label: "Poor", value: 'Poor'},
-        ];
-      }
-    }
-  }
 });
 
 ClassroomsSchema = new SimpleSchema ({

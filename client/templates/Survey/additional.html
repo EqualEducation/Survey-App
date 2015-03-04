@@ -4,7 +4,7 @@
 		{{#autoForm collection="Additional" id="survey" type="update" doc=selectedSchoolDoc resetOnSuccess=false}}
 		<button class="btn btn-primary btn-back">Back</button>
           <button type="submit" class="btn btn-primary">Save</button>
-				 {{> afQuickField name="yearBuilt"}}
+				<!--  {{> afQuickField name="yearBuilt"}}
 				 {{> afQuickField name="location"}}				 
 			 {{#unless afFieldValueContains name="location" value=" "}}
 				 {{> afQuickField name="couldBeMoved"}}
@@ -26,8 +26,16 @@
 			{{/if}}
 			{{#if afFieldValueContains name="facilities" value="Printing room"}}
 				 {{> afQuickField name="numberOfPrintingRooms"}}
-			{{/if}}
-
+			{{/if}} -->
+			{{#each afFieldNames}}
+<!-- 	          {{#if isEqual this "electronicConnectivity"}}
+	            {{> afQuickField name=this options="auto"}}
+	          {{else}}
+ -->	            {{> afQuickField name=this options="auto" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+	          <!-- {{/if}} -->
+	          <div class="clearfix visible-xs-block"></div>
+	          <br />
+        	{{/each}}
 		{{/autoForm}}
 </template>
 

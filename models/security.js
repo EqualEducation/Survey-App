@@ -9,7 +9,7 @@ SecuritySchema = new SimpleSchema({
       type: "select",
       options: function () {
         return [
-          {label: "Usually safe", value: 'Usually safe'},
+          {label: "Safe", value: 'Safe'},
           {label: "Sometimes safe", value: 'Sometimes safe'},
           {label: "Usually unsafe", value: 'Usually unsafe'}
         ];
@@ -36,16 +36,16 @@ SecuritySchema = new SimpleSchema({
         falseLabel: "No",
       }
   },
-  fenceIsCorrectHeight: {
-   label: "Is the fence, in all places, at least 1.8 metres high?",
-    optional: true,
-    type: Boolean,
-      autoform: {
-        type: "boolean-radios",
-        trueLabel: "Yes",
-        falseLabel: "No",
-      }
-  },
+  // fenceIsCorrectHeight: {
+  //  label: "Is the fence, in all places, at least 1.8 metres high?",
+  //   optional: true,
+  //   type: Boolean,
+  //     autoform: {
+  //       type: "boolean-radios",
+  //       trueLabel: "Yes",
+  //       falseLabel: "No",
+  //     }
+  // },
   conditionOfFence: {
    label: "What is the condition of the fence or wall around your school?",
     optional: true,
@@ -61,26 +61,26 @@ SecuritySchema = new SimpleSchema({
       }
     }
   },
-  hasBurglarBars: {
-    label: "Are there burglar bars on the windows on the ground floors?",
-   optional: true,
-    type: Boolean,
-      autoform: {
-        type: "boolean-radios",
-        trueLabel: "Yes",
-        falseLabel: "No",
-      }
-  },
-  hasSecurityGaurd: {
-    label: "Is there a security gaurd controlling access at the gate?",
-    optional: true,
-    type: Boolean,
-      autoform: {
-        type: "boolean-radios",
-        trueLabel: "Yes",
-        falseLabel: "No",
-      }
-  },
+  // hasBurglarBars: {
+  //   label: "Are there burglar bars on the windows on the ground floors?",
+  //  optional: true,
+  //   type: Boolean,
+  //     autoform: {
+  //       type: "boolean-radios",
+  //       trueLabel: "Yes",
+  //       falseLabel: "No",
+  //     }
+  // },
+  // hasSecurityGaurd: {
+  //   label: "Is there a security gaurd controlling access at the gate?",
+  //   optional: true,
+  //   type: Boolean,
+  //     autoform: {
+  //       type: "boolean-radios",
+  //       trueLabel: "Yes",
+  //       falseLabel: "No",
+  //     }
+  // },
   comment: {
     type: String,
     optional: true,

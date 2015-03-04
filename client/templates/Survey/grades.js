@@ -1,4 +1,6 @@
-if (Meteor.isClient) {
+Meteor.subscribe("schools");
+
+
 	Template.survey2.rendered = function() {
 		$.material.init();
 
@@ -32,12 +34,28 @@ if (Meteor.isClient) {
     },
  
   });
-}
+
 
 Template.registerHelper("currentFieldValue", function (fieldName) {
   var value= AutoForm.getFieldValue("survey", fieldName) || "";
   return value;
 });
+
+Handlebars.registerHelper("isPrimarySchool", function () {
+        var schoolId = Session.get("selectedSchoolId");
+        var school = Schools.find({'_id' : schoolId}, {"schoolDetails.CLASSIFICATION" : 1});
+        var ret = false;
+        if (school.count() == 1) {
+
+          school.forEach(function(entry) {
+              if (entry.schoolDetails.CLASSIFICATION === 'Primary') {
+                ret = true;
+              }
+          });
+        }
+
+        return ret;
+    });
 
 Template.registerHelper("totalNumberOfStudentsInGrade", function (gradeName) {
   //gradeR

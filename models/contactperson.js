@@ -32,8 +32,7 @@ ContactDetailsSchema = new SimpleSchema({
       return Session.get('selectedSchoolId');
     },
     autoform: {
-      type: "hidden",
-      label: false
+      omit: true,
     },
   },
   
