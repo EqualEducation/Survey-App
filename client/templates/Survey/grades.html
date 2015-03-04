@@ -5,20 +5,19 @@
             <button class="btn btn-primary btn-back">Back</button>
           <button type="submit" class="btn btn-primary">Save</button>
           <fieldset>
-            {{> afQuickField name="totalTeachersInSchool" options="auto"}}
-            <!-- {{> afQuickField name="schoolDetails.CLASSIFICATION" options="auto"}} -->
+            {{> afQuickField name="totalTeachersInSchool" options="auto" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+            <div class="clearfix visible-xs-block"></div>
+            <br />
+    
 
-            <b>Please select a grade to update</b>
+            <p>Please select a grade to update</p>
             {{#if isPrimarySchool}}
                 {{> primaryschool_accordian}}
               {{else}}
                 {{> highschool_accordian}}
             {{/if}}
         </fieldset>
-
    {{/autoForm}}
-
-
 </template>
 
 <template name="primaryschool_accordian">
@@ -26,16 +25,9 @@
     <div class="accordion-section">
         <a class="accordion-section-title" href="#accordion-0">Grade R</a>
         <div id="accordion-0" class="accordion-section-content">
-          {{#each afFieldNames name="gradeR"}}
-            {{#if isEqual this "gradeR.totalNumberOfStudents"}}
-                <div class="form-group">
-              <label class="control-label">Total number of students</label>
-              <input type="text" value="{{totalNumberOfStudentsInGrade "gradeR"}}" disabled="true" name="gradeR.totalNumberOfStudents" data-schema-key="gradeR.totalNumberOfStudents" class="form-control empty">    
-              <span class="help-block"></span>
-            </div>
-            {{else}}
-              {{> afQuickField name=this options="auto"}}
-            {{/if}}
+          {{#each afFieldNames name="gradeR"}}           
+              {{> afQuickField name=this options="auto" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+              <div class="clearfix visible-xs-block"></div>
           {{/each}}
         </div>
     </div><!--end .accordion-section-->
@@ -43,15 +35,8 @@
         <a class="accordion-section-title" href="#accordion-1">Grade 1</a>
         <div id="accordion-1" class="accordion-section-content">
           {{#each afFieldNames name="grade1"}}
-            {{#if isEqual this "grade1.totalNumberOfStudents"}}
-                <div class="form-group">
-              <label class="control-label">Total number of students</label>
-              <input type="text" value="{{totalNumberOfStudentsInGrade "grade1"}}" disabled="true" name="grade1.totalNumberOfStudents" data-schema-key="grade1.totalNumberOfStudents" class="form-control empty">    
-              <span class="help-block"></span>
-            </div>
-            {{else}}
-              {{> afQuickField name=this options="auto"}}
-            {{/if}}
+              {{> afQuickField name=this options="auto" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+              <div class="clearfix visible-xs-block"></div>
           {{/each}}        
         </div>
     </div><!--end .accordion-section-->
@@ -59,15 +44,8 @@
         <a class="accordion-section-title" href="#accordion-2">Grade 2</a>
         <div id="accordion-2" class="accordion-section-content">
           {{#each afFieldNames name="grade2"}}
-            {{#if isEqual this "grade2.totalNumberOfStudents"}}
-                <div class="form-group">
-              <label class="control-label">Total number of students</label>
-              <input type="text" value="{{totalNumberOfStudentsInGrade "grade2"}}" disabled="true" name="grade2.totalNumberOfStudents" data-schema-key="grade2.totalNumberOfStudents" class="form-control empty">    
-              <span class="help-block"></span>
-            </div>
-            {{else}}
-              {{> afQuickField name=this options="auto"}}
-            {{/if}}
+              {{> afQuickField name=this options="auto" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+              <div class="clearfix visible-xs-block"></div>
           {{/each}}          
         </div>
     </div><!--end .accordion-section-->
@@ -75,15 +53,8 @@
         <a class="accordion-section-title" href="#accordion-3">Grade 3</a>
         <div id="accordion-3" class="accordion-section-content">
           {{#each afFieldNames name="grade3"}}
-            {{#if isEqual this "grade3.totalNumberOfStudents"}}
-                <div class="form-group">
-              <label class="control-label">Total number of students</label>
-              <input type="text" value="{{totalNumberOfStudentsInGrade "grade3"}}" disabled="true" name="grade3.totalNumberOfStudents" data-schema-key="grade3.totalNumberOfStudents" class="form-control empty">    
-              <span class="help-block"></span>
-            </div>
-            {{else}}
-              {{> afQuickField name=this options="auto"}}
-            {{/if}}
+            {{> afQuickField name=this options="auto" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+              <div class="clearfix visible-xs-block"></div>
           {{/each}}  
         </div>
     </div><!--end .accordion-section-->        
@@ -91,15 +62,8 @@
         <a class="accordion-section-title" href="#accordion-4">Grade 4</a>
         <div id="accordion-4" class="accordion-section-content">
           {{#each afFieldNames name="grade4"}}
-            {{#if isEqual this "grade4.totalNumberOfStudents"}}
-                <div class="form-group">
-              <label class="control-label">Total number of students</label>
-              <input type="text" value="{{totalNumberOfStudentsInGrade "grade4"}}" disabled="true" name="grade4.totalNumberOfStudents" data-schema-key="grade4.totalNumberOfStudents" class="form-control empty">    
-              <span class="help-block"></span>
-            </div>
-            {{else}}
-              {{> afQuickField name=this options="auto"}}
-            {{/if}}
+            {{> afQuickField name=this options="auto" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+              <div class="clearfix visible-xs-block"></div>
           {{/each}}  
         </div>
     </div><!--end .accordion-section-->
@@ -107,15 +71,8 @@
         <a class="accordion-section-title" href="#accordion-5">Grade 5</a>
         <div id="accordion-5" class="accordion-section-content">
           {{#each afFieldNames name="grade5"}}
-            {{#if isEqual this "grade5.totalNumberOfStudents"}}
-                <div class="form-group">
-              <label class="control-label">Total number of students</label>
-              <input type="text" value="{{totalNumberOfStudentsInGrade "grade5"}}" disabled="true" name="grade5.totalNumberOfStudents" data-schema-key="grade5.totalNumberOfStudents" class="form-control empty">    
-              <span class="help-block"></span>
-            </div>
-            {{else}}
-              {{> afQuickField name=this options="auto"}}
-            {{/if}}
+            {{> afQuickField name=this options="auto" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+              <div class="clearfix visible-xs-block"></div>
           {{/each}}  
         </div>
     </div><!--end .accordion-section-->
@@ -123,15 +80,8 @@
         <a class="accordion-section-title" href="#accordion-6">Grade 6</a>
         <div id="accordion-6" class="accordion-section-content">
           {{#each afFieldNames name="grade6"}}
-            {{#if isEqual this "grade6.numberOfMaleStudents"}}
-                <div class="form-group">
-              <label class="control-label">Total number of students</label>
-              <input type="text" value="{{totalNumberOfStudentsInGrade "grade6"}}" disabled="true" name="grade6.totalNumberOfStudents" data-schema-key="grade6.totalNumberOfStudents" class="form-control empty">    
-              <span class="help-block"></span>
-            </div>
-            {{else}}
-              {{> afQuickField name=this options="auto"}}
-            {{/if}}
+           {{> afQuickField name=this options="auto" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+              <div class="clearfix visible-xs-block"></div>
           {{/each}}  
         </div>
     </div><!--end .accordion-section-->
@@ -139,15 +89,8 @@
         <a class="accordion-section-title" href="#accordion-7">Grade 7</a>
         <div id="accordion-7" class="accordion-section-content">
           {{#each afFieldNames name="grade7"}}
-            {{#if isEqual this "grade7.numberOfMaleStudents"}}
-                <div class="form-group">
-              <label class="control-label">Total number of students</label>
-              <input type="text" value="{{totalNumberOfStudentsInGrade "grade7"}}" disabled="true" name="grade7.totalNumberOfStudents" data-schema-key="grade7.totalNumberOfStudents" class="form-control empty">    
-              <span class="help-block"></span>
-            </div>
-            {{else}}
-              {{> afQuickField name=this options="auto"}}
-            {{/if}}
+           {{> afQuickField name=this options="auto" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+              <div class="clearfix visible-xs-block"></div>
           {{/each}}  
       </div>
     </div><!--end .accordion-section-->            
@@ -160,15 +103,8 @@
         <a class="accordion-section-title" href="#accordion-0">Grade 8</a>
         <div id="accordion-0" class="accordion-section-content">
           {{#each afFieldNames name="grade8"}}
-            {{#if isEqual this "grade8.totalNumberOfStudents"}}
-                <div class="form-group">
-              <label class="control-label">Total number of students</label>
-              <input type="text" value="{{totalNumberOfStudentsInGrade "grade8"}}" disabled="true" name="grade8.totalNumberOfStudents" data-schema-key="grade8.totalNumberOfStudents" class="form-control empty">    
-              <span class="help-block"></span>
-            </div>
-            {{else}}
-              {{> afQuickField name=this options="auto"}}
-            {{/if}}
+              {{> afQuickField name=this options="auto" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+              <div class="clearfix visible-xs-block"></div>
           {{/each}}  
         </div>
     </div><!--end .accordion-section-->
@@ -176,15 +112,8 @@
         <a class="accordion-section-title" href="#accordion-1">Grade 9</a>
         <div id="accordion-1" class="accordion-section-content">
           {{#each afFieldNames name="grade9"}}
-            {{#if isEqual this "grade9.totalNumberOfStudents"}}
-                <div class="form-group">
-              <label class="control-label">Total number of students</label>
-              <input type="text" value="{{totalNumberOfStudentsInGrade "grade1"}}" disabled="true" name="grade9.totalNumberOfStudents" data-schema-key="grade9.totalNumberOfStudents" class="form-control empty">    
-              <span class="help-block"></span>
-            </div>
-            {{else}}
-              {{> afQuickField name=this options="auto"}}
-            {{/if}}
+            {{> afQuickField name=this options="auto" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+              <div class="clearfix visible-xs-block"></div>
           {{/each}}  
         </div>
     </div><!--end .accordion-section-->
@@ -192,15 +121,8 @@
         <a class="accordion-section-title" href="#accordion-2">Grade 10</a>
         <div id="accordion-2" class="accordion-section-content">
           {{#each afFieldNames name="grade10"}}
-            {{#if isEqual this "grade10.totalNumberOfStudents"}}
-                <div class="form-group">
-              <label class="control-label">Total number of students</label>
-              <input type="text" value="{{totalNumberOfStudentsInGrade "grade10"}}" disabled="true" name="grade10.totalNumberOfStudents" data-schema-key="grade10.totalNumberOfStudents" class="form-control empty">    
-              <span class="help-block"></span>
-            </div>
-            {{else}}
-              {{> afQuickField name=this options="auto"}}
-            {{/if}}
+            {{> afQuickField name=this options="auto" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+              <div class="clearfix visible-xs-block"></div>
           {{/each}}  
         </div>
     </div><!--end .accordion-section-->
@@ -208,15 +130,8 @@
         <a class="accordion-section-title" href="#accordion-3">Grade 11</a>
         <div id="accordion-3" class="accordion-section-content">
           {{#each afFieldNames name="grade11"}}
-            {{#if isEqual this "grade11.totalNumberOfStudents"}}
-                <div class="form-group">
-              <label class="control-label">Total number of students</label>
-              <input type="text" value="{{totalNumberOfStudentsInGrade "grade1"}}" disabled="true" name="grade11.totalNumberOfStudents" data-schema-key="grade11.totalNumberOfStudents" class="form-control empty">    
-              <span class="help-block"></span>
-            </div>
-            {{else}}
-              {{> afQuickField name=this options="auto"}}
-            {{/if}}
+            {{> afQuickField name=this options="auto" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+              <div class="clearfix visible-xs-block"></div>
           {{/each}}  
         </div>
     </div><!--end .accordion-section-->        
@@ -224,15 +139,8 @@
         <a class="accordion-section-title" href="#accordion-4">Grade 12</a>
         <div id="accordion-4" class="accordion-section-content">
           {{#each afFieldNames name="grade12"}}
-            {{#if isEqual this "grade12.totalNumberOfStudents"}}
-                <div class="form-group">
-              <label class="control-label">Total number of students</label>
-              <input type="text" value="{{totalNumberOfStudentsInGrade "grade1"}}" disabled="true" name="grade12.totalNumberOfStudents" data-schema-key="grade12.totalNumberOfStudents" class="form-control empty">    
-              <span class="help-block"></span>
-            </div>
-            {{else}}
-              {{> afQuickField name=this options="auto"}}
-            {{/if}}
+           {{> afQuickField name=this options="auto" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+              <div class="clearfix visible-xs-block"></div>
           {{/each}}  
         </div>
     </div><!--end .accordion-section-->
