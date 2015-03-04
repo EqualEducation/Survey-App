@@ -41,6 +41,7 @@ if (Meteor.isClient) {
 	Handlebars.registerHelper('setSelectedDoc',function(schoolId, collection_name){
 		var doc = "unknown";
 		var session_item_name = "unknown";
+		// console.log("searching for "  + collection_name + " with school id " + schoolId);
 		if (collection_name === "additional") {
 			doc = Additional.findOne({'school_id' : schoolId});
 			session_item_name = "selectedAdditionalDoc";
@@ -88,6 +89,8 @@ if (Meteor.isClient) {
 			session_item_name = "selectedSportsDoc";
 		}
 
+		// console.log(session_item_name);
+		// console.log(doc);
 
 		Session.set(session_item_name, doc);
 		Session.set("current_session_item_name", session_item_name);
@@ -97,8 +100,10 @@ if (Meteor.isClient) {
 	Handlebars.registerHelper('selectedDoc', function() {
 		var currentSessionItemName = Session.get("current_session_item_name");
 		console.log("Getting selected doc for: " + currentSessionItemName);
+		var doc = Session.get(currentSessionItemName);
+		console.log(doc);
 
-		return Session.get(Session.get(currentSessionItemName));
+		return doc;
 	});
 
 	Handlebars.registerHelper('autoformType', function() {
