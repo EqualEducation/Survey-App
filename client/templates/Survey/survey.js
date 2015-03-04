@@ -148,9 +148,9 @@ Template.sciencelabs.rendered = function(){
 Template.afArrayField.rendered = function(){
    $.material.init(); 
 }
-Template.classroom_table.rendered = function(){
-   $.material.init(); 
-}
+// Template.classroom_table.rendered = function(){
+//    $.material.init(); 
+// }
 Template.lab_table.rendered = function(){
   $.material.init(); 
 }

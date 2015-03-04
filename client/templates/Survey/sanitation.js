@@ -51,26 +51,26 @@ if (Meteor.isClient) {
 	    }
   	});
 
-  	Template.more_info.helpers({
-  		autoformType: function () {
-  			if (Session.get('selectedSanitationDoc') != null) {
-  				return "update";
-  			} else {
-  				return "insert";
-  			}
-  		}
-  	})
+  	// Template.more_info.helpers({
+  	// 	autoformType: function () {
+  	// 		if (Session.get('selectedSanitationDoc') != null) {
+  	// 			return "update";
+  	// 		} else {
+  	// 			return "insert";
+  	// 		}
+  	// 	}
+  	// })
 
 
-	Handlebars.registerHelper('setSelectedSanitationDoc',function(schoolId){
-		var sanitation = Sanitation.findOne({'school_id' : schoolId});
-		console.log(sanitation);
- 	    Session.set("selectedSanitationDoc", sanitation);
-	});
+	// Handlebars.registerHelper('setSelectedSanitationDoc',function(schoolId){
+	// 	var sanitation = Sanitation.findOne({'school_id' : schoolId});
+	// 	console.log(sanitation);
+ // 	    Session.set("selectedSanitationDoc", sanitation);
+	// });
 
-	Handlebars.registerHelper('selectedSanitationDoc', function() {
-		return Session.get('selectedSanitationDoc');
-	});
+	// Handlebars.registerHelper('selectedSanitationDoc', function() {
+	// 	return Session.get('selectedSanitationDoc');
+	// });
 
 
 	AutoForm.setDefaultTemplate('bootstrap3-horizontal');
@@ -93,5 +93,5 @@ if (Meteor.isClient) {
 	        return true; //Let autoForm do his default job now
 	      }
 	    }
-	  });
+	});
 }

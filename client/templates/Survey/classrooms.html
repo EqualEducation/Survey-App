@@ -1,15 +1,73 @@
 
 <template name="survey11">
-		{{setSelectedSchoolDoc schoolId}}
-		{{#autoForm collection="Classrooms" id="survey" type="update" doc=selectedSchoolDoc}}
+	{{setSelectedSchoolDoc schoolId}}
+<!-- 		{{setSelectedDoc schoolId "classrooms"}}
+		{{autoformType}}
+		{{#autoForm collection="Classrooms" id="survey" type=autoformType doc=selectedDoc}}
 			<button class="btn btn-primary btn-back">Back</button>
 			<button type="submit" class="btn btn-primary">Save</button>
 			{{> afArrayField name="classrooms" template="classroom"}}
 
-		{{/autoForm}}
+		{{/autoForm}} -->
+		{{> classrooms}}
 </template>
 
-<template name="afArrayField_classroom">
+<template name="classrooms">
+  <input type="button" class="open-modal btn btn-primary" value="Add a classroom" />
+  {{> list_classrooms }}
+  {{> modal_classroom}}
+</template>
+
+<template name="list_classrooms">
+<table class="table">
+    <thead>
+      <tr>
+        <th>Class name</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+   {{#each classrooms}}
+        {{> classroom}} 
+      {{/each}}
+    </tbody>
+  </table>
+</template>
+
+<template name="classroom">
+  <tr>
+    <td>{{this.name}}</td>
+    <td><a href="#edit">Edit</a></td>
+    <td><a href="#delete">Delete</a></td>
+  </tr>
+</template>
+
+<!-- A modal that contains the bigger view of the image selected -->
+<template name="modal_classroom">
+  <div class="modal fade in" id="modal_classroom" data-backdrop="false" >
+     <div class="modal-dialog">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Add a Classroom</h4>
+        </div>
+        <div class="modal-body">
+            {{#autoForm collection="Classrooms" id="classrooms" type="insert" resetOnSuccess=true}}
+                {{#each afFieldNames}}
+                    {{> afQuickField name=this options="auto" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+                    <div class="clearfix visible-xs-block"></div>
+                    <br />
+                {{/each}}
+                <button type="submit" class="btn btn-primary">Save</button>
+            {{/autoForm}}
+          </div>
+      </div>
+  </div>
+</template>
+
+
+
+<!-- <template name="afArrayField_classroom">
 	<div class="panel panel-default">
 	    <div class="panel-heading">{{afFieldLabelText name=this.atts.name}}</div>
 	    {{#if afFieldIsInvalid name=this.atts.name}}
@@ -47,4 +105,4 @@
 <template name="classroom_table">
 	{{> afQuickField name=this.name label=false options="auto"}}
 </template>
-
+ -->

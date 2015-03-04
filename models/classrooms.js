@@ -1,7 +1,7 @@
 Classrooms = new Mongo.Collection("classrooms");
 
-ClassroomsDrillDownSchema = new SimpleSchema ({
-  name: {
+ClassroomsSchema = new SimpleSchema ({
+   name: {
     label: "Class name",
     type: String,
     optional: true,
@@ -133,29 +133,22 @@ ClassroomsDrillDownSchema = new SimpleSchema ({
            falseLabel: "No",
     },
   },
-});
-
-ClassroomsSchema = new SimpleSchema ({
-    classrooms: {
-      type: Array,
-      optional: true,
-      minCount: 0,
-      maxCount: 100
-   },
-   "classrooms.$": {
-      optional: true,
-      type: ClassroomsDrillDownSchema
-   },
-   school_id: {
+  comment: {
     type: String,
-    defaultValue: function(){ 
-      return Session.get('selectedSchoolId');
-    },
-    autoform: {
-      type: "hidden",
-      label: false
-    },
-  }
+    optional: true,
+    label: "Comment",
+  },
+    school_id: {
+      type: String,
+      defaultValue: function(){ 
+        console.log("School id: " + Session.get('selectedSchoolId'));
+        return Session.get('selectedSchoolId');
+      },
+      autoform: {
+        type: "hidden",
+        label: false
+      },
+    }
  });
 
 
