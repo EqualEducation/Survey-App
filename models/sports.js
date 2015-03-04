@@ -1,6 +1,7 @@
 Sports = new Mongo.Collection("sports");
 
 SportsFieldDrillDownSchema = new SimpleSchema ({
+  
   condition: {
    label: "What is the condition of this place used for this sport?",
     optional: true,
@@ -132,13 +133,15 @@ SportsFieldSchema = new SimpleSchema({
   school_id: {
     type: String,
     defaultValue: function(){ 
+      console.log("school id: ", Session.get('selectedSchoolId'));
       return Session.get('selectedSchoolId');
     },
     autoform: {
       type: "hidden",
       label: false
-    },
+    },  
   }
+  
 });
 
 Sports.attachSchema(SportsFieldSchema);

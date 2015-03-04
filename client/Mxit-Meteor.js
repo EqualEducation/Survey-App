@@ -85,13 +85,9 @@ if (Meteor.isClient) {
 			session_item_name = "selectedSpecialNeedsDoc";
 		}
 		else if (collection_name === "sports") {
-			doc = SportsFields.findOne({'school_id' : schoolId});
+			doc = Sports.findOne({'school_id' : schoolId});
 			session_item_name = "selectedSportsDoc";
 		}
-
-		// console.log(session_item_name);
-		// console.log(doc);
-
 		Session.set(session_item_name, doc);
 		Session.set("current_session_item_name", session_item_name);
 
@@ -99,23 +95,16 @@ if (Meteor.isClient) {
 
 	Handlebars.registerHelper('selectedDoc', function() {
 		var currentSessionItemName = Session.get("current_session_item_name");
-		console.log("Getting selected doc for: " + currentSessionItemName);
 		var doc = Session.get(currentSessionItemName);
-		console.log(doc);
-
 		return doc;
 	});
 
 	Handlebars.registerHelper('autoformType', function() {
 		var currentSessionItemName = Session.get("current_session_item_name");
-
-		console.log("Autoform type for: " + currentSessionItemName);
-
 		var autoformType = "insert";
 		if (Session.get(currentSessionItemName) != null) {
 			autoformType =  "update";
 		} 
-		console.log(autoformType);
 		return autoformType;
 	});
 

@@ -1,16 +1,24 @@
 
 <template name="survey3">
   {{setSelectedSchoolDoc schoolId}}
-  {{#autoForm collection="Sports" id="survey" type="update" doc=selectedSchoolDoc template="bootstrap3-horizontal" label-class="col-sm-3" input-col-class="col-sm-9" resetOnSuccess=false}}
+  {{setSelectedDoc schoolId "sports"}}
+  {{autoformType}}
+  {{#autoForm collection="Sports" id="survey" type=autoformType doc=selectedDoc resetOnSuccess=false}}
           <button class="btn btn-primary btn-back">Back</button>
           <button type="submit" class="btn btn-primary">Save</button>
           <fieldset>
           <legend>Sports Fields</legend>
-             {{> afQuickField name="numberOfSportsFields" options="auto"}}
-             {{> afQuickField name="availableSports" options="auto"}}
+              {{> afQuickField name="school_id" options="auto"}}
+
+             {{> afQuickField name="numberOfSportsFields" options="auto" template="bootstrap3-horizontal" label-class="col-sm-3" input-col-class="col-sm-9" }}
+              <div class="clearfix visible-xs-block"></div>
+
+             {{> afQuickField name="availableSports" options="auto" template="bootstrap3-horizontal" label-class="col-sm-3" input-col-class="col-sm-9"}}
+             <div class="clearfix visible-xs-block"></div>
 
              {{#if afFieldValueContains name="availableSports" value="Other"}}
-             	{{> afQuickField name="availableSportsOtherDescription" options="auto"}}
+             	{{> afQuickField name="availableSportsOtherDescription" options="auto" }}
+              <div class="clearfix visible-xs-block"></div>
             {{/if}}
 
             {{#if afFieldValueContains name="availableSports" value="Athletics Field"}}
@@ -42,10 +50,27 @@
             {{/if}}
 	        {{#if afFieldValueContains name="availableSports" value="Other"}}
              	{{> afQuickField name="otherDrillDown" options="auto"}}
-            {{/if}}
+          {{/if}}
+
         </fieldset>
 
    {{/autoForm}}
 
+<!--   {{setSelectedSchoolDoc schoolId}}
+  {{setSelectedDoc schoolId "sports"}}
+  {{autoformType}}
+  {{#autoForm collection="Sports" id="survey" type=autoformType doc=selectedDoc resetOnSuccess=false}}
+         <button class="btn btn-primary btn-back">Back</button>
+          <button type="submit" class="btn btn-primary">Save</button>
+          <fieldset>
+          <legend>Sports Fields</legend>
+          {{#each afFieldNames}}
+            {{> afQuickField name=this options="auto" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+            <div class="clearfix visible-xs-block"></div>
+          {{/each}}        
+
+    </fieldset>
+
+   {{/autoForm}} -->
 
 </template>
