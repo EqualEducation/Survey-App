@@ -1,5 +1,9 @@
 Meteor.subscribe('schools');
 Meteor.subscribe('contactpeople');
+Meteor.subscribe('security');
+Meteor.subscribe('specialneeds');
+Meteor.subscribe('electricity');
+Meteor.subscribe('nutrition');
 
 SimpleSchema.debug = true;
 

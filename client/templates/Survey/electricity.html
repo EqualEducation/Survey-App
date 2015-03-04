@@ -7,15 +7,20 @@
           <button type="submit" class="btn btn-primary">Save</button>
           <fieldset>
           <legend>Electricity</legend>
-             {{> afQuickField name="electricityCondition" options="auto"}}
+             {{> afQuickField name="electricityCondition" options="auto" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+             <div class="clearfix visible-xs-block"></div>
 
-			 {{#unless afFieldValueIs name="electricityCondition" value="There is no power supply"}}
+			 {{#unless afFieldValueIs name="electricityCondition" value="There is no power supply" }}
 		        {{#unless afFieldValueIs name="electricityCondition" value=""}}
 		        	{{> electricity}}
 		        {{/unless}}
 		      {{/unless}}
              
-             {{> afQuickField name="comment" options="auto"}}
+             {{> afQuickField name="comment" options="auto" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+              <div class="clearfix visible-xs-block"></div>
+
+            {{> afQuickField name="school_id" options="auto" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+             <div class="clearfix visible-xs-block"></div>
 
 		      
         </fieldset>
@@ -23,9 +28,11 @@
 </template>
 
 <template name="electricity">
-	{{> afQuickField name="electricitySource" options="auto"}}
+	{{> afQuickField name="electricitySource" options="auto" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
 	{{#if afFieldValueContains name="electricitySource" value="Other"}}
-	  	{{> afQuickField name="electricitySourceOtherDescription" options="auto"}}
+	  	{{> afQuickField name="electricitySourceOtherDescription" options="auto" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+       <div class="clearfix visible-xs-block"></div>
+
     {{/if}}
 </template>
 
