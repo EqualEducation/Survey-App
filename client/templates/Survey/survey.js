@@ -50,7 +50,6 @@ Template.survey6.events({
       Router.go('/survey/survey_sections/'+ schoolId);
       return false;
     }, 
-  
   });
 
 
