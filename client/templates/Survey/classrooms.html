@@ -45,7 +45,7 @@
           <h4 class="modal-title">Add a Classroom</h4>
         </div>
         <div class="modal-body">
-            {{#autoForm collection="Classrooms" id="classrooms" type="insert" resetOnSuccess=true}}
+            {{#autoForm collection="Classrooms" id="classrooms" type="insert" resetOnSuccess=true autosave=true}}
                 {{#each afFieldNames}}
                     {{> afQuickField name=this options="auto" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
                     <div class="clearfix visible-xs-block"></div>
