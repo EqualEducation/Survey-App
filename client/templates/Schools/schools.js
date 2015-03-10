@@ -1,6 +1,5 @@
 Meteor.subscribe("schooldetails");
 
-if (Meteor.isClient) {
 
   Template.schools.events({
       "click .btn-back" : function() {
@@ -17,7 +16,7 @@ AutoForm.hooks({
       },
     }
   });
-}
+
 
 
 

@@ -1,0 +1,30 @@
+<template name="basicLayout">
+  <!-- {{> metaData}} -->
+  {{> header}}
+  <div id="page" class="animated">
+    {{> yield}}
+  </div>
+    <!-- {{> footer}} -->
+
+</template>
+
+<template name="metaData">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fontastic.s3.amazonaws.com/KMscZPbco5cxLZSpmnpaA7/icons.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Raleway:600,800,100,400' rel='stylesheet' type='text/css'>
+    
+    <meta name="fragment" content="!">
+<!--     <link rel="icon"
+        type="image/png"
+        href="/favicons.png"> -->
+</template>
+
+<template name="header">
+    <div class="container">
+    <br />
+
+    <a href="{{pathFor 'home'}}"><img class="center-image" src="/logo.png"/></a>
+        {{> loginButtons}}
+
+</div>
+</template>

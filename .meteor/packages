@@ -17,3 +17,5 @@ fezvrasta:bootstrap-material-design
 jquery
 jquery-ui
 meteorhacks:kadira
+settinghead:auto-nprogress
+multiply:iron-router-progress

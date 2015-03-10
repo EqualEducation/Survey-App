@@ -1,7 +1,6 @@
 Meteor.subscribe('sanitationblocks');
 Meteor.subscribe('sanitation');
 
-if (Meteor.isClient) {
 	Template.survey7.events({
 		  "click .open-modal" : function(e,t) {
 	        // e.preventDefault();
@@ -94,4 +93,3 @@ if (Meteor.isClient) {
 	      }
 	    }
 	});
-}

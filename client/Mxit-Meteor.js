@@ -1,6 +1,5 @@
 
 
-if (Meteor.isClient) {
 
 	Handlebars.registerHelper('setSelectedSchoolDoc',function(schoolId){
 	    Session.set("selectedSchoolId", schoolId);
@@ -113,12 +112,4 @@ if (Meteor.isClient) {
 	});
 
 
-
-}
-
-if (Meteor.isServer) {
-  Meteor.startup(function () {
-    // code to run on server at startup
-  });
-}
 
