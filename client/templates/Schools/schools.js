@@ -12,7 +12,7 @@ AutoForm.hooks({
       Router.go('/');
       },
     }
-  });
+});
 
 
 

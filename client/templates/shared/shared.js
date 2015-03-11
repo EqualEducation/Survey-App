@@ -1,5 +1,9 @@
 Handlebars.registerHelper('setSelectedSchoolDoc',function(schoolId){
     Session.set("selectedSchoolId", schoolId);
+    var school = Schools.findOne({'_id': schoolId});
+    if (school) {
+ 	   Session.set("selectedSchoolName", school.schoolDetails.INSTITUTION_NAME);
+	}
 });
 
 Handlebars.registerHelper('selectedSchoolDoc',function(){
@@ -19,11 +23,8 @@ Handlebars.registerHelper('blocks',function(){
 	return SanitationBlocks.find();
 });
 
-Handlebars.registerHelper('schoolNameWithId',function(schoolId){
-	var school = Schools.findOne(schoolId);
-	if (school) {
-		return school.schoolDetails.INSTITUTION_NAME;
-	}
+Handlebars.registerHelper('schoolName',function(schoolId){
+	return Session.get("selectedSchoolName");
 });
 
 Handlebars.registerHelper('isEqual', function(string1, string2) {

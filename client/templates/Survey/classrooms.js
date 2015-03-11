@@ -1,4 +1,3 @@
-
 Template.survey11.events({
     "click .btn-back" : function() {
       var schoolId = Session.get("selectedSchoolId");
