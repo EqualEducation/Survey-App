@@ -15,7 +15,7 @@ accounts-ui
 accounts-password
 fezvrasta:bootstrap-material-design
 jquery
-jquery-ui
 meteorhacks:kadira
 settinghead:auto-nprogress
 multiply:iron-router-progress
+mrt:jquery-ui

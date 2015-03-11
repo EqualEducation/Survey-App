@@ -37,7 +37,6 @@ iron:middleware-stack@1.0.7
 iron:router@1.0.7
 iron:url@1.0.7
 jquery@1.11.3
-jquery-ui@0.0.0
 json@1.0.2
 launch-screen@1.0.1
 less@1.0.12
@@ -55,6 +54,7 @@ momentjs:moment@2.8.4
 mongo@1.0.11
 mongo-livedata@1.0.7
 mrt:jquery-csv@0.7.1
+mrt:jquery-ui@1.9.2
 mrt:nprogress@0.1.0
 multiply:iron-router-progress@1.0.1
 npm-bcrypt@0.7.7
