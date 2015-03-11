@@ -1,14 +1,11 @@
-Meteor.subscribe('sanitationblocks');
-Meteor.subscribe('sanitation');
-
-	Template.survey7.events({
+Template.survey7.events({
 		  "click .open-modal" : function(e,t) {
 	        // e.preventDefault();
 	        $("#modal_block").modal("show");
 	    },
 	    "click .btn-back" : function() {
 	      var schoolId = Session.get("selectedSchoolId");
-	      Router.go('/survey/survey_sections/'+ schoolId);
+	      Router.go('/survey/'+ schoolId);
 	      return false;
 	    }, 
 	    "click .btn-modal" : function() {
@@ -50,29 +47,6 @@ Meteor.subscribe('sanitation');
 	    }
   	});
 
-  	// Template.more_info.helpers({
-  	// 	autoformType: function () {
-  	// 		if (Session.get('selectedSanitationDoc') != null) {
-  	// 			return "update";
-  	// 		} else {
-  	// 			return "insert";
-  	// 		}
-  	// 	}
-  	// })
-
-
-	// Handlebars.registerHelper('setSelectedSanitationDoc',function(schoolId){
-	// 	var sanitation = Sanitation.findOne({'school_id' : schoolId});
-	// 	console.log(sanitation);
- // 	    Session.set("selectedSanitationDoc", sanitation);
-	// });
-
-	// Handlebars.registerHelper('selectedSanitationDoc', function() {
-	// 	return Session.get('selectedSanitationDoc');
-	// });
-
-
-	AutoForm.setDefaultTemplate('bootstrap3-horizontal');
 
 	AutoForm.hooks({
 	  blocks: {

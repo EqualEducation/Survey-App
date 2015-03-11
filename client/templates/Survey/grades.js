@@ -1,6 +1,3 @@
-Meteor.subscribe("schools");
-Meteor.subscribe("grades");
-
 
 	Template.survey2.rendered = function() {
 		$.material.init();
@@ -13,7 +10,7 @@ Meteor.subscribe("grades");
 	Template.survey2.events({
     "click .btn-back" : function() {
       var schoolId = Session.get("selectedSchoolId");
-      Router.go('/survey/survey_sections/'+ schoolId);
+      Router.go('/survey/'+ schoolId);
       return false;
     },
     "click .accordion-section-title" : function(e, template) {

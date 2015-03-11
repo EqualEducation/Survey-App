@@ -2,15 +2,15 @@
 <template name="survey6">
 	 {{setSelectedSchoolDoc schoolId}}
   {{setSelectedDoc schoolId "security"}}
-  {{#autoForm collection="Security" id="survey" type=autoformType doc=selectedDoc resetOnSuccess=false autosave=true}}
+  {{#autoForm collection="Security" id="survey6" type=autoformType doc=selectedDoc resetOnSuccess=false autosave=true}}
   	<button class="btn btn-primary btn-back">Back</button>
 	<button type="submit" class="btn btn-primary">Save</button>
 		<fieldset>
 	  		<legend>Perimeter Security</legend>
-       		{{> afQuickField name="safetyLevel" options="auto" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+       		{{> afQuickField name="safetyLevel" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
                     <div class="clearfix visible-xs-block"></div>
 
-       		{{> afQuickField name="hasFence" options="auto" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+       		{{> afQuickField name="hasFence" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
                     <div class="clearfix visible-xs-block"></div>
 
 
@@ -18,12 +18,10 @@
 				{{> security}}
             {{/if}}
 
-       		<!-- {{> afQuickField name="hasBurglarBars" options="auto"}} -->
-       		<!-- {{> afQuickField name="hasSecurityGaurd" options="auto"}} -->
-       		{{> afQuickField name="comment" options="auto" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+       		{{> afQuickField name="comment" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
                     <div class="clearfix visible-xs-block"></div>
 
-          {{> afQuickField name="school_id" options="auto" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+          {{> afQuickField name="school_id" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
                     <div class="clearfix visible-xs-block"></div>
 
 
@@ -32,13 +30,9 @@
 </template>
 
 <template name="security">
-	{{> afQuickField name="fenceHasHoles" options="auto" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+	{{> afQuickField name="fenceHasHoles" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
             <div class="clearfix visible-xs-block"></div>
-
-	{{> afQuickField name="fenceIsCorrectHeight" options="auto" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
-            <div class="clearfix visible-xs-block"></div>
-
-	{{> afQuickField name="conditionOfFence" options="auto" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+	{{> afQuickField name="conditionOfFence" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
             <div class="clearfix visible-xs-block"></div>
 
 </template>

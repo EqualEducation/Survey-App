@@ -2,7 +2,7 @@
 <template name="survey5">
 	{{setSelectedSchoolDoc schoolId}}
   {{setSelectedDoc schoolId "labs"}}
-  {{#autoForm collection="Labs" id="survey" type=autoformType doc=selectedDoc resetOnSuccess=false autosave=true}}
+  {{#autoForm collection="Labs" id="survey5" type=autoformType doc=selectedDoc resetOnSuccess=false autosave=true}}
         <button class="btn btn-primary btn-back">Back</button>
         <button type="submit" class="btn btn-primary">Save</button>
 		    <fieldset>
@@ -61,5 +61,5 @@
 </template>
 
 <template name="lab_table">
-  {{> afQuickField name=this.name label=false options="auto"}}
+  {{> afQuickField name=this.name label=false}}
 </template>

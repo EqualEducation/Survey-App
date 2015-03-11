@@ -1,13 +1,13 @@
 <template name="survey13">
   {{setSelectedSchoolDoc schoolId }}
   {{setSelectedDoc schoolId "electricity"}}
-  {{#autoForm collection="Electricity" id="survey" type=autoformType doc=selectedDoc resetOnSuccess=false autosave=true}}
+  {{#autoForm collection="Electricity" id="survey13" type=autoformType doc=selectedDoc resetOnSuccess=false autosave=true}}
 
   			<button class="btn btn-primary btn-back">Back</button>
           <button type="submit" class="btn btn-primary">Save</button>
           <fieldset>
           <legend>Electricity</legend>
-             {{> afQuickField name="electricityCondition" options="auto" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+             {{> afQuickField name="electricityCondition" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
              <div class="clearfix visible-xs-block"></div>
 
 			 {{#unless afFieldValueIs name="electricityCondition" value="There is no power supply" }}
@@ -16,10 +16,10 @@
 		        {{/unless}}
 		      {{/unless}}
              
-             {{> afQuickField name="comment" options="auto" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+             {{> afQuickField name="comment"  template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
               <div class="clearfix visible-xs-block"></div>
 
-            {{> afQuickField name="school_id" options="auto" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+            {{> afQuickField name="school_id" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
              <div class="clearfix visible-xs-block"></div>
 
 		      
@@ -28,9 +28,9 @@
 </template>
 
 <template name="electricity">
-	{{> afQuickField name="electricitySource" options="auto" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+	{{> afQuickField name="electricitySource" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
 	{{#if afFieldValueContains name="electricitySource" value="Other"}}
-	  	{{> afQuickField name="electricitySourceOtherDescription" options="auto" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+	  	{{> afQuickField name="electricitySourceOtherDescription" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
        <div class="clearfix visible-xs-block"></div>
 
     {{/if}}

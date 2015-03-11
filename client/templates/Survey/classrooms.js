@@ -1,9 +1,8 @@
-Meteor.subscribe('classrooms');
 
 Template.survey11.events({
     "click .btn-back" : function() {
       var schoolId = Session.get("selectedSchoolId");
-      Router.go('/survey/survey_sections/'+ schoolId);
+      Router.go('/survey/'+ schoolId);
       return false;
     }, 
     "click .open-modal" : function(e,t) {

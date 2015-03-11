@@ -2,12 +2,12 @@
 <template name="survey4">
   {{setSelectedSchoolDoc schoolId}}
   {{setSelectedDoc schoolId "libraries"}}
-  {{#autoForm collection="Libraries" id="survey" type=autoformType doc=selectedDoc resetOnSuccess=false autosave=true}}
+  {{#autoForm collection="Libraries" id="survey4" type=autoformType doc=selectedDoc resetOnSuccess=false autosave=true}}
     <button class="btn btn-primary btn-back">Back</button>
     <button type="submit" class="btn btn-primary">Save</button>
     <fieldset>
       <legend>Library & Media Centre</legend>
-      {{> afQuickField name="hasLibrary" options="auto"}}
+      {{> afQuickField name="hasLibrary"}}
 
       {{#unless afFieldValueIs name="hasLibrary" value="No library"}}
         {{#unless afFieldValueIs name="hasLibrary" value=""}}
@@ -15,8 +15,8 @@
         {{/unless}}
       {{/unless}}
 
-      {{> afQuickField name="comment" options="auto"}}
-      {{> afQuickField name="school_id" options="auto"}}
+      {{> afQuickField name="comment"}}
+      {{> afQuickField name="school_id"}}
 
     </fieldset>
 
@@ -24,11 +24,11 @@
 </template>
 
 <template name="libraries">
-	{{> afQuickField name="librarians" options="auto"}}
-	{{> afQuickField name="hasComputerTracking" options="auto"}}
-	{{> afQuickField name="hasComputerForGeneralUse" options="auto"}}
-	{{> afQuickField name="totalNumberOfComputers" options="auto"}}
-	{{> afQuickField name="totalNumberOfComputersThatConnectToTheInternet" options="auto"}}
-	{{> afQuickField name="hasBooks" options="auto"}}
-	{{> afQuickField name="hasFictionSection" options="auto"}}
+	{{> afQuickField name="librarians"}}
+	{{> afQuickField name="hasComputerTracking"}}
+	{{> afQuickField name="hasComputerForGeneralUse"}}
+	{{> afQuickField name="totalNumberOfComputers"}}
+	{{> afQuickField name="totalNumberOfComputersThatConnectToTheInternet"}}
+	{{> afQuickField name="hasBooks"}}
+	{{> afQuickField name="hasFictionSection"}}
 </template>

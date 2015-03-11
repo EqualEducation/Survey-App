@@ -1,12 +1,10 @@
 <template name="schools">
 
-        <!--     {{> quickForm  collection="Schools" id="insertSchoolForm" type="insert" resetOnSuccess=false template="bootstrap3-horizontal" label-class="col-sm-3" input-col-class="col-sm-9"}} -->
-
 {{#autoForm collection="Schools" id="insertSchoolForm" type="insert" resetOnSuccess=false}}
     <fieldset>
       <legend>Add a School</legend>
       {{#each afFieldNames name="schoolDetails"}}
-            {{> afQuickField name=this options="auto" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+            {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
           <div class="clearfix visible-xs-block"></div>
           <br />
       {{/each}}

@@ -1,5 +1,6 @@
 
 <template name="survey7">
+   {{setSelectedSchoolDoc schoolId }}
   {{setSelectedDoc schoolId "sanitation"}}
   <h3>Water & Sanitation</h3>
   <button class="btn btn-primary btn-back">Back</button>
@@ -26,13 +27,13 @@
 </template>
 
 <template name="more_info">
-  {{#autoForm collection="Sanitation" id="survey" type=autoformType doc=selectedDoc resetOnSuccess=false autosave=true}}
+  {{#autoForm collection="Sanitation" id="survey7" type=autoformType doc=selectedDoc resetOnSuccess=false autosave=true}}
       <button type="submit" class="btn btn-primary">Save</button>
         {{#each afFieldNames}}
-          {{#if isEqual this "waterSupply"}}
-            {{> afQuickField name=this options="auto"}}
+          {{#if isEqual this.name "waterSupply"}}
+            {{> afQuickField name=this.name}}
           {{else}}
-            {{> afQuickField name=this options="auto" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+            {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
           {{/if}}
           <div class="clearfix visible-xs-block"></div>
           <br />
@@ -82,14 +83,14 @@
         <div class="modal-body">
             {{#autoForm collection="SanitationBlocks" id="blocks" type="insert" resetOnSuccess=true autosave=true}}
                 {{#each afFieldNames}}
-                    {{#unless isEqual this "school_id"}}
-                      {{> afQuickField name=this options="auto" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+                    {{#unless isEqual this.name "school_id"}}
+                      {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
                     {{/unless}}
                     <div class="clearfix visible-xs-block"></div>
                     <br />
                 {{/each}}
 
-               {{> afQuickField name="school_id" options="auto" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+               {{> afQuickField name="school_id" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
 
                 <button type="submit" class="btn btn-primary">Save</button>
             {{/autoForm}}
