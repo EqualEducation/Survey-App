@@ -1,4 +1,9 @@
 if (Meteor.isServer) {
+
+  Meteor.publish("schoolnames", function () {
+    return Schools.find({}, {'schoolDetails.INSTITUTION_NAME' : 1});
+  });
+
   Meteor.publish("schools", function () {
     return Schools.find();
   });

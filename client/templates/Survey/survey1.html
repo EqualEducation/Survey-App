@@ -1,10 +1,7 @@
 
 <template name="survey">
-		{{#if this.schoolId}}
-			<h2>Survey for {{schoolNameWithId this.schoolId}}</h2>
-		{{else}}
-			<h2>Survey</h2>
-		{{/if}}
+		{{setSelectedSchoolDoc schoolId}}
+
 		
 		{{#if isEqual this.surveySection 'survey_sections'}}
 			{{>  section_selection schoolId=this.schoolId }}
@@ -85,14 +82,15 @@
 
  </template>
 
-
 <template name="surveyTitle">
-{{#if this.schoolId}}
-	<p>Survey for {{schoolNameWithId this.schoolId}}</p>
-{{else}}
-	<p>Survey</p>
-{{/if}}
+	{{this.schoolId}}
+	{{#if this.schoolId}}
+		<h2>Survey for </h2>
+	{{else}}
+	{{/if}}
 </template>
+
+
 
 
 

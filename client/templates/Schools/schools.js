@@ -1,7 +1,4 @@
-Meteor.subscribe("schooldetails");
-
-
-  Template.schools.events({
+Template.schools.events({
       "click .btn-back" : function() {
         Router.go('/');
         return false;
