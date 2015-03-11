@@ -1,16 +1,18 @@
 <template name="home">
+	 <page class="application">
+	 	  <div class="content">
+<!-- 
+
 	<div class="container">
 		<div class="align-content-center">
-
+ -->
 
 			<!-- {{#if currentUser}} -->
-				<h2>What would you like to do?</h2>
-				<a href="{{pathFor 'schools'}}" class="btn btn-primary full-width">Add a School</a>
+				<a href="/schools/add" class="btn btn-primary full-width">Add a School</a>
 				<br />
-				<a href="{{pathFor 'upload'}}" class="btn btn-primary full-width">Upload Many Schools</a>
+				<a href="" class="btn btn-primary full-width">Upload Many Schools</a>
 				<br />
-
-				  <a href="/survey/survey_schools" class="btn btn-primary full-width">Update a School Profile</a>
+				<a href="/schools/select" class="btn btn-primary full-width">Update a School Profile</a>
 
 				<br />
 <!-- 				<a href="{{pathFor 'view' }}" class="btn btn-primary full-width">View a School Profile for Printing</a>
@@ -22,5 +24,9 @@
 			{{/if}} -->
 
 		</div>
-	</div>
+	</page>
+</template>
+
+<template name="hometitle">
+	What would you like to do?
 </template>

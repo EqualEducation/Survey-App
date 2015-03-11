@@ -1,18 +1,12 @@
 
 <template name="survey">
-	<div class="container">
 		{{#if this.schoolId}}
 			<h2>Survey for {{schoolNameWithId this.schoolId}}</h2>
 
 		{{else}}
 			<h2>Survey</h2>
-			{{this.data}}
 		{{/if}}
 		
-		{{#if isEqual this.surveySection 'survey_schools'}}
-			{{>  school_selection }}
-		{{/if}}
-
 		{{#if isEqual this.surveySection 'survey_sections'}}
 			{{>  section_selection schoolId=this.schoolId }}
 		{{/if}}
@@ -68,63 +62,28 @@
 		{{#if isEqual this.surveySection 'survey13'}}
 			{{>  survey13 schoolId=this.schoolId }}
 		{{/if}}
-
-
-	</div>     
 </template>
 
-<template name="school_selection">
-		{{> survey_schools state=state}}
-</template>
 
-<template name="survey_schools">
-	<div class="container">
-		<div class="container">
-			<form class="form-horizontal select_school">
-				<div class="form-group">
-					<label class="col-lg-2 control-label">Select a school</label>
-					<div class="col-lg-10">
-						<div class="form-control-wrapper">
-							<select name="selected_school" class="form-control"  onChange="window.location.href=this.value">
-								<option value="">Select...</option>
-									{{#each schools}}
-											{{> survey_school}}
-									{{/each}}
-							</select>
-							<span class="material-input"></span>
-						</div>
-						<br> 
-					</div>
-				</div>
-			</form>
-		</div>
-	</div>
-</template>
-
-<template name="survey_school">
-		  	<option value="{{pathFor 'survey' surveySection='survey_sections'}}">{{schoolDetails.INSTITUTION_NAME}}</option>
-</template>
 
  <template name="section_selection">
-      <div class="align-content-center">
       
       <h3>Please choose a section to update</h3>
       {{setSelectedSchoolDoc schoolId}}
-      <a href="{{pathFor 'survey' surveySection='survey8' _id =schoolId}}" class="btn btn-primary btn-dashboard">School Details</a>
-      <a href="{{pathFor 'survey' surveySection='survey1' _id =schoolId}}" class="btn btn-primary btn-dashboard">Contact Person Details</a>
-      <a href="{{pathFor 'survey' surveySection='survey2' _id =schoolId}}" class="btn btn-primary btn-dashboard">Grade Demographics</a>
-      <a href="{{pathFor 'survey' surveySection='survey3' _id =schoolId}}" class="btn btn-primary btn-dashboard">Sports Fields</a>
-      <a href="{{pathFor 'survey' surveySection='survey4' _id =schoolId}}" class="btn btn-primary btn-dashboard">Library & Media Centre</a>
-      <a href="{{pathFor 'survey' surveySection='survey5' _id =schoolId}}" class="btn btn-primary btn-dashboard">Science Labs</a>
-      <a href="{{pathFor 'survey' surveySection='survey6' _id =schoolId}}" class="btn btn-primary btn-dashboard">Perimeter Security</a>
-      <a href="{{pathFor 'survey' surveySection='survey7' _id =schoolId}}" class="btn btn-primary btn-dashboard">Water & Sanitation</a>      
-      <a href="{{pathFor 'survey' surveySection='survey9' _id =schoolId}}" class="btn btn-primary btn-dashboard">Special Needs</a>
-      <a href="{{pathFor 'survey' surveySection='survey10' _id =schoolId}}" class="btn btn-primary btn-dashboard">School Environment</a>
-      <a href="{{pathFor 'survey' surveySection='survey11' _id =schoolId}}" class="btn btn-primary btn-dashboard">Classrooms</a>
-      <a href="{{pathFor 'survey' surveySection='survey12' _id =schoolId}}" class="btn btn-primary btn-dashboard">Nutrition</a>
-      <a href="{{pathFor 'survey' surveySection='survey13' _id =schoolId}}" class="btn btn-primary btn-dashboard">Electricity</a>
+      <a href="{{pathFor 'surveySection' surveySection='survey8' _id =schoolId}}" class="btn btn-primary btn-dashboard">School Details</a>
+      <a href="{{pathFor 'surveySection' surveySection='survey1' _id =schoolId}}" class="btn btn-primary btn-dashboard">Contact Person Details</a>
+      <a href="{{pathFor 'surveySection' surveySection='survey2' _id =schoolId}}" class="btn btn-primary btn-dashboard">Grade Demographics</a>
+      <a href="{{pathFor 'surveySection' surveySection='survey3' _id =schoolId}}" class="btn btn-primary btn-dashboard">Sports Fields</a>
+      <a href="{{pathFor 'surveySection' surveySection='survey4' _id =schoolId}}" class="btn btn-primary btn-dashboard">Library & Media Centre</a>
+      <a href="{{pathFor 'surveySection' surveySection='survey5' _id =schoolId}}" class="btn btn-primary btn-dashboard">Science Labs</a>
+      <a href="{{pathFor 'surveySection' surveySection='survey6' _id =schoolId}}" class="btn btn-primary btn-dashboard">Perimeter Security</a>
+      <a href="{{pathFor 'surveySection' surveySection='survey7' _id =schoolId}}" class="btn btn-primary btn-dashboard">Water & Sanitation</a>      
+      <a href="{{pathFor 'surveySection' surveySection='survey9' _id =schoolId}}" class="btn btn-primary btn-dashboard">Special Needs</a>
+      <a href="{{pathFor 'surveySection' surveySection='survey10' _id =schoolId}}" class="btn btn-primary btn-dashboard">School Environment</a>
+      <a href="{{pathFor 'surveySection' surveySection='survey11' _id =schoolId}}" class="btn btn-primary btn-dashboard">Classrooms</a>
+      <a href="{{pathFor 'surveySection' surveySection='survey12' _id =schoolId}}" class="btn btn-primary btn-dashboard">Nutrition</a>
+      <a href="{{pathFor 'surveySection' surveySection='survey13' _id =schoolId}}" class="btn btn-primary btn-dashboard">Electricity</a>
 
-    </div>
  </template>
 
 

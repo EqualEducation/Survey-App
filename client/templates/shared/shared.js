@@ -62,6 +62,7 @@
 			// session_item_name = "selectedContactPersonDoc";
 		}
 		else if (collection_name === "electricity") {
+			console.log('ELECTRICITY');
 			doc = Electricity.findOne({'school_id' : schoolId});
 			// session_item_name = "selectedElectricityDoc";
 		}

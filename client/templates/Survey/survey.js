@@ -10,7 +10,7 @@ SimpleSchema.debug = true;
 Template.survey1.events({
     "click .btn-back" : function() {
       var schoolId = Session.get("selectedSchoolId");
-      Router.go('/survey/survey_sections/'+ schoolId);
+      Router.go('/survey/'+ schoolId);
       return false;
     }, 
   
@@ -19,7 +19,7 @@ Template.survey1.events({
 Template.survey3.events({
     "click .btn-back" : function() {
       var schoolId = Session.get("selectedSchoolId");
-      Router.go('/survey/survey_sections/'+ schoolId);
+      Router.go('/survey/'+ schoolId);
       return false;
     }, 
     
@@ -28,7 +28,7 @@ Template.survey3.events({
 Template.survey4.events({
     "click .btn-back" : function() {
       var schoolId = Session.get("selectedSchoolId");
-      Router.go('/survey/survey_sections/'+ schoolId);
+      Router.go('/survey/'+ schoolId);
       return false;
     }, 
     
@@ -37,7 +37,7 @@ Template.survey4.events({
 Template.survey5.events({
     "click .btn-back" : function() {
       var schoolId = Session.get("selectedSchoolId");
-      Router.go('/survey/survey_sections/'+ schoolId);
+      Router.go('/survey/'+ schoolId);
       return false;
     }, 
    
@@ -56,7 +56,7 @@ Template.survey6.events({
 Template.survey8.events({
     "click .btn-back" : function() {
       var schoolId = Session.get("selectedSchoolId");
-      Router.go('/survey/survey_sections/'+ schoolId);
+      Router.go('/survey/'+ schoolId);
       return false;
     }, 
    
@@ -65,7 +65,7 @@ Template.survey8.events({
 Template.survey9.events({
     "click .btn-back" : function() {
       var schoolId = Session.get("selectedSchoolId");
-      Router.go('/survey/survey_sections/'+ schoolId);
+      Router.go('/survey/'+ schoolId);
       return false;
     }, 
   });
@@ -73,7 +73,7 @@ Template.survey9.events({
 Template.survey10.events({
     "click .btn-back" : function() {
       var schoolId = Session.get("selectedSchoolId");
-      Router.go('/survey/survey_sections/'+ schoolId);
+      Router.go('/survey/'+ schoolId);
       return false;
     }, 
   });
@@ -83,7 +83,7 @@ Template.survey10.events({
 Template.survey12.events({
     "click .btn-back" : function() {
       var schoolId = Session.get("selectedSchoolId");
-      Router.go('/survey/survey_sections/'+ schoolId);
+      Router.go('/survey/'+ schoolId);
       return false;
     }, 
   });
@@ -91,7 +91,7 @@ Template.survey12.events({
 Template.survey13.events({
     "click .btn-back" : function() {
       var schoolId = Session.get("selectedSchoolId");
-      Router.go('/survey/survey_sections/'+ schoolId);
+      Router.go('/survey/'+ schoolId);
       return false;
     }, 
   });
@@ -162,11 +162,11 @@ Template.block_details.rendered  = function() {
 
 AutoForm.hooks({
   survey: {
-      // onSuccess: function(operation, result, template) {  
-      //   console.log("Succes result: " + result);
-      //   console.log("Success operation: " + operation);
-      //   alert('School has been updated');
-      // },
+      onSuccess: function(operation, result, template) {  
+        console.log("Succes result: " + result);
+        console.log("Success operation: " + operation);
+        alert('School has been updated');
+      },
       onError: function(operation, error, template) {
         alert('Could not save the form. Please check all fields are filled in correctly' + error);
 

@@ -1,16 +1,47 @@
 <template name="schools">
-	<div class="container">
-	  {{#autoForm collection="Schools" id="insertSchoolForm" type="insert" autosave=true resetOnSuccess=false}}
+
+        <!--     {{> quickForm  collection="Schools" id="insertSchoolForm" type="insert" resetOnSuccess=false template="bootstrap3-horizontal" label-class="col-sm-3" input-col-class="col-sm-9"}} -->
+
+{{#autoForm collection="Schools" id="insertSchoolForm" type="insert" resetOnSuccess=false}}
     <fieldset>
       <legend>Add a School</legend>
-		{{#each afFieldNames name="schoolDetails"}}
+      {{#each afFieldNames name="schoolDetails"}}
             {{> afQuickField name=this options="auto" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
           <div class="clearfix visible-xs-block"></div>
           <br />
-    	{{/each}}
+      {{/each}}
     </fieldset>
         <button class="btn btn-primary btn-back">Back</button>
-    	<!-- <button type="submit" class="btn btn-primary">Save</button> -->
+      <button type="submit" class="btn btn-primary">Save</button>
   {{/autoForm}}
-	</div>
+</template>
+
+
+
+<template name="school_selection">
+    {{> survey_schools}}
+</template>
+
+<template name="survey_schools">
+      <form class="form-horizontal select_school">
+        <div class="form-group">
+          <label class="col-lg-2 control-label">Select a school</label>
+          <div class="col-lg-10">
+            <div class="form-control-wrapper">
+              <select name="selected_school" class="form-control"  onChange="window.location.href=this.value">
+                <option value="">Select...</option>
+                  {{#each this}}
+                      {{> survey_school}}
+                  {{/each}}
+              </select>
+              <span class="material-input"></span>
+            </div>
+            <br> 
+          </div>
+        </div>
+      </form>
+</template>
+
+<template name="survey_school">
+        <option value="{{pathFor 'survey'}}">{{schoolDetails.INSTITUTION_NAME}}</option>
 </template>

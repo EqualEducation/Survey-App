@@ -1,0 +1,58 @@
+
+
+<template name="basicLayout">
+  {{> metaData}}
+
+  <header>
+    {{> header}}
+  </header>
+  <div id="page" class="animated">
+    <page class="application">
+      <div class="content">
+        {{> yield}}
+      </div>
+    </page>
+  </div>
+
+  <footer>
+    {{> footer}}
+  </footer>
+</template>
+
+
+<template name="metaData">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fontastic.s3.amazonaws.com/KMscZPbco5cxLZSpmnpaA7/icons.css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Raleway:600,800,100,400' rel='stylesheet' type='text/css'>
+  <meta name="fragment" content="!">
+  <link rel="icon" type="image/png" href="/favicon.png">
+</template>
+
+<template name="header" >
+    <a href="/"><img class="center-image" src="/logo.png"/></a>
+    <h1 class="center-text">{{> yield "title"}}</h1>
+</template>
+
+<template name="footer">
+</template>
+
+<template name="Page">
+  <p>
+    <!-- {{post_content}} -->
+    Page content
+  </p>
+</template>
+
+
+
+<template name="PageTitle">
+  Some post specific title content.
+</template>
+
+<template name="loading">
+   <page class="application">
+      <div class="content">
+          <p>Loading...</p>
+      </div>
+  </page>
+</template>
