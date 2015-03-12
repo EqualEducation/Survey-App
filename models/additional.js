@@ -1,4 +1,5 @@
-//test
+//CArla comment
+
 Additional = new Mongo.Collection("additional");
 
 AdditionalInfoSchema = new SimpleSchema({
@@ -6,10 +7,10 @@ AdditionalInfoSchema = new SimpleSchema({
     label: "Which of the following does the school have? (tick all that apply):",
     optional: true,
     type: [String],
-    autoform:
+    autoform: 
     {
       type: "select-checkbox",
-      options: function ()
+      options: function () 
       {
         return [
       {label: "Telephone facilities", value: "Telephone facilities"},
@@ -24,10 +25,10 @@ AdditionalInfoSchema = new SimpleSchema({
     label: "Is ANY PART OF the school built out of any of the following materials? (tick all that apply)",
      optional: true,
     type: [String],
-    autoform:
+    autoform: 
     {
       type: "select-checkbox",
-      options: function ()
+      options: function () 
       {
         return [
       {label: "Mud", value: "Mud"},
@@ -41,10 +42,10 @@ AdditionalInfoSchema = new SimpleSchema({
     label: "Is THE ENTIRE school built out of any of the following materials? (tick all that apply)",
     optional: true,
     type: [String],
-    autoform:
+    autoform: 
     {
       type: "select-checkbox",
-      options: function ()
+      options: function () 
       {
         return [
       {label: "Mud", value: "Mud"},
@@ -58,17 +59,17 @@ AdditionalInfoSchema = new SimpleSchema({
   //   label: "Which of the following does the school have? (tick all that apply)",
   //   optional: true,
   //   type: [String],
-  //   autoform:
+  //   autoform: 
   //   {
   //     type: "select-checkbox",
-  //     options: function ()
+  //     options: function () 
   //     {
   //       return [
   //     {label: "Principal’s office", value: "Principal’s office"},
   //     {label: "Deputy principal’s office", value: "Deputy principal’s office"},
   //     {label: "Reception area", value: "Reception area"},
   //     {label: "Storage room", value: "Storage room"},
-  //     {label: "Strong room", value: "Strong room"},
+  //     {label: "Strong room", value: "Strong room"},      
   //     {label: "Counselling room", value: "Counselling room"},
   //     {label: "Sick room", value: "Sick room"},
   //     {label: "Staff kitchenette", value: "Staff kitchenette"},
@@ -123,7 +124,7 @@ AdditionalInfoSchema = new SimpleSchema({
   },
   school_id: {
     type: String,
-    defaultValue: function(){
+    defaultValue: function(){ 
       return Session.get('selectedSchoolId');
     },
     autoform: {
