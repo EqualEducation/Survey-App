@@ -5,17 +5,28 @@ ContactDetailsSchema = new SimpleSchema({
     type: String,
     label: "Contact Name",
     optional: true,
+    autoform: {
+      rows: 1,
+
+    },
   },
   phoneNumber: {
     type: String,
     optional: true,
     label: "Contact Number",
-    regEx: /^[0-9]{10}$/
+    regEx: /^[0-9]{10}$/,
+    autoform: {
+      rows: 1,
+    },
   },
   email: {
     type: String,
     label: "Contact Email",
     optional: true,
+    autoform: {
+      rows: 1,
+
+    },
 
   },
   comment: {

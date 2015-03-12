@@ -84,7 +84,10 @@ SecuritySchema = new SimpleSchema({
   comment: {
     type: String,
     optional: true,
-    label: "Comment"
+    label: "Comment",
+    autoform: {
+      rows: 4,
+    },
 
   },
   school_id: {

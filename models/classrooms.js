@@ -5,6 +5,9 @@ ClassroomsSchema = new SimpleSchema ({
     label: "Class name",
     type: String,
     optional: true,
+    autoform: {
+      rows: 1,
+    },
   },
   numberOfStudents: {
     label: "Number of students in classroom",
@@ -14,30 +17,6 @@ ClassroomsSchema = new SimpleSchema ({
       type: "text"
     }
   },
-  // totalNumberOfLightFittings: {
-  //   label: "Total number of light fittings in classroom",
-  //   type: Number,
-  //   optional: true,
-  //   autoform: {
-  //     type: "text"
-  //   }
-  // },
-  // totalNumberOfWorkingLightbulbs: {
-  //   label: "Total number of working lightbulbs in classroom",
-  //   type: Number,
-  //   optional: true,
-  //   autoform: {
-  //     type: "text"
-  //   }
-  // },
-  // totalNumberOfBrokenLightbulbs: {
-  //   label: "Total number of broken lightbulbs in classroom",
-  //   type: Number,
-  //   optional: true,
-  //   autoform: {
-  //     type: "text"
-  //   }
-  // },
   totalNumberOfWindows: {
     label: "Total number of windows in classroom",
     type: Number,
@@ -137,6 +116,9 @@ ClassroomsSchema = new SimpleSchema ({
     type: String,
     optional: true,
     label: "Comment",
+    autoform: {
+      rows: 4,
+    },
   },
     school_id: {
       type: String,

@@ -55,22 +55,6 @@ accessToSoap: {
       type: "text"
     }
   },
- // totalNumberOfToiletBlockTaps: {
- //    optional: true,
- //    type: Number,
- //    label: "Total number of taps outside toilet blocks",
- //    autoform: {
- //      type: "text"
- //    }
- //  },
- //  totalNumberOfWorkingTaps: {
- //    optional: true,
- //    type: Number,
- //    label: "Total number of working taps outside toilet blocks",
- //    autoform: {
- //      type: "text"
- //    }
- //  },
   disabledToilets: {
   label: "How many toilets were there that were big enough for a wheelchair?",
    optional: true,
@@ -127,40 +111,13 @@ waterSupply: {
       }
     }
   },
-  // isWaterDrinkable: {
-  //   label: "Is the water supply sufficient for drinking?",
-  //  optional: true,
-  //   type: Boolean,
-  //     autoform: {
-  //       type: "boolean-radios",
-  //       trueLabel: "Yes",
-  //       falseLabel: "No",
-  //     }
-  // },
-  // isWaterEnoughForFoodPreparation: {
-  //   label: "If there are people preparing food on school grounds, is there enough water for food preparation?",
-  //  optional: true,
-  //   type: Boolean,
-  //     autoform: {
-  //       type: "boolean-radios",
-  //       trueLabel: "Yes",
-  //       falseLabel: "No",
-  //     }
-  // },
-  // isWaterEnoughForHygiene: {
-  //   label: "Is there enough for water for personal hygiene?",
-  //  optional: true,
-  //   type: Boolean,
-  //     autoform: {
-  //       type: "boolean-radios",
-  //       trueLabel: "Yes",
-  //       falseLabel: "No",
-  //     }
-  // },
   comment: {
   type: String,
   optional: true,
-  label: "Comment"
+  label: "Comment",
+  autoform: {
+      rows: 4,
+    },
   },
   school_id: {
     type: String,

@@ -6,6 +6,9 @@ SanitationBlocksSchema = new SimpleSchema({
     label: "Block Name",
     type: String,
     optional: true,
+    autoform: {
+      rows: 1,
+    },
   },
   gender: {
     label: "Please select",

@@ -21,20 +21,13 @@ ScienceLabDrillDownSchema = new SimpleSchema({
         falseLabel: "No",
       }
   },
-  // hasSafeStorage: {
-  //   label: "Is there a safe and lockable storage space for lab equipment?",
-  //   type: Boolean,
-  //     optional: true,
-  //     autoform: {
-  //       type: "boolean-radios",
-  //       trueLabel: "Yes",
-  //       falseLabel: "No",
-  //     }
-  // },
   comment: {
     type: String,
     optional: true,
-    label: "Comment"
+    label: "Comment",
+    autoform: {
+      rows: 1,
+    },
   }
 
 });

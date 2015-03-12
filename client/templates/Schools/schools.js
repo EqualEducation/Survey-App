@@ -8,7 +8,7 @@ Template.schools.events({
 AutoForm.hooks({
   insertSchoolForm: {
       onSuccess: function(operation, result, template) {  
-      alert('School saved!');
+      // alert('School saved!');
       Router.go('/');
       },
     }

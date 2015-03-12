@@ -1,16 +1,6 @@
 Nutrition = new Mongo.Collection("nutrition");
 
 NutritionSchema = new SimpleSchema({
-  // isInNutritionProgramme: {
-  //   label: "Is the school in the National School Nutrition Programme?",
-  //   type: Boolean,
-  //     optional: true,
-  //     autoform: {
-  //          type: "boolean-radios",
-  //          trueLabel: "Yes",
-  //          falseLabel: "No",
-  //   }
-  // },
   nutritionProgram: {
     optional: true,
     label: "Which of the following describes the school’s nutrition program?",

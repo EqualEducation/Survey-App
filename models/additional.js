@@ -1,58 +1,6 @@
 Additional = new Mongo.Collection("additional");
 
 AdditionalInfoSchema = new SimpleSchema({
-  // yearBuilt: {
-  //   label: "Was this school built after 29 November 2013?",
-  //   type: Boolean,
-  //   optional: true,
-  //   autoform: {
-  //        type: "boolean-radios",
-  //        trueLabel: "Yes",
-  //        falseLabel: "No",
-  //     }
-  //   },
-  // location: {
-  //   label: "Is the school located near any of the following? (click all that apply)",
-  //   type: [String],
-  //   optional: true,
-  //   autoform: 
-  //   {
-  //     type: "select-checkbox",
-  //     options: function () 
-  //     {
-  //       return [
-  //     {label: "Cemetery", value: "Cemetery"},
-  //     {label: "Business centre", value: "Business centre"},
-  //     {label: "Railway station", value: "Railway station"},
-  //     {label: "Taxi rank", value: "Taxi rank"},
-  //     {label: "Sewage treatment plant", value: "Sewage treatment plant"},
-  //     {label: "Public hostel", value: "Public hostel"},
-  //     {label: "Busy road", value: "Busy road"},
-  //     {label: "Bottle store and/or shebeen", value: "Bottle store and/or shebeen"},
-  //     ];
-  //     }
-  //   }
-  // },
-  // couldBeMoved: {
-  // label: "Do you feel that there is other land where the school could be moved?",
-  // type: Boolean,
-  // optional: true,
-  // autoform: {
-  //      type: "boolean-radios",
-  //      trueLabel: "Yes",
-  //      falseLabel: "No",
-  //   }
-  // },
-  // schoolSignboard: {
-  //   label: "Does the school have a signboard which is visible to the public and which indicates the name and contact details of the school?",
-  //   type: Boolean,
-  //     optional: true,
-  //     autoform: {
-  //          type: "boolean-radios",
-  //          trueLabel: "Yes",
-  //          falseLabel: "No",
-  //       }
-  // },
   electronicConnectivity: {
     label: "Which of the following does the school have? (tick all that apply):",
     optional: true,

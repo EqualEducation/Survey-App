@@ -1,6 +1,6 @@
 <template name="schools">
 
-{{#autoForm collection="Schools" id="insertSchoolForm" type="insert" resetOnSuccess=false}}
+{{#autoForm collection="Schools" id="insertSchoolForm" type="insert" resetOnSuccess=false autosave=true}}
     <fieldset>
       <legend>Add a School</legend>
       {{#each afFieldNames name="schoolDetails"}}
