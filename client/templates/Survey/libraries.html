@@ -3,10 +3,11 @@
   <!-- {{setSelectedSchoolDoc schoolId}} -->
   {{setSelectedDoc schoolId "libraries"}}
   {{#autoForm collection="Libraries" id="survey4" type=autoformType doc=selectedDoc resetOnSuccess=false autosave=true}}
+    <legend>Library & Media Centre</legend>
+
     <button class="btn btn-primary btn-back">Back</button>
     <button type="submit" class="btn btn-primary">Save</button>
     <fieldset>
-      <legend>Library & Media Centre</legend>
       {{> afQuickField name="hasLibrary"}}
 
       {{#unless afFieldValueIs name="hasLibrary" value="No library"}}

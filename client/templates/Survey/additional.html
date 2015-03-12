@@ -3,9 +3,9 @@
 	<!-- {{setSelectedSchoolDoc schoolId }} -->
 	{{setSelectedDoc schoolId "additional"}}
 	{{#autoForm collection="Additional" id="survey10" type=autoformType doc=selectedDoc resetOnSuccess=false autosave=true}}
+	<legend>School Environment</legend>
 	<button class="btn btn-primary btn-back">Back</button>
-      <button type="submit" class="btn btn-primary">Save</button>
-			<legend>School Environment</legend>
+	<button type="submit" class="btn btn-primary">Save</button>
 
 		{{#each afFieldNames}}
             {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}

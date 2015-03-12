@@ -162,7 +162,7 @@ AutoForm.addHooks(['survey1', 'survey2', 'survey3', 'survey4', 'survey5', 'surve
         // alert('School has been updated');
       },
       onError: function(operation, error, template) {
-        alert('Could not save the form. Please check all fields are filled in correctly' + error);
+        // alert('Could not save the form. Please check all fields are filled in correctly' + error);
 
       },
       onSubmit : function(insertDoc, updateDoc, currentDoc) {

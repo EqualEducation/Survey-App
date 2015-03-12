@@ -2,9 +2,9 @@
 	<!-- {{setSelectedSchoolDoc schoolId}} -->
 	{{setSelectedDoc schoolId "nutrition"}}
 	{{#autoForm collection="Nutrition" id="survey12" type=autoformType doc=selectedDoc resetOnSuccess=false autosave=true}}
+			<legend>Nutrition</legend>
 			<button class="btn btn-primary btn-back">Back</button>
 			<button type="submit" class="btn btn-primary">Save</button>
-			<legend>Nutrition</legend>
 
 			<fieldset>
 			 {{#each afFieldNames}}

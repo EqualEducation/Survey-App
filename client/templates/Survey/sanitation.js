@@ -56,7 +56,7 @@ Template.survey7.events({
 	        alert('Block has been added');
 	      },
 	      onError: function(operation, error, template) {
-	        alert('Could not save the block. Please check all fields are filled in correctly. ' + error);
+	        // alert('Could not save the block. Please check all fields are filled in correctly. ' + error);
 
 	      },
 	      onSubmit : function(doc) {

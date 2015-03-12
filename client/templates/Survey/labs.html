@@ -3,10 +3,10 @@
 	<!-- {{setSelectedSchoolDoc schoolId}} -->
   {{setSelectedDoc schoolId "labs"}}
   {{#autoForm collection="Labs" id="survey5" type=autoformType doc=selectedDoc resetOnSuccess=false autosave=true}}
-        <button class="btn btn-primary btn-back">Back</button>
-        <button type="submit" class="btn btn-primary">Save</button>
+    <legend>Science Labs</legend>
+    <button class="btn btn-primary btn-back">Back</button>
+    <button type="submit" class="btn btn-primary">Save</button>
 		    <fieldset>
-      	<legend>Science Labs</legend>
   			{{> afQuickField name="hasLab" options="auto"}}
         {{#if afFieldValueIs name="hasLab" value=true}}
 		      {{> sciencelabs}}

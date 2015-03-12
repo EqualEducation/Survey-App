@@ -8,7 +8,7 @@
   </header>
   <div id="page" class="animated">
     <page class="application">
-      <div class="content">
+      <div class="container">
         {{> yield}}
       </div>
     </page>
@@ -30,7 +30,7 @@
 
 <template name="header" >
     <a href="/"><img class="center-image" src="/logo.png"/></a>
-    <h1 class="center-text">{{> yield "title"}}</h1>
+    <h1 class="center-content">{{> yield "title"}}</h1>
 </template>
 
 <template name="footer">

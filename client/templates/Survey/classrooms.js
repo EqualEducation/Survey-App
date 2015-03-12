@@ -26,7 +26,7 @@ AutoForm.hooks({
           alert('Classroom has been added. You can now add another classroom or click close.');
         },
         onError: function(operation, error, template) {
-          alert('Could not save the classroom. Please check all fields are filled in correctly. ' + error);
+          // alert('Could not save the classroom. Please check all fields are filled in correctly. ' + error);
 
         },
         onSubmit : function(doc) {
