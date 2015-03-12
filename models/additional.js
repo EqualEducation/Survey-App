@@ -1,3 +1,5 @@
+//CArla comment
+
 Additional = new Mongo.Collection("additional");
 
 AdditionalInfoSchema = new SimpleSchema({
