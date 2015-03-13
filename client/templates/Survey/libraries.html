@@ -9,6 +9,7 @@
     <button class="btn btn-primary btn-save">Save</button>
     <fieldset>
       {{> afQuickField name="hasLibrary" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+      <div class="clearfix visible-xs-block"></div>
 
       {{#unless afFieldValueIs name="hasLibrary" value="None"}}
         {{#unless afFieldValueIs name="hasLibrary" value=""}}
@@ -17,6 +18,8 @@
       {{/unless}}
 
       {{> afQuickField name="comment" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+            <div class="clearfix visible-xs-block"></div>
+
       {{> afQuickField name="school_id"}}
 
     </fieldset>
@@ -25,11 +28,32 @@
 </template>
 
 <template name="libraries">
-	{{> afQuickField name="librarians" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
-	{{> afQuickField name="hasComputerTracking" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
-	{{> afQuickField name="hasComputerForGeneralUse" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
-	{{> afQuickField name="totalNumberOfComputers" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
-	{{> afQuickField name="totalNumberOfComputersThatConnectToTheInternet" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
-	{{> afQuickField name="hasBooks" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
-	{{> afQuickField name="hasFictionSection" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+	{{> afQuickField name="librarians" template="bootstrap3-horizontal" label-class="col-xs-4" input-col-class="col-xs-8"}}
+        <div class="clearfix visible-xs-block"></div>
+        <br />
+
+	{{> afQuickField name="hasComputerTracking" template="bootstrap3-horizontal" label-class="col-xs-4" input-col-class="col-xs-8"}}
+        <div class="clearfix visible-xs-block"></div>
+        <br />
+
+	{{> afQuickField name="hasComputerForGeneralUse" template="bootstrap3-horizontal" label-class="col-xs-4" input-col-class="col-xs-8"}}
+        <div class="clearfix visible-xs-block"></div>
+        <br />
+
+	{{> afQuickField name="totalNumberOfComputers" template="bootstrap3-horizontal" label-class="col-xs-4" input-col-class="col-xs-8"}}
+        <div class="clearfix visible-xs-block"></div>
+        <br />
+
+	{{> afQuickField name="totalNumberOfComputersThatConnectToTheInternet" template="bootstrap3-horizontal" label-class="col-xs-4" input-col-class="col-xs-8"}}
+        <div class="clearfix visible-xs-block"></div>
+        <br />
+
+	{{> afQuickField name="hasBooks" template="bootstrap3-horizontal" label-class="col-xs-4" input-col-class="col-xs-8"}}
+        <div class="clearfix visible-xs-block"></div>
+        <br />
+
+	{{> afQuickField name="hasFictionSection" template="bootstrap3-horizontal" label-class="col-xs-4" input-col-class="col-xs-8"}}
+        <div class="clearfix visible-xs-block"></div>
+        <br />
+
 </template>
