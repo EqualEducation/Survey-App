@@ -1,3 +1,5 @@
+var buttonSaveClicked = false;
+
 SimpleSchema.debug = true;
 AutoForm.debug();
 
@@ -5,6 +7,11 @@ Template.survey1.events({
     "click .btn-back" : function() {
       var schoolId = Session.get("selectedSchoolId");
       Router.go('/survey/'+ schoolId);
+      return false;
+    }, 
+    "click .btn-save" : function() {
+      buttonSaveClicked = true;
+      $('#survey1').submit();
       return false;
     }, 
   
@@ -16,6 +23,11 @@ Template.survey3.events({
       Router.go('/survey/'+ schoolId);
       return false;
     }, 
+    "click .btn-save" : function() {
+      buttonSaveClicked = true;
+      $('#survey3').submit();
+      return false;
+    }, 
     
   });
 
@@ -23,6 +35,11 @@ Template.survey4.events({
     "click .btn-back" : function() {
       var schoolId = Session.get("selectedSchoolId");
       Router.go('/survey/'+ schoolId);
+      return false;
+    }, 
+    "click .btn-save" : function() {
+      buttonSaveClicked = true;
+      $('#survey4').submit();
       return false;
     }, 
     
@@ -33,7 +50,12 @@ Template.survey5.events({
       var schoolId = Session.get("selectedSchoolId");
       Router.go('/survey/'+ schoolId);
       return false;
-    }, 
+    },
+    "click .btn-save" : function() {
+      buttonSaveClicked = true;
+      $('#survey5').submit();
+      return false;
+    },  
    
   });
 
@@ -41,6 +63,11 @@ Template.survey6.events({
     "click .btn-back" : function() {
       var schoolId = Session.get("selectedSchoolId");
       Router.go('/survey/'+ schoolId);
+      return false;
+    }, 
+    "click .btn-save" : function() {
+      buttonSaveClicked = true;
+      $('#survey6').submit();
       return false;
     }, 
   });
@@ -55,12 +82,22 @@ Template.survey9.events({
       Router.go('/survey/'+ schoolId);
       return false;
     }, 
+    "click .btn-save" : function() {
+      buttonSaveClicked = true;
+      $('#survey9').submit();
+      return false;
+    }, 
   });
 
 Template.survey10.events({
     "click .btn-back" : function() {
       var schoolId = Session.get("selectedSchoolId");
       Router.go('/survey/'+ schoolId);
+      return false;
+    }, 
+    "click .btn-save" : function() {
+      buttonSaveClicked = true;
+      $('#survey10').submit();
       return false;
     }, 
   });
@@ -73,12 +110,22 @@ Template.survey12.events({
       Router.go('/survey/'+ schoolId);
       return false;
     }, 
+    "click .btn-save" : function() {
+      buttonSaveClicked = true;
+      $('#survey12').submit();
+      return false;
+    }, 
   });
 
 Template.survey13.events({
     "click .btn-back" : function() {
       var schoolId = Session.get("selectedSchoolId");
       Router.go('/survey/'+ schoolId);
+      return false;
+    }, 
+    "click .btn-save" : function() {
+      buttonSaveClicked = true;
+      $('#survey13').submit();
       return false;
     }, 
   });
@@ -147,6 +194,26 @@ Template.lab_table.rendered = function(){
 //   $.material.init(); 
 // }
 
+
+
+AutoForm.addHooks(['survey1', 'survey2', 'survey3', 'survey4', 'survey5', 'survey6', 'survey7', 'survey9', 'survey10', 'survey11', 'survey12', 'survey13'], {
+       onSuccess: function(operation, result, template) {  
+        console.log("Succes result: " + result);
+        console.log("Success operation: " + operation);   
+
+        if (buttonSaveClicked) {
+          alert('Saved School');
+          buttonSaveClicked = false;
+        }   
+
+      },
+      onError: function() {
+        if (buttonSaveClicked) {
+          alert('Error saving school');
+          buttonSaveClicked = false;
+        } 
+      }
+    });
 
 
 

@@ -30,6 +30,11 @@
  
         e.preventDefault();
     },
+    "click .btn-save" : function() {
+      buttonSaveClicked = true;
+      $('#survey2').submit();
+      return false;
+    }, 
  
   });
 
@@ -51,17 +56,3 @@ Handlebars.registerHelper("isPrimarySchool", function () {
 
         return ret;
     });
-
-// Template.registerHelper("totalNumberOfStudentsInGrade", function (gradeName) {
-//   //gradeR
-//   var numberOfMaleStudentsFieldName = gradeName.concat(".numberOfMaleStudents");
-//   alert(numberOfMaleStudentsFieldName);
-//   var totalNumberOfMaleStudents = AutoForm.getFieldValue("survey", numberOfMaleStudentsFieldName) || "0";
-//   var numberOfFemaleStudentsFieldName = gradeName.concat(".numberOfFemaleStudents");
-//   var totalNumberOfFemaleStudents = AutoForm.getFieldValue("survey", numberOfFemaleStudentsFieldName) || "0";
-
-//   var value = (parseInt(totalNumberOfFemaleStudents) + parseInt(totalNumberOfMaleStudents));
-
-
-//   return value;
-// });

@@ -8,6 +8,11 @@ Template.survey11.events({
 	        // e.preventDefault();
 	        $("#modal_classroom").modal("show");
 	    },
+      "click .btn-save" : function() {
+      buttonSaveClicked = true;
+      $('#survey11').submit();
+      return false;
+    }, 
   });
 
 Template.list_classrooms.helpers({

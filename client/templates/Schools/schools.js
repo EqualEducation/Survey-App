@@ -6,7 +6,6 @@ Template.schools.events({
         return false;
       },
       "click .btn-save" : function() {
-        $('#insertSchoolForm').submit();
 
         var name = AutoForm.getFieldValue("schoolDetails.INSTITUTION_NAME", "insertSchoolForm");
         var classification = AutoForm.getFieldValue("schoolDetails.CLASSIFICATION", "insertSchoolForm");
@@ -14,9 +13,13 @@ Template.schools.events({
 
         if (!name || !classification || !province) {
           alert('Error saving school');
+          saveButtonClicked = false;
+
           return false;
         }
         saveButtonClicked = true;
+        $('#insertSchoolForm').submit();
+
         return false;
       },
   });
