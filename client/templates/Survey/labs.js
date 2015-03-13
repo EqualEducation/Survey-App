@@ -37,6 +37,17 @@ Template.modal_lab.events({
     }, 
 });
 
+Template.lab.events({
+  "click .btn-edit" : function() {
+        Session.set('selectedLab',this._id);
+        $("#modal_lab").modal("show");
+
+    }, 
+     "click .btn-delete" : function() {
+        IndividualLabs.remove({'_id' : this._id});
+    }, 
+});
+
 Template.list_labs.helpers({
       labs: function () {
         var schoolId = Session.get("selectedSchoolId");
