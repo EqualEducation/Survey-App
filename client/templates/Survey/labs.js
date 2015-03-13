@@ -1,3 +1,5 @@
+var didTapSubmit = false;
+
 Template.survey5.events({
    
     "click .open-modal" : function(e,t) {
@@ -27,6 +29,14 @@ Template.survey5.events({
   
   });
 
+Template.modal_lab.events({
+  "click .btn-save" : function() {
+      didTapSubmit = true;
+      $('#labs').submit();
+      return false;
+    }, 
+});
+
 Template.list_labs.helpers({
       labs: function () {
         var schoolId = Session.get("selectedSchoolId");
@@ -36,21 +46,32 @@ Template.list_labs.helpers({
     });
 
 
-AutoForm.hooks({
-    labs: {
-        onSuccess: function(operation, result, template) {  
-          console.log("Success result: " + result);
-          console.log("Success operation: " + operation);
-        },
-        onError: function(operation, error, template) {
-          // alert('Could not save the classroom. Please check all fields are filled in correctly. ' + error);
+AutoForm.hooks
+({
+  labs: 
+  {
+    onSuccess: function(operation, result, template) 
+    {  
+      console.log("Succes result: " + result);
+      console.log("Success operation: " + operation);   
 
-        },
-        onSubmit : function(doc) {
-          // console.log("Submit: " + doc);
-          // doc.groupId = /*Get the group id*/;
-          // this.done(); //We've finished
-          return true; //Let autoForm do his default job now
-        }
+      if (didTapSubmit) 
+      {
+        alert('Added lab');
+        didTapSubmit = false;
+
+        $('#modal_lab').modal('hide')
+
+
+      }   
+    },
+    onError: function() 
+    {
+      if (didTapSubmit) 
+      {
+        alert('Error saving lab');
+        didTapSubmit = false;
       }
-  });
+    } 
+  }
+});
