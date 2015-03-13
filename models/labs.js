@@ -1,36 +1,6 @@
 Labs = new Mongo.Collection("labs");
 
-ScienceLabDrillDownSchema = new SimpleSchema({
-  labCondition:{
-    label: "Is the lab in good working order?",
-    optional: true,
-    type: String,
-    autoform: {
-        type: "boolean-radios",
-        trueLabel: "Yes",
-        falseLabel: "No",
-      }
-  },
-  hasNecessaryEquipment: {
-    label: "Does the lab have the equipment necessary?",
-    type: Boolean,
-      optional: true,
-      autoform: {
-        type: "boolean-radios",
-        trueLabel: "Yes",
-        falseLabel: "No",
-      }
-  },
-  comment: {
-    type: String,
-    optional: true,
-    label: "Comment",
-    autoform: {
-      rows: 1,
-    },
-  }
 
-});
 
 ScienceLabSchema = new SimpleSchema({
   hasLab: {
@@ -51,16 +21,6 @@ ScienceLabSchema = new SimpleSchema({
       type: "text"
     }
   },
-  labs: {
-      type: Array,
-      optional: true,
-      minCount: 0,
-      maxCount: 100
-   },
-   "labs.$": {
-      optional: true,
-      type: ScienceLabDrillDownSchema
-   },
    school_id: {
     type: String,
     defaultValue: function(){ 

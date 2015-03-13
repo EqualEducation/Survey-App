@@ -187,9 +187,9 @@ Template.afArrayField.rendered = function(){
 // Template.classroom_table.rendered = function(){
 //    $.material.init(); 
 // }
-Template.lab_table.rendered = function(){
-  $.material.init(); 
-}
+// Template.lab_table.rendered = function(){
+//   $.material.init(); 
+// }
 // Template.block_details.rendered  = function() {
 //   $.material.init(); 
 // }

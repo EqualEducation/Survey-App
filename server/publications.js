@@ -24,6 +24,9 @@ if (Meteor.isServer) {
   Meteor.publish("labs", function () {
     return Labs.find();
   });
+  Meteor.publish("individuallabs", function () {
+    return IndividualLabs.find();
+  });
   Meteor.publish("security", function () {
     return Security.find();
   });
