@@ -1,3 +1,4 @@
+var buttonSaveClicked = false;
 
 	Template.survey2.rendered = function() {
 		$.material.init();
@@ -13,6 +14,11 @@
       Router.go('/survey/'+ schoolId);
       return false;
     },
+    "click .btn-save" : function() {
+      buttonSaveClicked = true;
+      $('#survey2').submit();
+      return false;
+    }, 
     "click .accordion-section-title" : function(e, template) {
     	var currentAttrValue = $(e.target).attr('href');
  
@@ -30,11 +36,7 @@
  
         e.preventDefault();
     },
-    "click .btn-save" : function() {
-      buttonSaveClicked = true;
-      $('#survey2').submit();
-      return false;
-    }, 
+    
  
   });
 
@@ -55,4 +57,23 @@ Handlebars.registerHelper("isPrimarySchool", function () {
 
 
         return ret;
+    });
+
+AutoForm.addHooks(['survey2'], {
+       onSuccess: function(operation, result, template) {  
+        console.log("Succes result: " + result);
+        console.log("Success operation: " + operation);   
+
+        if (buttonSaveClicked) {
+          alert('Saved School');
+          buttonSaveClicked = false;
+        }   
+
+      },
+      onError: function() {
+        if (buttonSaveClicked) {
+          alert('Error saving school');
+          buttonSaveClicked = false;
+        } 
+      }
     });

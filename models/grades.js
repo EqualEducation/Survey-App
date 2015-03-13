@@ -166,15 +166,15 @@ GradesSchema = new SimpleSchema({
     optional: true
      },
     school_id: {
-          type: String,
-          defaultValue: function(){ 
-          console.log("school id: ", Session.get('selectedSchoolId'));
-          return Session.get('selectedSchoolId');
-      },
-      autoform: {
-       type: "hidden",
-       label: false
-      },
+    type: String,
+    defaultValue: function(){ 
+      console.log("school id: ", Session.get('selectedSchoolId'));
+      return Session.get('selectedSchoolId');
+    },
+    autoform: {
+      type: "hidden",
+      label: false
+    },  
   }
 });
 

@@ -196,7 +196,7 @@ Template.lab_table.rendered = function(){
 
 
 
-AutoForm.addHooks(['survey1', 'survey2', 'survey3', 'survey4', 'survey5', 'survey6', 'survey7', 'survey9', 'survey10', 'survey11', 'survey12', 'survey13'], {
+AutoForm.addHooks(['survey1', 'survey3', 'survey4', 'survey5', 'survey6', 'survey7', 'survey9', 'survey10', 'survey11', 'survey12', 'survey13'], {
        onSuccess: function(operation, result, template) {  
         console.log("Succes result: " + result);
         console.log("Success operation: " + operation);   
