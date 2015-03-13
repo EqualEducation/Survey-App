@@ -82,13 +82,13 @@ waterSupply: {
       options: function () 
       {
         return [
-      {label: "Municipal water supply", value: "Municipal water supply"},
-      {label: "Rain water", value: "Rain water"},
-      {label: "Mobile tankers (jojo tank)", value: "Mobile tankers (jojo tank)"},
-      {label: "Borehole", value: "Borehole"},
-      {label: "Local dam or reservoir", value: "Local dam or reservoir"},
-      {label: "Unsure", value: "Unsure"},
-      {label: "Other", value: "Other"},
+      {label: 'Municipal water supply', value: 'Municipal water supply'},
+      {label: 'Rain water', value: 'Rain water'},
+      {label: 'Mobile tankers (jojo tank)', value: 'Mobile tankers (jojo tank)'},
+      {label: 'Borehole', value: 'Borehole'},
+      {label: 'Local dam or reservoir', value: 'Local dam or reservoir'},
+      {label: 'Unsure', value: 'Unsure'},
+      {label: 'Other', value: 'Other'},
 
         ];
       }

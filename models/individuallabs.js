@@ -13,7 +13,7 @@ IndividualLabsSchema = new SimpleSchema({
   labCondition:{
     label: "Is the lab in good working order?",
     optional: true,
-    type: String,
+    type: Boolean,
     autoform: {
         type: "boolean-radios",
         trueLabel: "Yes",

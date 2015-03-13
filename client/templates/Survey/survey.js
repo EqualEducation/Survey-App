@@ -59,6 +59,19 @@ Template.survey5.events({
    
   });
 
+Template.survey7.events({
+    "click .btn-back" : function() {
+      var schoolId = Session.get("selectedSchoolId");
+      Router.go('/survey/'+ schoolId);
+      return false;
+    }, 
+    "click .btn-save" : function() {
+      buttonSaveClicked = true;
+      $('#survey7').submit();
+      return false;
+    }, 
+  });
+
 Template.survey6.events({
     "click .btn-back" : function() {
       var schoolId = Session.get("selectedSchoolId");
@@ -148,9 +161,9 @@ Template.survey5.rendered = function(){
 Template.survey6.rendered = function(){
   $.material.init();
 };
-// Template.survey7.rendered = function(){
-//   $.material.init();
-// };
+Template.survey7.rendered = function(){
+  $.material.init();
+};
 Template.survey8.rendered = function(){
   $.material.init();
 };
@@ -200,7 +213,7 @@ AutoForm.addHooks(['survey1', 'survey3', 'survey4', 'survey5', 'survey6', 'surve
        onSuccess: function(operation, result, template) {  
         console.log("Succes result: " + result);
         console.log("Success operation: " + operation);   
-
+        console.log('Survey');
         if (buttonSaveClicked) {
           alert('Saved School');
           buttonSaveClicked = false;

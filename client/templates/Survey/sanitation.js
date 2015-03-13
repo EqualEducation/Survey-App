@@ -1,9 +1,4 @@
 Template.survey7.events({
-	"click .btn-back" : function() {
-		var schoolId = Session.get("selectedSchoolId");
-	    Router.go('/survey/'+ schoolId);
-	    return false;
-	}, 
 	"click .open-modal" : function(e,t) {
     AutoForm.resetForm('blocks1');
 		$("#modal_block").modal("show");
@@ -27,10 +22,6 @@ Template.survey7.events({
         e.preventDefault();
     },
 });
-
-Template.survey7.rendered = function() {
-		$.material.init();
-};
 
 Template.list_blocks.helpers({
 	    blocks: function () {
