@@ -8,9 +8,7 @@ Template.survey7.events({
 	      Router.go('/survey/'+ schoolId);
 	      return false;
 	    }, 
-	    "click .btn-modal" : function() {
-			Meteor.render(Template.modal_block);	      
-	    }, 
+
 	    "input [name='totalNumberOfToiletBlocks']" : function(event, template) {
 	    	var numberOfToiletBlocks = event.target.value;
 	    	console.log(numberOfToiletBlocks);
@@ -47,23 +45,52 @@ Template.survey7.events({
 	    }
   	});
 
+Template.modal_block.events({
+  "click .btn-save" : function() {
+      $('#blocks1').submit();
+      return false;
+    }, 
+});
 
-	AutoForm.hooks({
-	  blocks: {
-	      onSuccess: function(operation, result, template) {  
-	        console.log("Success result: " + result);
-	        console.log("Success operation: " + operation);
-	        alert('Block has been added');
-	      },
-	      onError: function(operation, error, template) {
-	        // alert('Could not save the block. Please check all fields are filled in correctly. ' + error);
+Template.modal_block_update.events({
+  "click .btn-save" : function() {
+      $('#blocks2').submit();
+      return false;
+    }, 
+});
 
-	      },
-	      onSubmit : function(doc) {
-	        console.log("Submit: " + doc);
-	        // doc.groupId = /*Get the group id*/;
-	        // this.done(); //We've finished
-	        return true; //Let autoForm do his default job now
-	      }
-	    }
-	});
+Template.block.events({
+  "click .btn-edit" : function() {
+        Session.set('selectedBlockId',this._id);
+        $("#modal_block_update").modal("show");
+    }, 
+     "click .btn-delete" : function() {
+        SanitationBlocks.remove({'_id' : this._id});
+    }, 
+});
+
+Template.registerHelper('selectedBlock',function(){
+    var blockId = Session.get("selectedBlockId");
+
+    if (blockId) {
+      var block = SanitationBlocks.findOne({'_id' : blockId});
+      return block;
+    }
+
+    return null;
+});
+
+AutoForm.addHooks(['blocks1', 'blocks2'], {
+onSuccess: function(operation, result, template) 
+    {  
+      console.log("Succes result: " + result);
+      console.log("Success operation: " + operation);   
+        $('#modal_block').modal('hide')
+        $('#modal_block_update').modal('hide')
+ 
+    },
+    onError: function() 
+    {
+        alert('Error saving block');
+      }
+    });

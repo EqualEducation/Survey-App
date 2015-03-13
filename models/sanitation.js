@@ -49,11 +49,12 @@ accessToSoap: {
   },
   totalNumberOfToiletBlocks: {
     optional: true,
-    type: Number,
+    type: String,
     label: "Total number of toilet blocks",
+    regEx: /^[0-9]/,
     autoform: {
-      type: "text"
-    }
+      rows: 1,
+    },
   },
   disabledToilets: {
   label: "How many toilets were there that were big enough for a wheelchair?",

@@ -41,35 +41,39 @@ SanitationBlocksSchema = new SimpleSchema({
   },
   numberOfWorkingToilets: {
     label: "Number of working toilets",
-    type: Number,
+    type: String,
     optional: true,
+    regEx: /^[0-9]/,
     autoform: {
-      type: "text"
-    }
+      rows: 1,
+    },
   },
   numberOfBrokenToilets: {
     label: "Number of non-working toilets",
-    type: Number,
+    type: String,
     optional: true,
+    regEx: /^[0-9]/,
     autoform: {
-      type: "text"
-    }
+      rows: 1,
+    },
   },
   numberOfWorkingTaps: {
     label: "Number of working taps",
-    type: Number,
+    type: String,
     optional: true,
+    regEx: /^[0-9]/,
     autoform: {
-      type: "text"
-    }
+      rows: 1,
+    },
   },
   numberOfBrokenTaps: {
     label: "Number of non-working taps",
-    type: Number,
+    type: String,
     optional: true,
+    regEx: /^[0-9]/,
     autoform: {
-      type: "text"
-    }
+      rows: 1,
+    },
   },
   hasSoap: {
     label: "Is there soap?",
