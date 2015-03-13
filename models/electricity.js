@@ -25,7 +25,7 @@ ElectricitySchema = new SimpleSchema({
       type: "select-checkbox",
       options: function () {
         return [
-          {label: "Grid", value: 'Grid'},
+          {label: "Grid (e.g. Eskom)", value: 'Grid (e.g. Eskom)'},
           {label: "Generators", value: 'Generators'},
           {label: "Solar Panel", value: 'Solar Panel'},
           {label: "Wind Power", value: 'Wind Power'},
