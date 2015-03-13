@@ -88,15 +88,14 @@
           <h4 class="modal-title">Add a Lab</h4>
         </div>
         <div class="modal-body">
-            {{#autoForm collection="IndividualLabs" id="labs" type="insert" resetOnSuccess=true }}
+            {{#autoForm collection="IndividualLabs" id="labs1" type="insert" resetOnSuccess=true }}
                 {{#each afFieldNames}}
                     {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
                     <div class="clearfix visible-xs-block"></div>
                     <br />
                 {{/each}}
-<div>
-    <button type="submit">Submit</button>
-  </div>            {{/autoForm}}
+                  <button type="submit" class="btn btn-primary btn-save">Save</button>
+            {{/autoForm}}
           </div>
       </div>
   </div>
@@ -110,15 +109,14 @@
           <h4 class="modal-title">Update Lab</h4>
         </div>
         <div class="modal-body">
-            {{#autoForm collection="IndividualLabs" id="labs" type="update" doc=selectedLab resetOnSuccess=true }}
+            {{#autoForm collection="IndividualLabs" id="labs2" type="update" doc=selectedLab resetOnSuccess=true }}
                 {{#each afFieldNames}}
                     {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
                     <div class="clearfix visible-xs-block"></div>
                     <br />
                 {{/each}}
-<div>
-    <button type="submit">Submit</button>
-  </div>            {{/autoForm}}
+                  <button type="submit" class="btn btn-primary btn-save">Save</button>
+            {{/autoForm}}
           </div>
       </div>
   </div>

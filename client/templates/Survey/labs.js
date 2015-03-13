@@ -29,21 +29,21 @@ Template.survey5.events({
   
   });
 
-// Template.modal_lab.events({
-//   "click .btn-save" : function() {
-//       didTapSubmit = true;
-//       $('#labs').submit();
-//       return false;
-//     }, 
-// });
+Template.modal_lab.events({
+  "click .btn-save" : function() {
+      didTapSubmit = true;
+      $('#labs1').submit();
+      return false;
+    }, 
+});
 
-// Template.modal_lab_update.events({
-//   "click .btn-save" : function() {
-//       didTapSubmit = true;
-//       $('#labs').submit();
-//       return false;
-//     }, 
-// });
+Template.modal_lab_update.events({
+  "click .btn-save" : function() {
+      didTapSubmit = true;
+      $('#labs2').submit();
+      return false;
+    }, 
+});
 
 Template.lab.events({
   "click .btn-edit" : function() {
@@ -77,11 +77,9 @@ Template.registerHelper('selectedLab',function(){
 });
 
 
-AutoForm.hooks
-({
-  labs: 
-  {
-    onSuccess: function(operation, result, template) 
+
+AutoForm.addHooks(['labs1', 'labs2'], {
+onSuccess: function(operation, result, template) 
     {  
       console.log("Succes result: " + result);
       console.log("Success operation: " + operation);   
@@ -104,7 +102,6 @@ AutoForm.hooks
       // {
         alert('Error saving lab');
         // didTapSubmit = false;
-      // }
-    } 
-  }
-});
+      // 
+      }
+    });
