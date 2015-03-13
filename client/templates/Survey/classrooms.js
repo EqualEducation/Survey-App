@@ -1,19 +1,13 @@
 Template.survey11.events({
-    "click .btn-back" : function() {
-      var schoolId = Session.get("selectedSchoolId");
-      Router.go('/survey/'+ schoolId);
-      return false;
-    }, 
-    "click .open-modal" : function(e,t) {
-	        // e.preventDefault();
-	        $("#modal_classroom").modal("show");
-	    },
-      "click .btn-save" : function() {
-      buttonSaveClicked = true;
-      $('#survey11').submit();
-      return false;
-    }, 
-  });
+  "click .btn-back" : function() {
+    var schoolId = Session.get("selectedSchoolId");
+    Router.go('/survey/'+ schoolId);
+    return false;
+  }, 
+  "click .open-modal" : function(e,t) {
+    $("#modal_classroom").modal("show");
+  },
+});
 
 Template.modal_classroom.events({
   "click .btn-save" : function() {

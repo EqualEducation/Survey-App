@@ -184,12 +184,12 @@ Template.sciencelabs.rendered = function(){
 Template.afArrayField.rendered = function(){
    $.material.init(); 
 }
-// Template.classroom_table.rendered = function(){
-//    $.material.init(); 
-// }
-// Template.lab_table.rendered = function(){
-//   $.material.init(); 
-// }
+Template.modal_lab_update.rendered = function(){
+   $.material.init(); 
+}
+Template.modal_lab.rendered = function(){
+  $.material.init(); 
+}
 // Template.block_details.rendered  = function() {
 //   $.material.init(); 
 // }

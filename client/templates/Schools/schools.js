@@ -1,5 +1,9 @@
 var saveButtonClicked = false;
 
+Template.schools.rendered = function(){
+  AutoForm.resetForm('insertSchoolForm');
+}
+
 Template.schools.events({
       "click .btn-back" : function() {
         Router.go('/');
@@ -36,6 +40,7 @@ AutoForm.hooks({
         if (saveButtonClicked) {
           alert('Saved School');
           saveButtonClicked = false;
+          Router.go('/');
         }   
 
       },

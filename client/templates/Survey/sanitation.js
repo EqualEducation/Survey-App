@@ -1,20 +1,15 @@
 Template.survey7.events({
-		  "click .open-modal" : function(e,t) {
-	        // e.preventDefault();
-	        $("#modal_block").modal("show");
-	    },
-	    "click .btn-back" : function() {
-	      var schoolId = Session.get("selectedSchoolId");
-	      Router.go('/survey/'+ schoolId);
-	      return false;
-	    }, 
+	"click .btn-back" : function() {
+		var schoolId = Session.get("selectedSchoolId");
+	    Router.go('/survey/'+ schoolId);
+	    return false;
+	}, 
+	"click .open-modal" : function(e,t) {
+    AutoForm.resetForm('blocks1');
+		$("#modal_block").modal("show");
 
-	    "input [name='totalNumberOfToiletBlocks']" : function(event, template) {
-	    	var numberOfToiletBlocks = event.target.value;
-	    	console.log(numberOfToiletBlocks);
-	    	Session.set("numberOfToiletBlocks", numberOfToiletBlocks);
-	    }, 
-	    "click .accordion-section-title" : function(e, template) {
+	},
+	"click .accordion-section-title" : function(e, template) {
     	var currentAttrValue = $(e.target).attr('href');
  
         if($(e.target).is('.active')) {
@@ -31,13 +26,13 @@ Template.survey7.events({
  
         e.preventDefault();
     },
-	  });
+});
 
-	Template.survey7.rendered = function() {
+Template.survey7.rendered = function() {
 		$.material.init();
-	};
+};
 
-	Template.list_blocks.helpers({
+Template.list_blocks.helpers({
 	    blocks: function () {
 	    	var schoolId = Session.get("selectedSchoolId");
 	    	var blocks = SanitationBlocks.find({'school_id' : schoolId});

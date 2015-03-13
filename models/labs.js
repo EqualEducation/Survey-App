@@ -15,11 +15,12 @@ ScienceLabSchema = new SimpleSchema({
   },
   numberOfLabs: {
     label: "How many labs does the school have?",
-    type: Number,
+    type: String,
     optional: true,
+    regEx: /^[0-9]/,
     autoform: {
-      type: "text"
-    }
+      rows: 1,
+    },
   },
    school_id: {
     type: String,

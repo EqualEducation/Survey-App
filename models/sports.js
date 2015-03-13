@@ -37,11 +37,12 @@ SportsFieldDrillDownSchema = new SimpleSchema ({
 SportsFieldSchema = new SimpleSchema({
   numberOfSportsFields: {
     optional: true,
-    type: Number,
+    type: String,
     label: "Total Number of Sports Fields/Areas",
+    regEx: /^[0-9]/,
     autoform: {
-      type: "text"
-    }
+      rows: 1,
+    },
   },
   availableSports: {
     optional: true,
