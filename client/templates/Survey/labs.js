@@ -1,4 +1,4 @@
-var didTapSubmit = false;
+// var didTapSubmit = false;
 
 Template.survey5.events({
    
@@ -7,7 +7,7 @@ Template.survey5.events({
 	        $("#modal_lab").modal("show");
 	    },
       "click .btn-modal" : function() {
-      Meteor.render(Template.modal_lab);        
+        Meteor.render(Template.modal_lab);        
       }, 
       "click .accordion-section-title" : function(e, template) {
       var currentAttrValue = $(e.target).attr('href');
@@ -29,19 +29,26 @@ Template.survey5.events({
   
   });
 
-Template.modal_lab.events({
-  "click .btn-save" : function() {
-      didTapSubmit = true;
-      $('#labs').submit();
-      return false;
-    }, 
-});
+// Template.modal_lab.events({
+//   "click .btn-save" : function() {
+//       didTapSubmit = true;
+//       $('#labs').submit();
+//       return false;
+//     }, 
+// });
+
+// Template.modal_lab_update.events({
+//   "click .btn-save" : function() {
+//       didTapSubmit = true;
+//       $('#labs').submit();
+//       return false;
+//     }, 
+// });
 
 Template.lab.events({
   "click .btn-edit" : function() {
-        Session.set('selectedLab',this._id);
-        $("#modal_lab").modal("show");
-
+        Session.set('selectedLabId',this._id);
+        $("#modal_lab_update").modal("show");
     }, 
      "click .btn-delete" : function() {
         IndividualLabs.remove({'_id' : this._id});
@@ -57,6 +64,19 @@ Template.list_labs.helpers({
     });
 
 
+Template.registerHelper('selectedLab',function(){
+    var labId = Session.get("selectedLabId");
+    console.log('labid');
+    console.log(labId);
+    if (labId) {
+      var lab = IndividualLabs.findOne({'_id' : labId});
+      return lab;
+    }
+
+    return null;
+});
+
+
 AutoForm.hooks
 ({
   labs: 
@@ -66,23 +86,25 @@ AutoForm.hooks
       console.log("Succes result: " + result);
       console.log("Success operation: " + operation);   
 
-      if (didTapSubmit) 
-      {
-        alert('Added lab');
-        didTapSubmit = false;
+      // if (didTapSubmit) 
+      // {
+      //   alert('Added lab');
+      //   didTapSubmit = false;
 
+
+
+      // }  
         $('#modal_lab').modal('hide')
-
-
-      }   
+        $('#modal_lab_update').modal('hide')
+ 
     },
     onError: function() 
     {
-      if (didTapSubmit) 
-      {
+      // if (didTapSubmit) 
+      // {
         alert('Error saving lab');
-        didTapSubmit = false;
-      }
+        // didTapSubmit = false;
+      // }
     } 
   }
 });
