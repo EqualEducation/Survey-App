@@ -9,6 +9,8 @@
   <input type="button" class="open-modal btn btn-primary" value="Add a classroom" />
   {{> list_classrooms }}
   {{> modal_classroom}}
+  {{> modal_classroom_update}}
+
 </template>
 
 <template name="list_classrooms">
@@ -31,8 +33,8 @@
 <template name="classroom">
   <tr>
     <td>{{this.name}}</td>
-    <td><a href="#edit">Edit</a></td>
-    <td><a href="#delete">Delete</a></td>
+    <td><a href="" class="btn-edit">Edit</a></td>
+    <td><a href="" class="btn-delete">Delete</a></td>
   </tr>
 </template>
 
@@ -45,13 +47,34 @@
           <h4 class="modal-title">Add a Classroom</h4>
         </div>
         <div class="modal-body">
-            {{#autoForm collection="Classrooms" id="survey11" type="insert" resetOnSuccess=true autosave=true}}
+            {{#autoForm collection="Classrooms" id="classrooms1" type="insert" resetOnSuccess=true }}
+                {{#each afFieldNames}}
+                    {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+                    <div class="clearfix visible-xs-block"></div>
+                {{/each}}
+                  <button type="submit" class="btn btn-primary btn-save">Save</button>
+            {{/autoForm}}
+          </div>
+      </div>
+  </div>
+</template>
+
+
+<template name="modal_classroom_update">
+  <div class="modal fade in" id="modal_classroom_update" data-backdrop="false" >
+     <div class="modal-dialog">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Update Classroom</h4>
+        </div>
+        <div class="modal-body">
+            {{#autoForm collection="Classrooms" id="classrooms2" type="update" doc=selectedClassroom resetOnSuccess=true }}
                 {{#each afFieldNames}}
                     {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
                     <div class="clearfix visible-xs-block"></div>
                     <br />
                 {{/each}}
-                <button type="submit" class="btn btn-primary">Save</button>
+                  <button type="submit" class="btn btn-primary btn-save">Save</button>
             {{/autoForm}}
           </div>
       </div>

@@ -1,5 +1,3 @@
-// var didTapSubmit = false;
-
 Template.survey5.events({
    
     "click .open-modal" : function(e,t) {

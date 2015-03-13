@@ -15,6 +15,31 @@ Template.survey11.events({
     }, 
   });
 
+Template.modal_classroom.events({
+  "click .btn-save" : function() {
+      console.log('button clicked');
+      $('#classrooms1').submit();
+      return false;
+    }, 
+});
+
+Template.modal_classroom_update.events({
+  "click .btn-save" : function() {
+      $('#classrooms2').submit();
+      return false;
+    }, 
+});
+
+Template.classroom.events({
+  "click .btn-edit" : function() {
+        Session.set('selectedClassroomId',this._id);
+        $("#modal_classroom_update").modal("show");
+    }, 
+     "click .btn-delete" : function() {
+        Classrooms.remove({'_id' : this._id});
+    }, 
+});
+
 Template.list_classrooms.helpers({
       classrooms: function () {
         var schoolId = Session.get("selectedSchoolId");
@@ -23,21 +48,28 @@ Template.list_classrooms.helpers({
       }
     });
 
-AutoForm.hooks({
-    classrooms: {
-        onSuccess: function(operation, result, template) {  
-          console.log("Success result: " + result);
-          console.log("Success operation: " + operation);
-        },
-        onError: function(operation, error, template) {
-          // alert('Could not save the classroom. Please check all fields are filled in correctly. ' + error);
+Template.registerHelper('selectedClassroom',function(){
+    var classRoomId = Session.get("selectedClassroomId");
 
-        },
-        onSubmit : function(doc) {
-          // console.log("Submit: " + doc);
-          // doc.groupId = /*Get the group id*/;
-          // this.done(); //We've finished
-          return true; //Let autoForm do his default job now
-        }
+    if (classRoomId) {
+      var classroom = Classrooms.findOne({'_id' : classRoomId});
+      return classroom;
+    }
+
+    return null;
+});
+
+AutoForm.addHooks(['classrooms1', 'classrooms2'], {
+onSuccess: function(operation, result, template) 
+    {  
+      console.log("Succes result: " + result);
+      console.log("Success operation: " + operation);   
+        $('#modal_classroom').modal('hide')
+        $('#modal_classroom_update').modal('hide')
+ 
+    },
+    onError: function() 
+    {
+        alert('Error saving classroom');
       }
-  });
+    });
