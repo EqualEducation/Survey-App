@@ -35,13 +35,15 @@ LibrarySchema = new SimpleSchema({
     optional: true,
     type: [String],
     label: "Does the school have (please tick all that apply)",
-    autoform: {
+    autoform: 
+    {
       type: "select-checkbox",
-      options: function() {
+      options: function () 
+      {
         return [
-        {label: "Dedicated librarian", value: 'Dedicated librarian'},
-        {label: "Teacher assigned as a librarian", value: 'Teacher assigned as a librarian'},
-        {label: "No librarian", value: 'No librarian'},
+        {label: 'Dedicated librarian', value: 'Dedicated librarian'},
+        {label: 'Teacher assigned as a librarian', value: 'Teacher assigned as a librarian'},
+        {label: 'No librarian', value: 'No librarian'},
         ];
       }
     }
@@ -68,19 +70,21 @@ LibrarySchema = new SimpleSchema({
     },
     totalNumberOfComputers: {
       label: "Total number of computers",
-      type: Number,
+      type: String,
       optional: true,
+      regEx: /^[0-9]/,
       autoform: {
-        type: "text"
-      }
+        rows: 1,
+      },
     },
     totalNumberOfComputersThatConnectToTheInternet: {
       label: "Total number of computers that connect to the internet",
-      type: Number,
+      type: String,
       optional: true,
+      regEx: /^[0-9]/,
       autoform: {
-        type: "text"
-      }
+        rows: 1,
+      },
     },
     hasBooks: {
     label: "Does the library have books?",

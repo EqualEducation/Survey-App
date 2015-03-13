@@ -8,15 +8,15 @@
     <button class="btn btn-primary btn-back">Back</button>
     <button class="btn btn-primary btn-save">Save</button>
     <fieldset>
-      {{> afQuickField name="hasLibrary"}}
+      {{> afQuickField name="hasLibrary" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
 
-      {{#unless afFieldValueIs name="hasLibrary" value="No library"}}
+      {{#unless afFieldValueIs name="hasLibrary" value="None"}}
         {{#unless afFieldValueIs name="hasLibrary" value=""}}
           {{> libraries}}
         {{/unless}}
       {{/unless}}
 
-      {{> afQuickField name="comment"}}
+      {{> afQuickField name="comment" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
       {{> afQuickField name="school_id"}}
 
     </fieldset>
@@ -25,11 +25,11 @@
 </template>
 
 <template name="libraries">
-	{{> afQuickField name="librarians"}}
-	{{> afQuickField name="hasComputerTracking"}}
-	{{> afQuickField name="hasComputerForGeneralUse"}}
-	{{> afQuickField name="totalNumberOfComputers"}}
-	{{> afQuickField name="totalNumberOfComputersThatConnectToTheInternet"}}
-	{{> afQuickField name="hasBooks"}}
-	{{> afQuickField name="hasFictionSection"}}
+	{{> afQuickField name="librarians" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+	{{> afQuickField name="hasComputerTracking" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+	{{> afQuickField name="hasComputerForGeneralUse" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+	{{> afQuickField name="totalNumberOfComputers" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+	{{> afQuickField name="totalNumberOfComputersThatConnectToTheInternet" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+	{{> afQuickField name="hasBooks" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+	{{> afQuickField name="hasFictionSection" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
 </template>
