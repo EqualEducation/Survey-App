@@ -1,7 +1,7 @@
 App.info({
   name: 'Equal_Education',
   description: 'Equal Education App',
-  version: '0.0.5'
+  version: '0.0.6'
 });
 
 App.icons({

@@ -288,6 +288,18 @@ label {
   color: @primaryColor;
 }
 
+.btn-high.btn-flat:not(.btn-link) {
+  color: @highColor;
+}
+
+.btn-low.btn-flat:not(.btn-link) {
+  color: @lowColor;
+}
+
+.btn-medium.btn-flat:not(.btn-link) {
+  color: @mediumColor;
+}
+
 input[type="text"], input[type="email"], input[type="password"] {
   border-radius: 0px;
   border: 0;
@@ -304,6 +316,22 @@ label {
 
 .btn.btn-primary:not(.btn-link):not(.btn-flat) {
   background-color: @primaryColor;
+  border-style: none;
+  color: #000000;
+}
+
+.btn.btn-low:not(.btn-link):not(.btn-flat) {
+  background-color: @lowColor;
+  border-style: none;
+  color: #000000;
+}
+.btn.btn-medium:not(.btn-link):not(.btn-flat) {
+  background-color: @mediumColor;
+  border-style: none;
+  color: #000000;
+}
+.btn.btn-high:not(.btn-link):not(.btn-flat) {
+  background-color: @highColor;
   border-style: none;
   color: #000000;
 }
