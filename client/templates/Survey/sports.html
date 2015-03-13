@@ -5,9 +5,8 @@
   {{#autoForm collection="Sports" id="survey3" type=autoformType doc=selectedDoc resetOnSuccess=false autosave=true}}
           <legend>Sports Fields</legend>
           <button class="btn btn-primary btn-back">Back</button>
-    <button class="btn btn-primary btn-save">Save</button>
+          <button class="btn btn-primary btn-save">Save</button>
           <fieldset>
-              {{> afQuickField name="school_id"}}
 
              {{> afQuickField name="numberOfSportsFields" template="bootstrap3-horizontal" label-class="col-sm-3" input-col-class="col-sm-9" }}
               <div class="clearfix visible-xs-block"></div>
@@ -19,6 +18,8 @@
              	{{> afQuickField name="availableSportsOtherDescription" }}
               <div class="clearfix visible-xs-block"></div>
             {{/if}}
+
+            <p> </p>
 
             {{#if afFieldValueContains name="availableSports" value="Athletics Field"}}
               {{> afQuickField name="athleticsDrillDown" }}
@@ -50,6 +51,8 @@
 	        {{#if afFieldValueContains name="availableSports" value="Other"}}
              	{{> afQuickField name="otherDrillDown"}}
           {{/if}}
+
+          {{> afQuickField name="school_id"}}
 
         </fieldset>
 
