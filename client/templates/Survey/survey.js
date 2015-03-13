@@ -47,14 +47,7 @@ Template.survey6.events({
 
 
 
-Template.survey8.events({
-    "click .btn-back" : function() {
-      var schoolId = Session.get("selectedSchoolId");
-      Router.go('/survey/'+ schoolId);
-      return false;
-    }, 
-   
-  });
+
 
 Template.survey9.events({
     "click .btn-back" : function() {
@@ -154,23 +147,7 @@ Template.lab_table.rendered = function(){
 //   $.material.init(); 
 // }
 
-AutoForm.addHooks(['survey1', 'survey2', 'survey3', 'survey4', 'survey5', 'survey6', 'survey7', 'survey8', 'survey9', 'survey10', 'survey11', 'survey12', 'survey13'], {
 
-      onSuccess: function(operation, result, template) {  
-        console.log("Succes result: " + result);
-        console.log("Success operation: " + operation);
-      },
-      onError: function(operation, error, template) {
-        // alert('Could not save the form. Please check all fields are filled in correctly' + error);
-
-      },
-      onSubmit : function(insertDoc, updateDoc, currentDoc) {
-        console.log("Submit: ");
-        // doc.groupId = /*Get the group id*/;
-        // this.done(); //We've finished
-        return true; //Let autoForm do his default job now
-      }
-    });
 
 
 

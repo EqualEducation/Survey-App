@@ -3,8 +3,8 @@
 	<!-- {{setSelectedSchoolDoc schoolId}} -->
   	{{#autoForm collection="Schools" id="survey8" type="update" doc=selectedSchoolDoc resetOnSuccess=false autosave=true}}
       <legend>School Details</legend>
-          <button class="btn btn-primary btn-back">Back</button>
-          <button type="submit" class="btn btn-primary">Save</button>
+      <button class="btn btn-primary btn-back">Back</button>
+      <button class="btn btn-primary btn-save">Save</button>
           {{#each afFieldNames name="schoolDetails"}}
             {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
           <div class="clearfix visible-xs-block"></div>
@@ -14,3 +14,5 @@
    {{/autoForm}}
 
 </template>
+
+
