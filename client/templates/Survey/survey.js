@@ -159,7 +159,6 @@ AutoForm.addHooks(['survey1', 'survey2', 'survey3', 'survey4', 'survey5', 'surve
       onSuccess: function(operation, result, template) {  
         console.log("Succes result: " + result);
         console.log("Success operation: " + operation);
-        // alert('School has been updated');
       },
       onError: function(operation, error, template) {
         // alert('Could not save the form. Please check all fields are filled in correctly' + error);

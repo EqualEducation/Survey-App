@@ -23,14 +23,13 @@ AutoForm.hooks({
         onSuccess: function(operation, result, template) {  
           console.log("Success result: " + result);
           console.log("Success operation: " + operation);
-          alert('Classroom has been added. You can now add another classroom or click close.');
         },
         onError: function(operation, error, template) {
           // alert('Could not save the classroom. Please check all fields are filled in correctly. ' + error);
 
         },
         onSubmit : function(doc) {
-          console.log("Submit: " + doc);
+          // console.log("Submit: " + doc);
           // doc.groupId = /*Get the group id*/;
           // this.done(); //We've finished
           return true; //Let autoForm do his default job now
