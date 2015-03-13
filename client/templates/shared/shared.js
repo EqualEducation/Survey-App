@@ -15,10 +15,6 @@ Handlebars.registerHelper('selectedContactDoc',function(){
 	return ContactPeople.findOne(Session.get("selectedSchoolId"));
 });
 
-// Handlebars.registerHelper('schools',function(){
-// 	return Schools.find();
-// });
-
 Handlebars.registerHelper('blocks',function(){
 	return SanitationBlocks.find();
 });
@@ -41,54 +37,42 @@ Handlebars.registerHelper('setSelectedDoc',function(schoolId, collection_name){
 	// console.log("searching for "  + collection_name + " with school id " + schoolId);
 	if (collection_name === "additional") {
 		doc = Additional.findOne({'school_id' : schoolId});
-		// session_item_name = "selectedAdditionalDoc";
 	}
-
 	else if (collection_name === "sanitation") {
 		doc = Sanitation.findOne({'school_id' : schoolId});
-		// session_item_name = "selectedSanitationDoc";
 	}
-
 	else if (collection_name === "classrooms") {
 		doc = Classrooms.findOne({'school_id' : schoolId});
-		// session_item_name = "selectedClassroomsDoc";
 	}
 	else if (collection_name === "contactperson") {
 		doc = ContactPeople.findOne({'school_id' : schoolId});
-		// session_item_name = "selectedContactPersonDoc";
 	}
 	else if (collection_name === "electricity") {
-		// console.log('ELECTRICITY');
 		doc = Electricity.findOne({'school_id' : schoolId});
-		// session_item_name = "selectedElectricityDoc";
 	}
 	else if (collection_name === "grades") {
 		doc = Grades.findOne({'school_id' : schoolId});
-		// session_item_name = "selectedGradesDoc";
 	}
 	else if (collection_name === "libraries") {
 		doc = Libraries.findOne({'school_id' : schoolId});
-		// session_item_name = "selectedLabsDoc";
 	}
 	else if (collection_name === "labs") {
 		doc = Labs.findOne({'school_id' : schoolId});
-		// session_item_name = "selectedLabsDoc";
 	}
 	else if (collection_name === "nutrition") {
 		doc = Nutrition.findOne({'school_id' : schoolId});
-		// session_item_name = "selectedNutritionDoc";
 	}
 	else if (collection_name === "security") {
 		doc = Security.findOne({'school_id' : schoolId});
-		// session_item_name = "selectedSecurityDoc";
 	}
 	else if (collection_name === "specialneeds") {
 		doc = SpecialNeeds.findOne({'school_id' : schoolId});
-		// session_item_name = "selectedSpecialNeedsDoc";
 	}
 	else if (collection_name === "sports") {
 		doc = Sports.findOne({'school_id' : schoolId});
-		// session_item_name = "selectedSportsDoc";
+	}
+	else if (collection_name === "schools") {
+		doc = Schools.findOne({'school_id' : schoolId});
 	}
 	Session.set("selected_doc", doc);
 
@@ -96,13 +80,20 @@ Handlebars.registerHelper('setSelectedDoc',function(schoolId, collection_name){
 
 Handlebars.registerHelper('selectedDoc', function() {
 	var doc = Session.get("selected_doc");
-	// console.log(doc);
 	return doc;
 });
 
 Handlebars.registerHelper('autoformType', function() {
 	var autoformType = "insert";
 	if (Session.get("selected_doc") != null) {
+		autoformType =  "update";
+	} 
+	return autoformType;
+});
+
+Handlebars.registerHelper('autoformTypeForAddSchool', function() {
+	var autoformType = "insert";
+	if (Session.get("selectedSchoolId") != null) {
 		autoformType =  "update";
 	} 
 	return autoformType;

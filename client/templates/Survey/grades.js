@@ -34,10 +34,10 @@
   });
 
 
-Template.registerHelper("currentFieldValue", function (fieldName) {
-  var value= AutoForm.getFieldValue("survey", fieldName) || "";
-  return value;
-});
+// Template.registerHelper("currentFieldValue", function (fieldName) {
+//   var value= AutoForm.getFieldValue("survey", fieldName) || "";
+//   return value;
+// });
 
 Handlebars.registerHelper("isPrimarySchool", function () {
         var schoolId = Session.get("selectedSchoolId");
@@ -52,15 +52,16 @@ Handlebars.registerHelper("isPrimarySchool", function () {
         return ret;
     });
 
-Template.registerHelper("totalNumberOfStudentsInGrade", function (gradeName) {
-  //gradeR
-  var numberOfMaleStudentsFieldName = gradeName.concat(".numberOfMaleStudents");
-  var totalNumberOfMaleStudents = AutoForm.getFieldValue("survey", numberOfMaleStudentsFieldName) || "0";
-  var numberOfFemaleStudentsFieldName = gradeName.concat(".numberOfFemaleStudents");
-  var totalNumberOfFemaleStudents = AutoForm.getFieldValue("survey", numberOfFemaleStudentsFieldName) || "0";
+// Template.registerHelper("totalNumberOfStudentsInGrade", function (gradeName) {
+//   //gradeR
+//   var numberOfMaleStudentsFieldName = gradeName.concat(".numberOfMaleStudents");
+//   alert(numberOfMaleStudentsFieldName);
+//   var totalNumberOfMaleStudents = AutoForm.getFieldValue("survey", numberOfMaleStudentsFieldName) || "0";
+//   var numberOfFemaleStudentsFieldName = gradeName.concat(".numberOfFemaleStudents");
+//   var totalNumberOfFemaleStudents = AutoForm.getFieldValue("survey", numberOfFemaleStudentsFieldName) || "0";
 
-  var value = (parseInt(totalNumberOfFemaleStudents) + parseInt(totalNumberOfMaleStudents));
+//   var value = (parseInt(totalNumberOfFemaleStudents) + parseInt(totalNumberOfMaleStudents));
 
 
-  return value;
-});
+//   return value;
+// });
