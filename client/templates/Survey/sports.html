@@ -8,18 +8,21 @@
           <button class="btn btn-primary btn-save">Save</button>
           <fieldset>
 
-             {{> afQuickField name="numberOfSportsFields" template="bootstrap3-horizontal" label-class="col-sm-3" input-col-class="col-sm-9" }}
-              <div class="clearfix visible-xs-block"></div>
-
-             {{> afQuickField name="availableSports" template="bootstrap3-horizontal" label-class="col-sm-3" input-col-class="col-sm-9"}}
-             <div class="clearfix visible-xs-block"></div>
-
-             {{#if afFieldValueContains name="availableSports" value="Other"}}
-             	{{> afQuickField name="availableSportsOtherDescription" }}
-              <div class="clearfix visible-xs-block"></div>
+            <div class="row">   
+                {{> afQuickField name="numberOfSportsFields" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+              <br />
+            </div>
+              <div class="row">   
+                {{> afQuickField name="availableSports" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+              <br />
+            </div>
+            {{#if afFieldValueContains name="availableSports" value="Other"}}
+              <div class="row">   
+                  {{> afQuickField name="availableSportsOtherDescription" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+                <br />
+              </div>            
             {{/if}}
 
-            <p>   </p>
 
             {{#if afFieldValueContains name="availableSports" value="Athletics Field"}}
               {{> afQuickField name="athleticsDrillDown" }}

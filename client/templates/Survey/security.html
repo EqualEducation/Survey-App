@@ -7,32 +7,39 @@
   	 <button class="btn btn-primary btn-back">Back</button>
     <button class="btn btn-primary btn-save">Save</button>
 		<fieldset>
-       		{{> afQuickField name="safetyLevel" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
-                    <div class="clearfix visible-xs-block"></div>
+      <div class="row">   
+        {{> afQuickField name="safetyLevel" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+        <br />
+      </div> 
+      <div class="row">   
+        {{> afQuickField name="hasFence" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+        <br />
+      </div>
+   
+        {{#if afFieldValueIs name="hasFence" value=true}}
+				  {{> security}}
+        {{/if}}
 
-       		{{> afQuickField name="hasFence" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
-                    <div class="clearfix visible-xs-block"></div>
-
-
-        	{{#if afFieldValueIs name="hasFence" value=true}}
-				{{> security}}
-            {{/if}}
-
-       		{{> afQuickField name="comment" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
-                    <div class="clearfix visible-xs-block"></div>
-
+      <div class="row">   
+          {{> afQuickField name="comment" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+        <br />
+      </div>
+      <div class="row">   
           {{> afQuickField name="school_id" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
-                    <div class="clearfix visible-xs-block"></div>
-
+        <br />
+      </div>
 
         </fieldset>
    {{/autoForm}}
 </template>
 
 <template name="security">
-	{{> afQuickField name="fenceHasHoles" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
-            <div class="clearfix visible-xs-block"></div>
-	{{> afQuickField name="conditionOfFence" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
-            <div class="clearfix visible-xs-block"></div>
-
+  <div class="row">   
+      {{> afQuickField name="fenceHasHoles" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+    <br />
+  </div>
+  <div class="row">   
+      {{> afQuickField name="conditionOfFence" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+    <br />
+  </div>
 </template>

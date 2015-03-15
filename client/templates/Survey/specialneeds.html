@@ -2,17 +2,20 @@
 <template name="survey9">
 		<!-- {{setSelectedSchoolDoc schoolId}} -->
   {{setSelectedDoc schoolId "specialneeds"}}
-  {{#autoForm collection="SpecialNeeds" id="survey9" type=autoformType doc=selectedDoc resetOnSuccess=false autosave=true}}
-  	<legend>Special Needs</legend>
+	{{#autoForm collection="SpecialNeeds" id="survey9" type=autoformType doc=selectedDoc resetOnSuccess=false autosave=true}}
+	<legend>Special Needs</legend>
 	<button class="btn btn-primary btn-back">Back</button>
-    <button class="btn btn-primary btn-save">Save</button>
+	<button class="btn btn-primary btn-save">Save</button>
 
-			<fieldset>
+		<fieldset>
 			{{#each afFieldNames}}
-		    	{{> afQuickField name=this.name}}
-		  	{{/each}}  
-			</fieldset>
-		{{/autoForm}}
+				<div class="row">   
+					{{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+					<br />
+				</div>		  	
+			{{/each}}  
+		</fieldset>
+	{{/autoForm}}
 </template>
 
 

@@ -6,9 +6,11 @@
       <button class="btn btn-primary btn-back">Back</button>
       <button class="btn btn-primary btn-save">Save</button>
           {{#each afFieldNames name="schoolDetails"}}
-            {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
-          <div class="clearfix visible-xs-block"></div>
-          <br />
+          <div class="row">   
+              {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+              <br />
+            </div> 
+           
     	{{/each}}
 
    {{/autoForm}}

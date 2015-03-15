@@ -3,9 +3,10 @@
     <fieldset>
       <legend>Add a School</legend>
       {{#each afFieldNames name="schoolDetails"}}
+        <div class="row">
             {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
-          <div class="clearfix visible-xs-block"></div>
           <br />
+        </div>
       {{/each}}
     </fieldset>
       <button class="btn btn-primary btn-back">Back</button>
