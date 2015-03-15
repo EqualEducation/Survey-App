@@ -5,9 +5,11 @@
     <button class="btn btn-primary btn-back">Back</button>
     <button class="btn btn-primary btn-save">Save</button>
     <fieldset>
-      {{> afQuickField name="totalTeachersInSchool" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
-      <div class="clearfix visible-xs-block"></div>
-      <br />
+      <div class="row">
+        {{> afQuickField name="totalTeachersInSchool" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+        <br />
+      </div>
+
       <p>Please select a grade to update</p>
       {{#if isPrimarySchool}}
         {{> primaryschool_accordian}}
@@ -25,9 +27,11 @@
     <div class="accordion-section">
         <a class="accordion-section-title" href="#accordion-0">Grade R</a>
         <div id="accordion-0" class="accordion-section-content">
-          {{#each afFieldNames name="gradeR"}}           
-              {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
-              <div class="clearfix visible-xs-block"></div>
+          {{#each afFieldNames name="gradeR"}}        
+              <div class="row">   
+                {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+                <br />
+              </div>
           {{/each}}
         </div>
     </div><!--end .accordion-section-->
@@ -35,8 +39,10 @@
         <a class="accordion-section-title" href="#accordion-1">Grade 1</a>
         <div id="accordion-1" class="accordion-section-content">
           {{#each afFieldNames name="grade1"}}
-              {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
-              <div class="clearfix visible-xs-block"></div>
+              <div class="row">   
+                {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+                <br />
+              </div>
           {{/each}}        
         </div>
     </div><!--end .accordion-section-->
@@ -44,8 +50,10 @@
         <a class="accordion-section-title" href="#accordion-2">Grade 2</a>
         <div id="accordion-2" class="accordion-section-content">
           {{#each afFieldNames name="grade2"}}
-              {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
-              <div class="clearfix visible-xs-block"></div>
+              <div class="row">   
+                {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+                <br />
+              </div>
           {{/each}}          
         </div>
     </div><!--end .accordion-section-->
@@ -53,8 +61,10 @@
         <a class="accordion-section-title" href="#accordion-3">Grade 3</a>
         <div id="accordion-3" class="accordion-section-content">
           {{#each afFieldNames name="grade3"}}
-            {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
-              <div class="clearfix visible-xs-block"></div>
+            <div class="row">   
+                {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+                <br />
+              </div>
           {{/each}}  
         </div>
     </div><!--end .accordion-section-->        
@@ -62,8 +72,10 @@
         <a class="accordion-section-title" href="#accordion-4">Grade 4</a>
         <div id="accordion-4" class="accordion-section-content">
           {{#each afFieldNames name="grade4"}}
-            {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
-              <div class="clearfix visible-xs-block"></div>
+           <div class="row">   
+                {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+                <br />
+              </div>
           {{/each}}  
         </div>
     </div><!--end .accordion-section-->
@@ -71,8 +83,10 @@
         <a class="accordion-section-title" href="#accordion-5">Grade 5</a>
         <div id="accordion-5" class="accordion-section-content">
           {{#each afFieldNames name="grade5"}}
-            {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
-              <div class="clearfix visible-xs-block"></div>
+            <div class="row">   
+                {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+                <br />
+              </div>
           {{/each}}  
         </div>
     </div><!--end .accordion-section-->
@@ -80,8 +94,10 @@
         <a class="accordion-section-title" href="#accordion-6">Grade 6</a>
         <div id="accordion-6" class="accordion-section-content">
           {{#each afFieldNames name="grade6"}}
-           {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
-              <div class="clearfix visible-xs-block"></div>
+           <div class="row">   
+                {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+                <br />
+              </div>
           {{/each}}  
         </div>
     </div><!--end .accordion-section-->
@@ -89,8 +105,10 @@
         <a class="accordion-section-title" href="#accordion-7">Grade 7</a>
         <div id="accordion-7" class="accordion-section-content">
           {{#each afFieldNames name="grade7"}}
-           {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
-              <div class="clearfix visible-xs-block"></div>
+           <div class="row">   
+                {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+                <br />
+              </div>
           {{/each}}  
       </div>
     </div><!--end .accordion-section-->            
@@ -103,8 +121,10 @@
         <a class="accordion-section-title" href="#accordion-0">Grade 8</a>
         <div id="accordion-0" class="accordion-section-content">
           {{#each afFieldNames name="grade8"}}
-              {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
-              <div class="clearfix visible-xs-block"></div>
+             <div class="row">   
+                {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+                <br />
+              </div>
           {{/each}}  
         </div>
     </div><!--end .accordion-section-->
@@ -112,8 +132,10 @@
         <a class="accordion-section-title" href="#accordion-1">Grade 9</a>
         <div id="accordion-1" class="accordion-section-content">
           {{#each afFieldNames name="grade9"}}
-            {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
-              <div class="clearfix visible-xs-block"></div>
+            <div class="row">   
+                {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+                <br />
+              </div>
           {{/each}}  
         </div>
     </div><!--end .accordion-section-->
@@ -121,8 +143,10 @@
         <a class="accordion-section-title" href="#accordion-2">Grade 10</a>
         <div id="accordion-2" class="accordion-section-content">
           {{#each afFieldNames name="grade10"}}
-            {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
-              <div class="clearfix visible-xs-block"></div>
+           <div class="row">   
+                {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+                <br />
+              </div>
           {{/each}}  
         </div>
     </div><!--end .accordion-section-->
@@ -130,8 +154,10 @@
         <a class="accordion-section-title" href="#accordion-3">Grade 11</a>
         <div id="accordion-3" class="accordion-section-content">
           {{#each afFieldNames name="grade11"}}
-            {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
-              <div class="clearfix visible-xs-block"></div>
+            <div class="row">   
+                {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+                <br />
+              </div>
           {{/each}}  
         </div>
     </div><!--end .accordion-section-->        
@@ -139,8 +165,10 @@
         <a class="accordion-section-title" href="#accordion-4">Grade 12</a>
         <div id="accordion-4" class="accordion-section-content">
           {{#each afFieldNames name="grade12"}}
-           {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
-              <div class="clearfix visible-xs-block"></div>
+           <div class="row">   
+                {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+                <br />
+              </div>
           {{/each}}  
         </div>
     </div><!--end .accordion-section-->

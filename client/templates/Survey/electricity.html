@@ -1,36 +1,41 @@
 <template name="survey13">
   <!-- {{setSelectedSchoolDoc schoolId }} -->
   {{setSelectedDoc schoolId "electricity"}}
-  {{#autoForm collection="Electricity" id="survey13" type=autoformType doc=selectedDoc resetOnSuccess=false autosave=true}}
-        <legend>Electricity</legend>
-  			<button class="btn btn-primary btn-back">Back</button>
-        <button class="btn btn-primary btn-save">Save</button>
-          <fieldset>
-             {{> afQuickField name="electricityCondition" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
-             <div class="clearfix visible-xs-block"></div>
+    {{#autoForm collection="Electricity" id="survey13" type=autoformType doc=selectedDoc resetOnSuccess=false autosave=true}}
+    <legend>Electricity</legend>
+    <button class="btn btn-primary btn-back">Back</button>
+    <button class="btn btn-primary btn-save">Save</button>
+      <fieldset>
+        <div class="row">
+          {{> afQuickField name="electricityCondition" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+        </div>
 
-			 {{#unless afFieldValueIs name="electricityCondition" value="There is no power supply" }}
-		        {{#unless afFieldValueIs name="electricityCondition" value=""}}
-		        	{{> electricity}}
-		        {{/unless}}
-		      {{/unless}}
-             
-             {{> afQuickField name="comment"  template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
-              <div class="clearfix visible-xs-block"></div>
+        {{#unless afFieldValueIs name="electricityCondition" value="There is no power supply" }}
+        {{#unless afFieldValueIs name="electricityCondition" value=""}}
+        {{> electricity}}
+        {{/unless}}
+        {{/unless}}
 
-            {{> afQuickField name="school_id" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
-             <div class="clearfix visible-xs-block"></div>
+        <div class="row">
+          {{> afQuickField name="comment"  template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+        </div>
 
-		      
-        </fieldset>
-	{{/autoForm}}
+        <div class="row">
+          {{> afQuickField name="school_id" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+        </div>
+
+      </fieldset>
+    {{/autoForm}}
 </template>
 
 <template name="electricity">
-	{{> afQuickField name="electricitySource" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
-	{{#if afFieldValueContains name="electricitySource" value="Other"}}
-	  	{{> afQuickField name="electricitySourceOtherDescription" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
-       <div class="clearfix visible-xs-block"></div>
+  <div class="row">
+  	{{> afQuickField name="electricitySource" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+  </div>
+  	{{#if afFieldValueContains name="electricitySource" value="Other"}}
+      <div class="row">
+  	  	{{> afQuickField name="electricitySourceOtherDescription" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+      </div>
 
     {{/if}}
 </template>

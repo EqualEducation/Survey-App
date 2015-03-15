@@ -30,17 +30,20 @@
 <template name="more_info_labs">
    {{#autoForm collection="Labs" id="survey5" type=autoformType doc=selectedDoc resetOnSuccess=false autosave=true}}
       {{#each afFieldNames}}
-         {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
-          <div class="clearfix visible-xs-block"></div>
+        <div class="row">   
+          {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
           <br />
-        {{/each}}
+        </div>     
+      {{/each}}
    {{/autoForm}}
 </template>
 
 
 <template name="sciencelabs">
-  {{> afQuickField name="numberOfLabs"  template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
-    <div class="clearfix visible-xs-block"></div>
+    <div class="row">   
+      {{> afQuickField name="numberOfLabs" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+      <br />
+    </div>  
   {{> labs}}
 
 
@@ -90,9 +93,10 @@
         <div class="modal-body">
             {{#autoForm collection="IndividualLabs" id="labs1" type="insert" resetOnSuccess=true }}
                 {{#each afFieldNames}}
+                  <div class="row">   
                     {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
-                    <div class="clearfix visible-xs-block"></div>
                     <br />
+                  </div>  
                 {{/each}}
                   <button type="submit" class="btn btn-primary btn-save">Save</button>
             {{/autoForm}}
@@ -111,9 +115,10 @@
         <div class="modal-body">
             {{#autoForm collection="IndividualLabs" id="labs2" type="update" doc=selectedLab resetOnSuccess=true }}
                 {{#each afFieldNames}}
+                    <div class="row">   
                     {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
-                    <div class="clearfix visible-xs-block"></div>
                     <br />
+                  </div> 
                 {{/each}}
                   <button type="submit" class="btn btn-primary btn-save">Save</button>
             {{/autoForm}}
