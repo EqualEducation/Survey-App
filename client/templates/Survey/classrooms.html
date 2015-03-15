@@ -48,8 +48,11 @@
         <div class="modal-body">
             {{#autoForm collection="Classrooms" id="classrooms1" type="insert" resetOnSuccess=true }}
                 {{#each afFieldNames}}
+                  <div class="row">
                     {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
-                    <div class="clearfix visible-xs-block"></div>
+                    <br/>
+                    <br/>
+                  </div>
                 {{/each}}
                   <button type="submit" class="btn btn-primary btn-save">Save</button>
             {{/autoForm}}
@@ -69,9 +72,11 @@
         <div class="modal-body">
             {{#autoForm collection="Classrooms" id="classrooms2" type="update" doc=selectedClassroom resetOnSuccess=true }}
                 {{#each afFieldNames}}
+                  <div class="row">
                     {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
-                    <div class="clearfix visible-xs-block"></div>
                     <br />
+                    <br />
+                  </div>
                 {{/each}}
                   <button type="submit" class="btn btn-primary btn-save">Save</button>
             {{/autoForm}}
