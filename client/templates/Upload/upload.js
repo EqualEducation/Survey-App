@@ -17,16 +17,17 @@ Template.upload.events({
           _.each(all, function (entry) {
             i++;
 
-            var existingSchool = Schools.find({'schoolDetails.NEIMS_NUMBER' : entry.NEIMS_NUMBER});
-            if (typeof existingSchool === 'undefined') {
-                console.log(typeof existingSchool);
+            // var existingSchool = Schools.find({'schoolDetails.NEIMS_NUMBER' : entry.NEIMS_NUMBER});
+            // if (typeof existingSchool === 'undefined') {
+                // console.log(typeof existingSchool);
 
               Schools.insert({schoolDetails: entry});
               uploaded++;
-            } else {
-              console.log(typeof existingSchool);
-              alert('School already exists! NEIMS: ' + entry.NEIMS_NUMBER);
-            }
+              console.log("Uploaded: " + uploaded);
+            // } else {
+            //   console.log(typeof existingSchool);
+            //   alert('School already exists! NEIMS: ' + entry.NEIMS_NUMBER);
+            // }
 
             if (i == count) {
               var message = ' schools were added to the database';
