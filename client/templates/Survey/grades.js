@@ -54,8 +54,17 @@ Handlebars.registerHelper("isPrimarySchool", function () {
         if (school.schoolDetails.CLASSIFICATION === 'Primary') {
           ret = true;
         }
+        return ret;
+    });
 
-
+Handlebars.registerHelper("isSecondarySchool", function () {
+        var schoolId = Session.get("selectedSchoolId");
+        console.log("is primary school selected school: " + schoolId);
+        var school = Schools.findOne({'_id' : schoolId}, {"schoolDetails.CLASSIFICATION" : 1});
+        var ret = false;
+        if (school.schoolDetails.CLASSIFICATION === 'Secondary') {
+          ret = true;
+        }
         return ret;
     });
 

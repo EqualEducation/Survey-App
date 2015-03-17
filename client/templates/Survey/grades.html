@@ -10,16 +10,28 @@
         <br />
       </div>
 
-      <p>Please select a grade to update</p>
       {{#if isPrimarySchool}}
+        <p>Please select a grade to update</p>
         {{> primaryschool_accordian}}
       {{else}}
-        {{> highschool_accordian}}
+        {{#if isSecondarySchool}}
+          <p>Please select a grade to update</p>
+          {{> highschool_accordian}}
+        {{else}}
+          {{> unknown_classification}}
+        {{/if}}
       {{/if}}
+    
       {{> afQuickField name="school_id"}}
 
         </fieldset>
    {{/autoForm}}
+</template>
+
+<template name="unknown_classification">
+  <b>You have not selected if this school is a primary or secondary school. Please return to <a href="{{pathFor 'surveySection' surveySection='survey8' _id =schoolId}}">School Details</a> and update.</b>
+  
+
 </template>
 
 <template name="primaryschool_accordian">
