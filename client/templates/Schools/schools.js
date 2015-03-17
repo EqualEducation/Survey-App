@@ -28,6 +28,12 @@ Template.schools.events({
       },
   });
 
+Template.search.events({
+     "click .btn-delete" : function() {
+        Schools.remove({'_id' : this._id});
+    }, 
+});
+
 AutoForm.hooks({
   insertSchoolForm: {
       onSuccess: function(operation, result, template) {  

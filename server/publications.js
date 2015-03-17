@@ -58,4 +58,9 @@ if (Meteor.isServer) {
     return SpecialNeeds.find();
   });
 
+//API
+Accounts.connection = DDP.connect("http://app.equaleducation.org.za");
+
+
+
 }

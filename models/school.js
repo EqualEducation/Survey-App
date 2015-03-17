@@ -1,5 +1,11 @@
 Schools = new Mongo.Collection("schools");
 
+// Extended configuration
+Schools.initEasySearch(['schoolDetails.INSTITUTION_NAME'], {
+    'limit' : 10,
+    'use' : 'mongo-db'
+});
+
 SchoolDetailsSchema = new SimpleSchema({
   INSTITUTION_NAME: {
     type: String,
