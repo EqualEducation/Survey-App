@@ -1,6 +1,16 @@
 Nutrition = new Mongo.Collection("nutrition");
 
 NutritionSchema = new SimpleSchema({
+  hasNutritionCentre: {
+    label: "Does the school have a nutrition centre?",
+    type: Boolean,
+      optional: true,
+      autoform: {
+           type: "boolean-radios",
+           trueLabel: "Yes",
+           falseLabel: "No",
+    }
+  },
   nutritionProgram: {
     optional: true,
     label: "Which of the following describes the school’s nutrition program?",
@@ -15,16 +25,6 @@ NutritionSchema = new SimpleSchema({
           {label: "No nutrition program necessary", value: 'No nutrition program necessary'},
         ];
       }
-    }
-  },
-  hasNutritionCentre: {
-    label: "Does the school have a nutrition centre?",
-    type: Boolean,
-      optional: true,
-      autoform: {
-           type: "boolean-radios",
-           trueLabel: "Yes",
-           falseLabel: "No",
     }
   },
   comment: {

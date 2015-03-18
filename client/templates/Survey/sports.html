@@ -24,34 +24,53 @@
 
 
             {{#if afFieldValueContains name="availableSports" value="Athletics Field"}}
-              {{> afQuickField name="athleticsDrillDown" }}
+              {{>sports_drilldown name="athleticsDrillDown"}}
+              <!-- {{> afQuickField name="athleticsDrillDown" }} -->
             {{/if}}
             {{#if afFieldValueContains name="availableSports" value="Hockey Field"}}
-              {{> afQuickField name="hockeyDrillDown" }}
+              <!-- {{> afQuickField name="hockeyDrillDown" }} -->
+                            {{>sports_drilldown name="hockeyDrillDown"}}
+
             {{/if}}
              {{#if afFieldValueContains name="availableSports" value="Netball Court"}}
-             	{{> afQuickField name="netballDrillDown"}}
+             	<!-- {{> afQuickField name="netballDrillDown"}} -->
+                            {{>sports_drilldown name="netballDrillDown"}}
+
             {{/if}}
             {{#if afFieldValueContains name="availableSports" value="Basketball Court"}}
-             	{{> afQuickField name="basketballDrillDown"}}
+             	<!-- {{> afQuickField name="basketballDrillDown"}} -->
+                            {{>sports_drilldown name="basketballDrillDown"}}
+
             {{/if}}
             {{#if afFieldValueContains name="availableSports" value="Tennis Court"}}
-             	{{> afQuickField name="tennisDrillDown"}}
+             	<!-- {{> afQuickField name="tennisDrillDown"}} -->
+                            {{>sports_drilldown name="tennisDrillDown"}}
+
             {{/if}}
             {{#if afFieldValueContains name="availableSports" value="Cricket Pitch"}}
-             	{{> afQuickField name="cricketDrillDown"}}
+             	<!-- {{> afQuickField name="cricketDrillDown"}} -->
+                            {{>sports_drilldown name="cricketDrillDown"}}
+
             {{/if}}
             {{#if afFieldValueContains name="availableSports" value="Soccer Field"}}
-             	{{> afQuickField name="soccerDrillDown"}}
+             	<!-- {{> afQuickField name="soccerDrillDown"}} -->
+                            {{>sports_drilldown name="soccerDrillDown"}}
+
             {{/if}}
 	        {{#if afFieldValueContains name="availableSports" value="Rugby Field"}}
-             	{{> afQuickField name="rugbyDrillDown"}}
+             	<!-- {{> afQuickField name="rugbyDrillDown"}} -->
+                            {{>sports_drilldown name="rugbyDrillDown"}}
+
             {{/if}}
 	        {{#if afFieldValueContains name="availableSports" value="Swimming Pool"}}
-             	{{> afQuickField name="swimmingDrillDown"}}
+             	<!-- {{> afQuickField name="swimmingDrillDown"}} -->
+                            {{>sports_drilldown name="swimmingDrillDown"}}
+
             {{/if}}
 	        {{#if afFieldValueContains name="availableSports" value="Other"}}
-             	{{> afQuickField name="otherDrillDown"}}
+             	<!-- {{> afQuickField name="otherDrillDown"}} -->
+                            {{>sports_drilldown name="otherDrillDown"}}
+
           {{/if}}
 
           {{> afQuickField name="school_id"}}
@@ -59,4 +78,8 @@
         </fieldset>
 
    {{/autoForm}}
+</template>
+
+<template name="sports_drilldown">
+  {{> afQuickField name=name }}
 </template>

@@ -218,6 +218,9 @@ Template.modal_lab_update.rendered = function(){
 Template.modal_lab.rendered = function(){
   $.material.init(); 
 }
+Template.sports_drilldown.rendered = function(){
+  $.material.init(); 
+}
 // Template.block_details.rendered  = function() {
 //   $.material.init(); 
 // }

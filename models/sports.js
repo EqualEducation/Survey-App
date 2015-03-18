@@ -7,7 +7,7 @@ SportsFieldDrillDownSchema = new SimpleSchema ({
     optional: true,
     type: String,
     autoform: {
-      type: "select",
+      type: "select-radio",
       options: function () {
         return [
           {label: "Good Condition", value: 'Good Condition'},
@@ -22,7 +22,7 @@ SportsFieldDrillDownSchema = new SimpleSchema ({
     type: String,
     label: "Which of the following describes the location of the place used for this sport?",
     autoform: {
-      type: "select",
+      type: "select-radio",
       options: function () {
         return [
           {label: "School’s Own", value: 'School’s Own'},
