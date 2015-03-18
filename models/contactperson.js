@@ -1,9 +1,46 @@
 ContactPeople = new Mongo.Collection("contactpeople");
 
 ContactDetailsSchema = new SimpleSchema({
+  date: {
+    type: String,
+    optional: true,
+    autoform: {
+      afFieldInput: {
+        type: "date"
+      }
+    }
+  },
+  auditorName: {
+    type: String,
+    label: "Name of Auditor",
+    optional: true,
+    autoform: {
+      rows: 1,
+
+    },
+  },
+  auditorPhoneNumber: {
+    type: String,
+    optional: true,
+    label: "Contact Number of Auditor",
+    regEx: /^[0-9]{10}$/,
+    autoform: {
+      rows: 1,
+    },
+  },
+  auditorEmail: {
+    type: String,
+    label: "Contact Email of Auditor",
+    optional: true,
+    autoform: {
+      rows: 1,
+
+    },
+
+  },
   name: {
     type: String,
-    label: "Contact Name",
+    label: "Follow up Contact Name",
     optional: true,
     autoform: {
       rows: 1,
@@ -13,7 +50,7 @@ ContactDetailsSchema = new SimpleSchema({
   phoneNumber: {
     type: String,
     optional: true,
-    label: "Contact Number",
+    label: "Follow up Contact Number",
     regEx: /^[0-9]{10}$/,
     autoform: {
       rows: 1,
@@ -21,7 +58,7 @@ ContactDetailsSchema = new SimpleSchema({
   },
   email: {
     type: String,
-    label: "Contact Email",
+    label: "Follow up Contact Email",
     optional: true,
     autoform: {
       rows: 1,
