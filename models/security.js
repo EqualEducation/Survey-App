@@ -6,7 +6,7 @@ SecuritySchema = new SimpleSchema({
     type: String,
     label: "How safe do you consider your school?",
     autoform: {
-      type: "select",
+      type: "select-radio",
       options: function () {
         return [
           {label: "Safe", value: 'Safe'},
@@ -51,7 +51,7 @@ SecuritySchema = new SimpleSchema({
     optional: true,
     type: String,
     autoform: {
-      type: "select",
+      type: "select-radio",
       options: function () {
         return [
           {label: "Excellent (no repairs needed)", value: 'Excellent (no repairs needed)'},
@@ -71,16 +71,16 @@ SecuritySchema = new SimpleSchema({
   //       falseLabel: "No",
   //     }
   // },
-  // hasSecurityGaurd: {
-  //   label: "Is there a security gaurd controlling access at the gate?",
-  //   optional: true,
-  //   type: Boolean,
-  //     autoform: {
-  //       type: "boolean-radios",
-  //       trueLabel: "Yes",
-  //       falseLabel: "No",
-  //     }
-  // },
+  hasSecurityGaurd: {
+    label: "Is there a security guard controlling access at the gate?",
+    optional: true,
+    type: Boolean,
+      autoform: {
+        type: "boolean-radios",
+        trueLabel: "Yes",
+        falseLabel: "No",
+      }
+  },
   comment: {
     type: String,
     optional: true,
