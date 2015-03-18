@@ -143,6 +143,18 @@ Template.survey13.events({
     }, 
   });
 
+Template.survey14.events({
+    "click .btn-back" : function() {
+      var schoolId = Session.get("selectedSchoolId");
+      Router.go('/survey/'+ schoolId);
+      return false;
+    }, 
+    "click .btn-save" : function() {
+      buttonSaveClicked = true;
+      $('#survey14').submit();
+      return false;
+    }, 
+  });
 //NOTE: We need to re initialize the material css for some reason every time a template is rendered. 
 //TODO: Use one method for all rendered templates instead of having to define each on ehere
 Template.survey1.rendered = function(){
@@ -182,6 +194,9 @@ Template.survey12.rendered = function(){
 Template.survey13.rendered = function(){
   $.material.init();
 };
+Template.survey14.rendered = function(){
+  $.material.init();
+};
 Template.libraries.rendered = function(){
     $.material.init();
 }
@@ -209,7 +224,7 @@ Template.modal_lab.rendered = function(){
 
 
 
-AutoForm.addHooks(['survey1', 'survey3', 'survey4', 'survey5', 'survey6', 'survey7', 'survey9', 'survey10', 'survey11', 'survey12', 'survey13'], {
+AutoForm.addHooks(['survey1', 'survey3', 'survey4', 'survey5', 'survey6', 'survey7', 'survey9', 'survey10', 'survey11', 'survey12', 'survey13', 'survey14'], {
        onSuccess: function(operation, result, template) {  
         console.log("Succes result: " + result);
         console.log("Success operation: " + operation);   

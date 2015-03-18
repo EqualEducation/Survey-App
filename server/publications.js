@@ -9,6 +9,11 @@ if (Meteor.isServer) {
     return Schools.find({},{sort: {'schoolDetails.INSTITUTION_NAME': 1}}, {sort: {'schoolDetails.INSTITUTION_NAME': 'asc'}});
   });
 
+  Meteor.publish("electronicConnectivity", function () {
+    return ElectronicConnectivity.find();
+  });
+
+
   Meteor.publish("contactpeople", function () {
     return ContactPeople.find();
   });
@@ -59,7 +64,7 @@ if (Meteor.isServer) {
   });
 
 //API
-Accounts.connection = DDP.connect("http://app.equaleducation.org.za");
+// Accounts.connection = DDP.connect("http://app.equaleducation.org.za");
 
 
 

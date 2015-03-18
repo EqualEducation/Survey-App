@@ -38,6 +38,9 @@ Handlebars.registerHelper('setSelectedDoc',function(schoolId, collection_name){
 	if (collection_name === "additional") {
 		doc = Additional.findOne({'school_id' : schoolId});
 	}
+	else if (collection_name === "electronicConnectivity") {
+		doc = ElectronicConnectivity.findOne({'school_id' : schoolId});
+	}
 	else if (collection_name === "sanitation") {
 		doc = Sanitation.findOne({'school_id' : schoolId});
 	}

@@ -58,6 +58,10 @@
 		{{#if isEqual this.surveySection 'survey13'}}
 			{{>  survey13 schoolId=this.schoolId }}
 		{{/if}}
+
+		{{#if isEqual this.surveySection 'survey14'}}
+			{{>  survey14 schoolId=this.schoolId }}
+		{{/if}}
 </template>
 
 
@@ -68,6 +72,7 @@
       <h3>Please choose a section to update</h3>
       {{setSelectedSchoolDoc schoolId}}
 	      <a href="{{pathFor 'surveySection' surveySection='survey8' _id =schoolId}}" class="btn btn-high btn-dashboard">School Details</a>
+	      <a href="{{pathFor 'surveySection' surveySection='survey14' _id =schoolId}}" class="btn btn-high btn-dashboard">Electronic Connectivity</a>
 	      <a href="{{pathFor 'surveySection' surveySection='survey2' _id =schoolId}}" class="btn btn-high btn-dashboard">Grade Demographics</a>
    	      <a href="{{pathFor 'surveySection' surveySection='survey7' _id =schoolId}}" class="btn btn-high btn-dashboard">Water & Sanitation</a>      
 	      <a href="{{pathFor 'surveySection' surveySection='survey11' _id =schoolId}}" class="btn btn-high btn-dashboard">Classrooms</a>

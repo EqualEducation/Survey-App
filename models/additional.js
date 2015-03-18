@@ -1,26 +1,6 @@
-//CArla comment
-
 Additional = new Mongo.Collection("additional");
 
 AdditionalInfoSchema = new SimpleSchema({
-  electronicConnectivity: {
-    label: "Which of the following does the school have? (tick all that apply):",
-    optional: true,
-    type: [String],
-    autoform: 
-    {
-      type: "select-checkbox",
-      options: function () 
-      {
-        return [
-      {label: "Telephone facilities", value: "Telephone facilities"},
-      {label: "Fax facilities", value: "Fax facilities"},
-      {label: "Internet facilities", value: "RInternet facilities"},
-      {label: "An intercom or public address system", value: "An intercom or public address system"},
-      ];
-      }
-    }
-  },
   buildingMaterials_anyPart: {
     label: "Is ANY PART OF the school built out of any of the following materials? (tick all that apply)",
      optional: true,
@@ -31,6 +11,7 @@ AdditionalInfoSchema = new SimpleSchema({
       options: function () 
       {
         return [
+      {label: "No", value: "No"},
       {label: "Mud", value: "Mud"},
       {label: "Wood", value: "Wood"},
       {label: "Asbestos", value: "Asbestos"},
@@ -48,6 +29,7 @@ AdditionalInfoSchema = new SimpleSchema({
       options: function () 
       {
         return [
+      {label: "No", value: "No"},
       {label: "Mud", value: "Mud"},
       {label: "Wood", value: "Wood"},
       {label: "Asbestos", value: "Asbestos"},
