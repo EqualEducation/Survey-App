@@ -34,8 +34,11 @@
 
 <template name="version">
   <tr>
-    <!-- <td><a href="" class="btn-edit">{{this.name}}</a></td> -->
-    <td><a href="{{pathFor 'survey'}}" class="">{{this.name}}</a></td>
+    <!-- {{#if isEqual currentVersionId this._id}} -->
+        <td><a href="{{pathFor 'survey'}}" class="">{{this.name}}</a></td>
+      <!-- {{else}} -->
+        <!-- <td>{{this.name}}</td> -->
+    <!-- {{/if}} -->
     <td>{{this.startDate}}</td>
     <td>{{this.endDate}}</td>
     <td><a href="" class="btn-edit">Edit</a></td>

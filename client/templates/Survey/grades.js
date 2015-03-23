@@ -10,8 +10,8 @@ var buttonSaveClicked = false;
 
 	Template.survey2.events({
     "click .btn-back" : function() {
-      var schoolId = Session.get("selectedSchoolId");
-      Router.go('/survey/'+ schoolId);
+      var versionId = Session.get("selectedSurveyVersionId");
+      Router.go('/survey/'+ versionId);
       return false;
     },
     "click .btn-save" : function() {

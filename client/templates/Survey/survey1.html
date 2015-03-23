@@ -1,65 +1,67 @@
 
 <template name="survey">
 
-		
+		{{this.surveyVersionId}}
+		{{setSelectedSurveyVersionDoc this.surveyVersionId }}
+
 		{{#if isEqual this.surveySection 'survey_sections'}}
-			{{>  section_selection schoolId=this.schoolId }}
+			{{>  section_selection schoolId=this.schoolId surveyVersionId=this.surveyVersionId}}
 		{{/if}}
 
 		{{#if isEqual this.surveySection 'survey1'}}
-			{{>  survey1 schoolId=this.schoolId }}
+			{{>  survey1 schoolId=this.schoolId surveyVersionId=this.surveyVersionId}}
 		{{/if}}
 
 		{{#if isEqual this.surveySection 'survey2'}}
-			{{>  survey2 schoolId=this.schoolId }}
+			{{>  survey2 schoolId=this.schoolId surveyVersionId=this.surveyVersionId}}
 		{{/if}}
 
 		{{#if isEqual this.surveySection 'survey3'}}
-			{{>  survey3 schoolId=this.schoolId }}
+			{{>  survey3 schoolId=this.schoolId surveyVersionId=this.surveyVersionId}}
 		{{/if}}
 
 		{{#if isEqual this.surveySection 'survey4'}}
-			{{>  survey4 schoolId=this.schoolId }}
+			{{>  survey4 schoolId=this.schoolId surveyVersionId=this.surveyVersionId}}
 		{{/if}}
 
 		{{#if isEqual this.surveySection 'survey5'}}
-			{{>  survey5 schoolId=this.schoolId }}
+			{{>  survey5 schoolId=this.schoolId surveyVersionId=this.surveyVersionId}}
 		{{/if}}
 
 		{{#if isEqual this.surveySection 'survey6'}}
-			{{>  survey6 schoolId=this.schoolId }}
+			{{>  survey6 schoolId=this.schoolId surveyVersionId=this.surveyVersionId}}
 		{{/if}}
 
 		{{#if isEqual this.surveySection 'survey7'}}
-			{{>  survey7 schoolId=this.schoolId }}
+			{{>  survey7 schoolId=this.schoolId surveyVersionId=this.surveyVersionId}}
 		{{/if}}
 
 		{{#if isEqual this.surveySection 'survey8'}}
-			{{>  survey8 schoolId=this.schoolId }}
+			{{>  survey8 schoolId=this.schoolId surveyVersionId=this.surveyVersionId}}
 		{{/if}}
 		
 		{{#if isEqual this.surveySection 'survey9'}}
-			{{>  survey9 schoolId=this.schoolId }}
+			{{>  survey9 schoolId=this.schoolId surveyVersionId=this.surveyVersionId}}
 		{{/if}}
 
 		{{#if isEqual this.surveySection 'survey10'}}
-			{{>  survey10 schoolId=this.schoolId }}
+			{{>  survey10 schoolId=this.schoolId surveyVersionId=this.surveyVersionId}}
 		{{/if}}
 		
 		{{#if isEqual this.surveySection 'survey11'}}
-			{{>  survey11 schoolId=this.schoolId }}
+			{{>  survey11 schoolId=this.schoolId surveyVersionId=this.surveyVersionId}}
 		{{/if}}
 		
 		{{#if isEqual this.surveySection 'survey12'}}
-			{{>  survey12 schoolId=this.schoolId }}
+			{{>  survey12 schoolId=this.schoolId surveyVersionId=this.surveyVersionId}}
 		{{/if}}
 		
 		{{#if isEqual this.surveySection 'survey13'}}
-			{{>  survey13 schoolId=this.schoolId }}
+			{{>  survey13 schoolId=this.schoolId surveyVersionId=this.surveyVersionId}}
 		{{/if}}
 
 		{{#if isEqual this.surveySection 'survey14'}}
-			{{>  survey14 schoolId=this.schoolId }}
+			{{>  survey14 schoolId=this.schoolId surveyVersionId=this.surveyVersionId}}
 		{{/if}}
 </template>
 
@@ -69,21 +71,21 @@
     <div class="center-content">
 
       <h3>Please choose a section to update</h3>
-      {{setSelectedSchoolDoc schoolId}}
-	      <a href="{{pathFor 'surveySection' surveySection='survey8' _id =schoolId}}" class="btn btn-high btn-dashboard">School Details</a>
-	      <a href="{{pathFor 'surveySection' surveySection='survey14' _id =schoolId}}" class="btn btn-high btn-dashboard">Electronic Connectivity</a>
-	      <a href="{{pathFor 'surveySection' surveySection='survey2' _id =schoolId}}" class="btn btn-high btn-dashboard">Grade Demographics</a>
-   	      <a href="{{pathFor 'surveySection' surveySection='survey7' _id =schoolId}}" class="btn btn-high btn-dashboard">Water & Sanitation</a>      
-	      <a href="{{pathFor 'surveySection' surveySection='survey11' _id =schoolId}}" class="btn btn-high btn-dashboard">Classrooms</a>
-	      <a href="{{pathFor 'surveySection' surveySection='survey13' _id =schoolId}}" class="btn btn-medium btn-dashboard">Electricity</a>
-	      <a href="{{pathFor 'surveySection' surveySection='survey4' _id =schoolId}}" class="btn btn-medium btn-dashboard">Library & Media Centre</a>
-	      <a href="{{pathFor 'surveySection' surveySection='survey12' _id =schoolId}}" class="btn btn-medium btn-dashboard">Nutrition</a>
-	      <a href="{{pathFor 'surveySection' surveySection='survey6' _id =schoolId}}" class="btn btn-medium btn-dashboard">Perimeter Security</a>
-   	      <a href="{{pathFor 'surveySection' surveySection='survey10' _id =schoolId}}" class="btn btn-medium btn-dashboard">School Environment</a>
-	      <a href="{{pathFor 'surveySection' surveySection='survey5' _id =schoolId}}" class="btn btn-medium btn-dashboard">Science Labs</a>
-   	      <a href="{{pathFor 'surveySection' surveySection='survey9' _id =schoolId}}" class="btn btn-medium btn-dashboard">Special Needs</a>
-	      <a href="{{pathFor 'surveySection' surveySection='survey3' _id =schoolId}}" class="btn btn-medium btn-dashboard">Sports Fields</a>
-  	      <a href="{{pathFor 'surveySection' surveySection='survey1' _id =schoolId}}" class="btn btn-low btn-dashboard">Contact Person Details</a>
+      		{{surveyVersionId}}
+	      <a href="{{pathFor 'surveySection' surveySection='survey8' _id =surveyVersionId}}" class="btn btn-high btn-dashboard">School Details</a>
+	      <a href="{{pathFor 'surveySection' surveySection='survey14' _id =surveyVersionId}}" class="btn btn-high btn-dashboard">Electronic Connectivity</a>
+	      <a href="{{pathFor 'surveySection' surveySection='survey2' _id =surveyVersionId}}" class="btn btn-high btn-dashboard">Grade Demographics</a>
+   	      <a href="{{pathFor 'surveySection' surveySection='survey7' _id =surveyVersionId}}" class="btn btn-high btn-dashboard">Water & Sanitation</a>      
+	      <a href="{{pathFor 'surveySection' surveySection='survey11' _id =surveyVersionId}}" class="btn btn-high btn-dashboard">Classrooms</a>
+	      <a href="{{pathFor 'surveySection' surveySection='survey13' _id =surveyVersionId}}" class="btn btn-medium btn-dashboard">Electricity</a>
+	      <a href="{{pathFor 'surveySection' surveySection='survey4' _id =surveyVersionId}}" class="btn btn-medium btn-dashboard">Library & Media Centre</a>
+	      <a href="{{pathFor 'surveySection' surveySection='survey12' _id =surveyVersionId}}" class="btn btn-medium btn-dashboard">Nutrition</a>
+	      <a href="{{pathFor 'surveySection' surveySection='survey6' _id =surveyVersionId}}" class="btn btn-medium btn-dashboard">Perimeter Security</a>
+   	      <a href="{{pathFor 'surveySection' surveySection='survey10' _id =surveyVersionId}}" class="btn btn-medium btn-dashboard">School Environment</a>
+	      <a href="{{pathFor 'surveySection' surveySection='survey5' _id =surveyVersionId}}" class="btn btn-medium btn-dashboard">Science Labs</a>
+   	      <a href="{{pathFor 'surveySection' surveySection='survey9' _id =surveyVersionId}}" class="btn btn-medium btn-dashboard">Special Needs</a>
+	      <a href="{{pathFor 'surveySection' surveySection='survey3' _id =surveyVersionId}}" class="btn btn-medium btn-dashboard">Sports Fields</a>
+  	      <a href="{{pathFor 'surveySection' surveySection='survey1' _id =surveyVersionId}}" class="btn btn-low btn-dashboard">Contact Person Details</a>
 
   </div>
 

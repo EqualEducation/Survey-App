@@ -1,5 +1,5 @@
 <template name="survey2">
-  {{setSelectedDoc schoolId "grades"}}
+  {{setSelectedDoc surveyVersionId "grades"}}
   {{#autoForm collection="Grades" id="survey2" type=autoformType doc=selectedDoc resetOnSuccess=false autosave=true}}
     <legend>Grade Demographics</legend>
     <button class="btn btn-primary btn-back">Back</button>
@@ -22,7 +22,7 @@
         {{/if}}
       {{/if}}
     
-      {{> afQuickField name="school_id"}}
+      {{> afQuickField name="version_id"}}
 
         </fieldset>
    {{/autoForm}}

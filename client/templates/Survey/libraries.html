@@ -2,7 +2,7 @@
 <template name="survey4">
   <!-- {{setSelectedSchoolDoc schoolId}} -->
   <div class="container-fluid">
-    {{setSelectedDoc schoolId "libraries"}}
+    {{setSelectedDoc surveyVersionId "libraries"}}
     {{#autoForm collection="Libraries" id="survey4" type=autoformType doc=selectedDoc resetOnSuccess=false autosave=true}}
       <legend>Library & Media Centre</legend>
 
@@ -24,7 +24,7 @@
            <br />
         </div>
 
-        {{> afQuickField name="school_id"}}
+        {{> afQuickField name="version_id"}}
 
       </fieldset>
 

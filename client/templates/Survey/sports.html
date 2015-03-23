@@ -1,6 +1,6 @@
 
 <template name="survey3">
-  {{setSelectedDoc schoolId "sports"}}
+  {{setSelectedDoc surveyVersionId "sports"}}
   {{#autoForm collection="Sports" id="survey3" type=autoformType doc=selectedDoc resetOnSuccess=false autosave=true}}
           <legend>Sports Fields</legend>
           <button class="btn btn-primary btn-back">Back</button>
@@ -73,7 +73,7 @@
 
           {{/if}}
 
-          {{> afQuickField name="school_id"}}
+          {{> afQuickField name="version_id"}}
 
         </fieldset>
 

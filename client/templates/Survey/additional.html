@@ -1,7 +1,6 @@
 
 <template name="survey10">
-	<!-- {{setSelectedSchoolDoc schoolId }} -->
-	{{setSelectedDoc schoolId "additional"}}
+	{{setSelectedDoc surveyVersionId "additional"}}
 	{{#autoForm collection="Additional" id="survey10" type=autoformType doc=selectedDoc resetOnSuccess=false autosave=true}}
 	<legend>School Environment</legend>
 	<button class="btn btn-primary btn-back">Back</button>

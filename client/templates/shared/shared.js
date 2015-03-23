@@ -1,4 +1,5 @@
 Handlebars.registerHelper('setSelectedSchoolDoc',function(schoolId){
+	console.log('SETTING SCHOOL ID: ' + schoolId);
     Session.set("selectedSchoolId", schoolId);
     var school = Schools.findOne({'_id': schoolId});
     if (school) {
@@ -10,6 +11,22 @@ Handlebars.registerHelper('selectedSchoolDoc',function(){
 	return Schools.findOne(Session.get("selectedSchoolId"));
 });
 
+Handlebars.registerHelper('setSelectedSurveyVersionDoc',function(versionId){
+	console.log('setting version doc: ' + versionId);
+    Session.set("selectedSurveyVersionId", versionId);
+    var version = SurveyVersions.findOne({'_id': versionId});
+    if (version) {
+ 	   Session.set("selectedSurveyVersionName", version.name);
+	}
+});
+
+Handlebars.registerHelper('selectedSurveryVersionDoc',function(){
+	return SurveyVersions.findOne(Session.get("selectedSurveyVersionId"));
+});
+
+Handlebars.registerHelper('surveyVersionName',function(){
+	return Session.get("selectedSurveyVersionName");
+});
 
 Handlebars.registerHelper('selectedContactDoc',function(){
 	return ContactPeople.findOne(Session.get("selectedSchoolId"));
@@ -29,53 +46,54 @@ Handlebars.registerHelper('isEqual', function(string1, string2) {
 
 
 //Generic setting of session items
-Handlebars.registerHelper('setSelectedDoc',function(schoolId, collection_name){
+Handlebars.registerHelper('setSelectedDoc',function(versionId, collection_name){
 	var doc = "unknown";
 	var selected_doc = "selected_doc";
 	Session.set(selected_doc, null);
 
-	// console.log("searching for "  + collection_name + " with school id " + schoolId);
+	console.log("searching for "  + collection_name + " with school version id " + versionId);
+
 	if (collection_name === "additional") {
-		doc = Additional.findOne({'school_id' : schoolId});
+		doc = Additional.findOne({'version_id' : versionId});
 	}
 	else if (collection_name === "electronicConnectivity") {
-		doc = ElectronicConnectivity.findOne({'school_id' : schoolId});
+		doc = ElectronicConnectivity.findOne({'version_id' : versionId});
 	}
 	else if (collection_name === "sanitation") {
-		doc = Sanitation.findOne({'school_id' : schoolId});
+		doc = Sanitation.findOne({'version_id' : versionId});
 	}
 	else if (collection_name === "classrooms") {
-		doc = Classrooms.findOne({'school_id' : schoolId});
+		doc = Classrooms.findOne({'version_id' : versionId});
 	}
 	else if (collection_name === "contactperson") {
-		doc = ContactPeople.findOne({'school_id' : schoolId});
+		doc = ContactPeople.findOne({'version_id' : versionId});
 	}
 	else if (collection_name === "electricity") {
-		doc = Electricity.findOne({'school_id' : schoolId});
+		doc = Electricity.findOne({'version_id' : versionId});
 	}
 	else if (collection_name === "grades") {
-		doc = Grades.findOne({'school_id' : schoolId});
+		doc = Grades.findOne({'version_id' : versionId});
 	}
 	else if (collection_name === "libraries") {
-		doc = Libraries.findOne({'school_id' : schoolId});
+		doc = Libraries.findOne({'version_id' : versionId});
 	}
 	else if (collection_name === "labs") {
-		doc = Labs.findOne({'school_id' : schoolId});
+		doc = Labs.findOne({'version_id' : versionId});
 	}
 	else if (collection_name === "nutrition") {
-		doc = Nutrition.findOne({'school_id' : schoolId});
+		doc = Nutrition.findOne({'version_id' : versionId});
 	}
 	else if (collection_name === "security") {
-		doc = Security.findOne({'school_id' : schoolId});
+		doc = Security.findOne({'version_id' : versionId});
 	}
 	else if (collection_name === "specialneeds") {
-		doc = SpecialNeeds.findOne({'school_id' : schoolId});
+		doc = SpecialNeeds.findOne({'version_id' : versionId});
 	}
 	else if (collection_name === "sports") {
-		doc = Sports.findOne({'school_id' : schoolId});
+		doc = Sports.findOne({'version_id' : versionId});
 	}
 	else if (collection_name === "schools") {
-		doc = Schools.findOne({'school_id' : schoolId});
+		doc = Schools.findOne({'version_id' : versionId});
 	}
 	Session.set("selected_doc", doc);
 

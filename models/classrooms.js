@@ -129,8 +129,7 @@ ClassroomsSchema = new SimpleSchema ({
     version_id: {
       type: String,
       defaultValue: function(){ 
-        console.log("School id: " + Session.get('selectedSchoolId'));
-        return Session.get('selectedSchoolId');
+        return Session.get('selectedSurveyVersionId');
       },
       autoform: {
         type: "hidden",

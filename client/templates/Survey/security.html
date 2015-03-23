@@ -1,7 +1,6 @@
 
 <template name="survey6">
-	 <!-- {{setSelectedSchoolDoc schoolId}} -->
-  {{setSelectedDoc schoolId "security"}}
+  {{setSelectedDoc surveyVersionId "security"}}
   {{#autoForm collection="Security" id="survey6" type=autoformType doc=selectedDoc resetOnSuccess=false autosave=true}}
      <legend>Perimeter Security</legend>
   	 <button class="btn btn-primary btn-back">Back</button>
@@ -25,7 +24,7 @@
         <br />
       </div>
       <div class="row">   
-          {{> afQuickField name="school_id" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+          {{> afQuickField name="version_id" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
         <br />
       </div>
 

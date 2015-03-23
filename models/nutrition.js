@@ -38,7 +38,7 @@ NutritionSchema = new SimpleSchema({
   version_id: {
     type: String,
     defaultValue: function(){ 
-      return Session.get('selectedSchoolId');
+      return Session.get('selectedSurveyVersionId');
     },
     autoform: {
       type: "hidden",

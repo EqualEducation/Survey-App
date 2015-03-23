@@ -167,8 +167,7 @@ SportsFieldSchema = new SimpleSchema({
   version_id: {
     type: String,
     defaultValue: function(){ 
-      console.log("school id: ", Session.get('selectedSchoolId'));
-      return Session.get('selectedSchoolId');
+      return Session.get('selectedSurveyVersionId');
     },
     autoform: {
       type: "hidden",

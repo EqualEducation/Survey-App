@@ -1,7 +1,7 @@
 Template.survey11.events({
   "click .btn-back" : function() {
-    var schoolId = Session.get("selectedSchoolId");
-    Router.go('/survey/'+ schoolId);
+    var versionId = Session.get("selectedSurveyVersionId");
+    Router.go('/survey/'+ versionId);
     return false;
   }, 
   "click .open-modal" : function(e,t) {

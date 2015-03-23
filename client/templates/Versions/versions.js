@@ -52,15 +52,47 @@ Template.registerHelper('selectedVersion',function(){
     return null;
 });
 
+Template.registerHelper('currentVersionId',function(){
+      var schoolId = Session.get('selectedSchoolId');
+      var school = Schools.findOne({'_id': schoolId});
+
+      return school.current_version_id;
+});
+
 AutoForm.addHooks(['versions1', 'versions2'], {
 onSuccess: function(operation, result, template) 
     {   
-        $('#modal_version').modal('hide')
-        $('#modal_version_update').modal('hide')
+      var schoolId = Session.get('selectedSchoolId');
+      var school = Schools.findOne({'_id': schoolId});
+      var currentVersionId = school.current_version_id;
+
+      if (currentVersionId != undefined) {
+        copy('security', Security, result, currentVersionId);
+        Schools.update(schoolId, {$set: {current_version_id: result, previous_version_id: currentVersionId}});
+
+      } else {
+          Schools.update(schoolId, {$set: {current_version_id: result}});
+      }
+
+      $('#modal_version').modal('hide')
+      $('#modal_version_update').modal('hide')
  
     },
     onError: function() 
     {
         alert('Error saving version');
-      }
-    });
+    }, onSubmit: function() {
+      alert('on submit called');
+    }
+});
+
+function copy(collection, subscription, new_version_id, current_version_id) {
+  Meteor.subscribe(collection);
+  var copy = subscription.findOne({'version_id' : current_version_id});
+
+  if (copy!=undefined) {
+    copy._id = null;
+    copy.version_id = new_version_id;
+    subscription.insert(copy); 
+  }
+}

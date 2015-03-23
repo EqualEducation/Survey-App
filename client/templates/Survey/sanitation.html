@@ -1,6 +1,6 @@
 
 <template name="survey7">
-  {{setSelectedDoc schoolId "sanitation"}}
+  {{setSelectedDoc surveyVersionId "sanitation"}}
   <legend>Water & Sanitation</legend>
   <button class="btn btn-primary btn-back">Back</button>
   {{> sanitation_accordian}}
@@ -86,7 +86,7 @@
         <div class="modal-body">
             {{#autoForm collection="SanitationBlocks" id="blocks1" type="insert" resetOnSuccess=true}}
                 {{#each afFieldNames}}
-                    {{#unless isEqual this.name "school_id"}}
+                    {{#unless isEqual this.name "version_id"}}
                       <div class="row">   
                         {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
                         <br />
@@ -94,7 +94,7 @@
                     {{/unless}}
                 {{/each}}
 
-               {{> afQuickField name="school_id" }}
+               {{> afQuickField name="version_id" }}
 
                 <button type="submit" class="btn btn-primary btn-save">Save</button>
             {{/autoForm}}
@@ -113,7 +113,7 @@
         <div class="modal-body">
             {{#autoForm collection="SanitationBlocks" id="blocks2" type="update" doc=selectedBlock resetOnSuccess=true }}
                 {{#each afFieldNames}}
-                    {{#unless isEqual this.name "school_id"}}
+                    {{#unless isEqual this.name "version_id"}}
                       <div class="row">   
                         {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
                         <br />
@@ -122,7 +122,7 @@
                    
                 {{/each}}
 
-               {{> afQuickField name="school_id"}}
+               {{> afQuickField name="version_id"}}
 
                 <button type="submit" class="btn btn-primary btn-save">Save</button>
             {{/autoForm}}

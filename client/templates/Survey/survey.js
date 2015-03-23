@@ -5,8 +5,8 @@ AutoForm.debug();
 
 Template.survey1.events({
     "click .btn-back" : function() {
-      var schoolId = Session.get("selectedSchoolId");
-      Router.go('/survey/'+ schoolId);
+      var versionId = Session.get("selectedSurveyVersionId");
+      Router.go('/survey/'+ versionId);
       return false;
     }, 
     "click .btn-save" : function() {
@@ -19,8 +19,8 @@ Template.survey1.events({
 
 Template.survey3.events({
     "click .btn-back" : function() {
-      var schoolId = Session.get("selectedSchoolId");
-      Router.go('/survey/'+ schoolId);
+      var versionId = Session.get("selectedSurveyVersionId");
+      Router.go('/survey/'+ versionId);
       return false;
     }, 
     "click .btn-save" : function() {
@@ -33,8 +33,8 @@ Template.survey3.events({
 
 Template.survey4.events({
     "click .btn-back" : function() {
-      var schoolId = Session.get("selectedSchoolId");
-      Router.go('/survey/'+ schoolId);
+      var versionId = Session.get("selectedSurveyVersionId");
+      Router.go('/survey/'+ versionId);
       return false;
     }, 
     "click .btn-save" : function() {
@@ -47,8 +47,8 @@ Template.survey4.events({
 
 Template.survey5.events({
     "click .btn-back" : function() {
-      var schoolId = Session.get("selectedSchoolId");
-      Router.go('/survey/'+ schoolId);
+      var versionId = Session.get("selectedSurveyVersionId");
+      Router.go('/survey/'+ versionId);
       return false;
     },
     "click .btn-save" : function() {
@@ -61,8 +61,8 @@ Template.survey5.events({
 
 Template.survey7.events({
     "click .btn-back" : function() {
-      var schoolId = Session.get("selectedSchoolId");
-      Router.go('/survey/'+ schoolId);
+      var versionId = Session.get("selectedSurveyVersionId");
+      Router.go('/survey/'+ versionId);
       return false;
     }, 
     "click .btn-save" : function() {
@@ -74,8 +74,8 @@ Template.survey7.events({
 
 Template.survey6.events({
     "click .btn-back" : function() {
-      var schoolId = Session.get("selectedSchoolId");
-      Router.go('/survey/'+ schoolId);
+      var versionId = Session.get("selectedSurveyVersionId");
+      Router.go('/survey/'+ versionId);
       return false;
     }, 
     "click .btn-save" : function() {
