@@ -136,7 +136,15 @@ ClassroomsSchema = new SimpleSchema ({
         type: "hidden",
         label: false
       },
-    }
+    },
+    version: {
+    type: String,
+    optional: false,
+    autoform: {
+      type: "hidden",
+      label: false
+    },
+  },
  });
 
 

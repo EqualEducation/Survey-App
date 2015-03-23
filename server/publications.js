@@ -63,6 +63,9 @@ if (Meteor.isServer) {
     return SpecialNeeds.find();
   });
 
+ Meteor.publish("surveyVersions", function () {
+    return SurveyVersions.find();
+  });
 //API
 // Accounts.connection = DDP.connect("http://app.equaleducation.org.za");
 

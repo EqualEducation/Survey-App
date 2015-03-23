@@ -171,6 +171,14 @@ SchoolSchema = new SimpleSchema({
       }
     }
   },
+  version: {
+    type: String,
+    optional: false,
+    autoform: {
+      type: "hidden",
+      label: false
+    },
+  },
   // createdBy: {
   //   type: String,
   //   autoValue:function(){ return Meteor.user().emails[0].address },
