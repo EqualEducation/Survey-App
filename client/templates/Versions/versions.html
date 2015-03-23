@@ -34,7 +34,8 @@
 
 <template name="version">
   <tr>
-    <td>{{this.name}}</td>
+    <!-- <td><a href="" class="btn-edit">{{this.name}}</a></td> -->
+    <td><a href="{{pathFor 'survey'}}" class="">{{this.name}}</a></td>
     <td>{{this.startDate}}</td>
     <td>{{this.endDate}}</td>
     <td><a href="" class="btn-edit">Edit</a></td>

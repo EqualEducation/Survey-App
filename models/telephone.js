@@ -27,7 +27,7 @@ ElectronicConnectivitySchema = new SimpleSchema({
       rows: 4,
     }
   },
-  school_id: {
+  version_id: {
     type: String,
     defaultValue: function(){ 
       return Session.get('selectedSchoolId');

@@ -74,7 +74,7 @@ ContactDetailsSchema = new SimpleSchema({
       rows: 4,
     },
   },
-  school_id: {
+  version_id: {
     type: String,
     defaultValue: function(){ 
       console.log("school id: ", Session.get('selectedSchoolId'));
@@ -84,14 +84,6 @@ ContactDetailsSchema = new SimpleSchema({
       type: "hidden",
       label: false
     },  
-  },
-  version: {
-    type: String,
-    optional: false,
-    autoform: {
-      type: "hidden",
-      label: false
-    },
   },
 });
 

@@ -38,7 +38,7 @@ IndividualLabsSchema = new SimpleSchema({
       rows: 3,
     },
   },
-  school_id: {
+  version_id: {
     type: String,
     defaultValue: function(){ 
       return Session.get('selectedSchoolId');
@@ -48,15 +48,6 @@ IndividualLabsSchema = new SimpleSchema({
       label: false
     },
   },
-  version: {
-    type: String,
-    optional: false,
-    autoform: {
-      type: "hidden",
-      label: false
-    },
-  },
-
 });
 
 IndividualLabs.attachSchema(IndividualLabsSchema);

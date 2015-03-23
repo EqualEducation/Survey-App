@@ -1,6 +1,8 @@
 var saveButtonClicked = false;
 
 Template.schools.rendered = function(){
+    $.material.init(); 
+
   AutoForm.resetForm('insertSchoolForm');
 }
 

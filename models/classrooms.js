@@ -126,7 +126,7 @@ ClassroomsSchema = new SimpleSchema ({
       rows: 4,
     },
   },
-    school_id: {
+    version_id: {
       type: String,
       defaultValue: function(){ 
         console.log("School id: " + Session.get('selectedSchoolId'));
@@ -137,14 +137,6 @@ ClassroomsSchema = new SimpleSchema ({
         label: false
       },
     },
-    version: {
-    type: String,
-    optional: false,
-    autoform: {
-      type: "hidden",
-      label: false
-    },
-  },
  });
 
 

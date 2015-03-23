@@ -138,7 +138,7 @@ SanitationBlocksSchema = new SimpleSchema({
       }
     }
   },
-  school_id: {
+  version_id: {
     type: String,
     defaultValue: function(){ 
       return Session.get('selectedSchoolId');

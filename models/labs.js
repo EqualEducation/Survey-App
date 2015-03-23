@@ -22,7 +22,7 @@ ScienceLabSchema = new SimpleSchema({
       rows: 1,
     },
   },
-   school_id: {
+   version_id: {
     type: String,
     defaultValue: function(){ 
       return Session.get('selectedSchoolId');

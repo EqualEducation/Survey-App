@@ -171,9 +171,9 @@ SchoolSchema = new SimpleSchema({
       }
     }
   },
-  version: {
+  current_version: {
     type: String,
-    optional: false,
+    optional: true,
     autoform: {
       type: "hidden",
       label: false
