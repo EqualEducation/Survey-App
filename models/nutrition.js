@@ -16,7 +16,7 @@ NutritionSchema = new SimpleSchema({
     label: "Which of the following describes the school’s nutrition program?",
     type: String,
     autoform: {
-      type: "select",
+      type: "select-radio",
       options: function () {
         return [
           {label: "Works well", value: 'Works well'},

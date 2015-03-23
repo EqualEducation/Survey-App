@@ -6,7 +6,7 @@ LibrarySchema = new SimpleSchema({
     type: String,
     label: "Does your school have a library?",
     autoform: {
-      type: "select",
+      type: "select-radio",
       options: function () {
         return [
           {label: "School's own", value: "School's own"},
@@ -21,7 +21,7 @@ LibrarySchema = new SimpleSchema({
     type: String,
     label: "Does your school have a media centre?",
     autoform: {
-      type: "select",
+      type: "select-radio",
       options: function () {
         return [
           {label: "School's own", value: "School's own"},

@@ -88,7 +88,7 @@ SchoolDetailsSchema = new SimpleSchema({
     optional: false,
     autoform: 
     {
-      type: "select",
+      type: "select-radio",
       options: function () 
       {
         return [
@@ -120,7 +120,7 @@ SchoolDetailsSchema = new SimpleSchema({
     label: "Is this school a Primary or Secondary School?",
     autoform: 
     {
-      type: "select",
+      type: "select-radio",
       options: function () 
       {
         return [
@@ -136,7 +136,7 @@ SchoolDetailsSchema = new SimpleSchema({
     label: "Is the principal eager to work with Equal Education?",
     autoform: 
     {
-      type: "select",
+      type: "select-radio",
       options: function () 
       {
         return [

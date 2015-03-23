@@ -7,7 +7,7 @@ accessToSoap: {
     label: "How do students access soap?",
     autoform: {
       optional: true,
-      type: "select",
+      type: "select-radio",
       options: function () {
         return [
           {label: "No access", value: 'No access'},
@@ -22,7 +22,7 @@ accessToSoap: {
     type: String,
     label: "How do students access toilet paper?",
     autoform: {
-      type: "select",
+      type: "select-radio",
       options: function () {
         return [
           {label: "No access", value: 'No access'},
@@ -37,7 +37,7 @@ accessToSoap: {
     type: String,
     label: "How do students access sanitary pads?",
     autoform: {
-      type: "select",
+      type: "select-radio",
       options: function () {
         return [
           {label: "No access", value: 'No access'},
@@ -70,7 +70,7 @@ accessToSoap: {
    optional: true,
     type: String,
     autoform: {
-      type: "select",
+      type: "select-radio",
       options: function () {
         return [
           {label: "0", value: 'zero'},
@@ -109,7 +109,7 @@ waterSupply: {
     label: "How would you describe the water supply at the school?",
     autoform: 
     {
-      type: "select",
+      type: "select-radio",
       options: function () 
       {
         return [

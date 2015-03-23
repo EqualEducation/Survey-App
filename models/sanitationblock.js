@@ -111,7 +111,7 @@ SanitationBlocksSchema = new SimpleSchema({
     optional: true,
     type: String,
     autoform: {
-      type: "select",
+      type: "select-radio",
       options: function () {
         return [
           {label: "Good", value: 'Good'},
@@ -126,7 +126,7 @@ SanitationBlocksSchema = new SimpleSchema({
     optional: true,
     type: String,
     autoform: {
-      type: "select",
+      type: "select-radio",
       options: function () {
         return [
           {label: "Flush", value: 'Flush'},

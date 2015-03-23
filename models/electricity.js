@@ -6,7 +6,7 @@ ElectricitySchema = new SimpleSchema({
     label: "How would you describe the supply of power at the school?",
     type: String,
     autoform: {
-      type: "select",
+      type: "select-radio",
       options: function () {
         return [
           {label: "There is no power supply", value: 'There is no power supply'},
