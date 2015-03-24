@@ -31,15 +31,16 @@ Template.version.events({
      "click .btn-delete" : function() {
         SurveyVersions.remove({'_id' : this._id});
     }, 
+    "click .btn-duplicate" : function(e,t) {
+        Session.set('duplicateVersionId',this._id);
+        $("#modal_version").modal("show");
+    },
 });
 
-Template.list_versions.helpers({
-      versions: function () {
-        var schoolId = Session.get("selectedSchoolId");
-        var versions = SurveyVersions.find({'school_id' : schoolId});
-        return versions;
-      }
-    });
+Template.modal_version.rendered = function() {
+    AutoForm.resetForm('versions1');
+}
+
 
 Template.registerHelper('selectedVersion',function(){
     var versionId = Session.get("selectedVersionId");
@@ -59,23 +60,41 @@ Template.registerHelper('currentVersionId',function(){
       return school.current_version_id;
 });
 
-AutoForm.addHooks(['versions1', 'versions2'], {
-onSuccess: function(operation, result, template) 
-    {   
-      var schoolId = Session.get('selectedSchoolId');
-      var school = Schools.findOne({'_id': schoolId});
-      var currentVersionId = school.current_version_id;
+Template.registerHelper('versions',function(){
+  var schoolId = Session.get("selectedSchoolId");
+  var versions = SurveyVersions.find({'school_id' : schoolId});
+  return versions;
+});
 
-      if (currentVersionId != undefined) {
-        copy('security', Security, result, currentVersionId);
-        Schools.update(schoolId, {$set: {current_version_id: result, previous_version_id: currentVersionId}});
+Template.registerHelper('hasVersions',function(){
+  var schoolId = Session.get("selectedSchoolId");
+  var versions = SurveyVersions.find({'school_id' : schoolId});
+  if (versions.count() > 0) {
+    return true;
+  }
+  return false;
+});
+
+AutoForm.addHooks(['versions1', 'versions2'], {
+onSuccess: function(operation, new_version_id, template) 
+    {   
+      var selected_schoolId = Session.get('selectedSchoolId');
+      var selected_school = Schools.findOne({'_id': selected_schoolId});
+      var versionId_to_duplicate = Session.get('duplicateVersionId');
+
+      if (versionId_to_duplicate != undefined) {
+        console.log('duplication');
+        copy('security', Security, new_version_id, versionId_to_duplicate);
+        Schools.update(selected_schoolId, {$set: {current_version_id: new_version_id}});
 
       } else {
-          Schools.update(schoolId, {$set: {current_version_id: result}});
+          console.log('new or edit');
+          Schools.update(selected_schoolId, {$set: {current_version_id: new_version_id}});
       }
 
       $('#modal_version').modal('hide')
       $('#modal_version_update').modal('hide')
+      Session.set('duplicateVersionId',null);
  
     },
     onError: function() 

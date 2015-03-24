@@ -32,7 +32,6 @@ SurveyVersionSchema = new SimpleSchema({
     type: String,
     defaultValue: function(){ 
       var schoolid = Session.get('selectedSchoolId');
-      console.log('GETTING SCHOOL ID: ' + schoolid);
       return schoolid;
     },
     autoform: {
@@ -44,4 +43,3 @@ SurveyVersionSchema = new SimpleSchema({
 
 
 SurveyVersions.attachSchema(SurveyVersionSchema);
-//8cqvS2yECRymekshT
