@@ -32,14 +32,10 @@
   {{#autoForm collection="Sanitation" id="survey7" type=autoformType doc=selectedDoc resetOnSuccess=false autosave=true}}
         <button class="btn btn-primary btn-save">Save</button>
         {{#each afFieldNames}}
-          <!-- {{#if isEqual this.name "waterSupply"}} -->
-    <!--         {{> afQuickField name=this.name}}
-          {{else}} -->
           <div class="row">   
              {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
               <br />
           </div> 
-          <!-- {{/if}} -->
         {{/each}}
     {{/autoForm}}
 </template>

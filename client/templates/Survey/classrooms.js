@@ -1,9 +1,4 @@
 Template.survey11.events({
-  "click .btn-back" : function() {
-    var versionId = Session.get("selectedSurveyVersionId");
-    Router.go('/survey/'+ versionId);
-    return false;
-  }, 
   "click .open-modal" : function(e,t) {
     $("#modal_classroom").modal("show");
   },
@@ -36,8 +31,8 @@ Template.classroom.events({
 
 Template.list_classrooms.helpers({
       classrooms: function () {
-        var schoolId = Session.get("selectedSchoolId");
-        var blocks = Classrooms.find({'school_id' : schoolId});
+        var versionId = Session.get("selectedSurveyVersionId");
+        var blocks = Classrooms.find({'version_id' : versionId});
         return blocks;
       }
     });

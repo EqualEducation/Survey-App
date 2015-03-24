@@ -55,8 +55,8 @@ Template.lab.events({
 
 Template.list_labs.helpers({
       labs: function () {
-        var schoolId = Session.get("selectedSchoolId");
-        var labs = IndividualLabs.find({'school_id' : schoolId});
+        var versionId = Session.get("selectedSurveyVersionId");
+        var labs = IndividualLabs.find({'version_id' : versionId});
         return labs;
       }
     });

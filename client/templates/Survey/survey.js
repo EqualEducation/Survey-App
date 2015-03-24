@@ -118,7 +118,12 @@ Template.survey10.events({
     }, 
   });
 
+Template.survey11.events({
+  "click .btn-back" : function() {
+      back();
 
+  }, 
+});
 
 Template.survey12.events({
     "click .btn-back" : function() {

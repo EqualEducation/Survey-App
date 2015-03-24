@@ -25,8 +25,8 @@ Template.survey7.events({
 
 Template.list_blocks.helpers({
 	    blocks: function () {
-	    	var schoolId = Session.get("selectedSchoolId");
-	    	var blocks = SanitationBlocks.find({'school_id' : schoolId});
+	    	var versionId = Session.get("selectedSurveyVersionId");
+	    	var blocks = SanitationBlocks.find({'version_id' : versionId});
 	    	return blocks;
 	    }
   	});
