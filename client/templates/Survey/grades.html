@@ -1,4 +1,6 @@
 <template name="survey2">
+    {{setSelectedSurveyVersionDoc surveyVersionId }}
+  {{setSelectedSchoolDoc schoolId}}
   {{setSelectedDoc surveyVersionId "grades"}}
   {{#autoForm collection="Grades" id="survey2" type=autoformType doc=selectedDoc resetOnSuccess=false autosave=true}}
     <legend>Grade Demographics</legend>

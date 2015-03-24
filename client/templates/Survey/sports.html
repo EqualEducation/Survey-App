@@ -1,5 +1,7 @@
 
 <template name="survey3">
+    {{setSelectedSurveyVersionDoc surveyVersionId }}
+  {{setSelectedSchoolDoc schoolId}}
   {{setSelectedDoc surveyVersionId "sports"}}
   {{#autoForm collection="Sports" id="survey3" type=autoformType doc=selectedDoc resetOnSuccess=false autosave=true}}
           <legend>Sports Fields</legend>

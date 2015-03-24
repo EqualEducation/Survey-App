@@ -1,3 +1,4 @@
+//SCHOOL
 Handlebars.registerHelper('setSelectedSchoolDoc',function(schoolId){
 	console.log('SETTING SCHOOL ID: ' + schoolId);
     Session.set("selectedSchoolId", schoolId);
@@ -11,6 +12,16 @@ Handlebars.registerHelper('selectedSchoolDoc',function(){
 	return Schools.findOne(Session.get("selectedSchoolId"));
 });
 
+
+Handlebars.registerHelper('schoolName',function(schoolId){
+	return Session.get("selectedSchoolName");
+});
+
+Handlebars.registerHelper('selectedSchoolId',function(){
+	return Session.get("selectedSchoolId");
+});
+
+//SURVEY
 Handlebars.registerHelper('setSelectedSurveyVersionDoc',function(versionId){
 	console.log('setting version doc: ' + versionId);
     Session.set("selectedSurveyVersionId", versionId);
@@ -28,18 +39,24 @@ Handlebars.registerHelper('surveyVersionName',function(){
 	return Session.get("selectedSurveyVersionName");
 });
 
+
+Handlebars.registerHelper('selectedVersionId',function(){
+	return Session.get("selectedSurveyVersionId");
+});
+
+
+//CONTACT
 Handlebars.registerHelper('selectedContactDoc',function(){
 	return ContactPeople.findOne(Session.get("selectedSchoolId"));
 });
 
+//BLOCKS
 Handlebars.registerHelper('blocks',function(){
 	return SanitationBlocks.find();
 });
 
-Handlebars.registerHelper('schoolName',function(schoolId){
-	return Session.get("selectedSchoolName");
-});
 
+//FUNCTIONS
 Handlebars.registerHelper('isEqual', function(string1, string2) {
 	return string1 === string2;
 });

@@ -1,4 +1,6 @@
 <template name="survey1">
+    {{setSelectedSurveyVersionDoc surveyVersionId }}
+  {{setSelectedSchoolDoc schoolId}}
   {{setSelectedDoc surveyVersionId "contactperson"}}
   {{#autoForm collection="ContactPeople" id="survey1" type=autoformType doc=selectedDoc resetOnSuccess=false autosave=true}}
     <legend>Contact Person</legend>

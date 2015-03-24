@@ -35,7 +35,7 @@
 <template name="version">
   <tr>
     <!-- {{#if isEqual currentVersionId this._id}} -->
-        <td><a href="{{pathFor 'survey'}}" class="">{{this.name}}</a></td>
+        <td><a href="{{pathFor 'survey' _schoolId=selectedSchoolId}}" class="">{{this.name}}</a></td>
       <!-- {{else}} -->
         <!-- <td>{{this.name}}</td> -->
     <!-- {{/if}} -->

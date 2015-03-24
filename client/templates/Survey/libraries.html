@@ -1,7 +1,8 @@
 
 <template name="survey4">
-  <!-- {{setSelectedSchoolDoc schoolId}} -->
-  <div class="container-fluid">
+  {{setSelectedSurveyVersionDoc surveyVersionId }}
+  {{setSelectedSchoolDoc schoolId}}
+    <div class="container-fluid">
     {{setSelectedDoc surveyVersionId "libraries"}}
     {{#autoForm collection="Libraries" id="survey4" type=autoformType doc=selectedDoc resetOnSuccess=false autosave=true}}
       <legend>Library & Media Centre</legend>

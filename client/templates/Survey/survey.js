@@ -5,9 +5,7 @@ AutoForm.debug();
 
 Template.survey1.events({
     "click .btn-back" : function() {
-      var versionId = Session.get("selectedSurveyVersionId");
-      Router.go('/survey/'+ versionId);
-      return false;
+      back();
     }, 
     "click .btn-save" : function() {
       buttonSaveClicked = true;
@@ -19,9 +17,8 @@ Template.survey1.events({
 
 Template.survey3.events({
     "click .btn-back" : function() {
-      var versionId = Session.get("selectedSurveyVersionId");
-      Router.go('/survey/'+ versionId);
-      return false;
+            back();
+
     }, 
     "click .btn-save" : function() {
       buttonSaveClicked = true;
@@ -33,9 +30,8 @@ Template.survey3.events({
 
 Template.survey4.events({
     "click .btn-back" : function() {
-      var versionId = Session.get("selectedSurveyVersionId");
-      Router.go('/survey/'+ versionId);
-      return false;
+           back();
+
     }, 
     "click .btn-save" : function() {
       buttonSaveClicked = true;
@@ -47,9 +43,8 @@ Template.survey4.events({
 
 Template.survey5.events({
     "click .btn-back" : function() {
-      var versionId = Session.get("selectedSurveyVersionId");
-      Router.go('/survey/'+ versionId);
-      return false;
+           back();
+
     },
     "click .btn-save" : function() {
       buttonSaveClicked = true;
@@ -61,9 +56,8 @@ Template.survey5.events({
 
 Template.survey7.events({
     "click .btn-back" : function() {
-      var versionId = Session.get("selectedSurveyVersionId");
-      Router.go('/survey/'+ versionId);
-      return false;
+            back();
+
     }, 
     "click .btn-save" : function() {
       buttonSaveClicked = true;
@@ -74,9 +68,8 @@ Template.survey7.events({
 
 Template.survey6.events({
     "click .btn-back" : function() {
-      var versionId = Session.get("selectedSurveyVersionId");
-      Router.go('/survey/'+ versionId);
-      return false;
+          back();
+
     }, 
     "click .btn-save" : function() {
       buttonSaveClicked = true;
@@ -225,6 +218,14 @@ Template.sports_drilldown.rendered = function(){
 //   $.material.init(); 
 // }
 
+function back(){
+  var versionId = Session.get("selectedSurveyVersionId");
+  var schoolId = Session.get("selectedSchoolId");
+  Router.go('/school/' +schoolId +'/version/' + versionId + '/survey/section/select');
+
+
+
+}
 
 
 AutoForm.addHooks(['survey1', 'survey3', 'survey4', 'survey5', 'survey6', 'survey7', 'survey9', 'survey10', 'survey11', 'survey12', 'survey13', 'survey14'], {

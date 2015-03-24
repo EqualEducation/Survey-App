@@ -1,6 +1,7 @@
 <template name="survey13">
-  <!-- {{setSelectedSchoolDoc schoolId }} -->
-  {{setSelectedDoc surveyVersionId "electricity"}}
+  {{setSelectedSurveyVersionDoc surveyVersionId }}
+  {{setSelectedSchoolDoc schoolId}}
+    {{setSelectedDoc surveyVersionId "electricity"}}
     {{#autoForm collection="Electricity" id="survey13" type=autoformType doc=selectedDoc resetOnSuccess=false autosave=true}}
     <legend>Electricity</legend>
     <button class="btn btn-primary btn-back">Back</button>
