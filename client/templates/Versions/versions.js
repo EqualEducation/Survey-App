@@ -34,6 +34,11 @@ Template.version.events({
         Session.set('duplicateVersionId',this._id);
         $("#modal_version").modal("show");
     },
+    "click .toggle-checked": function () {
+
+      var schoolId = Session.get('selectedSchoolId');
+      Schools.update(schoolId, {$set: {'verified_version_id': this._id}});
+  },
 });
 
 Template.modal_version.rendered = function() {
@@ -57,6 +62,13 @@ Template.registerHelper('currentVersionId',function(){
       var school = Schools.findOne({'_id': schoolId});
 
       return school.current_version_id;
+});
+
+Template.registerHelper('verifiedVersionId',function(){
+      var schoolId = Session.get('selectedSchoolId');
+      var school = Schools.findOne({'_id': schoolId});
+
+      return school.verified_version_id;
 });
 
 Template.registerHelper('versions',function(){
