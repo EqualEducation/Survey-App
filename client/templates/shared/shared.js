@@ -1,6 +1,5 @@
 //SCHOOL
 Handlebars.registerHelper('setSelectedSchoolDoc',function(schoolId){
-	console.log('SETTING SCHOOL ID: ' + schoolId);
     Session.set("selectedSchoolId", schoolId);
     var school = Schools.findOne({'_id': schoolId});
     if (school) {
@@ -23,7 +22,6 @@ Handlebars.registerHelper('selectedSchoolId',function(){
 
 //SURVEY
 Handlebars.registerHelper('setSelectedSurveyVersionDoc',function(versionId){
-	console.log('setting version doc: ' + versionId);
     Session.set("selectedSurveyVersionId", versionId);
     var version = SurveyVersions.findOne({'_id': versionId});
     if (version) {
@@ -68,8 +66,6 @@ Handlebars.registerHelper('setSelectedDoc',function(versionId, collection_name){
 	var selected_doc = "selected_doc";
 	Session.set(selected_doc, null);
 
-	console.log("searching for "  + collection_name + " with school version id " + versionId);
-
 	if (collection_name === "additional") {
 		doc = Additional.findOne({'version_id' : versionId});
 	}
@@ -113,17 +109,12 @@ Handlebars.registerHelper('setSelectedDoc',function(versionId, collection_name){
 		doc = Schools.findOne({'version_id' : versionId});
 	}
 
-	console.log('SETTING DOC:');
-	console.log(doc);
 	Session.set("selected_doc", doc);
 
 });
 
 Handlebars.registerHelper('selectedDoc', function() {
 	var doc = Session.get("selected_doc");
-	console.log('GETTING DOC:');
-	console.log(doc);
-
 	return doc;
 });
 
@@ -132,7 +123,6 @@ Handlebars.registerHelper('autoformType', function() {
 	if (Session.get("selected_doc") != null) {
 		autoformType =  "update";
 	} 
-	console.log('AUTOFORM TYPE: ' + autoformType);
 	return autoformType;
 });
 

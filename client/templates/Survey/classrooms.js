@@ -6,7 +6,6 @@ Template.survey11.events({
 
 Template.modal_classroom.events({
   "click .btn-save" : function() {
-      console.log('button clicked');
       $('#classrooms1').submit();
       return false;
     }, 
@@ -51,8 +50,6 @@ Template.registerHelper('selectedClassroom',function(){
 AutoForm.addHooks(['classrooms1', 'classrooms2'], {
 onSuccess: function(operation, result, template) 
     {  
-      console.log("Succes result: " + result);
-      console.log("Success operation: " + operation);   
         $('#modal_classroom').modal('hide')
         $('#modal_classroom_update').modal('hide')
  

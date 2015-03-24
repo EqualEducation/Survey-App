@@ -39,8 +39,6 @@ Template.search.events({
 AutoForm.hooks({
   insertSchoolForm: {
       onSuccess: function(operation, result, template) {  
-        console.log("Succes result: " + result);
-        console.log("Success operation: " + operation);   
         if (operation === "insert") {
           Session.set("selectedSchoolId", result);
         };

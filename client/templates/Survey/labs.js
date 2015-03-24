@@ -64,8 +64,6 @@ Template.list_labs.helpers({
 
 Template.registerHelper('selectedLab',function(){
     var labId = Session.get("selectedLabId");
-    console.log('labid');
-    console.log(labId);
     if (labId) {
       var lab = IndividualLabs.findOne({'_id' : labId});
       return lab;
@@ -79,20 +77,8 @@ Template.registerHelper('selectedLab',function(){
 AutoForm.addHooks(['labs1', 'labs2'], {
 onSuccess: function(operation, result, template) 
     {  
-      console.log("Succes result: " + result);
-      console.log("Success operation: " + operation);   
-
-      // if (didTapSubmit) 
-      // {
-      //   alert('Added lab');
-      //   didTapSubmit = false;
-
-
-
-      // }  
-        $('#modal_lab').modal('hide')
-        $('#modal_lab_update').modal('hide')
- 
+      $('#modal_lab').modal('hide')
+      $('#modal_lab_update').modal('hide')
     },
     onError: function() 
     {

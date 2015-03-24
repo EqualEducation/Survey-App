@@ -239,21 +239,18 @@ function back(){
 function renderHelper(survey){
   $.material.init();
 
-  if (Session.get("selected_doc") == null) {
-    AutoForm.resetForm(survey);
-  } 
-
     if (survey!='survey8') {
         $('[name = "version_id"]')[0].value = Session.get("selectedSurveyVersionId");
+          if (Session.get("selected_doc") == null) {
+          AutoForm.resetForm(survey);
+      } 
+    } else {
     }
 }
 
 
 AutoForm.addHooks(['survey1', 'survey3', 'survey4', 'survey5', 'survey6', 'survey7', 'survey9', 'survey10', 'survey11', 'survey12', 'survey13', 'survey14'], {
        onSuccess: function(operation, result, template) {  
-        console.log("Succes result: " + result);
-        console.log("Success operation: " + operation);   
-        console.log('Survey');
         if (buttonSaveClicked) {
           alert('Saved School');
           buttonSaveClicked = false;

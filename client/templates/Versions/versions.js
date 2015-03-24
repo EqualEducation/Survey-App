@@ -10,7 +10,6 @@ Template.version_selection.events({
 
 Template.modal_version.events({
   "click .btn-save" : function() {
-      console.log('button clicked');
       $('#versions1').submit();
       return false;
     }, 
@@ -83,12 +82,25 @@ onSuccess: function(operation, new_version_id, template)
       var versionId_to_duplicate = Session.get('duplicateVersionId');
 
       if (versionId_to_duplicate != undefined) {
-        console.log('duplication');
         copy('security', Security, new_version_id, versionId_to_duplicate);
+        copy('electronicConnectivity', ElectronicConnectivity, new_version_id, versionId_to_duplicate);
+        copy('contactpeople', ContactPeople, new_version_id, versionId_to_duplicate);
+        copy('grades', Grades, new_version_id, versionId_to_duplicate);
+        copy('sports', Sports, new_version_id, versionId_to_duplicate);
+        copy('libraries', Libraries, new_version_id, versionId_to_duplicate);
+        copy('individuallabs', IndividualLabs, new_version_id, versionId_to_duplicate);
+        copy('sanitation', Sanitation, new_version_id, versionId_to_duplicate);
+        copy('sanitationblocks', SanitationBlocks, new_version_id, versionId_to_duplicate);
+        copy('additional', Additional, new_version_id, versionId_to_duplicate);
+        copy('classrooms', Classrooms, new_version_id, versionId_to_duplicate);
+        copy('nutrition', Nutrition, new_version_id, versionId_to_duplicate);
+        copy('electricity', Electricity, new_version_id, versionId_to_duplicate);
+        copy('specialneeds', SpecialNeeds, new_version_id, versionId_to_duplicate);
+        copy('surveyVersions', SurveyVersions, new_version_id, versionId_to_duplicate);
+
         Schools.update(selected_schoolId, {$set: {current_version_id: new_version_id}});
 
       } else {
-          console.log('new or edit');
           Schools.update(selected_schoolId, {$set: {current_version_id: new_version_id}});
       }
 
@@ -110,7 +122,8 @@ function copy(collection, subscription, new_version_id, current_version_id) {
   var copy = subscription.findOne({'version_id' : current_version_id});
 
   if (copy!=undefined) {
-    copy._id = null;
+    // copy._id = null;
+    delete copy._id;
     copy.version_id = new_version_id;
     subscription.insert(copy); 
   }

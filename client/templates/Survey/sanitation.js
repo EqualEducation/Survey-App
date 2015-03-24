@@ -68,9 +68,7 @@ Template.registerHelper('selectedBlock',function(){
 
 AutoForm.addHooks(['blocks1', 'blocks2'], {
 onSuccess: function(operation, result, template) 
-    {  
-      console.log("Succes result: " + result);
-      console.log("Success operation: " + operation);   
+    {   
         $('#modal_block').modal('hide')
         $('#modal_block_update').modal('hide')
  

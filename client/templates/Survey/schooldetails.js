@@ -10,9 +10,6 @@ Template.survey8.events({
 
         if (!name || !classification || !province) {
           alert('Error saving school');
-          console.log(name);
-          console.log(classification);
-          console.log(province);
           saveButtonClicked = false;
 
           return false;
@@ -25,9 +22,7 @@ Template.survey8.events({
 
 AutoForm.hooks({
   survey8: {
-      onSuccess: function(operation, result, template) {  
-        console.log("Succes result: " + result);
-        console.log("Success operation: " + operation);   
+      onSuccess: function(operation, result, template) {   
         if (operation === "insert") {
           Session.set("selectedSchoolId", result);
         };

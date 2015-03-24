@@ -28,8 +28,10 @@
 </template>
 
 <template name="header" >
-    <a href="/"><img class="center-image" src="/logo.png"/></a>
-    <h1 class="center-content">{{> yield "title"}}</h1>
+    <div class="header">
+      <a href="/"><img class="center-image" src="/logo.png"/></a>
+      <h1 class="center-content">{{> yield "title"}}</h1>
+  </div>
 </template>
 
 <template name="footer">

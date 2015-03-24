@@ -41,15 +41,11 @@ function renderHelper(survey){
   if (Session.get("selected_doc") == null) {
     AutoForm.resetForm(survey);
   } 
-
-    if (survey!='survey8') {
-        $('[name = "version_id"]')[0].value = Session.get("selectedSurveyVersionId");
-    }
+  $('[name = "version_id"]')[0].value = Session.get("selectedSurveyVersionId");
 }
 
 Handlebars.registerHelper("isPrimarySchool", function () {
         var schoolId = Session.get("selectedSchoolId");
-        console.log("is primary school selected school: " + schoolId);
         var school = Schools.findOne({'_id' : schoolId}, {"schoolDetails.CLASSIFICATION" : 1});
         var ret = false;
         if (school.schoolDetails.CLASSIFICATION === 'Primary') {
@@ -60,7 +56,6 @@ Handlebars.registerHelper("isPrimarySchool", function () {
 
 Handlebars.registerHelper("isSecondarySchool", function () {
         var schoolId = Session.get("selectedSchoolId");
-        console.log("is primary school selected school: " + schoolId);
         var school = Schools.findOne({'_id' : schoolId}, {"schoolDetails.CLASSIFICATION" : 1});
         var ret = false;
         if (school.schoolDetails.CLASSIFICATION === 'Secondary') {
@@ -71,8 +66,6 @@ Handlebars.registerHelper("isSecondarySchool", function () {
 
 AutoForm.addHooks(['survey2'], {
        onSuccess: function(operation, result, template) {  
-        console.log("Succes result: " + result);
-        console.log("Success operation: " + operation);   
 
         if (buttonSaveClicked) {
           alert('Saved School');

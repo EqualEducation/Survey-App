@@ -19,13 +19,10 @@ Template.upload.events({
 
             // var existingSchool = Schools.find({'schoolDetails.NEIMS_NUMBER' : entry.NEIMS_NUMBER});
             // if (typeof existingSchool === 'undefined') {
-                // console.log(typeof existingSchool);
 
               Schools.insert({schoolDetails: entry});
               uploaded++;
-              console.log("Uploaded: " + uploaded);
             // } else {
-            //   console.log(typeof existingSchool);
             //   alert('School already exists! NEIMS: ' + entry.NEIMS_NUMBER);
             // }
 

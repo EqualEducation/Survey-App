@@ -26,13 +26,19 @@
 
 <template name="surveyTitle">
 	{{#if this.schoolId}}
-		<h2>{{schoolName}}</h2>
-		<h3>{{surveyVersionName}}</h3>
+		<p>{{schoolName}}</p>
+		<p>{{surveyVersionName}}</p>
 	{{else}}
 	{{/if}}
 </template>
 
 
+<template name="versionsTitle">
+	{{#if this.schoolId}}
+		<p>{{schoolName}}</p>
+	{{else}}
+	{{/if}}
+</template>
 
 
 
