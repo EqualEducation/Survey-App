@@ -8,7 +8,9 @@
 <template name="versions">
 
   {{#unless hasVersions}}
-    <input type="button" class="open-modal btn btn-primary" value="Add a Version" />
+    {{#if userIsAdmin}}
+    <input type="button" class="open-modal btn btn-primary" value="Add a Version" /> 
+    {{/if}}
   {{/unless}}
   {{> list_versions }}
   {{> modal_version}}
@@ -23,9 +25,11 @@
         <th>Version name</th>
         <th>Start Date</th>
         <th>End Date</th>
-        <th></th>
-        <th></th>
-        <th></th>
+        {{#if userIsAdmin}}
+          <th></th>
+          <th></th>
+          <th></th>
+        {{/if}}
       </tr>
     </thead>
     <tbody>
@@ -38,16 +42,18 @@
 
 <template name="version">
   <tr>
-    <!-- {{#if isEqual currentVersionId this._id}} -->
+    {{#if isEqual currentVersionId this._id}}
         <td><a href="{{pathFor 'survey' _schoolId=selectedSchoolId}}" class="">{{this.name}}</a></td>
-      <!-- {{else}} -->
-        <!-- <td>{{this.name}}</td> -->
-    <!-- {{/if}} -->
+      {{else}}
+        <td>{{this.name}}</td>
+    {{/if}}
     <td>{{this.startDate}}</td>
     <td>{{this.endDate}}</td>
-    <td><a href="" class="btn-edit">Rename</a></td>
-    <td><a href="" class="btn-delete">Delete</a></td>
-    <td><a href="" class="btn-duplicate">Duplicate</a></td>
+    {{#if userIsAdmin}}
+      <td><a href="" class="btn-edit">Rename</a></td>
+      <td><a href="" class="btn-delete">Delete</a></td>
+      <td><a href="" class="btn-duplicate">Duplicate</a></td>
+    {{/if}}
 
   </tr>
 </template>
