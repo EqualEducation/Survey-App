@@ -4,16 +4,11 @@ var buttonSaveClicked = false;
     renderHelper('survey2');
 
  		$('.accordion .accordion-section-title').removeClass('active');
-        $('.accordion .accordion-section-content').slideUp(300).removeClass('open');
+    $('.accordion .accordion-section-content').slideUp(300).removeClass('open');
 	};
 
 
 	Template.survey2.events({
-    "click .btn-back" : function() {
-      var versionId = Session.get("selectedSurveyVersionId");
-      Router.go('/survey/'+ versionId);
-      return false;
-    },
     "click .btn-save" : function() {
       buttonSaveClicked = true;
       $('#survey2').submit();
@@ -40,11 +35,17 @@ var buttonSaveClicked = false;
  
   });
 
+function renderHelper(survey){
+  $.material.init();
 
-// Template.registerHelper("currentFieldValue", function (fieldName) {
-//   var value= AutoForm.getFieldValue("survey", fieldName) || "";
-//   return value;
-// });
+  if (Session.get("selected_doc") == null) {
+    AutoForm.resetForm(survey);
+  } 
+
+    if (survey!='survey8') {
+        $('[name = "version_id"]')[0].value = Session.get("selectedSurveyVersionId");
+    }
+}
 
 Handlebars.registerHelper("isPrimarySchool", function () {
         var schoolId = Session.get("selectedSchoolId");

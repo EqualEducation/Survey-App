@@ -15,6 +15,13 @@ Template.survey1.events({
   
   });
 
+  Template.survey2.events({
+    "click .btn-back" : function() {
+            back();
+
+    },
+  });
+
 Template.survey3.events({
     "click .btn-back" : function() {
             back();
@@ -79,7 +86,12 @@ Template.survey6.events({
   });
 
 
+Template.survey8.events({
+      "click .btn-back" : function() {
+            back();
 
+    }, 
+  });
 
 
 Template.survey9.events({
@@ -221,19 +233,14 @@ function back(){
 
 function renderHelper(survey){
   $.material.init();
-  console.log('rendering ' + survey);
-    console.log(Session.get("selected_doc"));
 
   if (Session.get("selected_doc") == null) {
-    console.log('resetting ' + survey);
-    console.log(AutoForm);
-
     AutoForm.resetForm(survey);
   } 
 
-  console.log(Session.get("selectedSurveyVersionId"));
-   $('[name = "version_id"]')[0].value = Session.get("selectedSurveyVersionId");
-        console.log($('[name = "version_id"]')[0].value);
+    if (survey!='survey8') {
+        $('[name = "version_id"]')[0].value = Session.get("selectedSurveyVersionId");
+    }
 }
 
 

@@ -165,7 +165,7 @@ GradesSchema = new SimpleSchema({
     label: "Grade 12",
     optional: true
      },
-    school_id: {
+    version_id: {
     type: String,
     defaultValue: function(){ 
       return Session.get('selectedSurveyVersionId');

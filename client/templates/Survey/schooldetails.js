@@ -2,10 +2,6 @@ var saveButtonClicked = false;
 
 
 Template.survey8.events({
-      "click .btn-back" : function() {
-            back();
-
-    }, 
       "click .btn-save" : function() {
 
         var name = AutoForm.getFieldValue("schoolDetails.INSTITUTION_NAME", "survey8");
