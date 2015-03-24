@@ -28,7 +28,9 @@
 </template>
 
 <template name="header" >
-    <div class="header">
+    <div class="container">
+            {{> loginButtons}}
+
       <a href="/"><img class="center-image" src="/logo.png"/></a>
       <h1 class="center-content">{{> yield "title"}}</h1>
   </div>

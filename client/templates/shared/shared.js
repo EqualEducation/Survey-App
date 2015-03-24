@@ -134,4 +134,25 @@ Handlebars.registerHelper('autoformTypeForAddSchool', function() {
 	return autoformType;
 });
 
+Handlebars.registerHelper('userIsVerified', function(){
+  if(Meteor.user()!=undefined) {
+    if(Meteor.user().emails[0].verified==true) {
+      return Meteor.user().emails[0].verified;
+    }
+  }
+});
+
+Handlebars.registerHelper('userIsAdmin', function(){
+  if(Meteor.user()!=undefined) {
+    if(Meteor.user().checked==true) {
+      return Meteor.user().checked;
+    }
+  }
+});
+
+
+
+Handlebars.registerHelper('print', function(toPrint) {
+	console.log(toPrint);
+})
 

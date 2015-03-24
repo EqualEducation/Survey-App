@@ -4,7 +4,6 @@ if (Meteor.isServer) {
     return Schools.find({}, {'schoolDetails.INSTITUTION_NAME' : 1}, {sort: {'schoolDetails.INSTITUTION_NAME': 'asc'}});
   });
 
-
   Meteor.publish("schools", function () {
     return Schools.find({},{sort: {'schoolDetails.INSTITUTION_NAME': 1}}, {sort: {'schoolDetails.INSTITUTION_NAME': 'asc'}});
   });
@@ -66,9 +65,33 @@ if (Meteor.isServer) {
  Meteor.publish("surveyVersions", function () {
     return SurveyVersions.find();
   });
+
 //API
 // Accounts.connection = DDP.connect("http://app.equaleducation.org.za");
+  Meteor.users.allow({
+    update: function(userId, docs, fields, modifier) {
+        return true;
+        }
+    });
 
+Meteor.publish(null, function() {
+
+  if (this.userId != null) 
+  {
+    return Meteor.users.find(
+    { }, 
+    {
+      fields: {
+        'createdAt': 1,
+        'checked':1,
+      }
+    });
+  } 
+  else 
+  {
+    return this.ready();
+  }
+});
 
 
 }

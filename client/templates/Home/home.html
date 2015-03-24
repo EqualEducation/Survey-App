@@ -7,6 +7,10 @@
 			<br />
 			<a href="/schools/select" class="btn btn-primary full-width">Update a School Profile</a>
 			<br />
+			{{#if userIsAdmin}}
+				<a href="/manage" class="btn btn-primary full-width">Manage</a>
+				<br />
+			{{/if}}
 		</div>
 	</page>
 </template>

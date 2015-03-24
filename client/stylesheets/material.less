@@ -288,6 +288,10 @@ label {
   color: @primaryColor;
 }
 
+.btn-secondary.btn-flat:not(.btn-link) {
+  color: @secondaryColor;
+}
+
 .btn-high.btn-flat:not(.btn-link) {
   color: @highColor;
 }
@@ -319,7 +323,11 @@ label {
   border-style: none;
   color: #000000;
 }
-
+.btn.btn-secondary:not(.btn-link):not(.btn-flat) {
+  background-color: @secondaryColor;
+  border-style: none;
+  color: #000000;
+}
 .btn.btn-low:not(.btn-link):not(.btn-flat) {
   background-color: @lowColor;
   border-style: none;

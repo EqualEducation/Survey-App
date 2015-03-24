@@ -1,0 +1,35 @@
+<template name="manage">
+	 <page class="application">
+	 	  <div class="content center-content">
+			{{#if userIsAdmin}}
+				<a href="/manage/users" class="btn btn-secondary full-width">Manage user roles</a>
+				<br />
+			{{else}}
+				<h1>You do not have permission to view this page</h1>
+			{{/if}}
+		</div>
+	</page>
+</template>
+
+<template name="manage_users">
+	 <page class="application">
+			<table class="table">
+			    <thead>
+			      <tr>
+			        <th>User Email Address</th>
+			        <th>Admin</th>
+			      </tr>
+			    </thead>
+			    <tbody>
+			   {{#each users}}
+				 <tr>
+				    <td>{{this.emails.[0].address}}</td>
+				    <td>
+						<input type="checkbox" checked="{{this.checked}}" class="toggle-checked" />
+					</td>
+				  </tr>
+  			    {{/each}}
+			    </tbody>
+  			</table>
+  	</page>
+</template>
