@@ -112,12 +112,18 @@ Handlebars.registerHelper('setSelectedDoc',function(versionId, collection_name){
 	else if (collection_name === "schools") {
 		doc = Schools.findOne({'version_id' : versionId});
 	}
+
+	console.log('SETTING DOC:');
+	console.log(doc);
 	Session.set("selected_doc", doc);
 
 });
 
 Handlebars.registerHelper('selectedDoc', function() {
 	var doc = Session.get("selected_doc");
+	console.log('GETTING DOC:');
+	console.log(doc);
+
 	return doc;
 });
 
@@ -126,6 +132,7 @@ Handlebars.registerHelper('autoformType', function() {
 	if (Session.get("selected_doc") != null) {
 		autoformType =  "update";
 	} 
+	console.log('AUTOFORM TYPE: ' + autoformType);
 	return autoformType;
 });
 

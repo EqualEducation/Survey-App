@@ -84,9 +84,8 @@ Template.survey6.events({
 
 Template.survey9.events({
     "click .btn-back" : function() {
-      var schoolId = Session.get("selectedSchoolId");
-      Router.go('/survey/'+ schoolId);
-      return false;
+      back();
+
     }, 
     "click .btn-save" : function() {
       buttonSaveClicked = true;
@@ -97,9 +96,8 @@ Template.survey9.events({
 
 Template.survey10.events({
     "click .btn-back" : function() {
-      var schoolId = Session.get("selectedSchoolId");
-      Router.go('/survey/'+ schoolId);
-      return false;
+      back();
+
     }, 
     "click .btn-save" : function() {
       buttonSaveClicked = true;
@@ -112,9 +110,8 @@ Template.survey10.events({
 
 Template.survey12.events({
     "click .btn-back" : function() {
-      var schoolId = Session.get("selectedSchoolId");
-      Router.go('/survey/'+ schoolId);
-      return false;
+      back();
+
     }, 
     "click .btn-save" : function() {
       buttonSaveClicked = true;
@@ -125,9 +122,8 @@ Template.survey12.events({
 
 Template.survey13.events({
     "click .btn-back" : function() {
-      var schoolId = Session.get("selectedSchoolId");
-      Router.go('/survey/'+ schoolId);
-      return false;
+      back();
+
     }, 
     "click .btn-save" : function() {
       buttonSaveClicked = true;
@@ -138,9 +134,8 @@ Template.survey13.events({
 
 Template.survey14.events({
     "click .btn-back" : function() {
-      var schoolId = Session.get("selectedSchoolId");
-      Router.go('/survey/'+ schoolId);
-      return false;
+            back();
+
     }, 
     "click .btn-save" : function() {
       buttonSaveClicked = true;
@@ -151,44 +146,44 @@ Template.survey14.events({
 //NOTE: We need to re initialize the material css for some reason every time a template is rendered. 
 //TODO: Use one method for all rendered templates instead of having to define each on ehere
 Template.survey1.rendered = function(){
-  $.material.init();
+  renderHelper('survey1');
 };
 
 Template.survey3.rendered = function(){
-  $.material.init();
+  renderHelper('survey3');
 };
 Template.survey4.rendered = function(){
-  $.material.init();
+  renderHelper('survey4');
 };
 Template.survey5.rendered = function(){
-  $.material.init();
+  renderHelper('survey5');
 };
 Template.survey6.rendered = function(){
-  $.material.init();
+  renderHelper('survey6');
 };
 Template.survey7.rendered = function(){
-  $.material.init();
+  renderHelper('survey7');
 };
 Template.survey8.rendered = function(){
-  $.material.init();
+  renderHelper('survey8');
 };
 Template.survey9.rendered = function(){
-  $.material.init();
+  renderHelper('survey9');
 };
 Template.survey10.rendered = function(){
-  $.material.init();
+  renderHelper('survey10');
 };
 Template.survey11.rendered = function(){
-  $.material.init();
+  renderHelper('survey11');
 };
 Template.survey12.rendered = function(){
-  $.material.init();
+  renderHelper('survey12');
 };
 Template.survey13.rendered = function(){
-  $.material.init();
+  renderHelper('survey13');
 };
 Template.survey14.rendered = function(){
-  $.material.init();
+  renderHelper('survey14');
 };
 Template.libraries.rendered = function(){
     $.material.init();
@@ -222,9 +217,23 @@ function back(){
   var versionId = Session.get("selectedSurveyVersionId");
   var schoolId = Session.get("selectedSchoolId");
   Router.go('/school/' +schoolId +'/version/' + versionId + '/survey/section/select');
+}
 
+function renderHelper(survey){
+  $.material.init();
+  console.log('rendering ' + survey);
+    console.log(Session.get("selected_doc"));
 
+  if (Session.get("selected_doc") == null) {
+    console.log('resetting ' + survey);
+    console.log(AutoForm);
 
+    AutoForm.resetForm(survey);
+  } 
+
+  console.log(Session.get("selectedSurveyVersionId"));
+   $('[name = "version_id"]')[0].value = Session.get("selectedSurveyVersionId");
+        console.log($('[name = "version_id"]')[0].value);
 }
 
 

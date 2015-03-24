@@ -1,7 +1,7 @@
 var buttonSaveClicked = false;
 
 	Template.survey2.rendered = function() {
-		$.material.init();
+    renderHelper('survey2');
 
  		$('.accordion .accordion-section-title').removeClass('active');
         $('.accordion .accordion-section-content').slideUp(300).removeClass('open');

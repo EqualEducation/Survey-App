@@ -3,9 +3,8 @@ var saveButtonClicked = false;
 
 Template.survey8.events({
       "click .btn-back" : function() {
-      var schoolId = Session.get("selectedSchoolId");
-      Router.go('/survey/'+ schoolId);
-      return false;
+            back();
+
     }, 
       "click .btn-save" : function() {
 
