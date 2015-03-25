@@ -2,7 +2,7 @@
 	 <page class="application">
 	 	  <div class="content center-content">
 			{{#if userIsAdmin}}
-				<a href="/manage/users" class="btn btn-secondary full-width">Manage user roles</a>
+				<a href="/manage/users" class="btn btn-primary full-width">Manage user roles</a>
 				<br />
 			{{else}}
 				<h1>You do not have permission to view this page</h1>
@@ -23,7 +23,7 @@
 			    <tbody>
 			   {{#each users}}
 				 <tr>
-				    <td>{{this.emails.[0].address}}</td>
+				    <td>{{emails.[0].address}}</td>
 				    <td>
 						<input type="checkbox" checked="{{this.checked}}" class="toggle-checked" />
 					</td>

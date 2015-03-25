@@ -34,6 +34,15 @@ Template.search.events({
      "click .btn-delete" : function() {
         Schools.remove({'_id' : this._id});
     }, 
+    "click .toggle-checked": function (e) {
+      var isChecked = e.currentTarget.checked;
+      if (isChecked) {
+        EasySearch.getComponentInstance({ index: 'schools' }).search({"current_version_id": {$exists:true}});
+      } else {
+        EasySearch.getComponentInstance({ index: 'schools' }).search();
+      }
+
+  },
 });
 
 AutoForm.hooks({

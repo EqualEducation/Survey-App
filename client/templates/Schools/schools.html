@@ -20,6 +20,12 @@
 
 <template name="search">
   <b>Search School:    </b>{{> esInput index="schools"}}
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" value="value" name="checkbox" class="toggle-checked"><span class="checkbox-material"><span class="check"></span></span>
+      Only show schools with changes      
+    </label>
+  </div>
   <br />
   <table class="table">
     <thead>

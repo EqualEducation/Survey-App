@@ -1,7 +1,7 @@
 Schools = new Mongo.Collection("schools");
 
 // Extended configuration
-Schools.initEasySearch(['schoolDetails.INSTITUTION_NAME'], {
+Schools.initEasySearch(['schoolDetails.INSTITUTION_NAME', 'current_version_id'],  {
     'limit' : 10,
     'use' : 'mongo-db'
 });

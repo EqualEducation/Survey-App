@@ -74,24 +74,29 @@ if (Meteor.isServer) {
         }
     });
 
-Meteor.publish(null, function() {
+Meteor.publish("allUsers", function () {
+  return Meteor.users.find();
+  });
 
-  if (this.userId != null) 
-  {
-    return Meteor.users.find(
-    { }, 
-    {
-      fields: {
-        'createdAt': 1,
-        'checked':1,
-      }
-    });
-  } 
-  else 
-  {
-    return this.ready();
-  }
-});
+
+// Meteor.publish(null, function() {
+
+//   if (this.userId != null) 
+//   {
+//     return Meteor.users.find(
+//     { }, 
+//     {
+//       fields: {
+//         'createdAt': 1,
+//         'checked':1,
+//       }
+//     });
+//   } 
+//   else 
+//   {
+//     return this.ready();
+//   }
+// });
 
 
 }
