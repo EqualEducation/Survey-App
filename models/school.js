@@ -1,9 +1,31 @@
 Schools = new Mongo.Collection("schools");
 
-// Extended configuration
-Schools.initEasySearch(['schoolDetails.INSTITUTION_NAME', 'current_version_id'],  {
-    'limit' : 10,
-    'use' : 'mongo-db'
+// // Extended configuration
+// Schools.initEasySearch(['schoolDetails.INSTITUTION_NAME', 'current_version_id'],  {
+//     'limit' : 10,
+//     'use' : 'mongo-db'
+// });
+
+
+EasySearch.createSearchIndex('schools', {
+  'field' : ['schoolDetails.INSTITUTION_NAME'],
+  'collection' : Schools,
+  'use' : 'mongo-db',
+  'limit' : 20,
+  'props' : {
+    'onlyShowSchoolsWithVersions' : false// demo purpose configuration, can be used in query  
+  },
+  'query' : function (searchString, opts) {
+    // Default query that is used for searching
+    var query = EasySearch.getSearcher(this.use).defaultQuery(this, searchString);
+
+    // this contains all the configuration specified above
+    if (this.props.onlyShowSchoolsWithVersions) {
+      query.current_version_id = "5pMAJqHNNpb3vBtP8";
+    }
+    console.log(query);
+    return query;
+  }
 });
 
 SchoolDetailsSchema = new SimpleSchema({

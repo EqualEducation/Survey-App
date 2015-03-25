@@ -36,14 +36,23 @@ Template.search.events({
     }, 
     "click .toggle-checked": function (e) {
       var isChecked = e.currentTarget.checked;
-      if (isChecked) {
-        EasySearch.getComponentInstance({ index: 'schools' }).search({"current_version_id": {$exists:true}});
-      } else {
-        EasySearch.getComponentInstance({ index: 'schools' }).search();
-      }
+      // if (isChecked) {
+      //   EasySearch.getComponentInstance({ index: 'schools' }).search({"current_version_id": {$exists:true}});
+      // } else {
+      //   EasySearch.getComponentInstance({ index: 'schools' }).search();
+      // }
+
+       var instance = EasySearch.getComponentInstance({
+        index: 'schools'});
+
+      EasySearch.changeProperty('schools', 'onlyShowSchoolsWithVersions', isChecked);
+
+      instance.triggerSearch();
+
 
   },
 });
+
 
 AutoForm.hooks({
   insertSchoolForm: {
