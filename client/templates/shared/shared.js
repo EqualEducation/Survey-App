@@ -148,6 +148,8 @@ Handlebars.registerHelper('userIsAdmin', function(){
       return Meteor.user().checked;
     }
   }
+
+  return false;
 });
 
 
@@ -156,3 +158,6 @@ Handlebars.registerHelper('print', function(toPrint) {
 	console.log(toPrint);
 })
 
+Handlebars.registerHelper('dateToString', function(date) {
+	return date.toDateString();
+})

@@ -11,17 +11,20 @@ SurveyVersionSchema = new SimpleSchema({
     },
   },
   startDate: {
-    type: String,
+    type: Date,
     optional: true,
+    min: new Date(),
     autoform: {
       afFieldInput: {
-        type: "date"
+        type: "date",
+
       }
     }
   },
   endDate: {
-    type: String,
+    type: Date,
     optional: true,
+    min: new Date(),
     autoform: {
       afFieldInput: {
         type: "date"

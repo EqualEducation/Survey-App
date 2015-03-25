@@ -89,36 +89,39 @@ Template.registerHelper('hasVersions',function(){
 AutoForm.addHooks(['versions1', 'versions2'], {
 onSuccess: function(operation, new_version_id, template) 
     {   
-      var selected_schoolId = Session.get('selectedSchoolId');
-      var selected_school = Schools.findOne({'_id': selected_schoolId});
-      var versionId_to_duplicate = Session.get('duplicateVersionId');
+        if (operation == 'insert') {
+          var selected_schoolId = Session.get('selectedSchoolId');
+          var selected_school = Schools.findOne({'_id': selected_schoolId});
+          var versionId_to_duplicate = Session.get('duplicateVersionId');
 
-      if (versionId_to_duplicate != undefined) {
-        copy('security', Security, new_version_id, versionId_to_duplicate);
-        copy('electronicConnectivity', ElectronicConnectivity, new_version_id, versionId_to_duplicate);
-        copy('contactpeople', ContactPeople, new_version_id, versionId_to_duplicate);
-        copy('grades', Grades, new_version_id, versionId_to_duplicate);
-        copy('sports', Sports, new_version_id, versionId_to_duplicate);
-        copy('libraries', Libraries, new_version_id, versionId_to_duplicate);
-        copy('individuallabs', IndividualLabs, new_version_id, versionId_to_duplicate);
-        copy('sanitation', Sanitation, new_version_id, versionId_to_duplicate);
-        copy('sanitationblocks', SanitationBlocks, new_version_id, versionId_to_duplicate);
-        copy('additional', Additional, new_version_id, versionId_to_duplicate);
-        copy('classrooms', Classrooms, new_version_id, versionId_to_duplicate);
-        copy('nutrition', Nutrition, new_version_id, versionId_to_duplicate);
-        copy('electricity', Electricity, new_version_id, versionId_to_duplicate);
-        copy('specialneeds', SpecialNeeds, new_version_id, versionId_to_duplicate);
-        copy('surveyVersions', SurveyVersions, new_version_id, versionId_to_duplicate);
-
-
-      } 
-
-      Schools.update(selected_schoolId, {$set: {current_version_id: new_version_id, hasVersions: true}});
+          if (versionId_to_duplicate != undefined) {
+            copy('security', Security, new_version_id, versionId_to_duplicate);
+            copy('electronicConnectivity', ElectronicConnectivity, new_version_id, versionId_to_duplicate);
+            copy('contactpeople', ContactPeople, new_version_id, versionId_to_duplicate);
+            copy('grades', Grades, new_version_id, versionId_to_duplicate);
+            copy('sports', Sports, new_version_id, versionId_to_duplicate);
+            copy('libraries', Libraries, new_version_id, versionId_to_duplicate);
+            copy('individuallabs', IndividualLabs, new_version_id, versionId_to_duplicate);
+            copy('sanitation', Sanitation, new_version_id, versionId_to_duplicate);
+            copy('sanitationblocks', SanitationBlocks, new_version_id, versionId_to_duplicate);
+            copy('additional', Additional, new_version_id, versionId_to_duplicate);
+            copy('classrooms', Classrooms, new_version_id, versionId_to_duplicate);
+            copy('nutrition', Nutrition, new_version_id, versionId_to_duplicate);
+            copy('electricity', Electricity, new_version_id, versionId_to_duplicate);
+            copy('specialneeds', SpecialNeeds, new_version_id, versionId_to_duplicate);
+            copy('surveyVersions', SurveyVersions, new_version_id, versionId_to_duplicate);
 
 
-      $('#modal_version').modal('hide')
-      $('#modal_version_update').modal('hide')
-      Session.set('duplicateVersionId',null);
+          } 
+
+          Schools.update(selected_schoolId, {$set: {current_version_id: new_version_id, hasVersions: true}});
+
+
+        }
+        $('#modal_version').modal('hide')
+        $('#modal_version_update').modal('hide')
+         Session.set('duplicateVersionId',null);
+
  
     },
     onError: function() 

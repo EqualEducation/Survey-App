@@ -13,7 +13,8 @@
 
 <template name="manage_users">
 	 <page class="application">
-			<table class="table">
+	 	{{#if userIsAdmin}}
+				<table class="table">
 			    <thead>
 			      <tr>
 			        <th>User Email Address</th>
@@ -31,5 +32,9 @@
   			    {{/each}}
 			    </tbody>
   			</table>
+			{{else}}
+				<h1>You do not have permission to view this page</h1>
+			{{/if}}
+			
   	</page>
 </template>

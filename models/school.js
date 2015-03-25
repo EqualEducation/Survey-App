@@ -1,11 +1,5 @@
 Schools = new Mongo.Collection("schools");
 
-// // Extended configuration
-// Schools.initEasySearch(['schoolDetails.INSTITUTION_NAME', 'current_version_id'],  {
-//     'limit' : 10,
-//     'use' : 'mongo-db'
-// });
-
 
 EasySearch.createSearchIndex('schools', {
   'field' : ['schoolDetails.INSTITUTION_NAME'],
@@ -23,7 +17,6 @@ EasySearch.createSearchIndex('schools', {
     if (this.props.onlyShowSchoolsWithVersions) {
       query.hasVersions = true;
     }
-    console.log(query);
     return query;
   }
 });
