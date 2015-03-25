@@ -110,11 +110,11 @@ onSuccess: function(operation, new_version_id, template)
         copy('specialneeds', SpecialNeeds, new_version_id, versionId_to_duplicate);
         copy('surveyVersions', SurveyVersions, new_version_id, versionId_to_duplicate);
 
-        Schools.update(selected_schoolId, {$set: {current_version_id: new_version_id}});
 
-      } else {
-          Schools.update(selected_schoolId, {$set: {current_version_id: new_version_id}});
-      }
+      } 
+
+      Schools.update(selected_schoolId, {$set: {current_version_id: new_version_id, hasVersions: true}});
+
 
       $('#modal_version').modal('hide')
       $('#modal_version_update').modal('hide')

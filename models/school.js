@@ -21,7 +21,7 @@ EasySearch.createSearchIndex('schools', {
 
     // this contains all the configuration specified above
     if (this.props.onlyShowSchoolsWithVersions) {
-      query.current_version_id = "5pMAJqHNNpb3vBtP8";
+      query.hasVersions = true;
     }
     console.log(query);
     return query;
@@ -203,6 +203,14 @@ SchoolSchema = new SimpleSchema({
   },
   current_version_id: {
     type: String,
+    optional: true,
+    autoform: {
+      type: "hidden",
+      label: false
+    },
+  },
+  hasVersions: {
+    type: Boolean,
     optional: true,
     autoform: {
       type: "hidden",
