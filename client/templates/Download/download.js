@@ -1,3 +1,23 @@
+Template.download.created = function() {
+    Meteor.subscribe('schools');
+    Meteor.subscribe('surveyVersions');
+
+  }
+
+Template.download.helpers({
+    'school': function(schoolId) {
+        return Schools.find({_id: schoolId});
+    },
+    'joinWithVersions': function() {
+      var school = this;
+      console.log(this._id);
+      var versions = SurveyVersions.find({'school_id': this._id}).fetch();
+      var ret = _.extend(school, versions);
+      console.log(ret);
+      return ret;
+    }
+});
+
 
 Template.download.events({
   "click .gen_btn": function (e) {
@@ -15,12 +35,9 @@ Template.registerHelper('JSONForSchool',function(schoolId){
   var schools = Schools.find();
   var schoolsString;
   for (var school in schools) {
-      console.log(JSON.stringify(school));
       schoolsString = schoolsString + school + ',';
 
   }
-
-  console.log(schoolsString);
   return schoolsString;
 
 });
@@ -29,7 +46,7 @@ function JSONToCSVConvertor(JSONData, ReportTitle, ShowLabel) {
     //If JSONData is not an object then JSON.parse will parse the JSON string in an Object
 
     var arrData = typeof JSONData != 'object' ? JSON.parse(JSONData) : JSONData;
-    console.log(arrData);
+    // console.log(arrData);
 
     var CSV = '';    
     //Set Report title in first row or line
@@ -42,13 +59,13 @@ function JSONToCSVConvertor(JSONData, ReportTitle, ShowLabel) {
         
         //This loop will extract the label from 1st index of on array
         for (var index in arrData[0]) {
-            console.log(index);
+            // console.log(index);
             //Now convert each value to string and comma-seprated
             row += index + ',';
         }
 
         row = row.slice(0, -1);
-        console.log(row);
+        // console.log(row);
 
         //append Label row with line break
         CSV += row + '\r\n';
@@ -60,8 +77,8 @@ function JSONToCSVConvertor(JSONData, ReportTitle, ShowLabel) {
 
         //2nd loop will extract each column and convert it in string comma-seprated
         for (var index in arrData[i]) {
-           console.log(index);
-           console.log(arrData[i])
+           // console.log(index);
+           // console.log(arrData[i])
 
             row += '"' + arrData[i][index] + '",';
 
