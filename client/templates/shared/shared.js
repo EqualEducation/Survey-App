@@ -159,5 +159,7 @@ Handlebars.registerHelper('print', function(toPrint) {
 })
 
 Handlebars.registerHelper('dateToString', function(date) {
-	return date.toDateString();
+	if (date) {
+		return date.toDateString();
+	}
 })
