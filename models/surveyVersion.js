@@ -13,7 +13,6 @@ SurveyVersionSchema = new SimpleSchema({
   startDate: {
     type: Date,
     optional: true,
-    min: new Date(),
     autoform: {
       afFieldInput: {
         type: "date",
@@ -24,10 +23,20 @@ SurveyVersionSchema = new SimpleSchema({
   endDate: {
     type: Date,
     optional: true,
-    min: new Date(),
     autoform: {
       afFieldInput: {
         type: "date"
+      }
+    }
+  },
+  isVerified: {
+    label: 'Mark as verified',
+    type: String,
+    optional: true,
+    autoform: {
+      afFieldInput: {
+        type: "boolean-checkbox",
+
       }
     }
   },

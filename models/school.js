@@ -186,22 +186,6 @@ SchoolSchema = new SimpleSchema({
       }
     }
   },
-  verified_version_id: {
-    type: String,
-    optional: true,
-    autoform: {
-      type: "hidden",
-      label: false
-    },
-  },
-  current_version_id: {
-    type: String,
-    optional: true,
-    autoform: {
-      type: "hidden",
-      label: false
-    },
-  },
   hasVersions: {
     type: Boolean,
     optional: true,

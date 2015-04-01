@@ -35,9 +35,7 @@ Template.version.events({
         $("#modal_version").modal("show");
     },
     "click .toggle-checked": function () {
-
-      var schoolId = Session.get('selectedSchoolId');
-      Schools.update(schoolId, {$set: {'verified_version_id': this._id}});
+      SurveyVersions.update(this._id, {$set: {'isVerified': !this.isVerified}});
   },
 });
 
@@ -57,12 +55,6 @@ Template.registerHelper('selectedVersion',function(){
     return null;
 });
 
-Template.registerHelper('currentVersionId',function(){
-      var schoolId = Session.get('selectedSchoolId');
-      var school = Schools.findOne({'_id': schoolId});
-
-      return school.current_version_id;
-});
 
 Template.registerHelper('verifiedVersionId',function(){
       var schoolId = Session.get('selectedSchoolId');
@@ -114,7 +106,7 @@ onSuccess: function(operation, new_version_id, template)
 
           } 
 
-          Schools.update(selected_schoolId, {$set: {current_version_id: new_version_id, hasVersions: true}});
+          Schools.update(selected_schoolId, {$set: {hasVersions: true}});
 
 
         }
