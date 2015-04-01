@@ -100,6 +100,15 @@ GradesSchema = new SimpleSchema({
       rows: 1,
     },
   },
+  totalStudentsInSchool: {
+    type: String,
+    label: "Total number of students in the school",
+    optional: true,
+    regEx: /^[0-9]/,
+    autoform: {
+      rows: 1,
+    },
+  },
   gradeR: {
     type: GradeDetailsSchema,
     label: "Grade R",

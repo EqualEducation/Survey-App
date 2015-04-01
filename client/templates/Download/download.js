@@ -4,16 +4,33 @@ Template.download.events({
      var data = $('#txt').val();
             if(data == '')
                 return;
-            
-            JSONToCSVConvertor(data, "Vehicle Report", true);
+            // data= Schools.find({}, {'schoolDetails' : 1});
+
+            JSONToCSVConvertor(data, "School Profile", true);
   }
 });
 
+Template.registerHelper('JSONForSchool',function(schoolId){
+  Meteor.subscribe('schools');
+  var schools = Schools.find();
+  var schoolsString;
+  for (var school in schools) {
+      console.log(JSON.stringify(school));
+      schoolsString = schoolsString + school + ',';
+
+  }
+
+  console.log(schoolsString);
+  return schoolsString;
+
+});
 
 function JSONToCSVConvertor(JSONData, ReportTitle, ShowLabel) {
     //If JSONData is not an object then JSON.parse will parse the JSON string in an Object
+
     var arrData = typeof JSONData != 'object' ? JSON.parse(JSONData) : JSONData;
-    
+    console.log(arrData);
+
     var CSV = '';    
     //Set Report title in first row or line
     
@@ -25,13 +42,14 @@ function JSONToCSVConvertor(JSONData, ReportTitle, ShowLabel) {
         
         //This loop will extract the label from 1st index of on array
         for (var index in arrData[0]) {
-            
+            console.log(index);
             //Now convert each value to string and comma-seprated
             row += index + ',';
         }
 
         row = row.slice(0, -1);
-        
+        console.log(row);
+
         //append Label row with line break
         CSV += row + '\r\n';
     }
@@ -39,10 +57,15 @@ function JSONToCSVConvertor(JSONData, ReportTitle, ShowLabel) {
     //1st loop is to extract each row
     for (var i = 0; i < arrData.length; i++) {
         var row = "";
-        
+
         //2nd loop will extract each column and convert it in string comma-seprated
         for (var index in arrData[i]) {
+           console.log(index);
+           console.log(arrData[i])
+
             row += '"' + arrData[i][index] + '",';
+
+
         }
 
         row.slice(0, row.length - 1);
@@ -57,7 +80,7 @@ function JSONToCSVConvertor(JSONData, ReportTitle, ShowLabel) {
     }   
     
     //Generate a file name
-    var fileName = "MyReport_";
+    var fileName = "School_";
     //this will remove the blank-spaces from the title and replace it with an underscore
     fileName += ReportTitle.replace(/ /g,"_");   
     
@@ -73,11 +96,11 @@ function JSONToCSVConvertor(JSONData, ReportTitle, ShowLabel) {
     var link = document.createElement("a");    
     link.href = uri;
     
-    //set the visibility hidden so it will not effect on your web-layout
+    // //set the visibility hidden so it will not effect on your web-layout
     link.style = "visibility:hidden";
     link.download = fileName + ".csv";
     
-    //this part will append the anchor tag and remove it after automatic click
+    // //this part will append the anchor tag and remove it after automatic click
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

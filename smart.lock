@@ -2,13 +2,19 @@
   "meteor": {},
   "dependencies": {
     "basePackages": {
-      "jquery-ui": {}
+      "jquery-ui": {},
+      "json2csv": {}
     },
     "packages": {
       "jquery-ui": {
         "git": "https://github.com/TimHeckel/meteor-jquery-ui.git",
         "tag": "v1.9.2",
         "commit": "c437d45edcf1367df8d5ffa8bad2867758030bd2"
+      },
+      "json2csv": {
+        "git": "https://github.com/axwaxw/json2csv",
+        "tag": "v0.1.0",
+        "commit": "75d11564d845bab9c42c03c26529c4c3c2286849"
       }
     }
   }
