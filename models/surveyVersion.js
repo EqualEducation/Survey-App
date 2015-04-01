@@ -31,14 +31,9 @@ SurveyVersionSchema = new SimpleSchema({
   },
   isVerified: {
     label: 'Mark as verified',
-    type: String,
+    type: Boolean,
     optional: true,
-    autoform: {
-      afFieldInput: {
-        type: "boolean-checkbox",
-
-      }
-    }
+    
   },
   school_id: {
     type: String,

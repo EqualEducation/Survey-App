@@ -35,6 +35,8 @@ Template.version.events({
         $("#modal_version").modal("show");
     },
     "click .toggle-checked": function () {
+      console.log("toggle " + this._id);
+      console.log(this.isVerified);
       SurveyVersions.update(this._id, {$set: {'isVerified': !this.isVerified}});
   },
 });

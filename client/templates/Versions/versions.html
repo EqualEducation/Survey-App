@@ -57,7 +57,18 @@
       <td><a href="" class="btn-duplicate">Duplicate</a></td>
       {{#if userIsAdmin}}
         <td><a href="" class="btn-delete">Delete</a></td>
-        <td><input type="radio" checked="{{this.isVerified}}" class="toggle-checked" /></td>
+        <td>
+          <div class="checkbox">
+              <label>
+                  <input type="checkbox" class="toggle-checked" checked="{{this.isVerified}}">
+                    <span class="checkbox-material" >
+                      <span class="check">
+                      </span>
+                    </span>
+              </label>
+          </div>
+          
+        </td>
       {{else}}
         {{#if this.isVerified}}
           <td>Verified by Admin</td>
