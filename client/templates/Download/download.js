@@ -1,21 +1,22 @@
-Template.download.created = function() {
-    Meteor.subscribe('schools');
-    Meteor.subscribe('surveyVersions');
 
+
+Template.registerHelper('JSONForSchool',function(versionId){
+  
+  var version = SurveyVersions.findOne({'_id' : versionId}, {limit: 1});
+  var school = Schools.findOne({'_id': version.school_id});
+  var security = Security.findOne({'version_id': versionId});
+  var grades = Grades.findOne({'version_id': versionId});
+
+
+  var schoolToExport = {
+    'Version' : version,
+    'School' : school,
+    'Security' : security,
+    'Grades' : grades,
   }
 
-Template.download.helpers({
-    'school': function(schoolId) {
-        return Schools.find({_id: schoolId});
-    },
-    'joinWithVersions': function() {
-      var school = this;
-      console.log(this._id);
-      var versions = SurveyVersions.find({'school_id': this._id}).fetch();
-      var ret = _.extend(school, versions);
-      console.log(ret);
-      return ret;
-    }
+  return JSON.stringify(schoolToExport);
+
 });
 
 
@@ -30,17 +31,7 @@ Template.download.events({
   }
 });
 
-Template.registerHelper('JSONForSchool',function(schoolId){
-  Meteor.subscribe('schools');
-  var schools = Schools.find();
-  var schoolsString;
-  for (var school in schools) {
-      schoolsString = schoolsString + school + ',';
 
-  }
-  return schoolsString;
-
-});
 
 function JSONToCSVConvertor(JSONData, ReportTitle, ShowLabel) {
     //If JSONData is not an object then JSON.parse will parse the JSON string in an Object

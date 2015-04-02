@@ -1,13 +1,8 @@
 
 <template name="download">
 <div class='mydiv'>    
-	{{#each school schoolId}}
-    	{{#with joinWithVersions}}
-    		{{this}}
-	   {{/with}}
-  {{/each}}
 <!--     <textarea id="txt" class='txtarea'>[{"Vehicle":"BMW","Date":"30, Jul 2013 09:24 AM","Location":"Hauz Khas, Enclave, New Delhi, Delhi, India","Speed":42},{"Vehicle":"Honda CBR","Date":"30, Jul 2013 12:00 AM","Location":"Military Road,  West Bengal 734013,  India","Speed":0},{"Vehicle":"Supra","Date":"30, Jul 2013 07:53 AM","Location":"Sec-45, St. Angel's School, Gurgaon, Haryana, India","Speed":58},{"Vehicle":"Land Cruiser","Date":"30, Jul 2013 09:35 AM","Location":"DLF Phase I, Marble Market, Gurgaon, Haryana, India","Speed":83},{"Vehicle":"Suzuki Swift","Date":"30, Jul 2013 12:02 AM","Location":"Behind Central Bank RO, Ram Krishna Rd by-lane, Siliguri, West Bengal, India","Speed":0},{"Vehicle":"Honda Civic","Date":"30, Jul 2013 12:00 AM","Location":"Behind Central Bank RO, Ram Krishna Rd by-lane, Siliguri, West Bengal, India","Speed":0},{"Vehicle":"Honda Accord","Date":"30, Jul 2013 11:05 AM","Location":"DLF Phase IV, Super Mart 1, Gurgaon, Haryana, India","Speed":71}]</textarea> -->
-<!-- <textarea id="txt" class='txtarea'>[{{JSONForSchool schoolId}}]</textarea> -->
+<textarea id="txt" class='txtarea'>[{{JSONForSchool versionId}}]</textarea>
 <!-- <textarea id="txt" class='txtarea'>[{"_id":"twDp8ucS9A7oPEjNA","schoolDetails":{"INSTITUTION_NAME":"test123","PROVINCE_NAME":"GAUTENG","CLASSIFICATION":"Primary","principalCooperative":"yes"},"current_version_id":"SC34g2testjsD6AGQ","verified_version_id":"5pMAJqHNNpb3vBtP8","hasVersions":true}]</textarea> -->
     <button class='gen_btn'>Generate File</button>
 </div>

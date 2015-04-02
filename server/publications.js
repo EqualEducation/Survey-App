@@ -79,24 +79,17 @@ Meteor.publish("allUsers", function () {
   });
 
 
-// Meteor.publish(null, function() {
+Meteor.publish('school_profile', function(versionId, schoolId) { 
+  console.log(versionId);
 
-//   if (this.userId != null) 
-//   {
-//     return Meteor.users.find(
-//     { }, 
-//     {
-//       fields: {
-//         'createdAt': 1,
-//         'checked':1,
-//       }
-//     });
-//   } 
-//   else 
-//   {
-//     return this.ready();
-//   }
-// });
+  check(versionId, String);
+  var version =  SurveyVersions.find({'_id' : versionId}, {limit: 1});
+  var school = Schools.find({'_id': schoolId});
+  var security = Security.find({'version_id': versionId});
+  var grades = Grades.find({'version_id': versionId});
 
+  return [version, school, security, grades];
+
+});
 
 }
