@@ -79,17 +79,37 @@ Meteor.publish("allUsers", function () {
   });
 
 
-Meteor.publish('school_profile', function(versionId, schoolId) { 
-  console.log(versionId);
-
+Meteor.publish('school_profile', function(versionId, schoolId, collections_to_include) { 
   check(versionId, String);
-  var version =  SurveyVersions.find({'_id' : versionId}, {limit: 1});
-  var school = Schools.find({'_id': schoolId});
-  var security = Security.find({'version_id': versionId});
-  var grades = Grades.find({'version_id': versionId});
+      var version =  SurveyVersions.find({'_id' : versionId}, {limit: 1});
+      var school = Schools.find({'_id': schoolId});
 
-  return [version, school, security, grades];
+  if (!collections_to_include) {
+      var additional = Additional.find({'version_id': versionId});
+      var classrooms = Classrooms.find({'version_id': versionId});
+      var contactpeople = ContactPeople.find({'version_id': versionId});
+      var electricity = Electricity.find({'version_id': versionId});
+      var labs = Labs.find({'version_id': versionId});
+      var libraries = Libraries.find({'version_id': versionId});
+      var nutrition = Nutrition.find({'version_id': versionId});
+      var sanitation = Sanitation.find({'version_id': versionId});
+      var specialneeds = SpecialNeeds.find({'version_id': versionId});
+      var sports = Sports.find({'version_id': versionId});
+      var telephone = ElectronicConnectivity.find({'version_id': versionId});
+      var security = Security.find({'version_id': versionId});
+      var grades = Grades.find({'version_id': versionId});
+
+      return [version, school, additional, classrooms, contactpeople, electricity, labs, libraries, nutrition,sanitation,specialneeds, sports, telephone, security, grades];
+  } 
+
+  var ret = [];
+  ret[0] = version;
+  ret[1] = school;
+  for (var i = 0; i < collections_to_include.length ; i++) {
+      ret[i+2] = collections_to_include[i].find({'version_id': versionId});
+  };
 
 });
+
 
 }

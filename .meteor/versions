@@ -56,6 +56,7 @@ mrt:jquery-csv@0.7.1
 mrt:jquery-ui@1.9.2
 mrt:nprogress@0.1.0
 multiply:iron-router-progress@1.0.1
+mystor:device-detection@0.2.0
 npm-bcrypt@0.7.8_1
 observe-sequence@1.0.5
 ordered-dict@1.0.3

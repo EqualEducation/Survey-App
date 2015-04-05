@@ -53,12 +53,10 @@ Template.lab.events({
     }, 
 });
 
-Template.list_labs.helpers({
-      labs: function () {
+Template.registerHelper('labs', function () {
         var versionId = Session.get("selectedSurveyVersionId");
         var labs = IndividualLabs.find({'version_id' : versionId});
         return labs;
-      }
     });
 
 

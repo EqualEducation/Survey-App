@@ -23,12 +23,10 @@ Template.survey7.events({
     },
 });
 
-Template.list_blocks.helpers({
-	    blocks: function () {
+Template.registerHelper('blocks', function () {
 	    	var versionId = Session.get("selectedSurveyVersionId");
 	    	var blocks = SanitationBlocks.find({'version_id' : versionId});
 	    	return blocks;
-	    }
   	});
 
 Template.modal_block.events({
@@ -45,7 +43,17 @@ Template.modal_block_update.events({
     }, 
 });
 
-Template.block.events({
+Template.list_blocks_small.events({
+  "click .btn-edit" : function() {
+        Session.set('selectedBlockId',this._id);
+        $("#modal_block_update").modal("show");
+    }, 
+     "click .btn-delete" : function() {
+        SanitationBlocks.remove({'_id' : this._id});
+    }, 
+});
+
+Template.list_blocks_large.events({
   "click .btn-edit" : function() {
         Session.set('selectedBlockId',this._id);
         $("#modal_block_update").modal("show");

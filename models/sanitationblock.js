@@ -1,6 +1,5 @@
 SanitationBlocks = new Mongo.Collection("sanitationblocks");
 
-
 SanitationBlocksSchema = new SimpleSchema({
   blockName: {
     label: "Block Name",

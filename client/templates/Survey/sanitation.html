@@ -1,11 +1,22 @@
 
 <template name="survey7">
-    {{setSelectedSurveyVersionDoc surveyVersionId }}
+  {{setSelectedSurveyVersionDoc surveyVersionId }}
   {{setSelectedSchoolDoc schoolId}}
   {{setSelectedDoc surveyVersionId "sanitation"}}
   <legend>Water & Sanitation</legend>
   <button class="btn btn-primary btn-back">Back</button>
-  {{> sanitation_accordian}}
+<!--   <div class="togglebutton">
+    <label>
+        Large
+      <input type="checkbox" checked=""><span class="toggle"></span>
+    </label>
+  </div> -->
+  <!-- {{#if isPhone}} -->
+    {{> sanitation_accordian}}
+  <!-- {{else}} -->
+    <!-- {{> sanitation_large}} -->
+  <!-- {{/if}} -->
+
   <br/>
 </template>
 
@@ -42,13 +53,56 @@
 
 <template name="blocks">
   <input type="button" class="open-modal btn btn-primary" value="Add a block" />
-  {{> list_blocks }}
+    {{#if isPhone}} 
+      {{> list_blocks_small }}
+    {{else}}
+      {{> list_blocks_large }}
+    {{/if}}
   {{> modal_block}}
   {{> modal_block_update}}
 
 </template>
 
-<template name="list_blocks">
+<template name="list_blocks_large">
+<table class="table">
+    <thead>
+      <tr>
+        <th>Block name</th>
+        <th>Gender</th>
+        <th>Teacher or Student</th>
+        <th>Toilets Broken/Total</th>
+        <th>Taps Broken/Total</th>
+        <th>Has Soap</th>
+        <th>Has Sanitary Bin</th>
+        <th>Has Toilet Paper</th>
+        <th>Condition</th> 
+        <th>Type of Toilet</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+   {{#each blocks}}
+    <tr>
+      <td>{{this.blockName}}</td>
+      <td>{{this.gender}}</td>
+      <td>{{this.teacherOrStudent}}</td>
+      <td>{{this.numberOfBrokenToilets}}/{{this.numberOfWorkingToilets}}</td>
+      <td>{{this.numberOfBrokenTaps}}/{{this.numberOfWorkingTaps}}</td>
+      <td>{{this.hasSoap}}</td>
+      <td>{{this.hasSanitaryBin}}</td>
+      <td>{{this.hasToiletPaper}}</td>
+      <td>{{this.condition}}</td>
+      <td>{{this.typeOfToilet}}</td>
+      <td><a href="" class="btn-edit">Edit</a></td>
+      <td><a href="" class="btn-delete">Delete</a></td>
+    </tr>  
+   {{/each}}
+    </tbody>
+  </table>
+</template>
+
+<template name="list_blocks_small">
 <table class="table">
     <thead>
       <tr>
@@ -59,18 +113,14 @@
     </thead>
     <tbody>
    {{#each blocks}}
-        {{> block}} 
-      {{/each}}
+      <tr>
+        <td>{{this.blockName}}</td>
+        <td><a href="" class="btn-edit">Edit</a></td>
+        <td><a href="" class="btn-delete">Delete</a></td>
+      </tr>
+    {{/each}}
     </tbody>
   </table>
-</template>
-
-<template name="block">
-  <tr>
-    <td>{{this.blockName}}</td>
-    <td><a href="" class="btn-edit">Edit</a></td>
-    <td><a href="" class="btn-delete">Delete</a></td>
-  </tr>
 </template>
 
 <!-- A modal that contains the bigger view of the image selected -->

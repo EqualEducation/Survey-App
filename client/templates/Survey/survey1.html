@@ -20,7 +20,10 @@
 	      <a href="{{pathFor 'surveySection' _schoolId=schoolId _versionId=surveyVersionId _surveySection='survey3'}}" class="btn btn-medium btn-dashboard">Sports Fields</a>
   	      <a href="{{pathFor 'surveySection' _schoolId=schoolId _versionId=surveyVersionId _surveySection='survey1'}}" class="btn btn-low btn-dashboard">Contact Person Details</a>
   	      <br />
-  	      <a href="{{pathFor 'download' _schoolId=schoolId _versionId=surveyVersionId}}">Download as CSV</a>
+  	      {{#if userIsAdmin}}
+  	      	<a href="{{pathFor 'download' _schoolId=schoolId _versionId=surveyVersionId}}">Review</a>
+			<br />
+		  {{/if}}
 
   </div>
 
