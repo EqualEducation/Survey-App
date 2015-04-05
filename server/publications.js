@@ -79,12 +79,11 @@ Meteor.publish("allUsers", function () {
   });
 
 
-Meteor.publish('school_profile', function(versionId, schoolId, collections_to_include) { 
+Meteor.publish('school_profile', function(versionId, schoolId) { 
   check(versionId, String);
       var version =  SurveyVersions.find({'_id' : versionId}, {limit: 1});
       var school = Schools.find({'_id': schoolId});
 
-  if (!collections_to_include) {
       var additional = Additional.find({'version_id': versionId});
       var classrooms = Classrooms.find({'version_id': versionId});
       var contactpeople = ContactPeople.find({'version_id': versionId});
@@ -100,16 +99,25 @@ Meteor.publish('school_profile', function(versionId, schoolId, collections_to_in
       var grades = Grades.find({'version_id': versionId});
 
       return [version, school, additional, classrooms, contactpeople, electricity, labs, libraries, nutrition,sanitation,specialneeds, sports, telephone, security, grades];
-  } 
-
-  var ret = [];
-  ret[0] = version;
-  ret[1] = school;
-  for (var i = 0; i < collections_to_include.length ; i++) {
-      ret[i+2] = collections_to_include[i].find({'version_id': versionId});
-  };
 
 });
+
+function MapCode() {
+  emit(this.school_id,
+  {
+    "details": this.City,
+    "lat":  this.Latitude,
+    "lon":  this.Longitude
+  });
+}
+
+
+function /*object*/ ReduceCode(key, arr_values) {
+  // 1) Key 2) An array of values (number of values outputted from Map step)
+  //Therefore the reduceCode and map
+}
+
+
 
 
 }
