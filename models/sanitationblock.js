@@ -38,6 +38,16 @@ SanitationBlocksSchema = new SimpleSchema({
       }
     }
   },
+  isLocked: {
+    label: "Is the toilet block locked?",
+   optional: true,
+    type: Boolean,
+      autoform: {
+        type: "boolean-radios",
+        trueLabel: "Yes",
+        falseLabel: "No",
+      }
+  },
   numberOfWorkingToilets: {
     label: "Number of working toilets",
     type: String,
