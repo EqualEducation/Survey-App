@@ -15,9 +15,9 @@
     <!-- {{/if}} -->
   <!-- {{/unless}} -->
   {{> list_versions }}
-<!--   {{> modal_version}}
+  {{> modal_version}}
   {{> modal_version_update}}
- -->
+
 </template>
 
 <template name="list_versions">
@@ -85,7 +85,7 @@
 </template>
 
 <!-- A modal that contains the bigger view of the image selected -->
-<!-- <template name="modal_version">
+<template name="modal_version">
   <div class="modal fade in" id="modal_version" data-backdrop="false" >
      <div class="modal-dialog">
         <div class="modal-header">
@@ -93,26 +93,26 @@
           <h4 class="modal-title">Add a Version</h4>
         </div>
         <div class="modal-body">
-            {{#autoForm collection="Schools" id="versions1" type="insert" resetOnSuccess=true }}
-                {{#each afFieldNames name="surveys"}}
+<!--           {{> quickForm id="versions1" type="insert" collection="Schools" scope="surveys"}}
+ -->
+
+          {{#autoForm id="versions1" type="update-pushArray" collection="Schools" doc=selectedSchoolDoc scope="surveys"}}
+            {{#each afFieldNames}}
                   <div class="row">
-                    {{#unless isEqual this.name 'isVerified'}}
-                      {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+                    {{#unless isEqual this.name 'grades'}}
+                      {{> afQuickField name=this.name}}
                     {{/unless}}
-                    <br/>
-                    <br/>
                   </div>
-                {{/each}}
-                
+                {{/each}}              
                   <button type="submit" class="btn btn-primary btn-save">Save</button>
             {{/autoForm}}
           </div>
       </div>
   </div>
-</template> -->
+</template>
 
 
-<!-- <template name="modal_version_update">
+<template name="modal_version_update">
   <div class="modal fade in" id="modal_version_update" data-backdrop="false" >
      <div class="modal-dialog">
         <div class="modal-header">
@@ -120,14 +120,13 @@
           <h4 class="modal-title">Update Version</h4>
         </div>
         <div class="modal-body">
-            {{#autoForm collection="Schools" id="versions2" type="update" doc=selectedVersion resetOnSuccess=true }}
+            {{#autoForm collection="Schools" id="versions2" type="update" doc=selectedVersion resetOnSuccess=true setArrayItems=true}}
                 {{#each afFieldNames}}
                   <div class="row">
-                    {{#unless isEqual this.name 'isVerified'}}
-                      {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
-                    {{/unless}}
-                    <br />
-                    <br />
+                      {{> afQuickField name="surveys.1.name"}}
+                      {{> afQuickField name="surveys.1.startDate"}}
+                      {{> afQuickField name="surveys.1.endDate"}}
+                      {{> afQuickField name="surveys.1.isVerified"}}
                   </div>
                 {{/each}}
           
@@ -136,5 +135,5 @@
           </div>
       </div>
   </div>
-</template> -->
+</template>
 

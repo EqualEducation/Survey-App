@@ -5,15 +5,15 @@ Template.registerHelper('schools',function(){
 });
 
 
-// Template.version_selection.events({
-//   "click .btn-back" : function() {
-//     Router.go('/schools/select');
-//     return false;
-//   }, 
-//   "click .open-modal" : function(e,t) {
-//     $("#modal_version").modal("show");
-//   },
-// });
+Template.version_selection.events({
+  "click .btn-back" : function() {
+    Router.go('/schools/select');
+    return false;
+  }, 
+  "click .open-modal" : function(e,t) {
+    $("#modal_version").modal("show");
+  },
+});
 
 // Template.modal_version.events({
 //   "click .btn-save" : function() {
@@ -48,9 +48,9 @@ Template.registerHelper('schools',function(){
 //   },
 // });
 
-// Template.modal_version.rendered = function() {
-//     AutoForm.resetForm('versions1');
-// }
+Template.modal_version.rendered = function() {
+    AutoForm.resetForm('versions1');
+}
 
 
 // Template.registerHelper('selectedVersion',function(){

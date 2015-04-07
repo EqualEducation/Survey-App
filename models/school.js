@@ -230,7 +230,14 @@ SchoolSchema = new SimpleSchema({
     type: GradesSchema,
     label: "Grades",
     optional: true
-  }
+  },
+  "surveys.$.survey_id" : {
+    type: String,
+    label: "ID",
+    optional: true,
+    autoValue: function(){ return Random.id() },
+
+  },
   // hasVersions: {
   //   type: Boolean,
   //   optional: true,
