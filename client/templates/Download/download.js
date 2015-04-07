@@ -1,25 +1,4 @@
 
-
-Template.registerHelper('JSONForSchool',function(versionId){
-  
-  var version = SurveyVersions.findOne({'_id' : versionId}, {limit: 1});
-  var school = Schools.findOne({'_id': version.school_id});
-  var security = Security.findOne({'version_id': versionId});
-  var grades = Grades.findOne({'version_id': versionId});
-
-
-  var schoolToExport = {
-    'Version' : version,
-    'School' : school,
-    'Security' : security,
-    'Grades' : grades,
-  }
-
-  return JSON.stringify(schoolToExport);
-
-});
-
-
 Template.download.events({
   "click .gen_btn": function (e) {
      var data = $('#txt').val();

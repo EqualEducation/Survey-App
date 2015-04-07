@@ -7,13 +7,13 @@
 
 <template name="versions">
 
-  {{#unless hasVersions}}
+  <!-- {{#unless hasVersions}} -->
     <!-- {{#if userIsAdmin}} -->
     <input type="button" class="open-modal btn btn-primary" value="Add a Version" /> 
       <!-- {{else}} -->
       <!-- <p>You need to be logged in as an admin to add a new version</p> -->
     <!-- {{/if}} -->
-  {{/unless}}
+  <!-- {{/unless}} -->
   {{> list_versions }}
   {{> modal_version}}
   {{> modal_version_update}}
@@ -24,7 +24,7 @@
 <table class="table">
     <thead>
       <tr>
-        <th>Version name</th>
+        <th>Survey name</th>
         <th>Start Date</th>
         <th>End Date</th>
         <th></th>
@@ -36,8 +36,10 @@
       </tr>
     </thead>
     <tbody>
-   {{#each versions}}
+   {{#each surveys}}
+      {{#each this.surveys}}
         {{> version}} 
+        {{/each}}
     {{/each}}
     </tbody>
   </table>
@@ -45,6 +47,7 @@
 
 <template name="version">
   <tr>
+    {{print this.surveys}}
     {{#if this.isVerified}}
         <td>{{this.name}}</td>
       {{else}}
@@ -89,8 +92,9 @@
           <h4 class="modal-title">Add a Version</h4>
         </div>
         <div class="modal-body">
-            {{#autoForm collection="SurveyVersions" id="versions1" type="insert" resetOnSuccess=true }}
-                {{#each afFieldNames}}
+          {{> quickForm id="demo" collection='Schools' type="insert" }}
+<!--             {{#autoForm collection="Schools" id="versions1" type="insert" resetOnSuccess=true }}
+                {{#each afFieldNames name="surveys"}}
                   <div class="row">
                     {{#unless isEqual this.name 'isVerified'}}
                       {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
@@ -101,7 +105,7 @@
                 {{/each}}
                 
                   <button type="submit" class="btn btn-primary btn-save">Save</button>
-            {{/autoForm}}
+            {{/autoForm}} -->
           </div>
       </div>
   </div>
@@ -116,7 +120,7 @@
           <h4 class="modal-title">Update Version</h4>
         </div>
         <div class="modal-body">
-            {{#autoForm collection="SurveyVersions" id="versions2" type="update" doc=selectedVersion resetOnSuccess=true }}
+            {{#autoForm collection="Schools" id="versions2" type="update" doc=selectedVersion resetOnSuccess=true }}
                 {{#each afFieldNames}}
                   <div class="row">
                     {{#unless isEqual this.name 'isVerified'}}

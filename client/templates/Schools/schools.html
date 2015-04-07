@@ -2,7 +2,7 @@
 {{#autoForm collection="Schools" id="insertSchoolForm" type=autoformTypeForAddSchool doc=selectedSchoolDoc resetOnSuccess=false autosave=true}}
     <fieldset>
       <legend>Add a School</legend>
-      {{#each afFieldNames name="schoolDetails"}}
+      {{#each afFieldNames}}
         <div class="row">
             {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
           <br />

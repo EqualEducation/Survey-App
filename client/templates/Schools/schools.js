@@ -10,23 +10,23 @@ Template.schools.events({
         Router.go('/');
         return false;
       },
-      "click .btn-save" : function() {
+      // "click .btn-save" : function() {
 
-        var name = AutoForm.getFieldValue("schoolDetails.INSTITUTION_NAME", "insertSchoolForm");
-        var classification = AutoForm.getFieldValue("schoolDetails.CLASSIFICATION", "insertSchoolForm");
-        var province = AutoForm.getFieldValue("schoolDetails.PROVINCE_NAME", "insertSchoolForm");
+      //   var name = AutoForm.getFieldValue("schoolDetails.INSTITUTION_NAME", "insertSchoolForm");
+      //   var classification = AutoForm.getFieldValue("schoolDetails.CLASSIFICATION", "insertSchoolForm");
+      //   var province = AutoForm.getFieldValue("schoolDetails.PROVINCE_NAME", "insertSchoolForm");
 
-        if (!name || !classification || !province) {
-          alert('Error saving school');
-          saveButtonClicked = false;
+      //   if (!name || !classification || !province) {
+      //     alert('Error saving school');
+      //     saveButtonClicked = false;
 
-          return false;
-        }
-        saveButtonClicked = true;
-        $('#insertSchoolForm').submit();
+      //     return false;
+      //   }
+      //   saveButtonClicked = true;
+      //   $('#insertSchoolForm').submit();
 
-        return false;
-      },
+      //   return false;
+      // },
   });
 
 AutoForm.hooks({
@@ -37,7 +37,9 @@ AutoForm.hooks({
         };
 
         if (saveButtonClicked) {
-          alert('Saved School');
+          // alert('Saved School');
+          FlashMessages.sendSuccess("Message");
+
           saveButtonClicked = false;
           Router.go('/');
         }   
@@ -45,7 +47,9 @@ AutoForm.hooks({
       },
       onError: function() {
         if (saveButtonClicked) {
-          alert('Error saving school');
+          // alert('Error saving school');
+          FlashMessages.sendError("Message");
+
           saveButtonClicked = false;
         } 
       }

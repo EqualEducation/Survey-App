@@ -2,7 +2,7 @@ Schools = new Mongo.Collection("schools");
 
 
 EasySearch.createSearchIndex('schools', {
-  'field' : ['schoolDetails.INSTITUTION_NAME'],
+  'field' : ['INSTITUTION_NAME'],
   'collection' : Schools,
   'use' : 'mongo-db',
   'limit' : 20,
@@ -21,7 +21,28 @@ EasySearch.createSearchIndex('schools', {
   }
 });
 
-SchoolDetailsSchema = new SimpleSchema({
+SchoolSchema = new SimpleSchema({
+  // schoolDetails: {
+  //   type: SchoolDetailsSchema,
+  //   optional: true,
+  //   custom: function () {
+  //     if (Meteor.isClient) {
+
+  //       var currentRoute = Router.current();
+  
+  //       var template_name = currentRoute.lookupTemplate();
+
+  //       var isRequired = template_name === "Schools";
+  //       if (!isRequired) {
+  //         return;
+  //       }
+  //       if (isRequired && !this.isSet && (!this.operator || (this.value === null || this.value === ""))) {
+  //         console.log("School Details are required");
+  //         return "required";
+  //       }
+  //     }
+  //   }
+  // },
   INSTITUTION_NAME: {
     type: String,
     label: "Name",
@@ -162,38 +183,56 @@ SchoolDetailsSchema = new SimpleSchema({
       }
     }
   },
-});
+   surveys: {
+      optional: true,
+      type: Array
+   },
+   "surveys.$" :{
+      type: Object
 
-SchoolSchema = new SimpleSchema({
-  schoolDetails: {
-    type: SchoolDetailsSchema,
+    },
+   "surveys.$.name": {
+    type: String,
+    label: "What would you like to call this survey?",
     optional: true,
-    custom: function () {
-      if (Meteor.isClient) {
+    autoform: {
+      rows: 1,
 
-        var currentRoute = Router.current();
-  
-        var template_name = currentRoute.lookupTemplate();
+    },
+  },
+  "surveys.$.startDate": {
+    type: Date,
+    optional: true,
+    autoform: {
+      afFieldInput: {
+        type: "date",
 
-        var isRequired = template_name === "Schools";
-        if (!isRequired) {
-          return;
-        }
-        if (isRequired && !this.isSet && (!this.operator || (this.value === null || this.value === ""))) {
-          console.log("School Details are required");
-          return "required";
-        }
       }
     }
   },
-  hasVersions: {
-    type: Boolean,
+  "surveys.$.endDate": {
+    type: Date,
     optional: true,
     autoform: {
-      type: "hidden",
-      label: false
-    },
+      afFieldInput: {
+        type: "date"
+      }
+    }
   },
+  "surveys.$.isVerified": {
+    label: 'Mark as verified',
+    type: Boolean,
+    optional: true,
+    
+  },
+  // hasVersions: {
+  //   type: Boolean,
+  //   optional: true,
+  //   autoform: {
+  //     type: "hidden",
+  //     label: false
+  //   },
+  // },
   // createdBy: {
   //   type: String,
   //   autoValue:function(){ return Meteor.user().emails[0].address },

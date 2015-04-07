@@ -31,7 +31,7 @@ SimpleSchema.messages({
   keyNotInSchema: "[key] is not allowed by the schema"
 });
 
-Grades = new Mongo.Collection("grades");
+// Grades = new Mongo.Collection("grades");
 
 GradeDetailsSchema = new SimpleSchema({
   numberOfMaleStudents: {
@@ -174,16 +174,16 @@ GradesSchema = new SimpleSchema({
     label: "Grade 12",
     optional: true
      },
-    version_id: {
-    type: String,
-    defaultValue: function(){ 
-      return Session.get('selectedSurveyVersionId');
-    },
-    autoform: {
-      type: "hidden",
-      label: false
-    },  
-  },
+  // version_id: {
+  //   type: String,
+  //   defaultValue: function(){ 
+  //     return Session.get('selectedSurveyVersionId');
+  //   },
+  //   autoform: {
+  //     type: "hidden",
+  //     label: false
+  //   },  
+  // },
 });
 
-Grades.attachSchema(GradesSchema);
+// Grades.attachSchema(GradesSchema);
