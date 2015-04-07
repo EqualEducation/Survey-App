@@ -12,6 +12,10 @@ if (Meteor.isServer) {
   	return Schools.find({'_id' : schoolId}, {'surveys' : 1});
   });
 
+   Meteor.publish("school_survey", function(surveyId) {
+    return Schools.find({'surveys' : {$elemMatch: {'survey_id' : surveyId}}}, {_id: 0, 'surveys.$': 1});
+  });
+
   Meteor.publish("schoolsWithSurveys", function() {
   	return Schools.find({ surveys: { $exists : true}});
   });

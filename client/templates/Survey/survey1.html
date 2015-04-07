@@ -32,7 +32,7 @@
 <template name="surveyTitle">
 	{{#if this.schoolId}}
 		<p>{{schoolName}}</p>
-		<p><a href="{{pathFor 'versions' _id = this.schoolId }}">{{surveyVersionName}}</a></p>
+		<p><a href="{{pathFor 'surveys' }}">{{surveyVersionName}}</a></p>
 	{{else}}
 	{{/if}}
 </template>

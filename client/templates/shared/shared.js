@@ -9,7 +9,7 @@ Handlebars.registerHelper('setSelectedSchoolDoc',function(schoolId){
     Session.set("selectedSchoolId", schoolId);
     var school = Schools.findOne({'_id': schoolId});
     if (school) {
- 	   Session.set("selectedSchoolName", school.schoolDetails.INSTITUTION_NAME);
+ 	   Session.set("selectedSchoolName", school.INSTITUTION_NAME);
 	}
 });
 
@@ -203,142 +203,142 @@ Handlebars.registerHelper('JSONForSchool',function(versionId){
 
 });
 
-function flattenSchool(item) {
-	var flattenedItem = {
-		'Name' : item.schoolDetails.INSTITUTION_NAME,
-		'District': item.schoolDetails.DISTRICT_NAME,
-		'Telephone': item.schoolDetails.TELEPHONE_NO,
-		'Street Number': item.schoolDetails.STREET_NO,
-		'Street Name' :item.schoolDetails.STREET_NAME,
-		'Township or Village' :item.schoolDetails.TOWNSHIP_OR_VILLAGE_NAME,
-		'Suburb': item.schoolDetails.SUBURB,
-		'Town or City': item.schoolDetails.TOWN_OR_CITY,
-		'Postal Code': item.schoolDetails.POSTAL_CODE,
-		'Province' :item.schoolDetails.PROVINCE_NAME,
-		'Neims number' :item.schoolDetails.NEIMS_NUMBER,
-		'Classification' :item.schoolDetails.CLASSIFICATION,
-		'Is Principal Cooperative' :item.schoolDetails.principalCooperative,
-	}
+// function flattenSchool(item) {
+// 	var flattenedItem = {
+// 		'Name' : item.schoolDetails.INSTITUTION_NAME,
+// 		'District': item.schoolDetails.DISTRICT_NAME,
+// 		'Telephone': item.schoolDetails.TELEPHONE_NO,
+// 		'Street Number': item.schoolDetails.STREET_NO,
+// 		'Street Name' :item.schoolDetails.STREET_NAME,
+// 		'Township or Village' :item.schoolDetails.TOWNSHIP_OR_VILLAGE_NAME,
+// 		'Suburb': item.schoolDetails.SUBURB,
+// 		'Town or City': item.schoolDetails.TOWN_OR_CITY,
+// 		'Postal Code': item.schoolDetails.POSTAL_CODE,
+// 		'Province' :item.schoolDetails.PROVINCE_NAME,
+// 		'Neims number' :item.schoolDetails.NEIMS_NUMBER,
+// 		'Classification' :item.schoolDetails.CLASSIFICATION,
+// 		'Is Principal Cooperative' :item.schoolDetails.principalCooperative,
+// 	}
 
-	return flattenedItem;
-}
+// 	return flattenedItem;
+// }
 
-function flattenGrades(item) {	
-	var flattenedItem = {
-		'Total No. Teachers in School' : item.totalTeachersInSchool,
-		'Total No. Students in School': item.totalStudentsInSchool,
-	}
+// function flattenGrades(item) {	
+// 	var flattenedItem = {
+// 		'Total No. Teachers in School' : item.totalTeachersInSchool,
+// 		'Total No. Students in School': item.totalStudentsInSchool,
+// 	}
 
-	if (item.gradeR) {
-		var grade = flattenGrade('Grade R', item.gradeR);
+// 	if (item.gradeR) {
+// 		var grade = flattenGrade('Grade R', item.gradeR);
 
-		$.extend(flattenedItem, grade);
-	}
-	if (item.grade1) {
-		var grade = flattenGrade('Grade 1', item.grade1);
-		$.extend(flattenedItem, grade);
-	}
-	if (item.grade2) {
-		var grade = flattenGrade('Grade 2', item.grade2);
-		$.extend(flattenedItem, grade);
-	}
-	if (item.grade3) {
-		var grade = flattenGrade('Grade 3', item.grade3);
-		$.extend(flattenedItem, grade);
-	}
-	if (item.grade4) {
-		var grade = flattenGrade('Grade 4', item.grade4);
-		$.extend(flattenedItem, grade);
-	}
-	if (item.grade5) {
-		var grade = flattenGrade('Grade 5', item.grade5);
-		$.extend(flattenedItem, grade);
-	}
-	if (item.grade6) {
-		var grade = flattenGrade('Grade 6', item.grade6);
-		$.extend(flattenedItem, grade);
-	}
-	if (item.grade7) {
-		var grade = flattenGrade('Grade 7', item.grade7);
-		$.extend(flattenedItem, grade);
-	}
-	if (item.grade8) {
-		var grade = flattenGrade('Grade 8', item.grade8);
-		$.extend(flattenedItem, grade);
-	}
-	if (item.grade9) {
-		var grade = flattenGrade('Grade 9', item.grade9);
-		$.extend(flattenedItem, grade);
-	}
-	if (item.grade10) {
-		var grade = flattenGrade('Grade 10', item.grade10);
-		$.extend(flattenedItem, grade);
-	}
-	if (item.grade11) {
-		var grade = flattenGrade('Grade 11', item.grade11);
-		$.extend(flattenedItem, grade);
-	}
-	if (item.grade12) {
-		var grade = flattenGrade('Grade 12', item.grade12);
-		$.extend(flattenedItem, grade);
-	}
+// 		$.extend(flattenedItem, grade);
+// 	}
+// 	if (item.grade1) {
+// 		var grade = flattenGrade('Grade 1', item.grade1);
+// 		$.extend(flattenedItem, grade);
+// 	}
+// 	if (item.grade2) {
+// 		var grade = flattenGrade('Grade 2', item.grade2);
+// 		$.extend(flattenedItem, grade);
+// 	}
+// 	if (item.grade3) {
+// 		var grade = flattenGrade('Grade 3', item.grade3);
+// 		$.extend(flattenedItem, grade);
+// 	}
+// 	if (item.grade4) {
+// 		var grade = flattenGrade('Grade 4', item.grade4);
+// 		$.extend(flattenedItem, grade);
+// 	}
+// 	if (item.grade5) {
+// 		var grade = flattenGrade('Grade 5', item.grade5);
+// 		$.extend(flattenedItem, grade);
+// 	}
+// 	if (item.grade6) {
+// 		var grade = flattenGrade('Grade 6', item.grade6);
+// 		$.extend(flattenedItem, grade);
+// 	}
+// 	if (item.grade7) {
+// 		var grade = flattenGrade('Grade 7', item.grade7);
+// 		$.extend(flattenedItem, grade);
+// 	}
+// 	if (item.grade8) {
+// 		var grade = flattenGrade('Grade 8', item.grade8);
+// 		$.extend(flattenedItem, grade);
+// 	}
+// 	if (item.grade9) {
+// 		var grade = flattenGrade('Grade 9', item.grade9);
+// 		$.extend(flattenedItem, grade);
+// 	}
+// 	if (item.grade10) {
+// 		var grade = flattenGrade('Grade 10', item.grade10);
+// 		$.extend(flattenedItem, grade);
+// 	}
+// 	if (item.grade11) {
+// 		var grade = flattenGrade('Grade 11', item.grade11);
+// 		$.extend(flattenedItem, grade);
+// 	}
+// 	if (item.grade12) {
+// 		var grade = flattenGrade('Grade 12', item.grade12);
+// 		$.extend(flattenedItem, grade);
+// 	}
 
 	
 
-	return flattenedItem;
-}
+// 	return flattenedItem;
+// }
 
-function flattenGrade (gradeName, item) {
-	var attr1 = gradeName + ' - No. Male Students';
-	var attr2 = gradeName + ' - No. Female Students';
-	var attr3 = gradeName + ' - Total No. Students';
-	var attr4 = gradeName + ' - Total No. Teachers';
-	var attr5 = gradeName + ' - Total No. Classrooms'
-	var attr6 = gradeName + ' - Comment';
+// function flattenGrade (gradeName, item) {
+// 	var attr1 = gradeName + ' - No. Male Students';
+// 	var attr2 = gradeName + ' - No. Female Students';
+// 	var attr3 = gradeName + ' - Total No. Students';
+// 	var attr4 = gradeName + ' - Total No. Teachers';
+// 	var attr5 = gradeName + ' - Total No. Classrooms'
+// 	var attr6 = gradeName + ' - Comment';
 
-	var data = {};
-	data[attr1] =  item.numberOfMaleStudents;
-	data[attr2] = item.numberOfFemaleStudents;
-	data[attr3] = item.totalNumberOfStudents;
-	data[attr4] = item.totalNumberOfTeachers;
-	data[attr5] = item.totalNumberOfClassRooms;
-	data[attr6] = item.comment;
+// 	var data = {};
+// 	data[attr1] =  item.numberOfMaleStudents;
+// 	data[attr2] = item.numberOfFemaleStudents;
+// 	data[attr3] = item.totalNumberOfStudents;
+// 	data[attr4] = item.totalNumberOfTeachers;
+// 	data[attr5] = item.totalNumberOfClassRooms;
+// 	data[attr6] = item.comment;
 
-	return data;
-}
+// 	return data;
+// }
 
-function flattenClassroom (name,item) {
+// function flattenClassroom (name,item) {
 
-	var attr1 = name + ' - No. Students in Class';
-	var attr2 = name + ' - Total No. Windows';
-	var attr3 = name + ' - Total No. Broken Windows';
-	var attr4 = name + ' - Teacher has Desk';
-	var attr5 = name + ' - Teacher has Chair';
-	var attr6 = name + ' - Total No. Desks';
-	var attr7 = name + ' - Total No. Broken Desks'
-	var attr8 = name + ' - Total No. Chairs';
-	var attr9 = name + ' - Total No. Broken Chairs';
-	var attr10 = name + ' - How is classroom used';
-	var attr11 = name + ' - Ceiling is damaged';
-	var attr12 = name + ' - Comment';
+// 	var attr1 = name + ' - No. Students in Class';
+// 	var attr2 = name + ' - Total No. Windows';
+// 	var attr3 = name + ' - Total No. Broken Windows';
+// 	var attr4 = name + ' - Teacher has Desk';
+// 	var attr5 = name + ' - Teacher has Chair';
+// 	var attr6 = name + ' - Total No. Desks';
+// 	var attr7 = name + ' - Total No. Broken Desks'
+// 	var attr8 = name + ' - Total No. Chairs';
+// 	var attr9 = name + ' - Total No. Broken Chairs';
+// 	var attr10 = name + ' - How is classroom used';
+// 	var attr11 = name + ' - Ceiling is damaged';
+// 	var attr12 = name + ' - Comment';
 
-	var data = {};
+// 	var data = {};
 
-	data[attr1] =  item.numberOfStudents;
-	data[attr2] = item.totalNumberOfWindows;
-	data[attr3] = item.totalNumberOfBrokenWindows;
-	data[attr4] = item.teachHasDesk;
-	data[attr5] = item.teacherHasChair;
-	data[attr6] = item.totalNumberOfDesks;
-	data[attr7] =  item.totalNumberOfBrokenDesks;
-	data[attr8] = item.totalNumberOfChairs;
-	data[attr9] = item.totalNumberOfBrokenChairs;
-	data[attr10] = item.showIsClassroomUsed;
-	data[attr11] = item.ceilingOrFloorHasHole;
-	data[attr12] = item.comment;
+// 	data[attr1] =  item.numberOfStudents;
+// 	data[attr2] = item.totalNumberOfWindows;
+// 	data[attr3] = item.totalNumberOfBrokenWindows;
+// 	data[attr4] = item.teachHasDesk;
+// 	data[attr5] = item.teacherHasChair;
+// 	data[attr6] = item.totalNumberOfDesks;
+// 	data[attr7] =  item.totalNumberOfBrokenDesks;
+// 	data[attr8] = item.totalNumberOfChairs;
+// 	data[attr9] = item.totalNumberOfBrokenChairs;
+// 	data[attr10] = item.showIsClassroomUsed;
+// 	data[attr11] = item.ceilingOrFloorHasHole;
+// 	data[attr12] = item.comment;
 
-	return data;
-}
+// 	return data;
+// }
 
 
   

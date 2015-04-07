@@ -52,7 +52,7 @@
     {{#if this.isVerified}}
         <td>{{this.name}}</td>
       {{else}}
-        <td><a href="{{pathFor 'survey' _schoolId=selectedSchoolId}}" class="">{{this.name}}</a></td>
+        <td><a href="{{pathFor 'survey' _schoolId=selectedSchoolId _surveyId=survey_id }}" class="">{{this.name}}</a></td>
     {{/if}}
     <td>{{dateToString this.startDate}}</td>
     <td>{{dateToString this.endDate}}</td>
@@ -123,12 +123,11 @@
             {{#autoForm collection="Schools" id="versions2" type="update" doc=selectedVersion resetOnSuccess=true setArrayItems=true}}
                 {{#each afFieldNames}}
                   <div class="row">
-                      {{> afQuickField name="surveys.1.name"}}
-                      {{> afQuickField name="surveys.1.startDate"}}
-                      {{> afQuickField name="surveys.1.endDate"}}
-                      {{> afQuickField name="surveys.1.isVerified"}}
+                    {{#unless isEqual this.name 'grades'}}
+                      {{> afQuickField name=this.name}}
+                    {{/unless}}
                   </div>
-                {{/each}}
+                {{/each}} 
           
                   <button type="submit" class="btn btn-primary btn-save">Save</button>
             {{/autoForm}}
