@@ -2,13 +2,14 @@
 
 <template name="basicLayout">
   {{> metaData}}
-  {{> flashMessages}}
   <header>
+    {{> flashMessages}}
     {{> header}}
   </header>
   <div id="page" class="animated">
     <page class="application">
       <div class="container">
+
         {{> yield}}
       </div>
     </page>

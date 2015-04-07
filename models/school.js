@@ -21,6 +21,7 @@ EasySearch.createSearchIndex('schools', {
   }
 });
 
+
 SchoolSchema = new SimpleSchema({
   // schoolDetails: {
   //   type: SchoolDetailsSchema,
@@ -225,6 +226,11 @@ SchoolSchema = new SimpleSchema({
     optional: true,
     
   },
+  "surveys.$.grades": {
+    type: GradesSchema,
+    label: "Grades",
+    optional: true
+  }
   // hasVersions: {
   //   type: Boolean,
   //   optional: true,

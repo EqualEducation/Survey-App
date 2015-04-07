@@ -31,7 +31,7 @@ SimpleSchema.messages({
   keyNotInSchema: "[key] is not allowed by the schema"
 });
 
-// Grades = new Mongo.Collection("grades");
+Grades = new Mongo.Collection(null);
 
 GradeDetailsSchema = new SimpleSchema({
   numberOfMaleStudents: {
@@ -186,4 +186,4 @@ GradesSchema = new SimpleSchema({
   // },
 });
 
-// Grades.attachSchema(GradesSchema);
+Grades.attachSchema(GradesSchema);

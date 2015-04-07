@@ -1,13 +1,25 @@
 <template name="schools">
-{{#autoForm collection="Schools" id="insertSchoolForm" type=autoformTypeForAddSchool doc=selectedSchoolDoc resetOnSuccess=false autosave=true}}
+{{#autoForm collection="Schools" id="insertSchoolForm" type="insert" resetOnSuccess=false autosave=true}}
     <fieldset>
       <legend>Add a School</legend>
-      {{#each afFieldNames}}
+      <!-- {{#each afFieldNames}} -->
         <div class="row">
-            {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+            {{> afQuickField name="INSTITUTION_NAME" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+            {{> afQuickField name="DISTRICT_NAME" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+            {{> afQuickField name="TELEPHONE_NO" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+            {{> afQuickField name="STREET_NO" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+            {{> afQuickField name="STREET_NAME" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+            {{> afQuickField name="TOWNSHIP_OR_VILLAGE_NAME" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+            {{> afQuickField name="SUBURB" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+            {{> afQuickField name="TOWN_OR_CITY" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+            {{> afQuickField name="POSTAL_CODE" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+            {{> afQuickField name="PROVINCE_NAME" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+            {{> afQuickField name="NEIMS_NUMBER" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+            {{> afQuickField name="CLASSIFICATION" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+            {{> afQuickField name="principalCooperative" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
           <br />
         </div>
-      {{/each}}
+      <!-- {{/each}} -->
     </fieldset>
       <button class="btn btn-primary btn-back">Back</button>
       <button type="submit" class="btn btn-primary btn-save">Save</button>

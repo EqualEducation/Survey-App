@@ -1,8 +1,11 @@
 <template name="survey2">
-  {{setSelectedSurveyVersionDoc surveyVersionId }}
+  <!-- {{setSelectedSurveyVersionDoc surveyVersionId }} -->
   {{setSelectedSchoolDoc schoolId}}
-  {{setSelectedDoc surveyVersionId "grades"}}
-  {{#autoForm collection="Grades" id="survey2" type=autoformType doc=selectedDoc resetOnSuccess=false autosave=true}}
+  <!-- {{setSelectedDoc surveyVersionId "grades"}} -->
+  {{> quickForm id="grades" collection="Schools" type="insert" }}
+
+
+<!--   {{#autoForm collection="Schools" id="survey2" type="insert" resetOnSuccess=false autosave=true}}
     <legend>Grade Demographics</legend>
     <button class="btn btn-primary btn-back">Back</button>
     <button class="btn btn-primary btn-save">Save</button>
@@ -27,7 +30,7 @@
       {{> afQuickField name="version_id"}}
 
         </fieldset>
-   {{/autoForm}}
+   {{/autoForm}} -->
 </template>
 
 <template name="unknown_classification">

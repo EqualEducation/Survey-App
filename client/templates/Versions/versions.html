@@ -15,9 +15,9 @@
     <!-- {{/if}} -->
   <!-- {{/unless}} -->
   {{> list_versions }}
-  {{> modal_version}}
+<!--   {{> modal_version}}
   {{> modal_version_update}}
-
+ -->
 </template>
 
 <template name="list_versions">
@@ -36,10 +36,11 @@
       </tr>
     </thead>
     <tbody>
-   {{#each surveys}}
+
+   {{#each schools}}
       {{#each this.surveys}}
         {{> version}} 
-        {{/each}}
+      {{/each}}
     {{/each}}
     </tbody>
   </table>
@@ -47,7 +48,7 @@
 
 <template name="version">
   <tr>
-    {{print this.surveys}}
+    {{print this}}
     {{#if this.isVerified}}
         <td>{{this.name}}</td>
       {{else}}
@@ -84,7 +85,7 @@
 </template>
 
 <!-- A modal that contains the bigger view of the image selected -->
-<template name="modal_version">
+<!-- <template name="modal_version">
   <div class="modal fade in" id="modal_version" data-backdrop="false" >
      <div class="modal-dialog">
         <div class="modal-header">
@@ -92,8 +93,7 @@
           <h4 class="modal-title">Add a Version</h4>
         </div>
         <div class="modal-body">
-          {{> quickForm id="demo" collection='Schools' type="insert" }}
-<!--             {{#autoForm collection="Schools" id="versions1" type="insert" resetOnSuccess=true }}
+            {{#autoForm collection="Schools" id="versions1" type="insert" resetOnSuccess=true }}
                 {{#each afFieldNames name="surveys"}}
                   <div class="row">
                     {{#unless isEqual this.name 'isVerified'}}
@@ -105,14 +105,14 @@
                 {{/each}}
                 
                   <button type="submit" class="btn btn-primary btn-save">Save</button>
-            {{/autoForm}} -->
+            {{/autoForm}}
           </div>
       </div>
   </div>
-</template>
+</template> -->
 
 
-<template name="modal_version_update">
+<!-- <template name="modal_version_update">
   <div class="modal fade in" id="modal_version_update" data-backdrop="false" >
      <div class="modal-dialog">
         <div class="modal-header">
@@ -136,5 +136,5 @@
           </div>
       </div>
   </div>
-</template>
+</template> -->
 

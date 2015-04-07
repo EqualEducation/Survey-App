@@ -1,3 +1,9 @@
+  FlashMessages.configure({
+    autoHide: true,
+    hideDelay: 5000,
+    autoScroll: true
+  });
+
 //SCHOOL
 Handlebars.registerHelper('setSelectedSchoolDoc',function(schoolId){
     Session.set("selectedSchoolId", schoolId);
@@ -22,24 +28,24 @@ Handlebars.registerHelper('selectedSchoolId',function(){
 
 //SURVEY
 Handlebars.registerHelper('setSelectedSurveyVersionDoc',function(versionId){
-    Session.set("selectedSurveyVersionId", versionId);
-    var version = SurveyVersions.findOne({'_id': versionId});
-    if (version) {
- 	   Session.set("selectedSurveyVersionName", version.name);
-	}
+ //    Session.set("selectedSurveyVersionId", versionId);
+ //    var version = SurveyVersions.findOne({'_id': versionId});
+ //    if (version) {
+ // 	   Session.set("selectedSurveyVersionName", version.name);
+	// }
 });
 
 Handlebars.registerHelper('selectedSurveryVersionDoc',function(){
-	return SurveyVersions.findOne(Session.get("selectedSurveyVersionId"));
+	// return SurveyVersions.findOne(Session.get("selectedSurveyVersionId"));
 });
 
 Handlebars.registerHelper('surveyVersionName',function(){
-	return Session.get("selectedSurveyVersionName");
+	// return Session.get("selectedSurveyVersionName");
 });
 
 
 Handlebars.registerHelper('selectedVersionId',function(){
-	return Session.get("selectedSurveyVersionId");
+	// return Session.get("selectedSurveyVersionId");
 });
 
 

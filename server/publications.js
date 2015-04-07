@@ -12,9 +12,17 @@ if (Meteor.isServer) {
   	return Schools.find({'_id' : schoolId}, {'surveys' : 1});
   });
 
-//   Meteor.publish("schoolnames", function () {
-//     return Schools.find({}, {'schoolDetails.INSTITUTION_NAME' : 1}, {sort: {'schoolDetails.INSTITUTION_NAME': 'asc'}});
-//   });
+  Meteor.publish("schoolsWithSurveys", function() {
+  	return Schools.find({ surveys: { $exists : true}});
+  });
+
+  Meteor.publish("school_grades", function(schoolId) {
+  	return Schools.find({'_id' : schoolId}, {'grades' : 1});
+  });
+
+  Meteor.publish("schoolnames", function () {
+    return Schools.find({}, {'INSTITUTION_NAME' : 1}, {sort: {'INSTITUTION_NAME': 'asc'}});
+  });
 
 //   Meteor.publish("schools", function () {
 //     return Schools.find({},{sort: {'schoolDetails.INSTITUTION_NAME': 1}}, {sort: {'schoolDetails.INSTITUTION_NAME': 'asc'}});
