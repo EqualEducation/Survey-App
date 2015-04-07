@@ -96,7 +96,7 @@
 <!--           {{> quickForm id="versions1" type="insert" collection="Schools" scope="surveys"}}
  -->
 
-          {{#autoForm id="versions1" type="update-pushArray" collection="Schools" doc=selectedSchoolDoc scope="surveys"}}
+          {{#autoForm  type="update-pushArray" collection="Schools" doc=selectedSchoolDoc scope="surveys"}}
             {{#each afFieldNames}}
                   <div class="row">
                     {{#unless isEqual this.name 'grades'}}
@@ -120,7 +120,7 @@
           <h4 class="modal-title">Update Version</h4>
         </div>
         <div class="modal-body">
-            {{#autoForm collection="Schools" id="versions2" type="update" doc=selectedVersion resetOnSuccess=true setArrayItems=true}}
+            {{#autoForm collection="Schools" type="update" doc=selectedVersion resetOnSuccess=true setArrayItems=true}}
                 {{#each afFieldNames}}
                   <div class="row">
                     {{#unless isEqual this.name 'grades'}}

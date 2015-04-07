@@ -228,7 +228,6 @@ SchoolSchema = new SimpleSchema({
   },
   "surveys.$.grades": {
     type: GradesSchema,
-    label: "Grades",
     optional: true
   },
   "surveys.$.survey_id" : {

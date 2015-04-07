@@ -2,23 +2,22 @@
     <div class="center-content">
 
       <h3>Please choose a section to update</h3>
-   		{{setSelectedSurveyVersionDoc surveyVersionId }}
    		{{setSelectedSchoolDoc schoolId}}
 
-	      <a href="{{pathFor 'surveySection' _schoolId=schoolId _versionId=surveyVersionId _surveySection='survey8' }}" class="btn btn-high btn-dashboard">School Details</a>
-	      <a href="{{pathFor 'surveySection' _schoolId=schoolId _versionId=surveyVersionId _surveySection='survey14'}}" class="btn btn-high btn-dashboard">Electronic Connectivity</a>
-	      <a href="{{pathFor 'surveySection' _schoolId=schoolId _versionId=surveyVersionId _surveySection='survey2'}}" class="btn btn-high btn-dashboard">Grade Demographics</a>
-   	      <a href="{{pathFor 'surveySection' _schoolId=schoolId _versionId=surveyVersionId _surveySection='survey7'}}" class="btn btn-high btn-dashboard">Water & Sanitation</a>      
-	      <a href="{{pathFor 'surveySection' _schoolId=schoolId _versionId=surveyVersionId _surveySection='survey11'}}" class="btn btn-high btn-dashboard">Classrooms</a>
-	      <a href="{{pathFor 'surveySection' _schoolId=schoolId _versionId=surveyVersionId _surveySection='survey13'}}" class="btn btn-medium btn-dashboard">Electricity</a>
-	      <a href="{{pathFor 'surveySection' _schoolId=schoolId _versionId=surveyVersionId _surveySection='survey4' }}" class="btn btn-medium btn-dashboard">Library & Media Centre</a>
-	      <a href="{{pathFor 'surveySection' _schoolId=schoolId _versionId=surveyVersionId _surveySection='survey12'}}" class="btn btn-medium btn-dashboard">Nutrition</a>
-	      <a href="{{pathFor 'surveySection' _schoolId=schoolId _versionId=surveyVersionId _surveySection='survey6' }}" class="btn btn-medium btn-dashboard">Perimeter Security</a>
-   	      <a href="{{pathFor 'surveySection' _schoolId=schoolId _versionId=surveyVersionId _surveySection='survey10' }}" class="btn btn-medium btn-dashboard">School Environment</a>
-	      <a href="{{pathFor 'surveySection' _schoolId=schoolId _versionId=surveyVersionId _surveySection='survey5'}}" class="btn btn-medium btn-dashboard">Science Labs</a>
-   	      <a href="{{pathFor 'surveySection' _schoolId=schoolId _versionId=surveyVersionId _surveySection='survey9'}}" class="btn btn-medium btn-dashboard">Special Needs</a>
-	      <a href="{{pathFor 'surveySection' _schoolId=schoolId _versionId=surveyVersionId _surveySection='survey3'}}" class="btn btn-medium btn-dashboard">Sports Fields</a>
-  	      <a href="{{pathFor 'surveySection' _schoolId=schoolId _surveySection='survey1'}}" class="btn btn-low btn-dashboard">Contact Person Details</a>
+	      <a href="{{pathFor 'surveySection' _schoolId=schoolId _surveyId=surveyId _surveySection='survey8' }}" class="btn btn-high btn-dashboard">School Details</a>
+	      <a href="{{pathFor 'surveySection' _schoolId=schoolId _surveyId=surveyId _surveySection='survey14'}}" class="btn btn-high btn-dashboard">Electronic Connectivity</a>
+	      <a href="{{pathFor 'surveySection' _schoolId=schoolId _surveyId=surveyId _surveySection='survey2'}}" class="btn btn-high btn-dashboard">Grade Demographics</a>
+   	      <a href="{{pathFor 'surveySection' _schoolId=schoolId _surveyId=surveyId _surveySection='survey7'}}" class="btn btn-high btn-dashboard">Water & Sanitation</a>      
+	      <a href="{{pathFor 'surveySection' _schoolId=schoolId _surveyId=surveyId _surveySection='survey11'}}" class="btn btn-high btn-dashboard">Classrooms</a>
+	      <a href="{{pathFor 'surveySection' _schoolId=schoolId _surveyId=surveyId _surveySection='survey13'}}" class="btn btn-medium btn-dashboard">Electricity</a>
+	      <a href="{{pathFor 'surveySection' _schoolId=schoolId _surveyId=surveyId _surveySection='survey4' }}" class="btn btn-medium btn-dashboard">Library & Media Centre</a>
+	      <a href="{{pathFor 'surveySection' _schoolId=schoolId _surveyId=surveyId _surveySection='survey12'}}" class="btn btn-medium btn-dashboard">Nutrition</a>
+	      <a href="{{pathFor 'surveySection' _schoolId=schoolId _surveyId=surveyId _surveySection='survey6' }}" class="btn btn-medium btn-dashboard">Perimeter Security</a>
+   	      <a href="{{pathFor 'surveySection' _schoolId=schoolId _surveyId=surveyId _surveySection='survey10' }}" class="btn btn-medium btn-dashboard">School Environment</a>
+	      <a href="{{pathFor 'surveySection' _schoolId=schoolId _surveyId=surveyId _surveySection='survey5'}}" class="btn btn-medium btn-dashboard">Science Labs</a>
+   	      <a href="{{pathFor 'surveySection' _schoolId=schoolId _surveyId=surveyId _surveySection='survey9'}}" class="btn btn-medium btn-dashboard">Special Needs</a>
+	      <a href="{{pathFor 'surveySection' _schoolId=schoolId _surveyId=surveyId _surveySection='survey3'}}" class="btn btn-medium btn-dashboard">Sports Fields</a>
+  	      <a href="{{pathFor 'surveySection' _schoolId=schoolId _surveyId=surveyId _surveySection='survey1'}}" class="btn btn-low btn-dashboard">Contact Person Details</a>
   	      <br />
   	      {{#if userIsAdmin}}
   	      	<a href="{{pathFor 'download' _schoolId=schoolId _versionId=surveyVersionId}}">Download</a>

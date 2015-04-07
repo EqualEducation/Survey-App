@@ -1,39 +1,39 @@
-// var buttonSaveClicked = false;
+var buttonSaveClicked = false;
 
-// 	Template.survey2.rendered = function() {
-//     renderHelper('survey2');
+	// Template.survey2.rendered = function() {
+ //    	renderHelper('survey2');
 
-//  		$('.accordion .accordion-section-title').removeClass('active');
-//     $('.accordion .accordion-section-content').slideUp(300).removeClass('open');
-// 	};
+ // 		$('.accordion .accordion-section-title').removeClass('active');
+ //    	$('.accordion .accordion-section-content').slideUp(300).removeClass('open');
+	// };
 
 
-// 	Template.survey2.events({
-//     "click .btn-save" : function() {
-//       buttonSaveClicked = true;
-//       $('#survey2').submit();
-//       return false;
-//     }, 
-//     "click .accordion-section-title" : function(e, template) {
-//     	var currentAttrValue = $(e.target).attr('href');
+	Template.survey2.events({
+    "click .btn-save" : function() {
+      buttonSaveClicked = true;
+      $('#survey2').submit();
+      return false;
+    }, 
+    // "click .accordion-section-title" : function(e, template) {
+    // 	var currentAttrValue = $(e.target).attr('href');
  
-//         if($(e.target).is('.active')) {
-// 	 		$('.accordion .accordion-section-title').removeClass('active');
-// 	        $('.accordion .accordion-section-content').slideUp(300).removeClass('open');
-// 	    }else {
-// 	 		$('.accordion .accordion-section-title').removeClass('active');
-// 	        $('.accordion .accordion-section-content').slideUp(300).removeClass('open'); 
-//             // Add active class to section title
-//             $(e.target).addClass('active');
-//             // Open up the hidden content panel
-//             $('.accordion ' + currentAttrValue).slideDown(300).addClass('open'); 
-//         }
+    //     if($(e.target).is('.active')) {
+	 		// $('.accordion .accordion-section-title').removeClass('active');
+	   //      $('.accordion .accordion-section-content').slideUp(300).removeClass('open');
+	   //  }else {
+	 		// $('.accordion .accordion-section-title').removeClass('active');
+	   //      $('.accordion .accordion-section-content').slideUp(300).removeClass('open'); 
+    //         // Add active class to section title
+    //         $(e.target).addClass('active');
+    //         // Open up the hidden content panel
+    //         $('.accordion ' + currentAttrValue).slideDown(300).addClass('open'); 
+    //     }
  
-//         e.preventDefault();
-//     },
+    //     e.preventDefault();
+    // },
     
  
-//   });
+  });
 
 // function renderHelper(survey){
 //   $.material.init();
@@ -64,19 +64,19 @@
 //         return ret;
 //     });
 
-// AutoForm.addHooks(['survey2'], {
-//        onSuccess: function(operation, result, template) {  
+AutoForm.addHooks(['survey2'], {
+       onSuccess: function(operation, result, template) {  
 
-//         if (buttonSaveClicked) {
-//           alert('Saved School');
-//           buttonSaveClicked = false;
-//         }   
+        if (buttonSaveClicked) {
+          FlashMessages.sendSuccess("Successfully Saved School");
+          buttonSaveClicked = false;
+        }   
 
-//       },
-//       onError: function() {
-//         if (buttonSaveClicked) {
-//           alert('Error saving school');
-//           buttonSaveClicked = false;
-//         } 
-//       }
-//     });
+      },
+      onError: function() {
+        if (buttonSaveClicked) {
+          FlashMessages.sendError("Error saving form. Please see below.");
+          buttonSaveClicked = false;
+        } 
+      }
+    });

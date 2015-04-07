@@ -1,36 +1,21 @@
 <template name="survey2">
-  <!-- {{setSelectedSurveyVersionDoc surveyVersionId }} -->
+  <!-- {{surveyId}} -->
+  <!-- {{setSelectedSurveyVersionDoc surveyId }} -->
+  <!-- {{setSelectedSchoolDoc schoolId}} -->
   {{setSelectedSchoolDoc schoolId}}
-  <!-- {{setSelectedDoc surveyVersionId "grades"}} -->
-  {{> quickForm id="grades" collection="Schools" type="insert" }}
+  <!-- {{> quickForm id="grades" collection="Schools" type="insert" }} -->
 
-
-<!--   {{#autoForm collection="Schools" id="survey2" type="insert" resetOnSuccess=false autosave=true}}
-    <legend>Grade Demographics</legend>
-    <button class="btn btn-primary btn-back">Back</button>
-    <button class="btn btn-primary btn-save">Save</button>
-    <fieldset>
-      <div class="row">
-        {{> afQuickField name="totalTeachersInSchool" template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
-        <br />
-      </div>
-
-      {{#if isPrimarySchool}}
-        <p>Please select a grade to update</p>
-        {{> primaryschool_accordian}}
-      {{else}}
-        {{#if isSecondarySchool}}
-          <p>Please select a grade to update</p>
-          {{> highschool_accordian}}
-        {{else}}
-          {{> unknown_classification}}
-        {{/if}}
-      {{/if}}
-    
-      {{> afQuickField name="version_id"}}
-
-        </fieldset>
-   {{/autoForm}} -->
+{{print selectedSchoolDoc}}
+ {{#autoForm  type="update-pushArray" collection="Schools" id="survey2" doc=selectedSchoolDoc scope="surveys"}}
+            {{#each afFieldNames}}
+                  <div class="row">
+                    {{#if isEqual this.name 'grades'}}
+                      {{> afQuickField name=this.name}}
+                    {{/if}}
+                  </div>
+                {{/each}}              
+                  <button type="submit" class="btn btn-primary btn-save">Save</button>
+            {{/autoForm}}
 </template>
 
 <template name="unknown_classification">

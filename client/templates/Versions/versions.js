@@ -48,9 +48,9 @@ Template.version_selection.events({
 //   },
 // });
 
-Template.modal_version.rendered = function() {
-    AutoForm.resetForm('versions1');
-}
+// Template.modal_version.rendered = function() {
+//     AutoForm.resetForm('versions1');
+// }
 
 
 // Template.registerHelper('selectedVersion',function(){
