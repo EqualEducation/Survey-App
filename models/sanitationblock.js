@@ -43,13 +43,19 @@ SanitationBlocksSchema = new SimpleSchema({
   },
   isLocked: {
     label: "Is the toilet block locked?",
-   optional: true,
-    type: Boolean,
+   type: String,
+      optional: true,
       autoform: {
-        type: "boolean-checkbox",
-        // trueLabel: "Yes",
-        // falseLabel: "No",
+           type: "select-radio",
+           options: function () {
+            return [
+              {label: "Yes", value: 'Yes'},
+              {label: "No", value: 'No'},
+              {label: "Unsure", value: 'Unsure'}
+        ];
       }
+
+    }
   },
   numberOfWorkingToilets: {
     label: "Number of working toilets",
@@ -89,34 +95,52 @@ SanitationBlocksSchema = new SimpleSchema({
   },
   hasSoap: {
     label: "Is there soap?",
-   optional: true,
-    type: Boolean,
+   type: String,
+      optional: true,
       autoform: {
-        type: "boolean-checkbox",
-        // trueLabel: "Yes",
-        // falseLabel: "No",
+           type: "select-radio",
+           options: function () {
+            return [
+              {label: "Yes", value: 'Yes'},
+              {label: "No", value: 'No'},
+              {label: "Unsure", value: 'Unsure'}
+        ];
       }
+
+    }
   },
   hasSanitaryBin: {
 
     label: "Are there sanitary bins?",
-   optional: true,
-    type: Boolean,
+   type: String,
+      optional: true,
       autoform: {
-        type: "boolean-checkbox",
-        // trueLabel: "Yes",
-        // falseLabel: "No",
+           type: "select-radio",
+           options: function () {
+            return [
+              {label: "Yes", value: 'Yes'},
+              {label: "No", value: 'No'},
+              {label: "Unsure", value: 'Unsure'}
+        ];
       }
+
+    }
   },
   hasToiletPaper: {
     label: "Is there toilet paper?",
-   optional: true,
-    type: Boolean,
+   type: String,
+      optional: true,
       autoform: {
-        type: "boolean-checkbox",
-        // trueLabel: "Yes",
-        // falseLabel: "No",
+           type: "select-radio",
+           options: function () {
+            return [
+              {label: "Yes", value: 'Yes'},
+              {label: "No", value: 'No'},
+              {label: "Unsure", value: 'Unsure'}
+        ];
       }
+
+    }
   },
   condition: {
     label: "Please describe the condition of the block",

@@ -18,23 +18,35 @@ SecuritySchema = new SimpleSchema({
   },
   hasFence: {
    label: "School has appropriate fence, including around all sports fields and facilitities",
-    optional: true,
-    type: Boolean,
-      autoform: {
-        type: "boolean-checkbox",
-        // trueLabel: "Yes",
-        // falseLabel: "No",
-      }
+    type: String,
+          optional: true,
+          autoform: {
+               type: "select-radio",
+               options: function () {
+                return [
+                  {label: "Yes", value: 'Yes'},
+                  {label: "No", value: 'No'},
+                  {label: "Unsure", value: 'Unsure'}
+            ];
+          }
+
+        }
   },
   fenceHasHoles: {
    label: "Fence has holes or gaps",
-    optional: true,
-    type: Boolean,
+    type: String,
+      optional: true,
       autoform: {
-        type: "boolean-checkbox",
-        // trueLabel: "Yes",
-        // falseLabel: "No",
+           type: "select-radio",
+           options: function () {
+            return [
+              {label: "Yes", value: 'Yes'},
+              {label: "No", value: 'No'},
+              {label: "Unsure", value: 'Unsure'}
+        ];
       }
+
+    }
   },
   // fenceIsCorrectHeight: {
   //  label: "Is the fence, in all places, at least 1.8 metres high?",
@@ -74,13 +86,19 @@ SecuritySchema = new SimpleSchema({
   // },
   hasSecurityGaurd: {
     label: "Security guard controls access at the gate",
-    optional: true,
-    type: Boolean,
+    type: String,
+      optional: true,
       autoform: {
-        type: "boolean-checkbox",
-        // trueLabel: "Yes",
-        // falseLabel: "No",
+           type: "select-radio",
+           options: function () {
+            return [
+              {label: "Yes", value: 'Yes'},
+              {label: "No", value: 'No'},
+              {label: "Unsure", value: 'Unsure'}
+        ];
       }
+
+    }
   },
   comment: {
     type: String,

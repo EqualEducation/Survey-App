@@ -12,23 +12,35 @@ IndividualLabsSchema = new SimpleSchema({
   },
   labCondition:{
     label: "Is the lab in good working order?",
-    optional: true,
-    type: Boolean,
-    autoform: {
-        type: "boolean-checkbox",
-        // trueLabel: "Yes",
-        // falseLabel: "No",
+    type: String,
+      optional: true,
+      autoform: {
+           type: "select-radio",
+           options: function () {
+            return [
+              {label: "Yes", value: 'Yes'},
+              {label: "No", value: 'No'},
+              {label: "Unsure", value: 'Unsure'}
+        ];
       }
+
+    }
   },
   hasNecessaryEquipment: {
     label: "Does the lab have the equipment necessary?",
-    type: Boolean,
+    type: String,
       optional: true,
       autoform: {
-        type: "boolean-checkbox",
-        // trueLabel: "Yes",
-        // falseLabel: "No",
+           type: "select-radio",
+           options: function () {
+            return [
+              {label: "Yes", value: 'Yes'},
+              {label: "No", value: 'No'},
+              {label: "Unsure", value: 'Unsure'}
+        ];
       }
+
+    }
   },
   comment: {
     type: String,

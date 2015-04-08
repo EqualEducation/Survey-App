@@ -1,5 +1,6 @@
 Template.search.rendered = function(){
   console.log($('.toggle-checked').value);
+  
   $('.toggle-checked').checked = false;
 }
 
