@@ -83,6 +83,6 @@ onSuccess: function(operation, result, template)
     },
     onError: function() 
     {
-        alert('Error saving block');
+              FlashMessages.sendError('Error saving school. Please see below for errors');
       }
     });

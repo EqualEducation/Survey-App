@@ -17,7 +17,7 @@ Template.schools.events({
         var province = AutoForm.getFieldValue("schoolDetails.PROVINCE_NAME", "insertSchoolForm");
 
         if (!name || !classification || !province) {
-          alert('Error saving school');
+              FlashMessages.sendError('Error saving school. Please see below for errors');
           saveButtonClicked = false;
 
           return false;
@@ -37,7 +37,7 @@ AutoForm.hooks({
         };
 
         if (saveButtonClicked) {
-          alert('Saved School');
+              FlashMessages.sendSuccess('School saved!');
           saveButtonClicked = false;
           Router.go('/');
         }   
@@ -45,7 +45,7 @@ AutoForm.hooks({
       },
       onError: function() {
         if (saveButtonClicked) {
-          alert('Error saving school');
+              FlashMessages.sendError('Error saving school. Please see below for errors');
           saveButtonClicked = false;
         } 
       }

@@ -56,6 +56,6 @@ onSuccess: function(operation, result, template)
     },
     onError: function() 
     {
-        alert('Error saving classroom');
+              FlashMessages.sendError('Error saving school. Please see below for errors');
       }
     });

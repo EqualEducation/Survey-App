@@ -252,14 +252,16 @@ function renderHelper(survey){
 AutoForm.addHooks(['survey1', 'survey3', 'survey4', 'survey5', 'survey6', 'survey7', 'survey9', 'survey10', 'survey11', 'survey12', 'survey13', 'survey14'], {
        onSuccess: function(operation, result, template) {  
         if (buttonSaveClicked) {
-          alert('Saved School');
+          // alert('Saved School');
+          FlashMessages.sendSuccess("School Saved.");
           buttonSaveClicked = false;
         }   
 
       },
       onError: function() {
         if (buttonSaveClicked) {
-          alert('Error saving school');
+          FlashMessages.sendError("Error saving school. Please see below for missing fields");
+          // alert('Error saving school');
           buttonSaveClicked = false;
         } 
       }

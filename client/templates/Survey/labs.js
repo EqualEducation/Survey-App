@@ -82,7 +82,7 @@ onSuccess: function(operation, result, template)
     {
       // if (didTapSubmit) 
       // {
-        alert('Error saving lab');
+              FlashMessages.sendError('Error saving school. Please see below for errors');
         // didTapSubmit = false;
       // 
       }

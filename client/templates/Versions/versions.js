@@ -120,7 +120,7 @@ onSuccess: function(operation, new_version_id, template)
     },
     onError: function() 
     {
-        alert('Error saving version');
+              FlashMessages.sendError('Error saving school. Please see below for errors');
     }, onSubmit: function() {
       alert('on submit called');
     }

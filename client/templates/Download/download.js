@@ -83,7 +83,7 @@ function JSONToCSVConvertor(JSONData, ReportTitle, ShowLabel) {
     }
 
     if (CSV == '') {        
-        alert("Invalid data");
+         FlashMessages.sendError('Invalid data');
         return;
     }   
     

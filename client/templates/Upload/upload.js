@@ -31,7 +31,7 @@ Template.upload.events({
               if (uploaded == 1){
                   message = ' school was added to the database';
               }
-              alert('Upload complete! ' + uploaded + message);
+              FlashMessages.sendInfo('Upload complete! ' + uploaded + message);
             }
           });
         }

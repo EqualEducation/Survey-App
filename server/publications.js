@@ -7,7 +7,10 @@ if (Meteor.isServer) {
     return Schools.find({}, {'schoolDetails.INSTITUTION_NAME' : 1}, {sort: {'schoolDetails.INSTITUTION_NAME': 'asc'}});
   });
 
-  Meteor.publish("schools", function () {
+  Meteor.publish("schools", function (schoolId) {
+    if (schoolId) {
+    return Schools.find({'_id' : schoolId},{sort: {'schoolDetails.INSTITUTION_NAME': 1}}, {sort: {'schoolDetails.INSTITUTION_NAME': 'asc'}});
+    }
     return Schools.find({},{sort: {'schoolDetails.INSTITUTION_NAME': 1}}, {sort: {'schoolDetails.INSTITUTION_NAME': 'asc'}});
   });
 

@@ -1,3 +1,9 @@
+FlashMessages.configure({
+    autoHide: true,
+    hideDelay: 3000,
+    autoScroll: true
+  });
+
 //SCHOOL
 Handlebars.registerHelper('setSelectedSchoolDoc',function(schoolId){
     Session.set("selectedSchoolId", schoolId);

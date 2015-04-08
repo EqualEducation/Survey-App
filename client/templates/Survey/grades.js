@@ -68,14 +68,14 @@ AutoForm.addHooks(['survey2'], {
        onSuccess: function(operation, result, template) {  
 
         if (buttonSaveClicked) {
-          alert('Saved School');
+              FlashMessages.sendSuccess('School saved!');
           buttonSaveClicked = false;
         }   
 
       },
       onError: function() {
         if (buttonSaveClicked) {
-          alert('Error saving school');
+              FlashMessages.sendError('Error saving school. Please see below for errors');
           buttonSaveClicked = false;
         } 
       }
