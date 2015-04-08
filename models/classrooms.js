@@ -41,9 +41,9 @@ ClassroomsSchema = new SimpleSchema ({
     type: Boolean,
       optional: true,
       autoform: {
-           type: "boolean-radios",
-           trueLabel: "Yes",
-           falseLabel: "No",
+           type: "boolean-checkbox",
+           // trueLabel: "Yes",
+           // falseLabel: "No",
     }
   },
   teacherHasChair: {
@@ -51,9 +51,9 @@ ClassroomsSchema = new SimpleSchema ({
     type: Boolean,
       optional: true,
       autoform: {
-           type: "boolean-radios",
-           trueLabel: "Yes",
-           falseLabel: "No",
+           type: "boolean-checkbox",
+           // trueLabel: "Yes",
+           // falseLabel: "No",
     }
   },
   totalNumberOfDesks: {
@@ -114,9 +114,9 @@ ClassroomsSchema = new SimpleSchema ({
     type: Boolean,
       optional: true,
       autoform: {
-           type: "boolean-radios",
-           trueLabel: "Yes",
-           falseLabel: "No",
+           type: "boolean-checkbox",
+           // trueLabel: "Yes",
+           // falseLabel: "No",
     },
   },
   comment: {

@@ -17,23 +17,23 @@ SecuritySchema = new SimpleSchema({
     }
   },
   hasFence: {
-   label: "Is there an appropriate fence around the school, including around all sports fields and facilitities?",
+   label: "School has appropriate fence, including around all sports fields and facilitities",
     optional: true,
     type: Boolean,
       autoform: {
-        type: "boolean-radios",
-        trueLabel: "Yes",
-        falseLabel: "No",
+        type: "boolean-checkbox",
+        // trueLabel: "Yes",
+        // falseLabel: "No",
       }
   },
   fenceHasHoles: {
-   label: "Are there any holes or gaps in the fence?",
+   label: "Fence has holes or gaps",
     optional: true,
     type: Boolean,
       autoform: {
-        type: "boolean-radios",
-        trueLabel: "Yes",
-        falseLabel: "No",
+        type: "boolean-checkbox",
+        // trueLabel: "Yes",
+        // falseLabel: "No",
       }
   },
   // fenceIsCorrectHeight: {
@@ -56,7 +56,8 @@ SecuritySchema = new SimpleSchema({
         return [
           {label: "Excellent (no repairs needed)", value: 'Excellent (no repairs needed)'},
           {label: "Average (no major issues at present)", value: 'Average (no major issues at present)'},
-          {label: "Needs urgent repair (e.g. holes, breaks)", value: 'Needs urgent repair (e.g. holes, breaks)'}
+          {label: "Needs urgent repair (e.g. holes, breaks)", value: 'Needs urgent repair (e.g. holes, breaks)'},
+          {label: "Unsure", value: 'Unsure'},
         ];
       }
     }
@@ -72,13 +73,13 @@ SecuritySchema = new SimpleSchema({
   //     }
   // },
   hasSecurityGaurd: {
-    label: "Is there a security guard controlling access at the gate?",
+    label: "Security guard controls access at the gate",
     optional: true,
     type: Boolean,
       autoform: {
-        type: "boolean-radios",
-        trueLabel: "Yes",
-        falseLabel: "No",
+        type: "boolean-checkbox",
+        // trueLabel: "Yes",
+        // falseLabel: "No",
       }
   },
   comment: {

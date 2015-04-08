@@ -19,7 +19,8 @@ SanitationBlocksSchema = new SimpleSchema({
         return [
           {label: "Male", value: 'Male'},
           {label: "Female", value: 'Female'},
-          {label: "Combined", value: 'Combined'}
+          {label: "Combined", value: 'Combined'},
+          {label: "Unknown", value: 'Unknown'},
         ];
       }
     }
@@ -34,6 +35,8 @@ SanitationBlocksSchema = new SimpleSchema({
         return [
           {label: "Teacher", value: 'Teacher'},
           {label: "Student", value: 'Student'},
+          {label: "Unknown", value: 'Unknown'},
+
         ];
       }
     }
@@ -43,9 +46,9 @@ SanitationBlocksSchema = new SimpleSchema({
    optional: true,
     type: Boolean,
       autoform: {
-        type: "boolean-radios",
-        trueLabel: "Yes",
-        falseLabel: "No",
+        type: "boolean-checkbox",
+        // trueLabel: "Yes",
+        // falseLabel: "No",
       }
   },
   numberOfWorkingToilets: {
@@ -89,9 +92,9 @@ SanitationBlocksSchema = new SimpleSchema({
    optional: true,
     type: Boolean,
       autoform: {
-        type: "boolean-radios",
-        trueLabel: "Yes",
-        falseLabel: "No",
+        type: "boolean-checkbox",
+        // trueLabel: "Yes",
+        // falseLabel: "No",
       }
   },
   hasSanitaryBin: {
@@ -100,9 +103,9 @@ SanitationBlocksSchema = new SimpleSchema({
    optional: true,
     type: Boolean,
       autoform: {
-        type: "boolean-radios",
-        trueLabel: "Yes",
-        falseLabel: "No",
+        type: "boolean-checkbox",
+        // trueLabel: "Yes",
+        // falseLabel: "No",
       }
   },
   hasToiletPaper: {
@@ -110,9 +113,9 @@ SanitationBlocksSchema = new SimpleSchema({
    optional: true,
     type: Boolean,
       autoform: {
-        type: "boolean-radios",
-        trueLabel: "Yes",
-        falseLabel: "No",
+        type: "boolean-checkbox",
+        // trueLabel: "Yes",
+        // falseLabel: "No",
       }
   },
   condition: {
@@ -125,7 +128,8 @@ SanitationBlocksSchema = new SimpleSchema({
         return [
           {label: "Good", value: 'Good'},
           {label: "Average", value: 'Average'},
-          {label: "Poor", value: 'Poor'}
+          {label: "Poor", value: 'Poor'},
+          {label: "Unsure", value: 'Unsure'},
         ];
       }
     }
@@ -143,6 +147,7 @@ SanitationBlocksSchema = new SimpleSchema({
           {label: "Ventilated Improved Pit (VIP)", value: 'Ventilated Improved Pit (VIP)'},
           {label: "Composting", value: 'Composting'},
           {label: "Bucket", value: 'Bucket'},
+          {label: "Unsure", value: 'Unsure'},
         ];
       }
     }

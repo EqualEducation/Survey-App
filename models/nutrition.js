@@ -6,9 +6,9 @@ NutritionSchema = new SimpleSchema({
     type: Boolean,
       optional: true,
       autoform: {
-           type: "boolean-radios",
-           trueLabel: "Yes",
-           falseLabel: "No",
+           type: "boolean-checkbox",
+           // trueLabel: "Yes",
+           // falseLabel: "No",
     }
   },
   nutritionProgram: {
@@ -23,6 +23,7 @@ NutritionSchema = new SimpleSchema({
           {label: "Sometimes or rarely works well ", value: 'Sometimes or rarely works well '},
           {label: "No nutrition program but school needs one", value: 'No nutrition program but school needs one'},
           {label: "No nutrition program necessary", value: 'No nutrition program necessary'},
+          {label: "Unsure", value: 'Unsure'},
         ];
       }
     }

@@ -15,9 +15,9 @@ IndividualLabsSchema = new SimpleSchema({
     optional: true,
     type: Boolean,
     autoform: {
-        type: "boolean-radios",
-        trueLabel: "Yes",
-        falseLabel: "No",
+        type: "boolean-checkbox",
+        // trueLabel: "Yes",
+        // falseLabel: "No",
       }
   },
   hasNecessaryEquipment: {
@@ -25,9 +25,9 @@ IndividualLabsSchema = new SimpleSchema({
     type: Boolean,
       optional: true,
       autoform: {
-        type: "boolean-radios",
-        trueLabel: "Yes",
-        falseLabel: "No",
+        type: "boolean-checkbox",
+        // trueLabel: "Yes",
+        // falseLabel: "No",
       }
   },
   comment: {

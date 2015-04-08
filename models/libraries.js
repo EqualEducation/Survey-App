@@ -11,7 +11,9 @@ LibrarySchema = new SimpleSchema({
         return [
           {label: "School's own", value: "School's own"},
           {label: "Shared with other school", value: 'Shared with other school'},
-          {label: "None", value: 'None'}
+          {label: "None", value: 'None'},
+          {label: "Unsure", value: 'Unsure'},
+
         ];
       }
     }
@@ -26,7 +28,9 @@ LibrarySchema = new SimpleSchema({
         return [
           {label: "School's own", value: "School's own"},
           {label: "Shared with other school", value: 'Shared with other school'},
-          {label: "None", value: 'None'}
+          {label: "None", value: 'None'},
+          {label: "Unsure", value: 'Unsure'},
+
         ];
       }
     }
@@ -44,6 +48,7 @@ LibrarySchema = new SimpleSchema({
         {label: 'Dedicated librarian', value: 'Dedicated librarian'},
         {label: 'Teacher assigned as a librarian', value: 'Teacher assigned as a librarian'},
         {label: 'No librarian', value: 'No librarian'},
+        {label: "Unsure", value: 'Unsure'},
         ];
       }
     }
@@ -53,9 +58,9 @@ LibrarySchema = new SimpleSchema({
     type: Boolean,
     optional: true,
     autoform: {
-         type: "boolean-radios",
-         trueLabel: "Yes",
-         falseLabel: "No",
+         type: "boolean-checkbox",
+         // trueLabel: "Yes",
+         // falseLabel: "No",
       }
     },
     hasComputerForGeneralUse: {
@@ -63,9 +68,9 @@ LibrarySchema = new SimpleSchema({
     type: Boolean,
     optional: true,
     autoform: {
-         type: "boolean-radios",
-         trueLabel: "Yes",
-         falseLabel: "No",
+         type: "boolean-checkbox",
+         // trueLabel: "Yes",
+         // falseLabel: "No",
       }
     },
     totalNumberOfComputers: {
@@ -91,9 +96,9 @@ LibrarySchema = new SimpleSchema({
     type: Boolean,
     optional: true,
     autoform: {
-         type: "boolean-radios",
-         trueLabel: "Yes",
-         falseLabel: "No",
+         type: "boolean-checkbox",
+         // trueLabel: "Yes",
+         // falseLabel: "No",
       }
     },
     hasFictionSection: {
@@ -101,9 +106,9 @@ LibrarySchema = new SimpleSchema({
       type: Boolean,
       optional: true,
       autoform: {
-        type: "boolean-radios",
-        trueLabel: "Yes",
-        falseLabel: "No",
+        type: "boolean-checkbox",
+        // trueLabel: "Yes",
+        // falseLabel: "No",
       }
     },
     comment: {

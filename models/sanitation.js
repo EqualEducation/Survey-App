@@ -22,7 +22,8 @@ accessToSoap: {
         return [
           {label: "No access", value: 'No access'},
           {label: "Ask a teacher or administrator", value: 'Ask a teacher or administrator'},
-          {label: "Soap is at the sink", value: 'Soap is at the sink'}
+          {label: "Soap is at the sink", value: 'Soap is at the sink'},
+          {label: "Unsure", value: 'Unsure'},
         ];
       }
     }
@@ -37,7 +38,8 @@ accessToSoap: {
         return [
           {label: "No access", value: 'No access'},
           {label: "Ask a teacher or administrator", value: 'Ask a teacher or administrator'},
-          {label: "Toilet paper is in the stall", value: 'Toilet paper is in the stall'}
+          {label: "Toilet paper is in the stall", value: 'Toilet paper is in the stall'},
+          {label: "Unsure", value: 'Unsure'},
         ];
       }
     }
@@ -52,7 +54,8 @@ accessToSoap: {
         return [
           {label: "No access", value: 'No access'},
           {label: "Ask a teacher or administrator", value: 'Ask a teacher or administrator'},
-          {label: "Sanitary pads are in the stall", value: 'Sanitary pads are in the stall'}
+          {label: "Sanitary pads are in the stall", value: 'Sanitary pads are in the stall'},
+          {label: "Unsure", value: 'Unsure'},
         ];
       }
     }
@@ -86,7 +89,8 @@ accessToSoap: {
           {label: "0", value: 'zero'},
           {label: "1", value: 'one'},
           {label: "2", value: 'two'},
-          {label: "3 or more", value: '3 or more'}
+          {label: "3 or more", value: '3 or more'},
+          {label: "Unsure", value: 'Unsure'},
         ];
       }
     }

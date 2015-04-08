@@ -8,9 +8,9 @@ ScienceLabSchema = new SimpleSchema({
     type: Boolean,
       optional: true,
       autoform: {
-        type: "boolean-radios",
-        trueLabel: "Yes",
-        falseLabel: "No",
+        type: "boolean-checkbox",
+        // trueLabel: "Yes",
+        // falseLabel: "No",
       }
   },
   numberOfLabs: {
