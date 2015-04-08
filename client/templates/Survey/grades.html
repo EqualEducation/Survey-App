@@ -24,7 +24,11 @@
           <p>Please select a grade to update</p>
           {{> highschool_accordian}}
         {{else}}
-          {{> unknown_classification}}
+          {{#if isOther}}
+            {{> all_accordian}}
+          {{else}}
+            {{> unknown_classification}}
+          {{/if}}
         {{/if}}
       {{/if}}
     
@@ -192,4 +196,9 @@
     </div><!--end .accordion-section-->
         
 </div><!--end .accordion-->
+</template>
+
+<template name="all_accordian"> 
+  {{>primaryschool_accordian}}
+  {{>highschool_accordian}}
 </template>

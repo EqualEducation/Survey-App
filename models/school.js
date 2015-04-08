@@ -141,6 +141,8 @@ SchoolDetailsSchema = new SimpleSchema({
         return [
         {label: "Primary (Grades R to 7)", value: 'Primary'},
         {label: "Secondary (Grades 8 to 12)", value: 'Secondary'},
+        {label: "Other", value: 'Other'},
+
         ];
       }
     }

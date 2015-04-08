@@ -64,6 +64,16 @@ Handlebars.registerHelper("isSecondarySchool", function () {
         return ret;
     });
 
+Handlebars.registerHelper("isOther", function () {
+        var schoolId = Session.get("selectedSchoolId");
+        var school = Schools.findOne({'_id' : schoolId}, {"schoolDetails.CLASSIFICATION" : 1});
+        var ret = false;
+        if (school.schoolDetails.CLASSIFICATION === 'Other') {
+          ret = true;
+        }
+        return ret;
+    });
+
 AutoForm.addHooks(['survey2'], {
        onSuccess: function(operation, result, template) {  
 
