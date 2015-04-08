@@ -12,8 +12,7 @@ SportsFieldDrillDownSchema = new SimpleSchema ({
         return [
           {label: "Good Condition", value: 'Good Condition'},
           {label: "Average Condition", value: 'Average Condition'},
-          {label: "Poor Condition", value: 'Poor Condition'},
-          {label: "Unsure", value: 'Unsure'},
+          {label: "Poor Condition", value: 'Poor Condition'}
         ];
       }
     }
@@ -28,8 +27,7 @@ SportsFieldDrillDownSchema = new SimpleSchema ({
         return [
           {label: "School’s Own", value: 'School’s Own'},
           {label: "Community Owned", value: 'Community Owned'},
-          {label: "Other School’s", value: 'Other School’s'},
-          {label: "Unsure", value: 'Unsure'},
+          {label: "Other School’s", value: 'Other School’s'}
         ];
       }
     }

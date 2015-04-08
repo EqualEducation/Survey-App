@@ -38,34 +38,22 @@ ClassroomsSchema = new SimpleSchema ({
   },
   teachHasDesk: {
     label: "Does the teacher have their own desk?",
-    type: String,
+    type: Boolean,
       optional: true,
       autoform: {
-           type: "select-radio",
-           options: function () {
-            return [
-              {label: "Yes", value: 'Yes'},
-              {label: "No", value: 'No'},
-              {label: "Unsure", value: 'Unsure'}
-        ];
-      }
-
+           type: "boolean-radios",
+           trueLabel: "Yes",
+           falseLabel: "No",
     }
   },
   teacherHasChair: {
     label: "Does the teacher have their own chair?",
-    type: String,
+    type: Boolean,
       optional: true,
       autoform: {
-           type: "select-radio",
-           options: function () {
-            return [
-              {label: "Yes", value: 'Yes'},
-              {label: "No", value: 'No'},
-              {label: "Unsure", value: 'Unsure'}
-        ];
-      }
-
+           type: "boolean-radios",
+           trueLabel: "Yes",
+           falseLabel: "No",
     }
   },
   totalNumberOfDesks: {
@@ -122,20 +110,14 @@ ClassroomsSchema = new SimpleSchema ({
   },
   ceilingOrFloorHasHole: {
     optional: true,
-    label: "Is there a hole in the ceiling or floor?",
-    type: String,
+    label: "Is there a hole in the celing or floor",
+    type: Boolean,
       optional: true,
       autoform: {
-           type: "select-radio",
-           options: function () {
-            return [
-              {label: "Yes", value: 'Yes'},
-              {label: "No", value: 'No'},
-              {label: "Unsure", value: 'Unsure'}
-        ];
-      }
-
-    }
+           type: "boolean-radios",
+           trueLabel: "Yes",
+           falseLabel: "No",
+    },
   },
   comment: {
     type: String,

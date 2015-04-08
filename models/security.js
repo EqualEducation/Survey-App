@@ -17,36 +17,24 @@ SecuritySchema = new SimpleSchema({
     }
   },
   hasFence: {
-   label: "School has appropriate fence, including around all sports fields and facilitities",
-    type: String,
-          optional: true,
-          autoform: {
-               type: "select-radio",
-               options: function () {
-                return [
-                  {label: "Yes", value: 'Yes'},
-                  {label: "No", value: 'No'},
-                  {label: "Unsure", value: 'Unsure'}
-            ];
-          }
-
-        }
+   label: "Is there an appropriate fence around the school, including around all sports fields and facilitities?",
+    optional: true,
+    type: Boolean,
+      autoform: {
+        type: "boolean-radios",
+        trueLabel: "Yes",
+        falseLabel: "No",
+      }
   },
   fenceHasHoles: {
-   label: "Fence has holes or gaps",
-    type: String,
-      optional: true,
+   label: "Are there any holes or gaps in the fence?",
+    optional: true,
+    type: Boolean,
       autoform: {
-           type: "select-radio",
-           options: function () {
-            return [
-              {label: "Yes", value: 'Yes'},
-              {label: "No", value: 'No'},
-              {label: "Unsure", value: 'Unsure'}
-        ];
+        type: "boolean-radios",
+        trueLabel: "Yes",
+        falseLabel: "No",
       }
-
-    }
   },
   // fenceIsCorrectHeight: {
   //  label: "Is the fence, in all places, at least 1.8 metres high?",
@@ -68,8 +56,7 @@ SecuritySchema = new SimpleSchema({
         return [
           {label: "Excellent (no repairs needed)", value: 'Excellent (no repairs needed)'},
           {label: "Average (no major issues at present)", value: 'Average (no major issues at present)'},
-          {label: "Needs urgent repair (e.g. holes, breaks)", value: 'Needs urgent repair (e.g. holes, breaks)'},
-          {label: "Unsure", value: 'Unsure'},
+          {label: "Needs urgent repair (e.g. holes, breaks)", value: 'Needs urgent repair (e.g. holes, breaks)'}
         ];
       }
     }
@@ -85,20 +72,14 @@ SecuritySchema = new SimpleSchema({
   //     }
   // },
   hasSecurityGaurd: {
-    label: "Security guard controls access at the gate",
-    type: String,
-      optional: true,
+    label: "Is there a security guard controlling access at the gate?",
+    optional: true,
+    type: Boolean,
       autoform: {
-           type: "select-radio",
-           options: function () {
-            return [
-              {label: "Yes", value: 'Yes'},
-              {label: "No", value: 'No'},
-              {label: "Unsure", value: 'Unsure'}
-        ];
+        type: "boolean-radios",
+        trueLabel: "Yes",
+        falseLabel: "No",
       }
-
-    }
   },
   comment: {
     type: String,

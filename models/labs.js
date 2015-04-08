@@ -5,19 +5,13 @@ Labs = new Mongo.Collection("labs");
 ScienceLabSchema = new SimpleSchema({
   hasLab: {
     label: "Does your school have a science laboratory?",
-    type: String,
+    type: Boolean,
       optional: true,
       autoform: {
-           type: "select-radio",
-           options: function () {
-            return [
-              {label: "Yes", value: 'Yes'},
-              {label: "No", value: 'No'},
-              {label: "Unsure", value: 'Unsure'}
-        ];
+        type: "boolean-radios",
+        trueLabel: "Yes",
+        falseLabel: "No",
       }
-
-    }
   },
   numberOfLabs: {
     label: "How many labs does the school have?",
