@@ -1,11 +1,11 @@
 if (Meteor.isServer) {
 
-  Meteor.publish("schoolnames", function (schoolId) {
-    if (schoolId) {
-       return Schools.find({'_id' : schoolId}, {'schoolDetails.INSTITUTION_NAME' : 1}, {sort: {'schoolDetails.INSTITUTION_NAME': 'asc'}});
-    }
-    return Schools.find({}, {'schoolDetails.INSTITUTION_NAME' : 1}, {sort: {'schoolDetails.INSTITUTION_NAME': 'asc'}});
-  });
+  // Meteor.publish("schoolnames", function (schoolId) {
+  //   if (schoolId) {
+  //      return Schools.find({'_id' : schoolId}, {'schoolDetails.INSTITUTION_NAME' : 1}, {sort: {'schoolDetails.INSTITUTION_NAME': 'asc'}});
+  //   }
+  //   return Schools.find({}, {'schoolDetails.INSTITUTION_NAME' : 1}, {sort: {'schoolDetails.INSTITUTION_NAME': 'asc'}});
+  // });
 
   Meteor.publish("schools", function (schoolId) {
     if (schoolId) {

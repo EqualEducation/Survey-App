@@ -5,7 +5,7 @@ EasySearch.createSearchIndex('schools', {
   'field' : ['schoolDetails.INSTITUTION_NAME'],
   'collection' : Schools,
   'use' : 'mongo-db',
-  'limit' : 20,
+  'limit' : 10,
   'props' : {
     'onlyShowSchoolsWithVersions' : false// demo purpose configuration, can be used in query  
   },
