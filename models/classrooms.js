@@ -31,9 +31,10 @@ ClassroomsSchema = new SimpleSchema ({
     label: "Total number of broken windows in classroom",
     type: String,
     optional: true,
+    regEx: /^[0-9]/,
     autoform: {
-      type: "text"
-    }
+      rows: 1,
+    },
   },
   teachHasDesk: {
     label: "Does the teacher have their own desk?",

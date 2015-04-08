@@ -8,13 +8,58 @@
 
 <template name="classrooms">
   <input type="button" class="open-modal btn btn-primary" value="Add a classroom" />
-  {{> list_classrooms }}
+   {{#if isPhone}} 
+      {{> list_classrooms_small }}
+    {{else}}
+      {{> list_classrooms_large }}
+    {{/if}}
+
   {{> modal_classroom}}
   {{> modal_classroom_update}}
 
 </template>
 
-<template name="list_classrooms">
+<template name="list_classrooms_large">
+<table class="table">
+    <thead>
+      <tr>
+        <th>Classroom Name</th>
+        <th>No. students in class</th>
+        <th>Windows Broken/Total</th>
+        <th>Teacher has Desk</th>
+        <th>Teacher has Chair</th>
+        <th>Desks Broken/Total</th>
+        <th>Chairs Broken/Total</th>
+        <th>How is classroom used</th> 
+        <th>Ceiling/Floor has holes</th>
+        <th>Comment</th>
+
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+   {{#each classrooms}}
+    <tr>
+      <td>{{this.name}}</td>
+      <td>{{this.numberOfStudents}}</td>
+      <td>{{this.totalNumberOfBrokenWindows}}/{{this.totalNumberOfWindows}}</td>
+      <td>{{this.teachHasDesk}}</td>
+      <td>{{this.teacherHasChair}}</td>
+      <td>{{this.totalNumberOfBrokenDesks}}/{{this.totalNumberOfDesks}}</td>
+      <td>{{this.totalNumberOfBrokenChairs}}/{{this.totalNumberOfChairs}}</td>
+      <td>{{this.howIsClassroomUsed}}</td>
+      <td>{{this.ceilingOrFloorHasHole}}</td>
+      <td>{{this.comment}}</td>
+      <td><a href="" class="btn-edit">Edit</a></td>
+      <td><a href="" class="btn-delete">Delete</a></td>
+    </tr>  
+   {{/each}}
+    </tbody>
+  </table>
+</template>
+
+<template name="list_classrooms_small">
 <table class="table">
     <thead>
       <tr>
@@ -48,14 +93,18 @@
           <h4 class="modal-title">Add a Classroom</h4>
         </div>
         <div class="modal-body">
-            {{#autoForm collection="Classrooms" id="classrooms1" type="insert" resetOnSuccess=true }}
-                {{#each afFieldNames}}
-                  <div class="row">
-                    {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
-                    <br/>
-                    <br/>
-                  </div>
+            {{#autoForm collection="Classrooms" id="classrooms1" type="insert" resetOnSuccess=false }}
+             {{#each afFieldNames}}
+                    {{#unless isEqual this.name "version_id"}}
+                      <div class="row">   
+                        {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}
+                        <br />
+                      </div> 
+                    {{/unless}}
                 {{/each}}
+
+               {{> afQuickField name="version_id" }}
+
                   <button type="submit" class="btn btn-primary btn-save">Save</button>
             {{/autoForm}}
           </div>
@@ -72,7 +121,7 @@
           <h4 class="modal-title">Update Classroom</h4>
         </div>
         <div class="modal-body">
-            {{#autoForm collection="Classrooms" id="classrooms2" type="update" doc=selectedClassroom resetOnSuccess=true }}
+            {{#autoForm collection="Classrooms" id="classrooms2" type="update" doc=selectedClassroom resetOnSuccess=false }}
                 {{#each afFieldNames}}
                   <div class="row">
                     {{> afQuickField name=this.name template="bootstrap3-horizontal" label-class="col-xs-6" input-col-class="col-xs-6"}}

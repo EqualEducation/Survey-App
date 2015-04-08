@@ -4,6 +4,12 @@ Template.survey11.events({
   },
 });
 
+Template.registerHelper('classrooms', function () {
+        var versionId = Session.get("selectedSurveyVersionId");
+        var classes = Classrooms.find({'version_id' : versionId});
+        return classes;
+      });
+
 Template.modal_classroom.events({
   "click .btn-save" : function() {
       $('#classrooms1').submit();
@@ -18,7 +24,7 @@ Template.modal_classroom_update.events({
     }, 
 });
 
-Template.classroom.events({
+Template.list_classrooms_small.events({
   "click .btn-edit" : function() {
         Session.set('selectedClassroomId',this._id);
         $("#modal_classroom_update").modal("show");
@@ -28,13 +34,16 @@ Template.classroom.events({
     }, 
 });
 
-Template.list_classrooms.helpers({
-      classrooms: function () {
-        var versionId = Session.get("selectedSurveyVersionId");
-        var blocks = Classrooms.find({'version_id' : versionId});
-        return blocks;
-      }
-    });
+Template.list_classrooms_large.events({
+  "click .btn-edit" : function() {
+        Session.set('selectedClassroomId',this._id);
+        $("#modal_classroom_update").modal("show");
+    }, 
+     "click .btn-delete" : function() {
+        Classrooms.remove({'_id' : this._id});
+    }, 
+});
+
 
 Template.registerHelper('selectedClassroom',function(){
     var classRoomId = Session.get("selectedClassroomId");
@@ -49,9 +58,10 @@ Template.registerHelper('selectedClassroom',function(){
 
 AutoForm.addHooks(['classrooms1', 'classrooms2'], {
 onSuccess: function(operation, result, template) 
-    {  
+    {   
         $('#modal_classroom').modal('hide')
         $('#modal_classroom_update').modal('hide')
+        FlashMessages.sendMessage('Added classroom');
  
     },
     onError: function() 
