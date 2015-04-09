@@ -29,6 +29,7 @@ Template.schools.events({
       },
   });
 
+
 AutoForm.hooks({
   insertSchoolForm: {
       onSuccess: function(operation, result, template) {  

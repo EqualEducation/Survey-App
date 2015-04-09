@@ -2,7 +2,7 @@ Schools = new Mongo.Collection("schools");
 
 
 EasySearch.createSearchIndex('schools', {
-  'field' : ['schoolDetails.INSTITUTION_NAME'],
+  'field' : ['schoolDetails.INSTITUTION_NAME', 'hasVersions'],
   'collection' : Schools,
   'use' : 'mongo-db',
   'limit' : 10,

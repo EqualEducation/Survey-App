@@ -1,7 +1,7 @@
-Template.search.rendered = function(){
-  console.log($('.toggle-checked').value);
-  
-  $('.toggle-checked').checked = false;
+Template.search.rendered = function(){  
+  Session.set('searchHasVersions', false);
+
+  $('.toggle-checked').checked = Session.get('searchHasVersions'); 
 }
 
 
@@ -11,10 +11,11 @@ Template.search.events({
     }, 
     "click .toggle-checked": function (e) {
       var isChecked = e.currentTarget.checked;
-       var instance = EasySearch.getComponentInstance({
+      Session.set('searchHasVersions', isChecked);
+      var instance = EasySearch.getComponentInstance({
         index: 'schools'});
 
-      EasySearch.changeProperty('schools', 'onlyShowSchoolsWithVersions', isChecked);
+      EasySearch.changeProperty('schools', 'onlyShowSchoolsWithVersions', Session.get('searchHasVersions'));
 
       instance.triggerSearch();
 
@@ -24,5 +25,7 @@ Template.search.events({
 
 
 
-
+Template.registerHelper("schools", function(){ 
+  return Schools.find({ 'hasVersions': { $exists: Session.get('searchHasVersions') } } ,{limit: 10}, {sort: {'schoolDetails.INSTITUTION_NAME': 'asc'}});
+});
 

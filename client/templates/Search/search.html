@@ -6,6 +6,7 @@
       Only show schools with changes      
     </label>
   </div>
+
   <br />
   <table class="table">
     <thead>
@@ -21,13 +22,23 @@
         <td><a href="" class="btn-delete">Delete</a></td>
       </tr>
       {{/esEach}}
+      {{#ifEsInputIsEmpty index="schools"}}
+        {{#each schools}}
+        <tr>
+          <td><a href="{{pathFor 'versions'}}" class="btn-edit">{{schoolDetails.INSTITUTION_NAME}}</a></td>
+          <td><a href="" class="btn-delete">Delete</a></td>
+        </tr>            
+        {{/each}}
+      {{/ifEsInputIsEmpty}}
     </tbody>
   </table>
-  {{> esLoadMoreButton index="schools" }}
+    {{> esPagination index="schools"}}
 
   {{#ifEsHasNoResults index="schools"}}
     <div class="no-results">No results found!</div>
   {{/ifEsHasNoResults}}
+
+
 
   {{#ifEsIsSearching index="schools"}}
     <div>Loading...</div>
