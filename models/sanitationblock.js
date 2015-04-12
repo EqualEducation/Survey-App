@@ -19,7 +19,8 @@ SanitationBlocksSchema = new SimpleSchema({
         return [
           {label: "Male", value: 'Male'},
           {label: "Female", value: 'Female'},
-          {label: "Combined", value: 'Combined'}
+          {label: "Combined", value: 'Combined'},
+          {label: "Unknown", value: 'Unknown'},
         ];
       }
     }
@@ -34,19 +35,27 @@ SanitationBlocksSchema = new SimpleSchema({
         return [
           {label: "Teacher", value: 'Teacher'},
           {label: "Student", value: 'Student'},
+          {label: "Unknown", value: 'Unknown'},
+
         ];
       }
     }
   },
   isLocked: {
     label: "Is the toilet block locked?",
-   optional: true,
-    type: Boolean,
+   type: String,
+      optional: true,
       autoform: {
-        type: "boolean-radios",
-        trueLabel: "Yes",
-        falseLabel: "No",
+           type: "select-radio",
+           options: function () {
+            return [
+              {label: "Yes", value: 'Yes'},
+              {label: "No", value: 'No'},
+              {label: "Unsure", value: 'Unsure'}
+        ];
       }
+
+    }
   },
   numberOfWorkingToilets: {
     label: "Number of working toilets",
@@ -86,34 +95,52 @@ SanitationBlocksSchema = new SimpleSchema({
   },
   hasSoap: {
     label: "Is there soap?",
-   optional: true,
-    type: Boolean,
+   type: String,
+      optional: true,
       autoform: {
-        type: "boolean-radios",
-        trueLabel: "Yes",
-        falseLabel: "No",
+           type: "select-radio",
+           options: function () {
+            return [
+              {label: "Yes", value: 'Yes'},
+              {label: "No", value: 'No'},
+              {label: "Unsure", value: 'Unsure'}
+        ];
       }
+
+    }
   },
   hasSanitaryBin: {
 
     label: "Are there sanitary bins?",
-   optional: true,
-    type: Boolean,
+   type: String,
+      optional: true,
       autoform: {
-        type: "boolean-radios",
-        trueLabel: "Yes",
-        falseLabel: "No",
+           type: "select-radio",
+           options: function () {
+            return [
+              {label: "Yes", value: 'Yes'},
+              {label: "No", value: 'No'},
+              {label: "Unsure", value: 'Unsure'}
+        ];
       }
+
+    }
   },
   hasToiletPaper: {
     label: "Is there toilet paper?",
-   optional: true,
-    type: Boolean,
+   type: String,
+      optional: true,
       autoform: {
-        type: "boolean-radios",
-        trueLabel: "Yes",
-        falseLabel: "No",
+           type: "select-radio",
+           options: function () {
+            return [
+              {label: "Yes", value: 'Yes'},
+              {label: "No", value: 'No'},
+              {label: "Unsure", value: 'Unsure'}
+        ];
       }
+
+    }
   },
   condition: {
     label: "Please describe the condition of the block",
@@ -125,7 +152,8 @@ SanitationBlocksSchema = new SimpleSchema({
         return [
           {label: "Good", value: 'Good'},
           {label: "Average", value: 'Average'},
-          {label: "Poor", value: 'Poor'}
+          {label: "Poor", value: 'Poor'},
+          {label: "Unsure", value: 'Unsure'},
         ];
       }
     }
@@ -143,6 +171,7 @@ SanitationBlocksSchema = new SimpleSchema({
           {label: "Ventilated Improved Pit (VIP)", value: 'Ventilated Improved Pit (VIP)'},
           {label: "Composting", value: 'Composting'},
           {label: "Bucket", value: 'Bucket'},
+          {label: "Unsure", value: 'Unsure'},
         ];
       }
     }

@@ -11,7 +11,9 @@ LibrarySchema = new SimpleSchema({
         return [
           {label: "School's own", value: "School's own"},
           {label: "Shared with other school", value: 'Shared with other school'},
-          {label: "None", value: 'None'}
+          {label: "None", value: 'None'},
+          {label: "Unsure", value: 'Unsure'},
+
         ];
       }
     }
@@ -26,7 +28,9 @@ LibrarySchema = new SimpleSchema({
         return [
           {label: "School's own", value: "School's own"},
           {label: "Shared with other school", value: 'Shared with other school'},
-          {label: "None", value: 'None'}
+          {label: "None", value: 'None'},
+          {label: "Unsure", value: 'Unsure'},
+
         ];
       }
     }
@@ -44,29 +48,42 @@ LibrarySchema = new SimpleSchema({
         {label: 'Dedicated librarian', value: 'Dedicated librarian'},
         {label: 'Teacher assigned as a librarian', value: 'Teacher assigned as a librarian'},
         {label: 'No librarian', value: 'No librarian'},
+        {label: "Unsure", value: 'Unsure'},
         ];
       }
     }
   },
   hasComputerTracking: {
     label: "Does the library have a computer to track book lending?",
-    type: Boolean,
-    optional: true,
-    autoform: {
-         type: "boolean-radios",
-         trueLabel: "Yes",
-         falseLabel: "No",
+    type: String,
+      optional: true,
+      autoform: {
+           type: "select-radio",
+           options: function () {
+            return [
+              {label: "Yes", value: 'Yes'},
+              {label: "No", value: 'No'},
+              {label: "Unsure", value: 'Unsure'}
+        ];
       }
+
+    }
     },
     hasComputerForGeneralUse: {
     label: "Does the library have other computers for general use?",
-    type: Boolean,
-    optional: true,
-    autoform: {
-         type: "boolean-radios",
-         trueLabel: "Yes",
-         falseLabel: "No",
+    type: String,
+      optional: true,
+      autoform: {
+           type: "select-radio",
+           options: function () {
+            return [
+              {label: "Yes", value: 'Yes'},
+              {label: "No", value: 'No'},
+              {label: "Unsure", value: 'Unsure'}
+        ];
       }
+
+    }
     },
     totalNumberOfComputers: {
       label: "Total number of computers",
@@ -88,23 +105,35 @@ LibrarySchema = new SimpleSchema({
     },
     hasBooks: {
     label: "Does the library have books?",
-    type: Boolean,
-    optional: true,
-    autoform: {
-         type: "boolean-radios",
-         trueLabel: "Yes",
-         falseLabel: "No",
+    type: String,
+      optional: true,
+      autoform: {
+           type: "select-radio",
+           options: function () {
+            return [
+              {label: "Yes", value: 'Yes'},
+              {label: "No", value: 'No'},
+              {label: "Unsure", value: 'Unsure'}
+        ];
       }
+
+    }
     },
     hasFictionSection: {
       label: "Does the library have fiction (stories, novels etc)?",
-      type: Boolean,
+      type: String,
       optional: true,
       autoform: {
-        type: "boolean-radios",
-        trueLabel: "Yes",
-        falseLabel: "No",
+           type: "select-radio",
+           options: function () {
+            return [
+              {label: "Yes", value: 'Yes'},
+              {label: "No", value: 'No'},
+              {label: "Unsure", value: 'Unsure'}
+        ];
       }
+
+    }
     },
     comment: {
       type: String,
