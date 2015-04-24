@@ -29,6 +29,7 @@ Template.registerHelper('blocks', function () {
 	    	return blocks;
   	});
 
+
 Template.modal_block.events({
   "click .btn-save" : function() {
       $('#blocks1').submit();

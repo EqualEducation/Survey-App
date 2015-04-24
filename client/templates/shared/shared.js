@@ -162,10 +162,10 @@ Handlebars.registerHelper('userIsAdmin', function(){
 
 Handlebars.registerHelper('print', function(toPrint) {
 	console.log(toPrint);
-})
+});
 
 Handlebars.registerHelper('dateToString', function(date) {
 	if (date) {
 		return date.toDateString();
 	}
-})
+});
