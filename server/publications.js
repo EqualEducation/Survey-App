@@ -1,4 +1,3 @@
-if (Meteor.isServer) {
 
   // Meteor.publish("schoolnames", function (schoolId) {
   //   if (schoolId) {
@@ -9,9 +8,9 @@ if (Meteor.isServer) {
 
   Meteor.publish("schools", function (schoolId) {
     if (schoolId) {
-    return Schools.find({'_id' : schoolId},{sort: {'schoolDetails.INSTITUTION_NAME': 1}}, {sort: {'schoolDetails.INSTITUTION_NAME': 'asc'}});
+    return Schools.find({'_id' : schoolId}, {sort: {'schoolDetails.INSTITUTION_NAME': 1}});
     }
-    return Schools.find({},{sort: {'schoolDetails.INSTITUTION_NAME': 1}}, {sort: {'schoolDetails.INSTITUTION_NAME': 'asc'}});
+    return Schools.find({}, {sort: {'schoolDetails.INSTITUTION_NAME': 1}});
   });
 
   Meteor.publish("electronicConnectivity", function (versionId) {
@@ -114,23 +113,3 @@ Meteor.publish('school_profile', function(versionId, schoolId) {
       return [version, school, additional, classrooms, contactpeople, electricity, labs, libraries, nutrition,sanitation,specialneeds, sports, telephone, security, grades];
 
 });
-
-function MapCode() {
-  emit(this.school_id,
-  {
-    "details": this.City,
-    "lat":  this.Latitude,
-    "lon":  this.Longitude
-  });
-}
-
-
-function /*object*/ ReduceCode(key, arr_values) {
-  // 1) Key 2) An array of values (number of values outputted from Map step)
-  //Therefore the reduceCode and map
-}
-
-
-
-
-}
