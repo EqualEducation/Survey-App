@@ -3,7 +3,7 @@ Additional = new Mongo.Collection("additional");
 AdditionalInfoSchema = new SimpleSchema({
   buildingMaterials_anyPart: {
     label: "Is ANY PART OF the school built out of any of the following materials? (tick all that apply)",
-     optional: true,
+    optional: true,
     type: [String],
     autoform: 
     {

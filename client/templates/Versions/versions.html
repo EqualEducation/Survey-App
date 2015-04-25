@@ -28,11 +28,11 @@
         <th>Start Date</th>
         <th>End Date</th>
         <th></th>
-        <th></th>
-        {{#if userIsAdmin}}
+        <!-- <th></th> -->
+        <!-- {{#if userIsAdmin}} -->
           <th></th>
-          <th>Mark as Verified</th>
-        {{/if}}
+          <th>Verified</th>
+        <!-- {{/if}} -->
       </tr>
     </thead>
     <tbody>
@@ -55,8 +55,8 @@
     <!-- {{#if userIsAdmin}} -->
       <td><a href="" class="btn-edit">Edit Version Details</a></td>
       <td><a href="" class="btn-duplicate">Duplicate</a></td>
-      {{#if userIsAdmin}}
-        <td><a href="" class="btn-delete">Delete</a></td>
+      <!-- {{#if userIsAdmin}} -->
+        <!-- <td><a href="" class="btn-delete">Delete</a></td> -->
         <td>
           <div class="checkbox">
               <label>
@@ -69,13 +69,13 @@
           </div>
           
         </td>
-      {{else}}
-        {{#if this.isVerified}}
-          <td>Verified by Admin</td>
+      <!-- {{else}} -->
+<!--         {{#if this.isVerified}}
+          <td>Verified</td>
         {{else}}
           <td></td>
-      {{/if}}
-    {{/if}}
+      {{/if}} -->
+    <!-- {{/if}} -->
 
   </tr>
 </template>
