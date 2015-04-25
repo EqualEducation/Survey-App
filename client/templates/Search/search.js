@@ -1,6 +1,5 @@
 Template.search.rendered = function(){  
   $('.toggle-checked')[0].checked = Session.get('searchHasVersions'); 
-  console.log($('.toggle-checked')[0].checked)
 }  
 
 
