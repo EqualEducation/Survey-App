@@ -169,3 +169,10 @@ Handlebars.registerHelper('dateToString', function(date) {
 		return date.toDateString();
 	}
 });
+
+
+Handlebars.registerHelper('add', function (number1, number2) {
+        var sum = parseInt(number1 )+ parseInt(number2);
+        console.log(sum);
+        return sum;
+    });
