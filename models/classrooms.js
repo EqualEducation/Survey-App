@@ -5,36 +5,27 @@ ClassroomsSchema = new SimpleSchema ({
     label: "Class name",
     type: String,
     optional: true,
-    autoform: {
-      rows: 1,
-    },
   },
   numberOfStudents: {
     label: "Number of students in classroom",
     type: String,
     optional: true,
-    regEx: /^[0-9]/,
-    autoform: {
-      rows: 1,
-    },
+    regEx: /^[0-9]*$/,
+
   },
   totalNumberOfWindows: {
     label: "Total number of windows in classroom",
     type: String,
     optional: true,
-    regEx: /^[0-9]/,
-    autoform: {
-      rows: 1,
-    },
+    regEx: /^[0-9]*$/,
+
   },
   totalNumberOfBrokenWindows: {
     label: "Total number of broken windows in classroom",
     type: String,
     optional: true,
-    regEx: /^[0-9]/,
-    autoform: {
-      rows: 1,
-    },
+    regEx: /^[0-9]*$/,
+
   },
   teachHasDesk: {
     label: "Does the teacher have their own desk?",
@@ -72,37 +63,28 @@ ClassroomsSchema = new SimpleSchema ({
     label: "Total number of desks in classroom (including teacher's)",
     type: String,
     optional: true,
-    regEx: /^[0-9]/,
-    autoform: {
-      rows: 1,
-    },
+    regEx: /^[0-9]*$/,
+
   },
   totalNumberOfBrokenDesks: {
     label: "Total number of broken desks in classroom (including teacher's)",
     type: String,
     optional: true,
-    regEx: /^[0-9]/,
-    autoform: {
-      rows: 1,
-    },
+    regEx: /^[0-9]*$/,
+
   },
   totalNumberOfChairs: {
     label: "Total number of chairs in classroom (including teacher's)",
     type: String,
     optional: true,
-    regEx: /^[0-9]/,
-    autoform: {
-      rows: 1,
-    },
+    regEx: /^[0-9]*$/,
+
   },
   totalNumberOfBrokenChairs: {
     label: "Total number of broken chairs in classroom (including teacher's)",
     type: String,
     optional: true,
-    regEx: /^[0-9]/,
-    autoform: {
-      rows: 1,
-    },
+    regEx: /^[0-9]*$/,
   },
   howIsClassroomUsed : {
     optional: true,

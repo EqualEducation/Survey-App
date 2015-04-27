@@ -89,19 +89,13 @@ LibrarySchema = new SimpleSchema({
       label: "Total number of computers",
       type: String,
       optional: true,
-      regEx: /^[0-9]/,
-      autoform: {
-        rows: 1,
-      },
+      regEx: /^[0-9]*$/,
     },
     totalNumberOfComputersThatConnectToTheInternet: {
       label: "Total number of computers that connect to the internet",
       type: String,
       optional: true,
-      regEx: /^[0-9]/,
-      autoform: {
-        rows: 1,
-      },
+      regEx: /^[0-9]*$/,
     },
     hasBooks: {
     label: "Does the library have books?",

@@ -6,9 +6,6 @@ IndividualLabsSchema = new SimpleSchema({
    label: "Lab name",
     optional: true,
     type: String,
-    autoform: {
-      rows: 1,
-    },
   },
   labCondition:{
     label: "Is the lab in good working order?",

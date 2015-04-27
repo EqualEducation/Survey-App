@@ -5,10 +5,6 @@ SurveyVersionSchema = new SimpleSchema({
     type: String,
     label: "What would you like to call this version?",
     optional: true,
-    autoform: {
-      rows: 1,
-
-    },
   },
   startDate: {
     type: Date,

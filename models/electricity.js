@@ -39,9 +39,6 @@ ElectricitySchema = new SimpleSchema({
     optional: true,
     label: "Please describe",
     type: String,
-    autoform: {
-      rows: 1,
-    },
   },
   comment: {
     type: String,

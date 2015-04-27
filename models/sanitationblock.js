@@ -5,9 +5,6 @@ SanitationBlocksSchema = new SimpleSchema({
     label: "Block Name",
     type: String,
     optional: true,
-    autoform: {
-      rows: 1,
-    },
   },
   gender: {
     label: "Please select",
@@ -61,37 +58,25 @@ SanitationBlocksSchema = new SimpleSchema({
     label: "Number of working toilets",
     type: String,
     optional: true,
-    regEx: /^[0-9]/,
-    autoform: {
-      rows: 1,
-    },
+    regEx: /^[0-9]*$/,
   },
   numberOfBrokenToilets: {
     label: "Number of non-working toilets",
     type: String,
     optional: true,
-    regEx: /^[0-9]/,
-    autoform: {
-      rows: 1,
-    },
+    regEx: /^[0-9]*$/,
   },
   numberOfWorkingTaps: {
     label: "Number of working taps",
     type: String,
     optional: true,
-    regEx: /^[0-9]/,
-    autoform: {
-      rows: 1,
-    },
+    regEx: /^[0-9]*$/,
   },
   numberOfBrokenTaps: {
     label: "Number of non-working taps",
     type: String,
     optional: true,
-    regEx: /^[0-9]/,
-    autoform: {
-      rows: 1,
-    },
+    regEx: /^[0-9]*$/,
   },
   hasSoap: {
     label: "Is there soap?",

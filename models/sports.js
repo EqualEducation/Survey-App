@@ -41,10 +41,7 @@ SportsFieldSchema = new SimpleSchema({
     optional: true,
     type: String,
     label: "Total Number of Sports Fields/Areas",
-    regEx: /^[0-9]/,
-    autoform: {
-      rows: 1,
-    },
+    regEx: /^[0-9]*$/,
   },
   availableSports: {
     optional: true,
@@ -74,89 +71,56 @@ SportsFieldSchema = new SimpleSchema({
     optional: true,
     type: String,
     label: "Please describe other available sports at your school",
-    autoform: {
-      rows: 1,
-    },
   },
   otherDrillDown: {
     type: SportsFieldDrillDownSchema,
     optional: true,
     label: "All other fields/courts",
-    autoform: {
-      rows: 1,
-    },
   },
   athleticsDrillDown: {
     type: SportsFieldDrillDownSchema,
     optional: true,
     label: "Athletics Field Details",
-    autoform: {
-      rows: 1,
-    },
   },
   hockeyDrillDown: {
     type: SportsFieldDrillDownSchema,
     optional: true,
     label: "Hockey Field Details",
-    autoform: {
-      rows: 1,
-    },
   },
   netballDrillDown: {
     type: SportsFieldDrillDownSchema,
     optional: true,
     label: "Netball Court Details",
-    autoform: {
-      rows: 1,
-    },
   },
   basketballDrillDown: {
     type: SportsFieldDrillDownSchema,
     optional: true,
     label: "Basketball Court Details",
-    autoform: {
-      rows: 1,
-    },
   },
   tennisDrillDown: {
     type: SportsFieldDrillDownSchema,
     optional: true,
     label: "Tennis Court Details",
-    autoform: {
-      rows: 1,
-    },
   },
   cricketDrillDown: {
     type: SportsFieldDrillDownSchema,
     optional: true,
     label: "Cricket Pitch Details",
-    autoform: {
-      rows: 1,
-    },
   },
   soccerDrillDown: {
     type: SportsFieldDrillDownSchema,
     optional: true,
     label: "Soccer Field Details",
-    autoform: {
-      rows: 1,
-    },
   },
   rugbyDrillDown: {
     type: SportsFieldDrillDownSchema,
     optional: true,
     label: "Rugby Field Details",
-    autoform: {
-      rows: 1,
-    },
   },
   swimmingDrillDown: {
     type: SportsFieldDrillDownSchema,
     optional: true,
     label: "Swimming Pool Details",
-    autoform: {
-      rows: 1,
-    },
   },
   comment: {
     type: String,

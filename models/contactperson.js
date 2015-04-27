@@ -14,10 +14,6 @@ ContactDetailsSchema = new SimpleSchema({
     type: String,
     label: "Name of Auditor",
     optional: true,
-    autoform: {
-      rows: 1,
-
-    },
   },
   auditorPhoneNumber: {
     type: String,
@@ -32,39 +28,23 @@ ContactDetailsSchema = new SimpleSchema({
     type: String,
     label: "Contact Email of Auditor",
     optional: true,
-    autoform: {
-      rows: 1,
-
-    },
 
   },
   name: {
     type: String,
     label: "Follow up Contact Name",
     optional: true,
-    autoform: {
-      rows: 1,
-
-    },
   },
   phoneNumber: {
     type: String,
     optional: true,
     label: "Follow up Contact Number",
     regEx: /^[0-9]{10}$/,
-    autoform: {
-      rows: 1,
-    },
   },
   email: {
     type: String,
     label: "Follow up Contact Email",
     optional: true,
-    autoform: {
-      rows: 1,
-
-    },
-
   },
   comment: {
     type: String,

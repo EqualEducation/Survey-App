@@ -27,7 +27,7 @@ SchoolDetailsSchema = new SimpleSchema({
     label: "Name",
     optional: false,
     autoform: {
-      rows: 1,
+      rows: 2,
     },
   },
   DISTRICT_NAME: {
@@ -35,7 +35,7 @@ SchoolDetailsSchema = new SimpleSchema({
     label: "District",
     optional: true,
     autoform: {
-      rows: 1,
+      rows: 2,
     },
   },
   TELEPHONE_NO: {
@@ -44,7 +44,7 @@ SchoolDetailsSchema = new SimpleSchema({
     optional: true,  
     regEx: /^[0-9]{10}$/,
     autoform: {
-      rows: 1,
+      rows: 2,
     },
   },
   STREET_NO: {
@@ -52,16 +52,13 @@ SchoolDetailsSchema = new SimpleSchema({
     label: "Street number",
     optional: true,
     regEx: /^[0-9]{0,5}$/,
-    autoform: {
-      rows: 1,
-    },
   },
   STREET_NAME: {
     type: String,
     label: "Street name",
     optional: true,
     autoform: {
-      rows: 1,
+      rows: 2,
     },
   },
   TOWNSHIP_OR_VILLAGE_NAME: {
@@ -69,7 +66,7 @@ SchoolDetailsSchema = new SimpleSchema({
     label: "Township or Village Name",
     optional: true,
     autoform: {
-      rows: 1,
+      rows: 2,
     },
   },
   SUBURB: {
@@ -77,7 +74,7 @@ SchoolDetailsSchema = new SimpleSchema({
     label: "Suburb",
     optional: true,
     autoform: {
-      rows: 1,
+      rows: 2,
     },
   },
   TOWN_OR_CITY: {
@@ -85,7 +82,7 @@ SchoolDetailsSchema = new SimpleSchema({
     label: "Town or City",
     optional: true,
     autoform: {
-      rows: 1,
+      rows: 2,
     },
   },
   POSTAL_CODE: {
@@ -93,9 +90,6 @@ SchoolDetailsSchema = new SimpleSchema({
     label: "Postal Code",
     optional: true,
     regEx: /^[0-9]{4}$/,
-    autoform: {
-      rows: 1,
-    },
   },
   PROVINCE_NAME: {
     type: String,
@@ -125,9 +119,6 @@ SchoolDetailsSchema = new SimpleSchema({
     label: "NEIMS number",
     optional: true,
     regEx: /^[0-9]{9}$/,
-    autoform: {
-      rows: 1,
-    },
   },
   CLASSIFICATION: {
     type: String,

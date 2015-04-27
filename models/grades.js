@@ -38,7 +38,7 @@ GradeDetailsSchema = new SimpleSchema({
     optional: true,
     type: String,
     label: "Number of male students",
-    regEx: /^[0-9]/,
+    regEx: /^[0-9]*$/,
     // autoform: {
     //   rows: 1,
     // },
@@ -47,7 +47,7 @@ GradeDetailsSchema = new SimpleSchema({
     optional: true,
     type: String,
     label: "Number of female students",
-    regEx: /^[0-9]/,
+    regEx: /^[0-9]*$/,
     // autoform: {
     //   rows: 1,
     // },
@@ -56,7 +56,7 @@ GradeDetailsSchema = new SimpleSchema({
     optional: true,
     type: String,
     label: "Total number of students",
-    regEx: /^[0-9]/,
+    regEx: /^[0-9]*$/,
     // autoform: {
     //   rows: 1,
     // },
@@ -65,7 +65,7 @@ GradeDetailsSchema = new SimpleSchema({
     optional: true,
     type: String,
     label: "Total number of teachers",
-    regEx: /^[0-9]/,
+    regEx: /^[0-9]*$/,
     // autoform: {
     //   rows: 1,
     // },
@@ -74,7 +74,7 @@ GradeDetailsSchema = new SimpleSchema({
     optional: true,
     type: String,
     label: "Total number of classrooms",
-    regEx: /^[0-9]/,
+    regEx: /^[0-9]*$/,
     // autoform: {
     //   rows: 1,
     // },
@@ -95,7 +95,7 @@ GradesSchema = new SimpleSchema({
     type: String,
     label: "Total number of teachers in the school",
     optional: true,
-    regEx: /^[0-9]/,
+    regEx: /^[0-9]*$/,
     // autoform: {
     //   rows: 1,
     // },
@@ -104,7 +104,7 @@ GradesSchema = new SimpleSchema({
     type: String,
     label: "Total number of students in the school",
     optional: true,
-    regEx: /^[0-9]/,
+    regEx: /^[0-9]*$/,
     // autoform: {
     //   rows: 1,
     // },
@@ -112,27 +112,27 @@ GradesSchema = new SimpleSchema({
   gradeR: {
     type: GradeDetailsSchema,
     label: "Grade R",
-    optional: false
+    optional: true
   },
   grade1: {
     type: GradeDetailsSchema,
     label: "Grade 1",
-    optional: false
+    optional: true
   },
   grade2: {
     type: GradeDetailsSchema,
     label: "Grade 2",
-    optional: false
+    optional: true
   },
   grade3: {
     type: GradeDetailsSchema,
     label: "Grade 3",
-    optional: false
+    optional: true
   },
   grade4: {
     type: GradeDetailsSchema,
     label: "Grade 4",
-    optional: false
+    optional: true
   },
   grade5: {
     type: GradeDetailsSchema,
@@ -142,37 +142,37 @@ GradesSchema = new SimpleSchema({
   grade6: {
     type: GradeDetailsSchema,
     label: "Grade 6" ,
-    optional: false
+    optional: true
   },
   grade7: {
     type: GradeDetailsSchema,
     label: "Grade 7" ,
-    optional: false
+    optional: true
      },
   grade8: {
     type: GradeDetailsSchema,
     label: "Grade 8" ,
-    optional: false
+    optional: true
      },
   grade9: {
     type: GradeDetailsSchema,
     label: "Grade 9",
-    optional: false 
+    optional: true
      },
   grade10: {
     type: GradeDetailsSchema,
     label: "Grade 10",
-    optional: false
+    optional: true
      },
   grade11: {
     type: GradeDetailsSchema,
     label: "Grade 11",
-    optional: false
+    optional: true
      },
   grade12: {
     type: GradeDetailsSchema,
     label: "Grade 12",
-    optional: false
+    optional: true
      },
     version_id: {
     type: String,

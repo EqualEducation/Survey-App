@@ -5,11 +5,7 @@ totalNumberOfCleaningStaff: {
   optional: true,
   label: "Number of maintenance/cleaning staff?",
   type: String,
-  regEx: /^[0-9]/,
-  autoform: {
-    rows: 1,
-  },
-
+  regEx: /^[0-9]*$/,
 },
 accessToSoap: {
     optional: true,
@@ -64,19 +60,13 @@ accessToSoap: {
     optional: true,
     type: String,
     label: "Total number of sanitation staff in the school",
-    regEx: /^[0-9]/,
-    autoform: {
-      rows: 1,
-    },
+    regEx: /^[0-9]*$/,
   },
   totalNumberOfToiletBlocks: {
     optional: true,
     type: String,
     label: "Total number of toilet blocks",
-    regEx: /^[0-9]/,
-    autoform: {
-      rows: 1,
-    },
+    regEx: /^[0-9]*$/,
   },
   disabledToilets: {
   label: "How many toilets were there that were big enough for a wheelchair?",
