@@ -1,13 +1,5 @@
 
 
-Template.registerHelper('exports',function() {
-    // var fs = Npm.require('fs');
-    var files = fs.readdirSync('/files/');
-    console.log(files);
-    return files;
-});
-
-
 Template.registerHelper('JSONForSchool',function(versionId){
   
   var version = SurveyVersions.findOne({'_id' : versionId}, {limit: 1});
