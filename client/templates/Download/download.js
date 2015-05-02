@@ -2,7 +2,7 @@
 
 Template.registerHelper('exports',function() {
     // var fs = Npm.require('fs');
-    var files = fs.readdirSync('/exports/');
+    var files = fs.readdirSync('/files/');
     console.log(files);
     return files;
 });
