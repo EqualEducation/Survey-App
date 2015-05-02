@@ -7,13 +7,13 @@
 
 <template name="versions">
 
-  {{#unless hasVersions}}
+  <!-- {{#unless hasVersions}} -->
     <!-- {{#if userIsAdmin}} -->
     <input type="button" class="open-modal btn btn-primary" value="Add a Version" /> 
       <!-- {{else}} -->
       <!-- <p>You need to be logged in as an admin to add a new version</p> -->
     <!-- {{/if}} -->
-  {{/unless}}
+  <!-- {{/unless}} -->
   {{> list_versions }}
   {{> modal_version}}
   {{> modal_version_update}}
@@ -30,7 +30,7 @@
         <th></th>
         <!-- <th></th> -->
         <!-- {{#if userIsAdmin}} -->
-          <th></th>
+          <!-- <th></th> -->
           <th>Verified</th>
         <!-- {{/if}} -->
       </tr>
@@ -54,8 +54,8 @@
     <td>{{dateToString this.endDate}}</td>
     <!-- {{#if userIsAdmin}} -->
       <td><a href="" class="btn-edit">Edit Version Details</a></td>
-      <td><a href="" class="btn-duplicate">Duplicate</a></td>
-      <!-- {{#if userIsAdmin}} -->
+<!--       <td><a href="" class="btn-duplicate">Duplicate</a></td>
+ -->      <!-- {{#if userIsAdmin}} -->
         <!-- <td><a href="" class="btn-delete">Delete</a></td> -->
         <td>
           <div class="checkbox">
